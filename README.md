@@ -497,8 +497,12 @@ This project is licensed under the MIT license. See the `LICENSE` file for more 
 ---
 
 <div align="center">
+  ## frontend section
+<img width="1902" height="897" alt="Screenshot 2026-10-02 123845" src="https://github.com/user-attachments/assets/cc5898ab-431f-4970-a893-491a0b7d6b06" />
+<img width="1857" height="877" alt="Screenshot 2026-10-02 123947" src="https://github.com/user-attachments/assets/3ea81230-df30-437e-bb3e-282682b6ba01" />
+<img width="1885" height="876" alt="Screenshot 2026-10-02 124229" src="https://github.com/user-attachments/assets/5b72b41d-f1ec-43b0-a50e-275755d8ca24" />
+<img width="1917" height="906" alt="Screenshot 2026-10-02 124323" src="https://github.com/user-attachments/assets/13c03eec-da0a-4a88-9af0-813d268e934e" />
 
-### Made with ❤️ for transparent hiring
 
 [GitHub](https://github.com/123bruke/Moseb_job_portal) • [Issues](https://github.com/123bruke/Moseb_job_portal/issues)
 
