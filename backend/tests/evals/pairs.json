@@ -1,0 +1,10 @@
+[
+  {"id": "strong-be", "rubric": {"must_have": ["Python", "FastAPI"], "nice_to_have": ["Docker"], "min_years": 3, "education": "bachelor"},
+   "resume": {"skills": ["Python", "FastAPI", "Docker"], "years": 5, "education": "bachelor"}, "expect_eligible": true, "min_score": 85},
+  {"id": "missing-must", "rubric": {"must_have": ["Python", "FastAPI"], "nice_to_have": [], "min_years": 2, "education": "none"},
+   "resume": {"skills": ["Python"], "years": 6, "education": "master"}, "expect_eligible": false, "min_score": 0},
+  {"id": "too-junior", "rubric": {"must_have": ["Python"], "nice_to_have": [], "min_years": 5, "education": "bachelor"},
+   "resume": {"skills": ["Python"], "years": 1, "education": "bachelor"}, "expect_eligible": false, "min_score": 0},
+  {"id": "ok-mid", "rubric": {"must_have": ["Python"], "nice_to_have": ["Docker", "AWS"], "min_years": 2, "education": "diploma"},
+   "resume": {"skills": ["Python", "Docker"], "years": 3, "education": "bachelor"}, "expect_eligible": true, "min_score": 60}
+]

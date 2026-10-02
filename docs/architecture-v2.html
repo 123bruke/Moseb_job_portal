@@ -1,0 +1,648 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}</style><style>:root{color-scheme:light dark;--md-bg:#fff;--md-text:rgba(0,0,0,.8);--md-muted:rgba(0,0,0,.6);--md-fill:rgba(0,0,0,.04);--md-fill-strong:rgba(0,0,0,.06);--md-rule:rgba(0,0,0,.1);--md-rule-strong:rgba(0,0,0,.16);--md-link:hsl(210 100% 45%)}@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])){--md-bg:#0d0d0d;--md-text:rgba(255,255,255,.85);--md-muted:rgba(255,255,255,.6);--md-fill:rgba(255,255,255,.06);--md-fill-strong:rgba(255,255,255,.09);--md-rule:rgba(255,255,255,.14);--md-rule-strong:rgba(255,255,255,.22);--md-link:hsl(210 100% 72%)}}:root[data-theme="dark"]{color-scheme:dark;--md-bg:#0d0d0d;--md-text:rgba(255,255,255,.85);--md-muted:rgba(255,255,255,.6);--md-fill:rgba(255,255,255,.06);--md-fill-strong:rgba(255,255,255,.09);--md-rule:rgba(255,255,255,.14);--md-rule-strong:rgba(255,255,255,.22);--md-link:hsl(210 100% 72%)}:root[data-theme="light"]{color-scheme:light}@media print{:root,:root[data-theme="dark"]{color-scheme:light;--md-bg:#fff;--md-text:rgba(0,0,0,.8);--md-muted:rgba(0,0,0,.6);--md-fill:rgba(0,0,0,.04);--md-fill-strong:rgba(0,0,0,.06);--md-rule:rgba(0,0,0,.1);--md-rule-strong:rgba(0,0,0,.16);--md-link:hsl(210 100% 45%)}}body{background:var(--md-bg);color:var(--md-text);max-width:720px;margin:0 auto;padding:32px;display:flex;flex-direction:column;gap:10px;font:14px/1.55 -apple-system,BlinkMacSystemFont,'SF Pro','Segoe UI',sans-serif;overflow-wrap:break-word}body>:first-child{margin-top:0}h1,h2,h3,h4,h5,h6{margin:6px 0 0;line-height:1.25;font-weight:600;text-wrap:balance}h1{font-size:1.35em}h2{font-size:1.15em;color:var(--md-muted)}h3,h4,h5,h6{font-size:1em}p,ul,ol,blockquote,table,pre,hr{margin:0}strong{font-weight:600}a{color:var(--md-link);text-decoration:none}a:hover{text-decoration:underline}ul,ol{display:flex;flex-direction:column;gap:6px;padding-left:22px}ul{list-style:disc}ol{list-style:decimal}:is(li,td,th)>*+:is(p,ul,ol,blockquote){margin-top:6px}blockquote{display:flex;flex-direction:column;gap:10px;border-left:2px solid var(--md-rule);padding-left:10px;color:var(--md-muted)}:not(pre)>code{background:var(--md-fill);padding:1px 3px;border-radius:4px;font:.92em 'SF Mono',ui-monospace,Menlo,Consolas,monospace}a>code{background:none;color:inherit}pre{background:var(--md-fill);padding:10px 12px;border-radius:6px;overflow-x:auto;font:12px/1.5 'SF Mono',ui-monospace,Menlo,Consolas,monospace;margin-block:4px}pre code{background:none;padding:0;font:inherit}table{width:100%;border-collapse:separate;border-spacing:2px;font:inherit}th,td{padding:6px 8px;border-radius:3px;text-align:left;vertical-align:top}th{background:var(--md-fill-strong);font-weight:600}td{background:var(--md-fill)}:is(th,td) :not(pre)>code{background:transparent}hr{border:0;border-top:1px solid var(--md-rule-strong);margin-block:10px}img{max-width:100%;height:auto;border-radius:4px}</style>
+</head><body>
+<h1>Smart Resume Checker v2: Full Architecture (no code)</h1>
+<h2>1. What I found in your current project</h2>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Where</th>
+<th>Fix in v2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Two backends (Express in <code>smart-control-dashboard</code>, Flask in <code>thinkingmodel/flask.py</code>) that don't talk to each other</td>
+<td>root</td>
+<td>One backend: <strong>FastAPI</strong></td>
+</tr>
+<tr>
+<td>Local HF models (Qwen 1.5B, BART-MNLI) loaded inside scripts, <code>tokenizer</code>/<code>model</code> used but never imported</td>
+<td><code>full_langchain_system/</code></td>
+<td><strong>Gemini API</strong> for LLM + embeddings</td>
+</tr>
+<tr>
+<td><code>pdf.py</code> imports itself; hard-coded DB hosts/passwords; broken SQL (<code>insert_query = value</code>)</td>
+<td><code>extraction/</code>, <code>storing/</code></td>
+<td>Env-based config, Alembic migrations</td>
+</tr>
+<tr>
+<td>Auth via custom JWT + SQLite</td>
+<td><code>server.ts</code></td>
+<td><strong>Supabase Auth</strong> (JWT verified in FastAPI)</td>
+</tr>
+<tr>
+<td>Datasets in <code>MODEL DATA/*.json</code> fed as one giant string</td>
+<td><code>saving.py</code></td>
+<td>Chunked and embedded into <strong>ChromaDB</strong></td>
+</tr>
+<tr>
+<td>No Docker, no CI/CD, no tests</td>
+<td>root</td>
+<td>Docker Compose + GitHub Actions</td>
+</tr>
+<tr>
+<td>PASS/FAIL only, no explanation</td>
+<td><code>djuge.py</code></td>
+<td>Scored, explainable <strong>reasoning</strong> pipeline</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Stack decision:</strong> you listed Flask <em>and</em> FastAPI. Running both is the main reason the project is unstable. Use <strong>FastAPI only</strong> for the API. React is the frontend. Flask is dropped, and everything it did becomes FastAPI routers.</p>
+<hr>
+<h2>2. High-level architecture</h2>
+<pre class="mermaid">flowchart LR
+  subgraph Client
+    U[Candidate - React]
+    C[Company - React]
+  end
+  U &amp; C --&gt;|Supabase JWT| NG[Nginx gateway]
+  NG --&gt; API[FastAPI API]
+  API --&gt; SB[(Supabase: Auth + Postgres + Storage)]
+  API --&gt; CH[(ChromaDB)]
+  API --&gt; N4[(Neo4j)]
+  API --&gt; RQ[(Redis queue)]
+  RQ --&gt; WK[Worker: ingestion + matching]
+  WK --&gt; YO[YOLO layout service]
+  WK --&gt; PDF[PDF reader: PyMuPDF + OCR]
+  WK --&gt; AG[LangChain/LangGraph agents]
+  AG --&gt; GM[Gemini API]
+  AG --&gt; CH
+  AG --&gt; N4
+  WK --&gt; SB
+</pre>
+<p><strong>Roles of each data store (each one has one job):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Store</th>
+<th>Job</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Supabase Auth</strong></td>
+<td>Sign-up, login, JWT, roles (<code>candidate</code> / <code>company</code> / <code>admin</code>)</td>
+</tr>
+<tr>
+<td><strong>Supabase Postgres (SQL)</strong></td>
+<td>Source of truth: users, profiles, companies, jobs, applications, scores, reasoning logs, audit</td>
+</tr>
+<tr>
+<td><strong>Supabase Storage</strong></td>
+<td>Raw files: resumes, company requirement files</td>
+</tr>
+<tr>
+<td><strong>ChromaDB</strong></td>
+<td>Semantic search: resume chunks, job-requirement chunks, domain knowledge (your <code>MODEL DATA</code> JSONs)</td>
+</tr>
+<tr>
+<td><strong>Neo4j</strong></td>
+<td>Relationships and recommendations: Candidate-Skill-Job-Company-Domain graph</td>
+</tr>
+<tr>
+<td><strong>Redis</strong></td>
+<td>Job queue and cache</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>3. Roles and user flows</h2>
+<h3>Candidate</h3>
+<ol>
+<li>Sign up (Supabase): name, email, password, nationality, phone, location.</li>
+<li>Profile: skills, years of experience, education, domain, languages, expected salary.</li>
+<li><strong>Job feed</strong> is ranked by profile experience and skills (Section 7).</li>
+<li>Apply to a job: fill the application form and upload a resume (PDF/DOCX).</li>
+<li>See own application status and AI feedback (missing skills, improvements).</li>
+</ol>
+<h3>Company</h3>
+<ol>
+<li>Sign up as company, create a company profile.</li>
+<li><strong>Post job</strong>: title, description, required skills, min experience, education, deadline, number of seats, plus an optional <strong>requirement file</strong> (PDF/DOCX/TXT with any extra requirements).</li>
+<li>When the deadline passes (or the company clicks <em>Close and Rank</em>), the system ranks all applicants.</li>
+<li>The company receives the <strong>Top-N shortlist</strong> with reasoning and comparison.</li>
+<li>After delivery, non-selected candidate data is removed (Section 9).</li>
+</ol>
+<h3>Admin</h3>
+<p>Manage users, view audit log, monitor queues and model costs.</p>
+<hr>
+<h2>4. Ingestion pipelines</h2>
+<h3>4.1 Resume pipeline (async worker)</h3>
+<pre><code>Upload -&gt; Supabase Storage -&gt; queue job
+ 1. Validate (type, size, virus scan, page limit)
+ 2. PDF reader: PyMuPDF text per page; OCR fallback if scanned
+ 3. YOLO layout detection (page images):
+      - classes: header, photo, table, section-title, skills-block, signature, logo
+      - use: crop sections, drop photo/logo noise, order the reading flow of multi-column CVs
+ 4. Section parser (Gemini, structured output): name, contact, skills, experience entries,
+    education, certificates, languages, projects
+ 5. Normalize: skill aliases (JS = JavaScript), compute total years of experience
+ 6. Save structured result -&gt; Postgres
+ 7. Chunk by section + embed (Gemini embeddings) -&gt; ChromaDB (collection: resumes)
+ 8. Upsert graph -&gt; Neo4j (Candidate)-[:HAS_SKILL {years}]-&gt;(Skill)
+ 9. Mark application &#34;processed&#34;
+</code></pre>
+<h3>4.2 Job pipeline</h3>
+<pre><code>Post job (+ requirement file)
+ 1. Extract text from the requirement file (same PDF reader)
+ 2. Gemini converts everything into a structured rubric:
+      must-have skills, nice-to-have skills, min years, education, certifications,
+      weights (e.g. skills 40 / experience 30 / education 10 / domain 10 / other 10)
+ 3. Company can review and edit the rubric before publishing (human in the loop)
+ 4. Save to Postgres, embed to ChromaDB (collection: jobs), upsert graph (Job)-[:REQUIRES]-&gt;(Skill)
+</code></pre>
+<hr>
+<h2>5. Matching and ranking engine</h2>
+<p>Hybrid scoring: not only an LLM guess.</p>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Source</th>
+<th>Weight (default, editable per job)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Must-have skill coverage</td>
+<td>Postgres + Neo4j</td>
+<td>35%</td>
+</tr>
+<tr>
+<td>Semantic similarity (resume chunks vs job requirements)</td>
+<td>ChromaDB</td>
+<td>25%</td>
+</tr>
+<tr>
+<td>Experience fit (years, seniority, domain)</td>
+<td>Postgres</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>Education and certificates</td>
+<td>Postgres</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>Graph proximity (related skills, e.g. FastAPI is close to Flask)</td>
+<td>Neo4j</td>
+<td>10%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Hard filters first:</strong> missing a must-have, below minimum years, or wrong location or work-authorization (if the company set it). A candidate who fails a hard filter is marked &quot;not eligible&quot; with a reason, not silently dropped.</p>
+<p><strong>Ranking:</strong> weighted score 0-100, then Gemini does a <strong>pairwise comparison of the top ~10</strong> candidates (candidate A vs B on this job), which breaks ties and produces the comparison text.</p>
+<hr>
+<h2>6. Reasoning system (explainable)</h2>
+<p>An agent graph (LangGraph on top of LangChain) with these nodes, each writing a visible step to <code>reasoning_traces</code>:</p>
+<pre class="mermaid">flowchart TD
+  A[1 Understand job rubric] --&gt; B[2 Retrieve evidence from resume - Chroma]
+  B --&gt; C[3 Verify each requirement: met / partial / missing + quote]
+  C --&gt; D[4 Score with formula + graph signals]
+  D --&gt; E[5 Compare against other candidates]
+  E --&gt; F[6 Self-check: bias and hallucination review]
+  F --&gt; G[7 Final explanation + recommendation]
+</pre>
+<p>Rules that keep it trustworthy:</p>
+<ul>
+<li><strong>Evidence-grounded:</strong> every &quot;met&quot; claim must cite a resume chunk. No evidence means &quot;missing&quot;.</li>
+<li><strong>Bias guard:</strong> the scoring agent never sees name, photo, age, gender, nationality. Those fields are stripped before step 2. (Nationality is stored for the profile, not used for ranking.)</li>
+<li><strong>Self-check node</strong> flags contradictions (e.g. &quot;10 years&quot; claimed but the dates give 3).</li>
+<li><strong>Output per candidate:</strong> score, per-requirement table, strengths, gaps, risk flags, one-paragraph reasoning, confidence.</li>
+<li><strong>Company sees the trace</strong>, can override ranking, and overrides are logged.</li>
+<li>Your old PASS/FAIL classifier becomes just one cheap pre-filter, not the decision maker.</li>
+</ul>
+<hr>
+<h2>7. Job feed for candidates (recommendation)</h2>
+<ol>
+<li><strong>Candidate generation:</strong> Neo4j query: jobs whose required skills overlap the candidate's skills, within experience range.</li>
+<li><strong>Semantic boost:</strong> Chroma similarity between the profile and job embeddings.</li>
+<li><strong>Rank:</strong> <code>0.5 skill-overlap + 0.3 semantic + 0.2 experience-fit</code>, plus &quot;recently posted&quot; tie-breaker.</li>
+<li><strong>Explain:</strong> each card shows &quot;Matches 7 of 9 skills; you are 1 year short on experience&quot;.</li>
+<li><strong>Learning loop:</strong> clicks, applies and saves update graph edge weights.</li>
+</ol>
+<hr>
+<h2>8. SQL database (Supabase Postgres): tables</h2>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Key columns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>profiles</code></td>
+<td>id (= auth uid), role, full_name, email, nationality, phone, location, created_at</td>
+</tr>
+<tr>
+<td><code>candidate_profiles</code></td>
+<td>profile_id, headline, years_experience, domain, education_level, expected_salary, skills[]</td>
+</tr>
+<tr>
+<td><code>companies</code></td>
+<td>id, owner_profile_id, name, industry, website, size, logo_url</td>
+</tr>
+<tr>
+<td><code>jobs</code></td>
+<td>id, company_id, title, description, domain, min_experience, location, seats, deadline, status (draft/open/closed/ranked), rubric_json, requirement_file_path</td>
+</tr>
+<tr>
+<td><code>job_skills</code></td>
+<td>job_id, skill_id, importance (must/nice), min_years</td>
+</tr>
+<tr>
+<td><code>skills</code></td>
+<td>id, name, aliases[], category</td>
+</tr>
+<tr>
+<td><code>applications</code></td>
+<td>id, job_id, candidate_id, form_answers_json, resume_path, status, created_at</td>
+</tr>
+<tr>
+<td><code>parsed_resumes</code></td>
+<td>application_id, structured_json, total_years, parse_confidence</td>
+</tr>
+<tr>
+<td><code>scores</code></td>
+<td>application_id, total, breakdown_json, eligible, rank</td>
+</tr>
+<tr>
+<td><code>reasoning_traces</code></td>
+<td>application_id, step, content, evidence_refs, created_at</td>
+</tr>
+<tr>
+<td><code>shortlists</code></td>
+<td>id, job_id, generated_at, delivered_at, report_path</td>
+</tr>
+<tr>
+<td><code>shortlist_items</code></td>
+<td>shortlist_id, application_id, rank, summary</td>
+</tr>
+<tr>
+<td><code>notifications</code></td>
+<td>id, profile_id, type, payload, read</td>
+</tr>
+<tr>
+<td><code>audit_log</code></td>
+<td>id, actor, action, entity, entity_id, at</td>
+</tr>
+</tbody>
+</table>
+<p>Use <strong>Row Level Security</strong>: a candidate sees only their own rows; a company sees only its jobs and the applications to those jobs.</p>
+<h2>9. Delivery and cleanup (&quot;send best fits, remove the rest&quot;)</h2>
+<ol>
+<li>Ranking finishes and the shortlist report is generated (PDF + in-app view).</li>
+<li>Shortlisted candidates' full data is delivered to the company.</li>
+<li>Notify everyone of the outcome (selected / not selected).</li>
+<li><strong>Cleanup job</strong> (scheduled): for non-selected applicants, delete the resume file, Chroma chunks, and graph resume edges. Keep a minimal record (application id, status, timestamp) for audit.</li>
+<li>The candidate is told at apply time, via a consent checkbox, that the resume is deleted after the decision. Add a configurable retention period (e.g. 30 days) and a &quot;delete my account and data&quot; button. This matters legally (GDPR-style rules) because you store personal data from many nationalities.</li>
+</ol>
+<hr>
+<h2>10. ChromaDB and Neo4j design</h2>
+<p><strong>Chroma collections</strong></p>
+<table>
+<thead>
+<tr>
+<th>Collection</th>
+<th>Content</th>
+<th>Metadata</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>resumes</code></td>
+<td>resume section chunks</td>
+<td>application_id, job_id, section, candidate_id</td>
+</tr>
+<tr>
+<td><code>jobs</code></td>
+<td>requirement chunks</td>
+<td>job_id, company_id</td>
+</tr>
+<tr>
+<td><code>knowledge</code></td>
+<td>your <code>MODEL DATA</code> JSONs (IT, Engineering, Medicine, Accounting) split into role and skill chunks</td>
+<td>domain, role</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Neo4j graph</strong></p>
+<ul>
+<li>Nodes: <code>Candidate</code>, <code>Skill</code>, <code>Job</code>, <code>Company</code>, <code>Domain</code>, <code>Education</code></li>
+<li>Edges: <code>HAS_SKILL{years,level}</code>, <code>REQUIRES{importance}</code>, <code>POSTED_BY</code>, <code>IN_DOMAIN</code>, <code>RELATED_TO{weight}</code> (skill to skill), <code>APPLIED_TO</code>, <code>VIEWED</code>, <code>SAVED</code></li>
+<li>Seed <code>RELATED_TO</code> from your domain JSONs.</li>
+</ul>
+<hr>
+<h2>11. FastAPI structure and endpoints</h2>
+<table>
+<thead>
+<tr>
+<th>Router</th>
+<th>Endpoints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>auth</code></td>
+<td><code>GET /me</code>, <code>PATCH /me</code> (Supabase handles sign-up and login; API only verifies JWT and syncs the profile)</td>
+</tr>
+<tr>
+<td><code>candidates</code></td>
+<td><code>PUT /candidates/profile</code>, <code>GET /candidates/feed</code>, <code>GET /candidates/applications</code></td>
+</tr>
+<tr>
+<td><code>companies</code></td>
+<td><code>POST /companies</code>, <code>GET /companies/me</code></td>
+</tr>
+<tr>
+<td><code>jobs</code></td>
+<td><code>POST /jobs</code>, <code>POST /jobs/{id}/requirements-file</code>, <code>GET/PATCH /jobs/{id}/rubric</code>, <code>POST /jobs/{id}/publish</code>, <code>POST /jobs/{id}/close-and-rank</code>, <code>GET /jobs</code></td>
+</tr>
+<tr>
+<td><code>applications</code></td>
+<td><code>POST /jobs/{id}/apply</code> (form + resume), <code>GET /applications/{id}</code></td>
+</tr>
+<tr>
+<td><code>ranking</code></td>
+<td><code>GET /jobs/{id}/shortlist</code>, <code>GET /applications/{id}/reasoning</code>, <code>POST /jobs/{id}/override</code></td>
+</tr>
+<tr>
+<td><code>chat</code></td>
+<td><code>POST /chat</code> (RAG chatbot: candidate career help; company &quot;ask about candidates&quot;)</td>
+</tr>
+<tr>
+<td><code>admin</code></td>
+<td><code>GET /admin/jobs-queue</code>, <code>GET /admin/audit</code></td>
+</tr>
+<tr>
+<td><code>health</code></td>
+<td><code>GET /health</code>, <code>GET /ready</code></td>
+</tr>
+</tbody>
+</table>
+<p>Internal layers: <code>routers -&gt; services -&gt; repositories (Postgres / Chroma / Neo4j)</code>; <code>agents/</code> holds LangChain/LangGraph; <code>workers/</code> holds queue tasks; <code>ml/</code> holds YOLO and PDF reader wrappers. Standard errors, request IDs, rate limiting, and pydantic schemas everywhere.</p>
+<hr>
+<h2>12. React frontend (customizable and clean)</h2>
+<p>Stack: React + TypeScript + Vite, Tailwind, shadcn/ui, TanStack Query, React Router, Supabase JS (auth only), Recharts.</p>
+<p><strong>Customization:</strong> design tokens (colors, radius, font) in one theme file, light/dark mode, and per-company brand color and logo on job pages.</p>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Pages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Public</td>
+<td>Landing, Browse jobs, Login/Register (role picker)</td>
+</tr>
+<tr>
+<td>Candidate</td>
+<td>Dashboard, Profile, Job feed, Job detail, Apply form, My applications, Resume feedback, Chatbot</td>
+</tr>
+<tr>
+<td>Company</td>
+<td>Dashboard, Company profile, Post job wizard (details, requirement file, rubric review, publish), Applicants, Ranking and comparison view, Reasoning panel, Shortlist export</td>
+</tr>
+<tr>
+<td>Admin</td>
+<td>Users, Queue, Audit</td>
+</tr>
+</tbody>
+</table>
+<p>Key components: <code>ResumeUploader</code> (progress and parse status), <code>RubricEditor</code> (weights sliders), <code>CandidateCompareTable</code> (side-by-side), <code>ReasoningTimeline</code>, <code>SkillGapChips</code>.</p>
+<hr>
+<h2>13. Folder structure (copy this)</h2>
+<pre><code>smart-resume-v2/
+├── README.md
+├── .env.example
+├── docker-compose.yml
+├── docker-compose.dev.yml
+├── Makefile
+├── .github/
+│   └── workflows/
+│       ├── ci.yml
+│       ├── cd.yml
+│       └── security.yml
+├── infra/
+│   ├── nginx/nginx.conf
+│   ├── neo4j/seed/
+│   └── supabase/migrations/
+├── data/
+│   └── knowledge/            # your MODEL DATA json (IT, engineering, medicine, accounting)
+├── backend/
+│   ├── Dockerfile
+│   ├── pyproject.toml
+│   ├── alembic/
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── core/             # config, security (JWT verify), logging, deps
+│   │   ├── routers/          # auth, candidates, companies, jobs, applications, ranking, chat, admin
+│   │   ├── schemas/          # pydantic models
+│   │   ├── services/         # business logic
+│   │   ├── repositories/     # postgres, chroma_repo, neo4j_repo, storage_repo
+│   │   ├── agents/           # langgraph: rubric_agent, evidence_agent, scoring_agent,
+│   │   │                     #            compare_agent, selfcheck_agent, chat_agent
+│   │   ├── prompts/          # versioned prompt templates
+│   │   ├── ml/
+│   │   │   ├── pdf_reader/   # PyMuPDF + OCR (from your pdf.py)
+│   │   │   ├── yolo/         # layout detector wrapper + weights/
+│   │   │   └── embeddings/   # Gemini embedding client
+│   │   ├── workers/          # ingest_resume, ingest_job, rank_job, cleanup
+│   │   └── utils/
+│   └── tests/                # unit, integration, agent evals
+├── frontend/
+│   ├── Dockerfile
+│   ├── package.json
+│   └── src/
+│       ├── app/              # router, providers, theme
+│       ├── components/       # ui, resume, job, ranking, reasoning
+│       ├── pages/            # public, candidate, company, admin
+│       ├── hooks/
+│       ├── lib/              # api client, supabase client
+│       └── styles/tokens
+├── ml-training/              # YOLO dataset labels, training notebooks, eval
+└── docs/                     # this file, API docs, ADRs
+</code></pre>
+<hr>
+<h2>14. Docker setup</h2>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Image / build</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nginx</code></td>
+<td>nginx</td>
+<td>Gateway: <code>/</code> goes to frontend, <code>/api</code> goes to backend</td>
+</tr>
+<tr>
+<td><code>frontend</code></td>
+<td>multi-stage Node build then nginx static</td>
+<td></td>
+</tr>
+<tr>
+<td><code>backend</code></td>
+<td>Python 3.11 slim, FastAPI via uvicorn</td>
+<td>health check on <code>/health</code></td>
+</tr>
+<tr>
+<td><code>worker</code></td>
+<td>same image as backend, different command</td>
+<td>scale with replicas; YOLO weights mounted</td>
+</tr>
+<tr>
+<td><code>redis</code></td>
+<td>redis</td>
+<td>queue and cache</td>
+</tr>
+<tr>
+<td><code>chromadb</code></td>
+<td>chromadb/chroma</td>
+<td>persistent volume</td>
+</tr>
+<tr>
+<td><code>neo4j</code></td>
+<td>neo4j</td>
+<td>volume; APOC plugin; seeded on start</td>
+</tr>
+<tr>
+<td><code>supabase</code></td>
+<td><strong>Supabase Cloud</strong> for production; local Supabase CLI stack for dev</td>
+<td>keep Postgres, Auth and Storage managed</td>
+</tr>
+</tbody>
+</table>
+<p>Compose files: <code>docker-compose.yml</code> (production-like) and <code>docker-compose.dev.yml</code> (hot reload, exposed ports). Separate networks: <code>public</code> (nginx) and <code>private</code> (databases are never exposed). Named volumes for chroma, neo4j and redis. Secrets come only from <code>.env</code> or the CI secret store.</p>
+<h2>15. CI/CD (GitHub Actions)</h2>
+<p><strong><code>ci.yml</code></strong> (on every pull request and push)</p>
+<ol>
+<li>Backend: lint (ruff), type-check (mypy), unit tests (pytest), coverage gate</li>
+<li>Frontend: lint, type-check, unit tests (Vitest), build</li>
+<li>Integration job: start Docker Compose test stack (Chroma, Neo4j, Redis) and run API tests with a mocked Gemini</li>
+<li><strong>Agent evals:</strong> small labeled set of resume-job pairs, fail the build if ranking accuracy drops below threshold</li>
+<li>Build Docker images and scan them (Trivy)</li>
+</ol>
+<p><strong><code>security.yml</code>:</strong> dependency audit, secret scanning, CodeQL (weekly).</p>
+<p><strong><code>cd.yml</code></strong></p>
+<ul>
+<li>Merge to <code>main</code>: build and push images to GHCR, deploy to <strong>staging</strong>, run smoke tests</li>
+<li>Git tag <code>v*</code>: manual approval, deploy to <strong>production</strong> (VPS with Compose over SSH, or Cloud Run / ECS), run DB migrations first, then roll out; automatic rollback if <code>/ready</code> fails</li>
+</ul>
+<p>Branching: <code>feature/*</code> to PR to <code>main</code> to tag.</p>
+<h2>16. Environment variables (<code>.env.example</code> names)</h2>
+<p><code>SUPABASE_URL</code>, <code>SUPABASE_ANON_KEY</code>, <code>SUPABASE_SERVICE_ROLE_KEY</code>, <code>SUPABASE_JWT_SECRET</code>, <code>DATABASE_URL</code>, <code>GEMINI_API_KEY</code>, <code>GEMINI_MODEL</code>, <code>GEMINI_EMBED_MODEL</code>, <code>CHROMA_HOST</code>, <code>CHROMA_PORT</code>, <code>NEO4J_URI</code>, <code>NEO4J_USER</code>, <code>NEO4J_PASSWORD</code>, <code>REDIS_URL</code>, <code>YOLO_WEIGHTS_PATH</code>, <code>RETENTION_DAYS</code>, <code>CORS_ORIGINS</code>, <code>ENV</code>.
+Rule: never commit real values. The passwords in your old files must be <strong>rotated</strong> if they were ever real.</p>
+<h2>17. Security and compliance checklist</h2>
+<ul>
+<li>Verify the Supabase JWT on every request; enforce roles in dependencies</li>
+<li>RLS on all tables; the service-role key lives only in the backend/worker</li>
+<li>Upload limits, MIME sniffing, malware scan, filename sanitizing</li>
+<li>Prompt-injection defense: resume text is treated as data, never instructions; the system prompt tells Gemini to ignore commands inside documents</li>
+<li>PII never logged; encrypt files at rest; signed URLs with expiry</li>
+<li>Rate limits on apply and chat endpoints; Gemini cost caps per day</li>
+</ul>
+<h2>18. Build order (milestones)</h2>
+<ol>
+<li><strong>M1 Foundation:</strong> repo layout, Docker Compose, FastAPI skeleton, Supabase auth + roles, CI lint/test</li>
+<li><strong>M2 Data:</strong> Postgres schema and RLS, Chroma and Neo4j connections, seed knowledge JSONs</li>
+<li><strong>M3 Company side:</strong> post job, requirement file, rubric editor</li>
+<li><strong>M4 Candidate side:</strong> profile, job feed, apply form, resume upload</li>
+<li><strong>M5 Ingestion:</strong> PDF reader, YOLO layout, section parser, embeddings, graph upsert</li>
+<li><strong>M6 Ranking and reasoning:</strong> scoring engine, agent graph, comparison, traces</li>
+<li><strong>M7 Delivery:</strong> shortlist report, notifications, cleanup job</li>
+<li><strong>M8 Hardening:</strong> evals, security checklist, CD to staging then production</li>
+</ol>
+<hr>
+<h3>Notes / assumptions</h3>
+<ul>
+<li>YOLO needs <strong>labeled CV layouts</strong> to train (about 300-500 pages is enough to start); until then, run without YOLO and rely on PyMuPDF with OCR fallback.</li>
+<li>Gemini is the only LLM; model names are in env vars so you can swap versions without code changes.</li>
+<li>Auto-ranking should support hiring decisions, not make them alone. Keep the company override and the reasoning trace visible.</li>
+</ul>
+
+
+<!--claude-mermaid-runtime-begin:3477-->
+<style>.mermaid-diagram{margin-block:4px}.mermaid-diagram svg{display:block;margin:0 auto;max-width:100%;height:auto}</style>
+<script src="/_runtime/mermaid-11.16.1.min.js"></script>
+<script>(function(){
+var CFG={"palettes":{"light":{"surface":"#f4efe4","text":"#42392e","line":"#8a7f6d","border":"#7a6c52","bg":"#fffdf8"},"dark":{"surface":"#262b34","text":"#f2f3f5","line":"#a8adb8","border":"#9aa4b8","bg":"#1f232b"}}};
+if(typeof mermaid==='undefined')return;
+var pres=Array.prototype.slice.call(document.querySelectorAll('pre.mermaid')).filter(function(p){if(p.hasAttribute('data-claude-mermaid-claimed'))return false;p.setAttribute('data-claude-mermaid-claimed','1');return true;});
+if(!pres.length)return;
+var mq=window.matchMedia?window.matchMedia('(prefers-color-scheme: dark)'):null;
+var root=document.documentElement;
+var items=pres.map(function(pre){
+var mount=document.createElement('div');mount.className='mermaid-diagram';
+return {pre:pre,mount:mount,src:pre.textContent||''};
+});
+var seq=0;
+var renderGen=0;
+var lastKey='';
+function pageBg(fallback){
+var els=[document.body,document.documentElement];
+for(var i=0;i<els.length;i++){
+var c=els[i]&&getComputedStyle(els[i]).backgroundColor;
+if(c&&c!=='transparent'&&c!=='rgba(0, 0, 0, 0)')return c;
+}
+return fallback;
+}
+function render(){
+var theme=root.getAttribute('data-theme');
+var dark=theme==='dark'||(!!(mq&&mq.matches)&&theme!=='light');
+var pal=dark?CFG.palettes.dark:CFG.palettes.light;
+var bg=pageBg(pal.bg);
+var key=(dark?'d':'l')+'|'+bg;
+if(key===lastKey)return;
+lastKey=key;
+var gen=++renderGen;
+var font=getComputedStyle(document.body).fontFamily||'sans-serif';
+var nat={useMaxWidth:false};
+mermaid.initialize({
+startOnLoad:false,securityLevel:'strict',theme:'base',
+flowchart:nat,sequence:nat,er:nat,state:nat,class:nat,pie:nat,
+gantt:nat,journey:nat,timeline:nat,gitGraph:nat,mindmap:nat,xyChart:nat,
+quadrantChart:nat,sankey:nat,c4:nat,requirement:nat,block:nat,
+packet:nat,kanban:nat,architecture:nat,radar:nat,
+themeVariables:{background:bg,mainBkg:pal.surface,primaryColor:pal.surface,
+primaryTextColor:pal.text,lineColor:pal.line,primaryBorderColor:pal.border,
+nodeBorder:pal.border,clusterBorder:pal.border,edgeLabelBackground:bg,
+clusterBkg:'rgba(127,127,127,0.07)',titleColor:pal.text,
+darkMode:dark,rowOdd:bg,rowEven:'rgba(127,127,127,0.07)',
+attributeBackgroundColorOdd:bg,attributeBackgroundColorEven:'rgba(127,127,127,0.07)',
+fontSize:'16px',fontFamily:font},
+themeCSS:'.node rect, .node circle, .node polygon, .node path, .cluster rect { stroke-width: 2px; }'
+});
+items.forEach(function(it){
+var id='claude-mermaid-'+seq++;
+mermaid.render(id,it.src).then(function(r){
+if(gen!==renderGen)return;
+var prev=it.pre.previousElementSibling;
+if(prev&&prev.className==='mermaid-diagram'&&prev!==it.mount)return;
+it.mount.innerHTML=r.svg;
+if(!it.mount.parentNode)it.pre.parentNode.insertBefore(it.mount,it.pre);
+it.pre.style.display='none';
+},function(){
+var scratch=document.getElementById(id);
+if(scratch)scratch.parentNode.removeChild(scratch);
+scratch=document.getElementById('d'+id);
+if(scratch)scratch.parentNode.removeChild(scratch);
+if(gen!==renderGen)return;
+if(it.mount.parentNode)it.mount.parentNode.removeChild(it.mount);
+it.pre.style.display='';
+});
+});
+}
+render();
+if(mq&&mq.addEventListener)mq.addEventListener('change',render);
+if(typeof MutationObserver!=='undefined')new MutationObserver(render).observe(root,{attributes:true,attributeFilter:['data-theme']});
+})();</script>
+<!--claude-mermaid-runtime-end-->
+</body></html>

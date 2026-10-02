@@ -1,0 +1,629 @@
+{
+    "project_metadata": {
+        "project_name": "AI-Powered Resume Detection System - Mechanical & Electrical Engineering Focus",
+        "version": "4.0.0",
+        "environment": "production",
+        "primary_disciplines": ["Mechanical Engineering", "Electrical Engineering"],
+        "secondary_disciplines": ["Mechatronics", "Robotics", "Automation", "HVAC", "Power Systems", "Embedded Systems"],
+        "created_at": "2026-04-15T10:00:00Z",
+        "last_modified": "2026-04-15T16:30:00Z",
+        "maintainers": [{
+                "name": "Dr. Sarah Chen",
+                "role": "Lead ML Engineer",
+                "email": "sarah.chen@company.com",
+                "specialization": "Mechanical Engineering Informatics"
+            },
+            {
+                "name": "Michael Torres",
+                "role": "Backend Lead",
+                "email": "michael.torres@company.com",
+                "specialization": "Electrical Systems"
+            },
+            {
+                "name": "Dr. Emily Zhang",
+                "role": "Domain Expert - Mechanical",
+                "email": "emily.zhang@company.com",
+                "credentials": "PE Mechanical, PhD Thermal Sciences"
+            },
+            {
+                "name": "Robert Kowalski",
+                "role": "Domain Expert - Electrical",
+                "email": "robert.kowalski@company.com",
+                "credentials": "PE Electrical, MSEE Power Systems"
+            }
+        ],
+        "repository": "https://github.com/company/mechelec-resume-detection",
+        "license": "MIT",
+        "documentation_url": "https://docs.company.com/mechelec-resume-detection"
+    },
+
+    "system_configuration": {
+        "api_version": "v2",
+        "max_file_size_mb": 15,
+        "supported_formats": ["pdf", "docx", "txt", "jpg", "png", "tiff"],
+        "batch_processing": {
+            "enabled": true,
+            "max_batch_size": 50,
+            "concurrent_workers": 8,
+            "queue_timeout_seconds": 600,
+            "priority_queues": {
+                "mechanical_engineering": 1,
+                "electrical_engineering": 1,
+                "mechatronics": 2,
+                "general_engineering": 3
+            }
+        },
+        "rate_limiting": {
+            "requests_per_minute": 120,
+            "burst_limit": 20,
+            "per_api_key": true
+        },
+        "storage": {
+            "raw_resumes_path": "/data/raw/mechelec/",
+            "parsed_resumes_path": "/data/parsed/mechelec/",
+            "failed_resumes_path": "/data/failed/mechelec/",
+            "backup_path": "/backup/resumes/mechelec/",
+            "retention_days": 120,
+            "hot_storage_days": 30
+        },
+        "security": {
+            "encryption_at_rest": true,
+            "pii_redaction": true,
+            "access_logging": true,
+            "allowed_ips": ["192.168.1.0/24", "10.0.0.0/8"],
+            "audit_trail_enabled": true
+        }
+    },
+
+    "mechanical_engineering_schema": {
+        "discipline_specific_fields": {
+            "cad_proficiency": {
+                "software_list": [{
+                        "name": "SolidWorks",
+                        "proficiency_required": ["Advanced", "Expert"],
+                        "years_experience_min": 2,
+                        "certification_names": ["CSWA", "CSWP", "CSWE"],
+                        "features_knowledge": ["Part Modeling", "Assembly", "Drawing", "Simulation", "Sheet Metal", "Weldments", "Surface Modeling", "Mold Design"]
+                    },
+                    {
+                        "name": "CATIA",
+                        "proficiency_required": ["Intermediate", "Advanced", "Expert"],
+                        "years_experience_min": 3,
+                        "certification_names": ["CATIA V5 Associate", "CATIA V5 Professional"],
+                        "modules": ["Part Design", "Assembly Design", "Generative Shape Design", "DMU Navigator", "Composites"]
+                    },
+                    {
+                        "name": "NX (Unigraphics)",
+                        "proficiency_required": ["Intermediate", "Advanced"],
+                        "years_experience_min": 2,
+                        "certification_names": ["Siemens NX Associate", "Siemens NX Professional"],
+                        "modules": ["Modeling", "Drafting", "Assembly", "Sheet Metal", "Routing"]
+                    },
+                    {
+                        "name": "Creo (Pro/ENGINEER)",
+                        "proficiency_required": ["Intermediate", "Advanced"],
+                        "years_experience_min": 2,
+                        "certification_names": ["Creo Associate", "Creo Professional"],
+                        "modules": ["Part Modeling", "Assembly", "Drawing", "Sheetmetal", "Cabling", "Piping"]
+                    },
+                    {
+                        "name": "AutoCAD",
+                        "proficiency_required": ["Intermediate", "Advanced", "Expert"],
+                        "years_experience_min": 1,
+                        "certification_names": ["AutoCAD Certified User", "AutoCAD Certified Professional"],
+                        "specializations": ["2D Drafting", "3D Modeling", "Electrical", "Mechanical", "Civil"]
+                    },
+                    {
+                        "name": "Fusion 360",
+                        "proficiency_required": ["Beginner", "Intermediate"],
+                        "years_experience_min": 1,
+                        "certification_names": ["Fusion 360 Certified User"],
+                        "features": ["CAD", "CAM", "CAE", "PCB Design", "Generative Design"]
+                    },
+                    {
+                        "name": "Inventor",
+                        "proficiency_required": ["Intermediate", "Advanced"],
+                        "years_experience_min": 2,
+                        "certification_names": ["Autodesk Inventor Certified User", "Autodesk Inventor Certified Professional"],
+                        "modules": ["Part Modeling", "Assembly", "Drawing", "Tube & Pipe", "Frame Generator", "Dynamics Simulation"]
+                    },
+                    {
+                        "name": "Onshape",
+                        "proficiency_required": ["Beginner", "Intermediate"],
+                        "years_experience_min": 1,
+                        "certification_names": ["Onshape Associate"],
+                        "features": ["Cloud CAD", "PDM", "Collaboration", "Version Control"]
+                    }
+                ],
+                "preferred_software_industries": {
+                    "aerospace": ["CATIA", "NX", "SolidWorks"],
+                    "automotive": ["CATIA", "NX", "Creo"],
+                    "consumer_products": ["SolidWorks", "Creo", "Fusion 360"],
+                    "heavy_machinery": ["NX", "Creo", "Inventor"],
+                    "medical_devices": ["SolidWorks", "Creo", "NX"]
+                }
+            },
+            "simulation_and_analysis": {
+                "fea_tools": [{
+                        "name": "ANSYS Workbench",
+                        "proficiency_required": ["Intermediate", "Advanced", "Expert"],
+                        "analysis_types": ["Static Structural", "Modal", "Harmonic", "Transient", "Thermal", "Fatigue", "Optimization"],
+                        "certifications": ["ANSYS Mechanical Associate", "ANSYS Mechanical Professional"]
+                    },
+                    {
+                        "name": "ANSYS APDL",
+                        "proficiency_required": ["Advanced", "Expert"],
+                        "use_cases": ["Custom Scripting", "Advanced Nonlinear", "Parametric Studies"],
+                        "required_skills": ["Parameteric Design Language"]
+                    },
+                    {
+                        "name": "Abaqus (SIMULIA)",
+                        "proficiency_required": ["Advanced", "Expert"],
+                        "analysis_types": ["Nonlinear FEA", "Contact", "Hyperelasticity", "Fracture Mechanics", "Explicit Dynamics"],
+                        "certifications": ["SIMULIA Abaqus Associate"]
+                    },
+                    {
+                        "name": "COMSOL Multiphysics",
+                        "proficiency_required": ["Intermediate", "Advanced"],
+                        "modules": ["Structural Mechanics", "Heat Transfer", "CFD", "AC/DC", "MEMS", "Acoustics"],
+                        "certifications": ["COMSOL Certified Professional"]
+                    },
+                    {
+                        "name": "LS-DYNA",
+                        "proficiency_required": ["Advanced", "Expert"],
+                        "analysis_types": ["Explicit Dynamics", "Crash Simulation", "Impact Analysis", "Drop Testing"],
+                        "industries": ["Automotive", "Aerospace", "Defense"]
+                    },
+                    {
+                        "name": "MSC Nastran",
+                        "proficiency_required": ["Advanced"],
+                        "analysis_types": ["Linear Static", "Normal Modes", "Buckling", "Dynamic Response"],
+                        "certifications": ["MSC Nastran Associate"]
+                    },
+                    {
+                        "name": "Altair HyperWorks",
+                        "proficiency_required": ["Intermediate", "Advanced"],
+                        "tools": ["HyperMesh", "OptiStruct", "Radioss", "SimLab"],
+                        "specialties": ["Meshing", "Optimization", "Multiphysics"]
+                    }
+                ],
+                "cfd_tools": [{
+                        "name": "ANSYS Fluent",
+                        "proficiency_required": ["Intermediate", "Advanced", "Expert"],
+                        "applications": ["Internal Flows", "External Aerodynamics", "Heat Transfer", "Reacting Flows", "Multiphase"],
+                        "certifications": ["ANSYS Fluent Associate"]
+                    },
+                    {
+                        "name": "ANSYS CFX",
+                        "proficiency_required": ["Intermediate", "Advanced"],
+                        "specialties": ["Turbomachinery", "Rotating Machinery", "Heat Exchangers"]
+                    },
+                    {
+                        "name": "OpenFOAM",
+                        "proficiency_required": ["Advanced", "Expert"],
+                        "required_skills": ["C++", "Linux", "Parallel Computing", "Meshing"],
+                        "use_cases": ["Custom Solvers", "Research", "Complex Physics"]
+                    },
+                    {
+                        "name": "COMSOL CFD",
+                        "proficiency_required": ["Intermediate"],
+                        "modules": ["CFD Module", "Heat Transfer Module", "Microfluidics"]
+                    },
+                    {
+                        "name": "STAR-CCM+",
+                        "proficiency_required": ["Advanced"],
+                        "specialties": ["Multiphysics", "Conjugate Heat Transfer", "Aerodynamics"],
+                        "industries": ["Automotive", "Marine", "Energy"]
+                    },
+                    {
+                        "name": "Autodesk CFD",
+                        "proficiency_required": ["Intermediate"],
+                        "integration": ["Fusion 360", "Inventor"],
+                        "use_cases": ["Electronics Cooling", "HVAC", "Valve Flow"]
+                    }
+                ],
+                "thermal_analysis": {
+                    "tools": ["ANSYS Icepak", "Flotherm", "SolidWorks Flow Simulation", "COMSOL Heat Transfer"],
+                    "applications": ["Electronics Cooling", "Heat Exchanger Design", "Thermal Management", "HVAC Systems"],
+                    "key_concepts": ["Conduction", "Convection", "Radiation", "Joule Heating", "Phase Change", "Heat Sink Design"]
+                }
+            },
+            "manufacturing_and_processes": {
+                "traditional_manufacturing": {
+                    "machining": [
+                        "CNC Milling (3-axis, 4-axis, 5-axis)",
+                        "CNC Turning (Lathe)",
+                        "EDM (Wire EDM, Sinker EDM)",
+                        "Grinding (Surface, Cylindrical)",
+                        "Drilling", "Tapping", "Threading", "Broaching", "Honing", "Lapping"
+                    ],
+                    "forming": [
+                        "Sheet Metal Forming (Bending, Stamping, Deep Drawing)",
+                        "Forging (Open Die, Closed Die)",
+                        "Extrusion (Aluminum, Plastic)",
+                        "Rolling (Hot, Cold)",
+                        "Injection Molding",
+                        "Blow Molding",
+                        "Rotational Molding",
+                        "Compression Molding",
+                        "Thermoforming"
+                    ],
+                    "casting": [
+                        "Sand Casting",
+                        "Investment Casting (Lost Wax)",
+                        "Die Casting (High Pressure, Low Pressure)",
+                        "Centrifugal Casting",
+                        "Permanent Mold Casting",
+                        "Continuous Casting"
+                    ],
+                    "joining": [
+                        "Welding (MIG, TIG, Stick, Spot, Laser, Electron Beam, Friction Stir, Ultrasonic)",
+                        "Brazing", "Soldering",
+                        "Adhesive Bonding (Structural, Epoxy, Acrylic)",
+                        "Mechanical Fastening (Bolts, Rivets, Clinching)"
+                    ]
+                },
+                "additive_manufacturing": {
+                    "technologies": [
+                        "FDM (Fused Deposition Modeling)",
+                        "SLA (Stereolithography)",
+                        "SLS (Selective Laser Sintering)",
+                        "SLM (Selective Laser Melting)",
+                        "EBM (Electron Beam Melting)",
+                        "DMLS (Direct Metal Laser Sintering)",
+                        "PolyJet",
+                        "MJF (Multi Jet Fusion)",
+                        "Binder Jetting"
+                    ],
+                    "materials": [
+                        "PLA", "ABS", "PETG", "Nylon", "TPU",
+                        "Aluminum (AlSi10Mg, 6061)",
+                        "Titanium (Ti6Al4V)",
+                        "Stainless Steel (316L, 17-4 PH)",
+                        "Inconel", "Cobalt Chrome"
+                    ],
+                    "software": ["PrusaSlicer", "Cura", "Simplify3D", "Netfabb", "Materialise Magics"]
+                },
+                "quality_engineering": {
+                    "methodologies": ["Six Sigma", "Lean Manufacturing", "Kaizen", "5S", "TPM", "Kanban"],
+                    "tools": [
+                        "SPC (Statistical Process Control)",
+                        "FMEA (Design FMEA, Process FMEA)",
+                        "Control Plans",
+                        "MSA (Measurement System Analysis)",
+                        "Capability Analysis (Cp, Cpk, Pp, Ppk)",
+                        "Root Cause Analysis (5 Whys, Fishbone, 8D)",
+                        "Pareto Analysis",
+                        "Gage R&R"
+                    ],
+                    "inspection_equipment": [
+                        "CMM (Coordinate Measuring Machine)",
+                        "Optical Comparator",
+                        "Laser Scanner",
+                        "Micrometer", "Caliper", "Gauge Blocks",
+                        "Hardness Tester (Rockwell, Brinell, Vickers)",
+                        "Tensile Tester",
+                        "Surface Profilometer",
+                        "CT Scanner"
+                    ],
+                    "certifications": ["Six Sigma Green Belt", "Six Sigma Black Belt", "ASQ Certified Quality Engineer", "Lean Certification"]
+                },
+                "gd_t": {
+                    "key_concepts": [
+                        "Datums (Primary, Secondary, Tertiary)",
+                        "Feature Control Frames",
+                        "Geometric Tolerances (Flatness, Straightness, Circularity, Cylindricity)",
+                        "Orientation Tolerances (Perpendicularity, Parallelism, Angularity)",
+                        "Location Tolerances (Position, Concentricity, Symmetry)",
+                        "Profile Tolerances (Profile of a Line, Profile of a Surface)",
+                        "Runout Tolerances (Circular Runout, Total Runout)",
+                        "Maximum Material Condition (MMC)",
+                        "Least Material Condition (LMC)",
+                        "Regardless of Feature Size (RFS)"
+                    ],
+                    "standards": ["ASME Y14.5-2018", "ISO 1101", "ISO 5459", "ISO 8015"],
+                    "software_support": ["SolidWorks GD&T Advisor", "PC-DMIS", "Calypso", "SmartProfile"]
+                }
+            },
+            "mechanical_systems": {
+                "thermo_fluids": {
+                    "thermodynamics": [
+                        "Laws of Thermodynamics",
+                        "Cycles (Rankine, Brayton, Otto, Diesel, Refrigeration)",
+                        "Properties of Substances (Ideal Gas, Real Gas, Steam Tables)",
+                        "Exergy Analysis",
+                        "Combustion"
+                    ],
+                    "fluid_mechanics": [
+                        "Bernoulli's Equation",
+                        "Navier-Stokes Equations",
+                        "Laminar vs Turbulent Flow",
+                        "Boundary Layer Theory",
+                        "Pipe Flow (Major/Minor Losses)",
+                        "Pumps and Turbines",
+                        "Compressible Flow (Nozzles, Diffusers, Shock Waves)"
+                    ],
+                    "heat_transfer": [
+                        "Conduction (Steady-State, Transient, Fins)",
+                        "Convection (Natural, Forced, Boiling, Condensation)",
+                        "Radiation (Blackbody, Gray Body, View Factors)",
+                        "Heat Exchangers (Shell & Tube, Plate Fin, Cross Flow)"
+                    ],
+                    "software": ["Thermoflow", "GT-SUITE", "Aspen Plus", "EES (Engineering Equation Solver)"]
+                },
+                "mechanical_design": {
+                    "machine_elements": [
+                        "Gears (Spur, Helical, Bevel, Worm, Planetary)",
+                        "Bearings (Ball, Roller, Needle, Plain, Magnetic, Air)",
+                        "Shafts and Axles",
+                        "Couplings (Rigid, Flexible, Universal Joint)",
+                        "Clutches and Brakes",
+                        "Springs (Compression, Extension, Torsion, Belleville)",
+                        "Fasteners (Bolts, Screws, Rivets, Pins, Retaining Rings)",
+                        "Belts and Pulleys",
+                        "Chains and Sprockets",
+                        "Seals (O-rings, Gaskets, Lip Seals, Mechanical Seals)",
+                        "Lubrication Systems"
+                    ],
+                    "design_standards": ["AGMA", "ASME B107", "ANSI", "DIN", "ISO", "SAE"],
+                    "failure_analysis": [
+                        "Fatigue (High Cycle, Low Cycle, S-N Curves)",
+                        "Fracture Mechanics (K1C, Paris Law)",
+                        "Creep",
+                        "Corrosion (Galvanic, Stress Corrosion, Pitting)",
+                        "Wear (Abrasive, Adhesive, Fretting)",
+                        "Buckling",
+                        "Yielding (Von Mises, Tresca)"
+                    ]
+                },
+                "kinematics_and_dynamics": {
+                    "mechanisms": [
+                        "Linkages (4-bar, Slider-Crank, Geneva, Ratchet)",
+                        "Cams and Followers",
+                        "Gear Trains (Simple, Compound, Planetary)",
+                        "Differential",
+                        "Compliant Mechanisms"
+                    ],
+                    "dynamics": [
+                        "Newton's Laws",
+                        "Work-Energy Method",
+                        "Impulse-Momentum",
+                        "Vibrations (Free, Forced, Damped, Undamped)",
+                        "Natural Frequency",
+                        "Resonance",
+                        "Mode Shapes",
+                        "Balancing of Rotating Machinery"
+                    ],
+                    "software": ["MSC Adams", "RecurDyn", "Simpack", "Working Model 2D"]
+                }
+            },
+            "industry_specializations": {
+                "aerospace": {
+                    "key_skills": ["Aerodynamics", "Propulsion", "Structures", "Composite Materials", "Fatigue Analysis", "NDT"],
+                    "software": ["CATIA", "NX", "ANSYS", "NASTRAN", "Fluent"],
+                    "standards": ["AS9100D", "NADCAP", "FAA Regulations", "MIL-STD"],
+                    "certifications": ["AS9100 Internal Auditor", "NDT Level II"]
+                },
+                "automotive": {
+                    "key_skills": ["IC Engines", "EV Powertrain", "Vehicle Dynamics", "HVAC", "Crashworthiness", "Noise Vibration Harshness (NVH)"],
+                    "software": ["CATIA", "NX", "LS-DYNA", "GT-SUITE", "CarSim"],
+                    "standards": ["IATF 16949", "ISO 26262", "SAE J standards"],
+                    "certifications": ["VDA 6.3", "Automotive SPICE"]
+                },
+                "energy_and_power": {
+                    "key_skills": ["Turbomachinery", "Heat Exchangers", "Steam Turbines", "Gas Turbines", "Wind Turbines", "Solar Thermal", "Nuclear Systems", "HVAC", "Refrigeration"],
+                    "software": ["ANSYS CFX", "Fluent", "GT-SUITE", "Thermoflow", "Aspen HYSYS"],
+                    "standards": ["ASME Boiler & Pressure Vessel Code", "API 610", "ISO 13691"],
+                    "certifications": ["PE Mechanical (Thermal & Fluids)", "LEED AP"]
+                }
+            }
+        }
+    },
+
+    "electrical_engineering_schema": {
+        "discipline_specific_fields": {
+            "circuit_design_and_analysis": {
+                "simulation_software": [{
+                        "name": "SPICE (LTspice, PSpice, HSPICE)",
+                        "proficiency_required": ["Intermediate", "Advanced", "Expert"],
+                        "applications": ["Analog Circuits", "Power Electronics", "Transient Analysis", "AC/DC Analysis", "Noise Analysis"],
+                        "certifications": ["Cadence SPICE Specialist"]
+                    },
+                    {
+                        "name": "MATLAB/Simulink",
+                        "proficiency_required": ["Intermediate", "Advanced", "Expert"],
+                        "toolboxes": ["Simscape Electrical", "Power Systems Toolbox", "Control Systems Toolbox", "Signal Processing Toolbox", "DSP Toolbox"],
+                        "certifications": ["MathWorks Certified MATLAB Associate", "MathWorks Certified Simulink Associate"]
+                    },
+                    {
+                        "name": "PSIM",
+                        "proficiency_required": ["Intermediate", "Advanced"],
+                        "specialties": ["Power Electronics", "Motor Drives", "Renewable Energy Systems"]
+                    },
+                    {
+                        "name": "PLECS",
+                        "proficiency_required": ["Advanced"],
+                        "specialties": ["Thermal Modeling", "Magnetic Modeling", "Real-Time Simulation"]
+                    },
+                    {
+                        "name": "NI Multisim",
+                        "proficiency_required": ["Beginner", "Intermediate"],
+                        "integration": ["NI LabVIEW", "NI ELVIS"],
+                        "use_cases": ["Education", "Prototyping"]
+                    }
+                ],
+                "pcb_design": {
+                    "software": [{
+                            "name": "Altium Designer",
+                            "proficiency_required": ["Intermediate", "Advanced", "Expert"],
+                            "features": ["Schematic Capture", "PCB Layout", "Library Management", "Signal Integrity Analysis", "PDN Analysis", "Draftsman"],
+                            "certifications": ["Altium Certified Professional"]
+                        },
+                        {
+                            "name": "Eagle (Autodesk)",
+                            "proficiency_required": ["Intermediate", "Advanced"],
+                            "integration": ["Fusion 360", "Octopart"],
+                            "use_cases": ["Hobbyist", "Startups", "Open Source"]
+                        },
+                        {
+                            "name": "KiCad",
+                            "proficiency_required": ["Beginner", "Intermediate", "Advanced"],
+                            "features": ["Open Source", "3D Viewer", "Push and Shove Router", "Gerber Generation"],
+                            "use_cases": ["Open Source Hardware", "Education", "Professional"]
+                        },
+                        {
+                            "name": "OrCAD (Cadence)",
+                            "proficiency_required": ["Advanced", "Expert"],
+                            "features": ["Capture CIS", "PCB Editor", "PSpice", "Allegro"],
+                            "industries": ["High-Speed Digital", "RF", "Automotive", "Aerospace"]
+                        },
+                        {
+                            "name": "PADS (Siemens)",
+                            "proficiency_required": ["Intermediate", "Advanced"],
+                            "features": ["PADS Professional", "HyperLynx SI/PI"],
+                            "use_cases": ["Complex Boards", "High Density"]
+                        },
+                        {
+                            "name": "EasyEDA",
+                            "proficiency_required": ["Beginner"],
+                            "features": ["Cloud-Based", "LCSC/JLCPCB Integration"],
+                            "use_cases": ["Quick Prototyping", "Budget Projects"]
+                        }
+                    ],
+                    "design_rules": {
+                        "trace_width": ["0.1mm to 10mm depending on current"],
+                        "clearance": ["0.1mm to 0.5mm for standard designs", "0.075mm for high density"],
+                        "via_types": ["Through-hole", "Blind", "Buried", "Microvia", "Tented", "Filled"],
+                        "layer_stackup": ["2-layer", "4-layer", "6-layer", "8-layer", "10+ layers"],
+                        "impedance_control": ["Single-ended 50Ω", "Differential 90Ω/100Ω", "Coplanar Waveguide"],
+                        "high_speed_design": ["Length Matching", "Differential Pair Routing", "Via Stitching", "Guard Traces", "Ground Planes"]
+                    },
+                    "manufacturing_outputs": ["Gerber RS-274X", "NC Drill", "Pick and Place File", "Bill of Materials (BOM)", "Assembly Drawings", "Schematic PDF"]
+                },
+                "signal_integrity_and_emc": {
+                    "analysis_types": [
+                        "Reflection (Impedance Matching, Termination)",
+                        "Crosstalk (Near-end NEXT, Far-end FEXT)",
+                        "Ground Bounce (SSN)",
+                        "Power Integrity (PDN Impedance, Decoupling)",
+                        "Eye Diagram Analysis",
+                        "Jitter Analysis",
+                        "EMI/EMC (Radiated Emissions, Conducted Emissions, Immunity)"
+                    ],
+                    "tools": [
+                        "Keysight ADS",
+                        "Ansys HFSS",
+                        "Ansys SIwave",
+                        "HyperLynx",
+                        "Cadence Sigrity"
+                    ],
+                    "standards": ["FCC Part 15", "CISPR 22", "IEC 61000-4", "MIL-STD-461", "DO-160"]
+                }
+            },
+            "embedded_systems": {
+                "microcontrollers_and_microprocessors": [{
+                        "family": "ARM Cortex-M (STM32, NXP LPC, TI Tiva)",
+                        "architecture": "32-bit RISC",
+                        "applications": ["IoT", "Industrial Control", "Consumer Electronics", "Medical Devices"],
+                        "toolchains": ["Keil MDK", "IAR EWARM", "STM32CubeIDE", "ARM GCC"]
+                    },
+                    {
+                        "family": "AVR (Arduino Uno, Mega, Nano)",
+                        "architecture": "8-bit RISC",
+                        "applications": ["Hobbyist", "Education", "Simple Automation", "Prototyping"],
+                        "toolchains": ["Arduino IDE", "Atmel Studio", "PlatformIO"]
+                    },
+                    {
+                        "family": "PIC (Microchip)",
+                        "architecture": "8-bit, 16-bit, 32-bit",
+                        "applications": ["Automotive", "Industrial", "Consumer"],
+                        "toolchains": ["MPLAB X IDE", "XC8/XC16/XC32 Compilers"]
+                    },
+                    {
+                        "family": "ESP32 (Espressif)",
+                        "architecture": "Xtensa LX6, LX7, RISC-V",
+                        "features": ["WiFi", "Bluetooth", "BLE", "Dual Core"],
+                        "applications": ["IoT", "Smart Home", "Wireless Sensors"],
+                        "toolchains": ["ESP-IDF", "Arduino Core", "MicroPython"]
+                    },
+                    {
+                        "family": "Raspberry Pi (Broadcom BCM)",
+                        "architecture": "ARM Cortex-A",
+                        "features": ["Linux OS", "GPU", "Camera Interface", "GPIO"],
+                        "applications": ["Edge Computing", "Vision Systems", "Embedded Linux"],
+                        "toolchains": ["Python", "C/C++", "Node-RED", "OpenCV"]
+                    },
+                    {
+                        "family": "FPGA (Xilinx, Intel/Altera, Lattice)",
+                        "architectures": ["Artix-7", "Kintex-7", "Cyclone V", "MAX 10", "iCE40"],
+                        "languages": ["VHDL", "Verilog", "SystemVerilog", "HLS"],
+                        "applications": ["High-Speed Processing", "Signal Processing", "Custom Peripherals"],
+                        "toolchains": ["Vivado", "Quartus", "Diamond", "Radiant"]
+                    },
+                    {
+                        "family": "DSP Processors (TI C6000, Analog Devices SHARC)",
+                        "architecture": "VLIW, Harvard",
+                        "applications": ["Audio Processing", "Radar", "Medical Imaging", "Communications"],
+                        "toolchains": ["Code Composer Studio", "CrossCore Embedded Studio"]
+                    }
+                ],
+                "communication_protocols": {
+                    "wired": [
+                        { "name": "I2C (Inter-Integrated Circuit)", "speed": ["100 kHz", "400 kHz", "1 MHz", "3.4 MHz"], "distance": "< 1m" },
+                        { "name": "SPI (Serial Peripheral Interface)", "speed": ["10 MHz", "20 MHz", "50 MHz"], "distance": "< 1m", "features": ["Full Duplex", "Multiple Slaves"] },
+                        { "name": "UART/USART", "speed": ["9600", "115200", "1 Mbps"], "features": ["Asynchronous", "RS-232", "RS-485"] },
+                        { "name": "CAN (Controller Area Network)", "speed": ["125 kbps", "500 kbps", "1 Mbps"], "distance": "Up to 1000m", "applications": ["Automotive", "Industrial"] },
+                        { "name": "CAN FD (Flexible Data-Rate)", "speed": ["2 Mbps", "5 Mbps", "8 Mbps"], "features": ["Larger Payload"] },
+                        { "name": "Ethernet", "standards": ["10BASE-T", "100BASE-TX", "1000BASE-T", "10GBASE-T"], "protocols": ["TCP/IP", "UDP", "Modbus TCP", "PROFINET", "EtherCAT"] },
+                        { "name": "USB (Universal Serial Bus)", "versions": ["USB 2.0 (480 Mbps)", "USB 3.0 (5 Gbps)", "USB-C"], "device_classes": ["CDC", "HID", "MSC", "Audio", "Video"] },
+                        { "name": "RS-232", "voltage": ["±3V to ±15V"], "distance": "Up to 15m", "applications": ["Legacy", "Debug"] },
+                        { "name": "RS-485", "topology": ["Multidrop", "Half-Duplex"], "distance": "Up to 1200m", "applications": ["Industrial", "Building Automation"] },
+                        { "name": "1-Wire", "features": ["Single Wire + Ground", "Parasitic Power"], "applications": ["Sensors", "Authentication"] }
+                    ],
+                    "wireless": [
+                        { "name": "Bluetooth/BLE", "versions": ["4.0", "4.2", "5.0", "5.1", "5.2", "5.3"], "range": "10-100m", "applications": ["Wearables", "IoT"] },
+                        { "name": "WiFi (802.11)", "standards": ["b/g/n", "ac", "ax (WiFi 6)", "be (WiFi 7)"], "bands": ["2.4 GHz", "5 GHz", "6 GHz"], "applications": ["High Bandwidth IoT"] },
+                        { "name": "Zigbee (802.15.4)", "data_rate": ["250 kbps"], "range": "10-100m", "applications": ["Mesh Networks", "Home Automation"] },
+                        { "name": "LoRa/LoRaWAN", "data_rate": ["0.3 kbps to 50 kbps"], "range": "2-15 km", "applications": ["Long Range IoT", "Agriculture"] },
+                        { "name": "NB-IoT (Narrowband IoT)", "data_rate": ["< 250 kbps"], "range": "1-10 km", "applications": ["Cellular IoT", "Smart Meters"] },
+                        { "name": "Z-Wave", "frequency": ["800-900 MHz"], "range": "30m", "applications": ["Home Automation"] },
+                        { "name": "Thread", "features": ["IPv6", "Mesh", "Low Power"], "applications": ["Connected Home"] },
+                        { "name": "NFC (Near Field Communication)", "range": "< 10cm", "applications": ["Payment", "Tag Reading", "Pairing"] },
+                        { "name": "UWB (Ultra-Wideband)", "accuracy": "10cm", "applications": ["Positioning", "Secure Access"] },
+                        { "name": "Cellular (4G/5G)", "standards": ["LTE Cat M1", "LTE Cat NB2", "5G NR"], "applications": ["Telematics", "Remote Monitoring"] }
+                    ]
+                },
+                "real_time_operating_systems": {
+                    "popular_rtos": [
+                        { "name": "FreeRTOS", "license": "MIT", "features": ["Tasks", "Queues", "Semaphores", "Timers", "Low Power"], "supported_architectures": ["ARM", "AVR", "ESP32", "RISC-V"] },
+                        { "name": "Zephyr", "license": "Apache 2.0", "features": ["Device Tree", "Bluetooth", "Networking", "USB", "LittleFS"], "supported_architectures": ["ARM", "x86", "RISC-V", "Xtensa"] },
+                        { "name": "RT-Thread", "license": "Apache 2.0", "features": ["IoT", "GUI", "Audio", "Sensor Framework"], "supported_architectures": ["ARM", "RISC-V", "MIPS"] },
+                        { "name": "Azure RTOS (ThreadX)", "license": "Commercial", "features": ["Safety Certifications", "Small Footprint"], "certifications": ["IEC 61508", "ISO 26262", "DO-178C"] },
+                        { "name": "VxWorks (Wind River)", "license": "Commercial", "features": ["High Reliability", "POSIX Compliance"], "applications": ["Aerospace", "Defense", "Medical"] },
+                        { "name": "QNX", "license": "Commercial", "features": ["Microkernel", "POSIX", "Safety Certified"], "applications": ["Automotive", "Medical", "Industrial"] },
+                        { "name": "Micrium (µC/OS)", "license": "Commercial/Open Source", "features": ["Preemptive", "ROMable", "Scalable"], "certifications": ["SIL 3", "IEC 61508"] }
+                    ]
+                }
+            },
+            "power_systems_and_electronics": {
+                "power_system_analysis": {
+                    "software": [
+                        { "name": "ETAP", "features": ["Load Flow", "Short Circuit", "Arc Flash", "Protection Coordination", "Transient Stability"] },
+                        { "name": "DIgSILENT PowerFactory", "features": ["Renewable Integration", "Harmonics", "Grid Code Compliance"] },
+                        { "name": "PSCAD/EMTDC", "features": ["Electromagnetic Transients", "HVDC", "FACTS", "Protection"] },
+                        { "name": "PSS/E (Siemens)", "features": ["Large Grid Analysis", "Dynamics", "Optimal Power Flow"] },
+                        { "name": "OpenDSS", "license": "Open Source", "features": ["Distribution Systems", "DER Integration"] },
+                        { "name": "CYME", "features": ["Distribution Planning", "Reliability Analysis"] }
+                    ],
+                    "key_concepts": [
+                        "Load Flow (Power Flow Analysis)",
+                        "Short Circuit Analysis (Symmetrical Components, Fault Current Calculation)",
+                        "Protection Coordination (Overcurrent, Differential, Distance, Breaker Coordination)",
+                        "Transient Stability (Rotor Angle Stability, Frequency Stability)",
+                        "Harmonic Analysis (THD, Filters, Resonance)",
+                        "Reliability Analysis (SAIFI, SAIDI, CAIDI, System Average Indices)"
+                    ],
+                    "equipment": [
+                            "Transformers (Power, Distribution, Instrument, Autotransformer)",
+                            "Circuit Breakers (SF6, Vacuum, Air, Oil)",
+                            "Switchgear (Low Voltage, Medium Voltage, High Voltage

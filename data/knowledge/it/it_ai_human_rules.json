@@ -1,0 +1,578 @@
+{
+    "ai_human_identification_system": {
+        "metadata": {
+            "system_name": "IT_CV_AI_Human_Classifier_with_CodeCorrection",
+            "version": "5.0",
+            "created_date": "2024-01-15",
+            "department": "Information Technology",
+            "total_cvs_analyzed": 25,
+            "total_lines": 5250,
+            "classification_accuracy": 0.94,
+            "code_correction_engine": "Integrated"
+        },
+        "identification_rules": {
+            "ai_indicators": {
+                "linguistic_patterns": [
+                    "excessive_use_of_strong_adjectives",
+                    "repetitive_sentence_structures",
+                    "lack_of_specific_dates",
+                    "generic_job_descriptions",
+                    "overuse_of_buzzwords",
+                    "perfect_grammar_with_no_variation",
+                    "missing_typos_or_imperfections",
+                    "consistent_verb_tense_without_flow",
+                    "lack_of_personal_pronouns",
+                    "formulaic_achievement_statements"
+                ],
+                "technical_patterns": [
+                    "perfect_code_formatting_with_no_errors",
+                    "overly_optimized_code_snippets",
+                    "generic_variable_names",
+                    "missing_comments_in_code",
+                    "lack_of_edge_case_handling",
+                    "perfect_algorithm_complexity",
+                    "no_debugging_artifacts",
+                    "standardized_project_structure"
+                ],
+                "structural_patterns": [
+                    "perfectly_aligned_formatting",
+                    "identical_section_lengths",
+                    "predictable_bullet_point_patterns",
+                    "no_variation_in_resume_length",
+                    "standard_template_structure",
+                    "missing_whitespace_anomalies",
+                    "consistent_font_usage"
+                ]
+            },
+            "human_indicators": {
+                "linguistic_patterns": [
+                    "varied_sentence_lengths",
+                    "inconsistent_verb_tense",
+                    "presence_of_minor_typos",
+                    "use_of_colloquial_language",
+                    "personal_anecdotes",
+                    "emotional_language",
+                    "varied_punctuation",
+                    "abbreviations_and_shortcuts",
+                    "hedging_language",
+                    "unique_phrasing"
+                ],
+                "technical_patterns": [
+                    "inconsistent_code_formatting",
+                    "debugging_comments_present",
+                    "TODO_notes_in_code",
+                    "edge_case_handling_attempts",
+                    "suboptimal_but_functional_solutions",
+                    "personal_naming_conventions",
+                    "learning_journey_reflections"
+                ],
+                "structural_patterns": [
+                    "inconsistent_spacing",
+                    "varied_bullet_point_lengths",
+                    "unique_section_order",
+                    "inconsistent_date_formats",
+                    "custom_section_headings",
+                    "uneven_margins"
+                ]
+            }
+        },
+        "code_correction_system": {
+            "description": "System that analyzes code snippets from CVs to detect AI vs Human patterns",
+            "correction_categories": [{
+                    "category": "syntax_errors",
+                    "ai_pattern": "perfect_syntax_no_errors",
+                    "human_pattern": "minor_syntax_errors_typos",
+                    "correction_provided": true
+                },
+                {
+                    "category": "code_optimization",
+                    "ai_pattern": "overly_optimized_complex",
+                    "human_pattern": "functional_but_not_optimal",
+                    "correction_provided": true
+                },
+                {
+                    "category": "commenting_style",
+                    "ai_pattern": "minimal_or_excessive_comments",
+                    "human_pattern": "organic_commenting",
+                    "correction_provided": true
+                },
+                {
+                    "category": "error_handling",
+                    "ai_pattern": "complete_error_handling",
+                    "human_pattern": "partial_or_no_error_handling",
+                    "correction_provided": true
+                },
+                {
+                    "category": "variable_naming",
+                    "ai_pattern": "generic_names",
+                    "human_pattern": "personal_or_descriptive_names",
+                    "correction_provided": true
+                }
+            ],
+            "code_analysis_engine": {
+                "languages_supported": ["Python", "Java", "JavaScript", "TypeScript", "Go", "C++", "C#", "Ruby", "PHP", "Swift", "Kotlin", "Rust"],
+                "analysis_depth": "AST_level",
+                "error_detection": true,
+                "optimization_suggestions": true,
+                "style_check": true,
+                "security_vulnerability_scan": true
+            }
+        },
+        "cvs_with_code_samples": [{
+                "cv_id": "IT_AI_001",
+                "candidate_name": "AI_Generated_Candidate_01",
+                "job_title": "Senior Python Developer",
+                "classification": "AI_Generated",
+                "confidence_score": 0.96,
+                "code_samples": [{
+                        "language": "Python",
+                        "file_name": "data_processor.py",
+                        "original_code": "def process_data(data_list):\n    \"\"\"Process the input data list and return transformed results.\"\"\"\n    if not data_list:\n        return []\n    \n    result = []\n    for item in data_list:\n        if item.get('status') == 'active':\n            transformed_item = {\n                'id': item.get('id'),\n                'name': item.get('name', '').upper(),\n                'value': item.get('value', 0) * 1.1,\n                'processed_at': datetime.now().isoformat()\n            }\n            result.append(transformed_item)\n    \n    return sorted(result, key=lambda x: x['value'], reverse=True)\n",
+                        "ai_analysis": {
+                            "syntax_errors": 0,
+                            "style_violations": 0,
+                            "optimization_score": 95,
+                            "comment_quality": "excessive_docstring",
+                            "error_handling": "none",
+                            "variable_naming": "generic",
+                            "complexity_score": "O(n log n)",
+                            "ai_probability": 0.98
+                        },
+                        "human_analysis": {
+                            "syntax_errors": 0,
+                            "style_violations": 2,
+                            "optimization_score": 65,
+                            "comment_quality": "minimal",
+                            "error_handling": "none",
+                            "variable_naming": "descriptive",
+                            "complexity_score": "O(n log n)",
+                            "human_probability": 0.02
+                        },
+                        "corrections_provided": [{
+                                "type": "error_handling",
+                                "original": "No error handling for missing 'status' key",
+                                "suggestion": "def process_data(data_list):\n    try:\n        if not data_list:\n            return []\n        result = []\n        for item in data_list:\n            status = item.get('status', 'inactive')\n            if status == 'active':\n                transformed_item = {\n                    'id': item.get('id'),\n                    'name': item.get('name', '').upper(),\n                    'value': item.get('value', 0) * 1.1,\n                    'processed_at': datetime.now().isoformat()\n                }\n                result.append(transformed_item)\n        return sorted(result, key=lambda x: x['value'], reverse=True)\n    except Exception as e:\n        logger.error(f\"Error processing data: {e}\")\n        return []",
+                                "priority": "high"
+                            },
+                            {
+                                "type": "import_missing",
+                                "original": "datetime not imported",
+                                "suggestion": "from datetime import datetime",
+                                "priority": "critical"
+                            },
+                            {
+                                "type": "code_optimization",
+                                "original": "List comprehension could replace for loop",
+                                "suggestion": "result = [\n    {\n        'id': item.get('id'),\n        'name': item.get('name', '').upper(),\n        'value': item.get('value', 0) * 1.1,\n        'processed_at': datetime.now().isoformat()\n    }\n    for item in data_list\n    if item.get('status') == 'active'\n]",
+                                "priority": "medium"
+                            }
+                        ]
+                    },
+                    {
+                        "language": "Python",
+                        "file_name": "api_handler.py",
+                        "original_code": "import requests\n\ndef fetch_user_data(user_id):\n    response = requests.get(f'https://api.example.com/users/{user_id}')\n    return response.json()\n\ndef fetch_multiple_users(user_ids):\n    users = []\n    for user_id in user_ids:\n        user_data = fetch_user_data(user_id)\n        users.append(user_data)\n    return users\n",
+                        "ai_analysis": {
+                            "syntax_errors": 0,
+                            "style_violations": 1,
+                            "optimization_score": 92,
+                            "comment_quality": "minimal",
+                            "error_handling": "none",
+                            "variable_naming": "generic",
+                            "ai_probability": 0.95
+                        },
+                        "corrections_provided": [{
+                                "type": "error_handling",
+                                "original": "No timeout or exception handling",
+                                "suggestion": "def fetch_user_data(user_id):\n    try:\n        response = requests.get(\n            f'https://api.example.com/users/{user_id}',\n            timeout=5\n        )\n        response.raise_for_status()\n        return response.json()\n    except requests.exceptions.Timeout:\n        print(f'Timeout fetching user {user_id}')\n        return None\n    except requests.exceptions.HTTPError as e:\n        print(f'HTTP error {e.response.status_code} for user {user_id}')\n        return None",
+                                "priority": "high"
+                            },
+                            {
+                                "type": "performance",
+                                "original": "Sequential API calls",
+                                "suggestion": "import asyncio\nimport aiohttp\n\nasync def fetch_user_data_async(session, user_id):\n    async with session.get(f'https://api.example.com/users/{user_id}') as response:\n        return await response.json()\n\nasync def fetch_multiple_users_async(user_ids):\n    async with aiohttp.ClientSession() as session:\n        tasks = [fetch_user_data_async(session, uid) for uid in user_ids]\n        return await asyncio.gather(*tasks)",
+                                "priority": "high"
+                            }
+                        ]
+                    }
+                ],
+                "resume_text_analysis": {
+                    "linguistic_score": 0.95,
+                    "structural_score": 0.97,
+                    "content_score": 0.92,
+                    "overall_ai_probability": 0.96
+                }
+            },
+            {
+                "cv_id": "IT_HUMAN_001",
+                "candidate_name": "Human_Written_Candidate_01",
+                "job_title": "Senior Backend Engineer",
+                "classification": "Human_Written",
+                "confidence_score": 0.93,
+                "code_samples": [{
+                        "language": "Python",
+                        "file_name": "user_service.py",
+                        "original_code": "# TODO: fix this function - it's slow for large datasets\n# Not proud of this but it works for now\n\ndef get_active_users(users_list):\n    active = []\n    # I know there's probably a better way to do this\n    for user in users_list:\n        try:\n            if user['status'] == 'active':\n                # need to format the date better\n                user['last_login'] = str(user.get('last_login', 'never'))\n                active.append(user)\n        except KeyError:\n            print(f\"Missing status for user: {user.get('id', 'unknown')}\")\n            continue\n    return active\n\n# This is hacky but gets the job done\n# Should refactor when I have time\n",
+                        "human_analysis": {
+                            "syntax_errors": 0,
+                            "style_violations": 4,
+                            "optimization_score": 45,
+                            "comment_quality": "organic_with_TODOs",
+                            "error_handling": "partial",
+                            "variable_naming": "descriptive",
+                            "debugging_artifacts": true,
+                            "human_probability": 0.95
+                        },
+                        "ai_analysis": {
+                            "syntax_errors": 0,
+                            "style_violations": 4,
+                            "optimization_score": 45,
+                            "comment_quality": "organic",
+                            "error_handling": "partial",
+                            "ai_probability": 0.12
+                        },
+                        "corrections_provided": [{
+                                "type": "code_optimization",
+                                "original": "Inefficient loop with list comprehension",
+                                "suggestion": "def get_active_users(users_list):\n    active = []\n    for user in users_list:\n        if user.get('status') == 'active':\n            user_copy = user.copy()\n            user_copy['last_login'] = str(user_copy.get('last_login', 'never'))\n            active.append(user_copy)\n    return active",
+                                "priority": "medium",
+                                "explanation": "Using .get() avoids KeyError exceptions and handles missing keys gracefully"
+                            },
+                            {
+                                "type": "performance",
+                                "original": "O(n) with print statements slowing down",
+                                "suggestion": "import logging\nlogging.basicConfig(level=logging.WARNING)\n\n# Remove print statement or use debug logging\nlogging.debug(f\"Missing status for user: {user.get('id', 'unknown')}\")",
+                                "priority": "low"
+                            }
+                        ]
+                    },
+                    {
+                        "language": "JavaScript",
+                        "file_name": "apiHelper.js",
+                        "original_code": "// This is my messy API helper - works but needs cleanup\n// Last modified: 2023-04-15\n\nasync function callAPI(endpoint, data) {\n    // TODO: add error handling\n    const response = await fetch(endpoint, {\n        method: 'POST',\n        headers: {\n            'Content-Type': 'application/json'\n        },\n        body: JSON.stringify(data)\n    });\n    \n    const result = await response.json();\n    return result;\n}\n\n// Used in 5 different places - need to refactor\nasync function batchAPICalls(endpoints) {\n    let results = [];\n    for (let i = 0; i < endpoints.length; i++) {\n        // This is slow I know\n        let res = await callAPI(endpoints[i], {});\n        results.push(res);\n    }\n    return results;\n}\n",
+                        "human_analysis": {
+                            "syntax_errors": 0,
+                            "style_violations": 3,
+                            "optimization_score": 38,
+                            "error_handling": "none",
+                            "todo_notes": 2,
+                            "human_probability": 0.94
+                        },
+                        "corrections_provided": [{
+                                "type": "performance",
+                                "original": "Sequential await in loop",
+                                "suggestion": "async function batchAPICalls(endpoints) {\n    const promises = endpoints.map(endpoint => callAPI(endpoint, {}));\n    const results = await Promise.all(promises);\n    return results;\n}",
+                                "priority": "high"
+                            },
+                            {
+                                "type": "error_handling",
+                                "original": "No try-catch blocks",
+                                "suggestion": "async function callAPI(endpoint, data) {\n    try {\n        const response = await fetch(endpoint, {\n            method: 'POST',\n            headers: { 'Content-Type': 'application/json' },\n            body: JSON.stringify(data)\n        });\n        \n        if (!response.ok) {\n            throw new Error(`HTTP ${response.status}: ${response.statusText}`);\n        }\n        \n        return await response.json();\n    } catch (error) {\n        console.error(`API call failed for ${endpoint}:`, error);\n        throw error;\n    }\n}",
+                                "priority": "high"
+                            }
+                        ]
+                    }
+                ],
+                "resume_text_analysis": {
+                    "linguistic_score": 0.12,
+                    "structural_score": 0.18,
+                    "content_score": 0.08,
+                    "overall_human_probability": 0.93
+                }
+            },
+            {
+                "cv_id": "IT_AI_002",
+                "candidate_name": "AI_Generated_Candidate_02",
+                "job_title": "Full Stack Developer",
+                "classification": "AI_Generated",
+                "confidence_score": 0.94,
+                "code_samples": [{
+                    "language": "JavaScript",
+                    "file_name": "reactComponent.jsx",
+                    "original_code": "import React, { useState, useEffect, useCallback, useMemo } from 'react';\nimport axios from 'axios';\n\nconst DataTable = ({ dataSource, columns, pageSize = 10 }) => {\n    const [data, setData] = useState([]);\n    const [loading, setLoading] = useState(false);\n    const [currentPage, setCurrentPage] = useState(1);\n    const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });\n\n    const fetchData = useCallback(async () => {\n        setLoading(true);\n        try {\n            const response = await axios.get(dataSource);\n            setData(response.data);\n        } catch (error) {\n            console.error('Error fetching data:', error);\n        } finally {\n            setLoading(false);\n        }\n    }, [dataSource]);\n\n    useEffect(() => {\n        fetchData();\n    }, [fetchData]);\n\n    const sortedData = useMemo(() => {\n        if (!sortConfig.key) return data;\n        \n        return [...data].sort((a, b) => {\n            if (a[sortConfig.key] < b[sortConfig.key]) {\n                return sortConfig.direction === 'asc' ? -1 : 1;\n            }\n            if (a[sortConfig.key] > b[sortConfig.key]) {\n                return sortConfig.direction === 'asc' ? 1 : -1;\n            }\n            return 0;\n        });\n    }, [data, sortConfig]);\n\n    const paginatedData = useMemo(() => {\n        const startIndex = (currentPage - 1) * pageSize;\n        return sortedData.slice(startIndex, startIndex + pageSize);\n    }, [sortedData, currentPage, pageSize]);\n\n    const requestSort = (key) => {\n        setSortConfig({\n            key,\n            direction: sortConfig.key === key && sortConfig.direction === 'asc' ? 'desc' : 'asc'\n        });\n    };\n\n    if (loading) return <div>Loading...</div>;\n\n    return (\n        <table>\n            <thead>\n                <tr>\n                    {columns.map(column => (\n                        <th key={column.key} onClick={() => requestSort(column.key)}>\n                            {column.title}\n                            {sortConfig.key === column.key && (\n                                <span>{sortConfig.direction === 'asc' ? ' ↑' : ' ↓'}</span>\n                            )}\n                        </th>\n                    ))}\n                </tr>\n            </thead>\n            <tbody>\n                {paginatedData.map((row, index) => (\n                    <tr key={index}>\n                        {columns.map(column => (\n                            <td key={column.key}>{row[column.key]}</td>\n                        ))}\n                    </tr>\n                ))}\n            </tbody>\n        </table>\n    );\n};\n\nexport default DataTable;\n",
+                    "ai_analysis": {
+                        "syntax_errors": 0,
+                        "style_violations": 0,
+                        "optimization_score": 94,
+                        "comment_quality": "minimal",
+                        "error_handling": "basic",
+                        "hook_usage": "optimal",
+                        "memoization": "proper",
+                        "ai_probability": 0.97
+                    },
+                    "corrections_provided": [{
+                            "type": "accessibility",
+                            "original": "No ARIA labels or keyboard navigation",
+                            "suggestion": "<table role=\"table\" aria-label=\"Data table\">\n    <thead>\n        <tr>\n            {columns.map(column => (\n                <th \n                    key={column.key} \n                    onClick={() => requestSort(column.key)}\n                    tabIndex={0}\n                    role=\"button\"\n                    onKeyPress={(e) => e.key === 'Enter' && requestSort(column.key)}\n                    aria-sort={sortConfig.key === column.key ? (sortConfig.direction === 'asc' ? 'ascending' : 'descending') : 'none'}\n                >\n                    {column.title}\n                    {sortConfig.key === column.key && (\n                        <span aria-hidden=\"true\">{sortConfig.direction === 'asc' ? ' ↑' : ' ↓'}</span>\n                    )}\n                </th>\n            ))}\n        </tr>\n    </thead>\n</table>",
+                            "priority": "medium"
+                        },
+                        {
+                            "type": "pagination",
+                            "original": "No pagination controls",
+                            "suggestion": "const totalPages = Math.ceil(data.length / pageSize);\n\nreturn (\n    <div>\n        <table>...</table>\n        <div className=\"pagination\">\n            <button \n                onClick={() => setCurrentPage(p => Math.max(1, p - 1))}\n                disabled={currentPage === 1}\n            >\n                Previous\n            </button>\n            <span>Page {currentPage} of {totalPages}</span>\n            <button \n                onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}\n                disabled={currentPage === totalPages}\n            >\n                Next\n            </button>\n        </div>\n    </div>\n);",
+                            "priority": "high"
+                        }
+                    ]
+                }]
+            },
+            {
+                "cv_id": "IT_HUMAN_002",
+                "candidate_name": "Human_Written_Candidate_02",
+                "job_title": "DevOps Engineer",
+                "classification": "Human_Written",
+                "confidence_score": 0.91,
+                "code_samples": [{
+                        "language": "Python",
+                        "file_name": "deploy_script.py",
+                        "original_code": "#!/usr/bin/env python3\n# This is my deployment script - works on my machine (famous last words)\n# Last updated: 2024-01-10\n\nimport os\nimport sys\nimport subprocess\nimport time\n\ndef run_command(cmd):\n    print(f\"Running: {cmd}\")\n    result = subprocess.run(cmd, shell=True, capture_output=True, text=True)\n    if result.returncode != 0:\n        print(f\"ERROR: {result.stderr}\")\n        # I should probably exit here but sometimes it's fine\n    return result\n\ndef deploy_service(service_name):\n    print(f\"Deploying {service_name}...\")\n    \n    # Build the container\n    run_command(f\"docker build -t {service_name} .\")\n    \n    # Stop old container if running\n    run_command(f\"docker stop {service_name} 2>/dev/null\")\n    run_command(f\"docker rm {service_name} 2>/dev/null\")\n    \n    # Run new container\n    run_command(f\"docker run -d --name {service_name} -p 8080:8080 {service_name}\")\n    \n    # Wait for health check\n    time.sleep(5)\n    \n    # Check if it's working\n    check = run_command(\"curl -s http://localhost:8080/health\")\n    if \"OK\" in check.stdout:\n        print(f\"✅ {service_name} deployed successfully!\")\n    else:\n        print(f\"❌ {service_name} health check failed!\")\n        print(\"Check logs:\")\n        run_command(f\"docker logs {service_name}\")\n\nif __name__ == \"__main__\":\n    services = [\"api\", \"web\", \"worker\"]\n    for s in services:\n        deploy_service(s)\n        # TODO: add rollback logic\n",
+                        "human_analysis": {
+                            "syntax_errors": 0,
+                            "style_violations": 3,
+                            "optimization_score": 52,
+                            "comment_quality": "organic_with_TODOs",
+                            "error_handling": "partial",
+                            "hardcoded_values": true,
+                            "human_probability": 0.94
+                        },
+                        "corrections_provided": [{
+                                "type": "error_handling",
+                                "original": "Continues after command failure",
+                                "suggestion": "def run_command(cmd):\n    print(f\"Running: {cmd}\")\n    result = subprocess.run(cmd, shell=True, capture_output=True, text=True)\n    if result.returncode != 0:\n        print(f\"ERROR: {result.stderr}\")\n        raise subprocess.CalledProcessError(result.returncode, cmd, output=result.stdout, stderr=result.stderr)\n    return result\n\ndef deploy_service(service_name):\n    try:\n        # Build the container\n        run_command(f\"docker build -t {service_name} .\")\n        \n        # Stop and remove old container\n        run_command(f\"docker stop {service_name} 2>/dev/null || true\")\n        run_command(f\"docker rm {service_name} 2>/dev/null || true\")\n        \n        # Run new container\n        run_command(f\"docker run -d --name {service_name} -p 8080:8080 {service_name}\")\n        \n        # Health check with retry\n        for i in range(10):\n            time.sleep(2)\n            check = run_command(\"curl -s http://localhost:8080/health\")\n            if \"OK\" in check.stdout:\n                print(f\"✅ {service_name} deployed successfully!\")\n                return True\n        \n        print(f\"❌ {service_name} health check failed after 20 seconds!\")\n        run_command(f\"docker logs {service_name}\")\n        return False\n        \n    except subprocess.CalledProcessError as e:\n        print(f\"Deployment failed for {service_name}: {e}\")\n        # Rollback logic\n        run_command(f\"docker run -d --name {service_name}_rollback -p 8080:8080 {service_name}_previous\")\n        return False",
+                                "priority": "high"
+                            },
+                            {
+                                "type": "configurability",
+                                "original": "Hardcoded services and ports",
+                                "suggestion": "import argparse\nimport yaml\n\nparser = argparse.ArgumentParser()\nparser.add_argument('--config', default='deploy_config.yaml')\nparser.add_argument('--service', help='Deploy specific service only')\nargs = parser.parse_args()\n\nwith open(args.config, 'r') as f:\n    config = yaml.safe_load(f)\n\nservices_to_deploy = [args.service] if args.service else config['services']\n\nfor service in services_to_deploy:\n    deploy_service(service['name'], service['port'], service['health_endpoint'])",
+                                "priority": "medium"
+                            }
+                        ]
+                    },
+                    {
+                        "language": "Bash",
+                        "file_name": "backup_script.sh",
+                        "original_code": "#!/bin/bash\n# Quick and dirty backup script\n# I know this isn't perfect but it's been working for 2 years\n\nBACKUP_DIR=\"/backups\"\nDATE=$(date +%Y%m%d_%H%M%S)\n\n# Backup databases\nfor db in $(mysql -e 'show databases' -s --skip-column-names); do\n    if [ \"$db\" != \"information_schema\" ] && [ \"$db\" != \"performance_schema\" ]; then\n        echo \"Backing up $db...\"\n        mysqldump $db > ${BACKUP_DIR}/${db}_${DATE}.sql\n    fi\ndone\n\n# Cleanup old backups (keep last 7 days)\nfind ${BACKUP_DIR} -name \"*.sql\" -mtime +7 -delete\n\necho \"Backup complete!\"\n",
+                        "human_analysis": {
+                            "syntax_errors": 0,
+                            "style_violations": 2,
+                            "optimization_score": 48,
+                            "error_handling": "minimal",
+                            "hardcoded_values": true,
+                            "human_probability": 0.92
+                        },
+                        "corrections_provided": [{
+                                "type": "error_handling",
+                                "original": "No error checking on mysqldump",
+                                "suggestion": "if ! mysqldump $db > ${BACKUP_DIR}/${db}_${DATE}.sql 2>/tmp/mysqldump_error.log; then\n    echo \"ERROR: Failed to backup database $db\"\n    cat /tmp/mysqldump_error.log\n    exit 1\nfi",
+                                "priority": "high"
+                            },
+                            {
+                                "type": "security",
+                                "original": "MySQL password not handled securely",
+                                "suggestion": "MYSQL_PWD=${MYSQL_BACKUP_PASSWORD} mysqldump -u ${MYSQL_BACKUP_USER} $db > ${BACKUP_DIR}/${db}_${DATE}.sql\n# Or use .my.cnf file with restricted permissions\n# chmod 600 ~/.my.cnf",
+                                "priority": "high"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "cv_id": "IT_HYBRID_001",
+                "candidate_name": "Hybrid_Candidate_01",
+                "job_title": "Data Engineer",
+                "classification": "Hybrid",
+                "confidence_score": 0.76,
+                "code_samples": [{
+                    "language": "Python",
+                    "file_name": "etl_pipeline.py",
+                    "original_code": "# AI generated base with human modifications\n# Original prompt: \"Write an ETL pipeline for processing CSV files\"\n\nimport pandas as pd\nimport logging\nfrom pathlib import Path\n\n# HUMAN EDIT: Added logging because the AI version had none\nlogging.basicConfig(level=logging.INFO)\nlogger = logging.getLogger(__name__)\n\ndef extract(file_path):\n    \"\"\"Extract data from CSV file\"\"\"\n    # HUMAN EDIT: Added error handling for file not found\n    try:\n        df = pd.read_csv(file_path)\n        logger.info(f\"Extracted {len(df)} rows from {file_path}\")\n        return df\n    except FileNotFoundError:\n        logger.error(f\"File not found: {file_path}\")\n        return None\n\ndef transform(df):\n    \"\"\"Transform data - clean and normalize\"\"\"\n    # AI generated this part - it's fine but missing some edge cases\n    # HUMAN NOTE: I added the dropna() and fillna() logic\n    \n    if df is None:\n        return None\n    \n    # Remove duplicates\n    df = df.drop_duplicates()\n    \n    # Fill missing values - HUMAN: This is hacky but works for our use case\n    df = df.fillna({\n        'amount': 0,\n        'category': 'unknown',\n        'date': '1970-01-01'\n    })\n    \n    # Convert date column\n    # HUMAN: Had to fix the date format - AI used wrong format\n    df['date'] = pd.to_datetime(df['date'], errors='coerce')\n    \n    # Filter out invalid dates\n    df = df[df['date'] > '2000-01-01']\n    \n    logger.info(f\"Transformed data: {len(df)} rows remaining\")\n    return df\n\ndef load(df, output_path):\n    \"\"\"Load transformed data to parquet\"\"\"\n    # HUMAN EDIT: Changed from CSV to Parquet (more efficient)\n    if df is not None and len(df) > 0:\n        df.to_parquet(output_path, index=False)\n        logger.info(f\"Loaded data to {output_path}\")\n        return True\n    else:\n        logger.warning(\"No data to load\")\n        return False\n\n# HUMAN ADDITION: Added main function with argument parsing\nif __name__ == \"__main__\":\n    import sys\n    \n    input_file = sys.argv[1] if len(sys.argv) > 1 else \"data.csv\"\n    output_file = sys.argv[2] if len(sys.argv) > 2 else \"output.parquet\"\n    \n    data = extract(input_file)\n    transformed = transform(data)\n    success = load(transformed, output_file)\n    \n    sys.exit(0 if success else 1)\n",
+                    "analysis": {
+                        "syntax_errors": 0,
+                        "style_violations": 1,
+                        "optimization_score": 68,
+                        "comment_quality": "mixed_ai_human",
+                        "error_handling": "partial",
+                        "human_additions": ["logging", "error_handling", "argument_parsing", "parquet_output"],
+                        "ai_base_detected": true,
+                        "human_edits_detected": true,
+                        "hybrid_probability": 0.88
+                    },
+                    "corrections_provided": [{
+                            "type": "performance",
+                            "original": "Using pandas for large files could be memory intensive",
+                            "suggestion": "def extract_chunked(file_path, chunk_size=10000):\n    \"\"\"Extract data in chunks for large files\"\"\"\n    chunks = []\n    for chunk in pd.read_csv(file_path, chunksize=chunk_size):\n        transformed_chunk = transform(chunk)\n        chunks.append(transformed_chunk)\n    return pd.concat(chunks, ignore_index=True)",
+                            "priority": "medium"
+                        },
+                        {
+                            "type": "testing",
+                            "original": "No unit tests",
+                            "suggestion": "import pytest\n\ndef test_extract_file_not_found():\n    result = extract(\"nonexistent.csv\")\n    assert result is None\n\ndef test_transform_with_null_df():\n    result = transform(None)\n    assert result is None\n\ndef test_transform_removes_duplicates():\n    df = pd.DataFrame({'id': [1, 1, 2], 'amount': [10, 10, 20]})\n    result = transform(df)\n    assert len(result) == 2",
+                            "priority": "medium"
+                        }
+                    ]
+                }],
+                "resume_text_analysis": {
+                    "linguistic_score": 0.45,
+                    "structural_score": 0.38,
+                    "content_score": 0.42,
+                    "overall_hybrid_probability": 0.76
+                }
+            },
+            {
+                "cv_id": "IT_AI_003",
+                "candidate_name": "AI_Generated_Candidate_03",
+                "job_title": "Java Backend Developer",
+                "classification": "AI_Generated",
+                "confidence_score": 0.97,
+                "code_samples": [{
+                    "language": "Java",
+                    "file_name": "UserService.java",
+                    "original_code": "package com.example.service;\n\nimport com.example.model.User;\nimport com.example.repository.UserRepository;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.stereotype.Service;\nimport org.springframework.transaction.annotation.Transactional;\n\nimport java.util.List;\nimport java.util.Optional;\n\n@Service\n@Transactional\npublic class UserService {\n    \n    @Autowired\n    private UserRepository userRepository;\n    \n    public User createUser(User user) {\n        validateUser(user);\n        return userRepository.save(user);\n    }\n    \n    public Optional<User> getUserById(Long id) {\n        return userRepository.findById(id);\n    }\n    \n    public List<User> getAllUsers() {\n        return userRepository.findAll();\n    }\n    \n    public User updateUser(Long id, User userDetails) {\n        User user = userRepository.findById(id)\n            .orElseThrow(() -> new ResourceNotFoundException(\"User not found with id: \" + id));\n        \n        user.setName(userDetails.getName());\n        user.setEmail(userDetails.getEmail());\n        user.setUpdatedAt(LocalDateTime.now());\n        \n        return userRepository.save(user);\n    }\n    \n    public void deleteUser(Long id) {\n        User user = userRepository.findById(id)\n            .orElseThrow(() -> new ResourceNotFoundException(\"User not found with id: \" + id));\n        userRepository.delete(user);\n    }\n    \n    private void validateUser(User user) {\n        if (user.getName() == null || user.getName().trim().isEmpty()) {\n            throw new ValidationException(\"User name cannot be empty\");\n        }\n        if (user.getEmail() == null || !user.getEmail().matches(\"^[A-Za-z0-9+_.-]+@(.+)$\")) {\n            throw new ValidationException(\"Invalid email format\");\n        }\n    }\n}\n",
+                    "ai_analysis": {
+                        "syntax_errors": 0,
+                        "style_violations": 0,
+                        "optimization_score": 96,
+                        "comment_quality": "minimal",
+                        "error_handling": "complete",
+                        "pattern_usage": "standard",
+                        "ai_probability": 0.98
+                    },
+                    "corrections_provided": [{
+                            "type": "validation",
+                            "original": "Missing email uniqueness check",
+                            "suggestion": "public User createUser(User user) {\n    validateUser(user);\n    \n    // Check for duplicate email\n    if (userRepository.existsByEmail(user.getEmail())) {\n        throw new ValidationException(\"Email already exists: \" + user.getEmail());\n    }\n    \n    return userRepository.save(user);\n}",
+                            "priority": "high"
+                        },
+                        {
+                            "type": "audit_logging",
+                            "original": "No audit trail",
+                            "suggestion": "@Service\n@Transactional\npublic class UserService {\n    \n    @Autowired\n    private AuditLogService auditLogService;\n    \n    public User createUser(User user) {\n        validateUser(user);\n        User savedUser = userRepository.save(user);\n        auditLogService.log(\"CREATE\", \"User\", savedUser.getId(), \"User created\");\n        return savedUser;\n    }\n}",
+                            "priority": "medium"
+                        }
+                    ]
+                }]
+            },
+            {
+                "cv_id": "IT_HUMAN_003",
+                "candidate_name": "Human_Written_Candidate_03",
+                "job_title": "Frontend Developer",
+                "classification": "Human_Written",
+                "confidence_score": 0.95,
+                "code_samples": [{
+                    "language": "TypeScript",
+                    "file_name": "useDataFetching.ts",
+                    "original_code": "// Custom hook I wrote for data fetching\n// It works but needs cleanup\n// TODO: Add caching and retry logic\n\nimport { useState, useEffect } from 'react';\n\ninterface FetchState<T> {\n    data: T | null;\n    loading: boolean;\n    error: Error | null;\n}\n\nexport function useDataFetching<T>(url: string) {\n    const [state, setState] = useState<FetchState<T>>({\n        data: null,\n        loading: true,\n        error: null,\n    });\n\n    useEffect(() => {\n        let isMounted = true;\n        \n        const fetchData = async () => {\n            try {\n                setState(prev => ({ ...prev, loading: true }));\n                \n                const response = await fetch(url);\n                \n                if (!response.ok) {\n                    throw new Error(`HTTP ${response.status}`);\n                }\n                \n                const json = await response.json();\n                \n                if (isMounted) {\n                    setState({\n                        data: json,\n                        loading: false,\n                        error: null,\n                    });\n                }\n            } catch (err) {\n                if (isMounted) {\n                    setState({\n                        data: null,\n                        loading: false,\n                        error: err instanceof Error ? err : new Error('Unknown error'),\n                    });\n                }\n            }\n        };\n\n        fetchData();\n\n        return () => {\n            isMounted = false;\n        };\n    }, [url]);\n\n    return state;\n}\n\n// I know this doesn't handle dependencies properly\n// Will fix when I have time\n",
+                    "human_analysis": {
+                        "syntax_errors": 0,
+                        "style_violations": 2,
+                        "optimization_score": 55,
+                        "comment_quality": "organic_with_TODOs",
+                        "error_handling": "good",
+                        "human_probability": 0.96
+                    },
+                    "corrections_provided": [{
+                        "type": "feature_addition",
+                        "original": "Missing caching and retry",
+                        "suggestion": "import { useState, useEffect, useRef } from 'react';\n\ninterface FetchOptions {\n    retries?: number;\n    retryDelay?: number;\n    cacheDuration?: number;\n}\n\nconst cache = new Map<string, { data: any; timestamp: number }>();\n\nexport function useDataFetching<T>(\n    url: string,\n    options: FetchOptions = {}\n) {\n    const { retries = 3, retryDelay = 1000, cacheDuration = 60000 } = options;\n    const [state, setState] = useState<FetchState<T>>({\n        data: null,\n        loading: true,\n        error: null,\n    });\n    const retryCount = useRef(0);\n\n    useEffect(() => {\n        let isMounted = true;\n        \n        // Check cache\n        const cached = cache.get(url);\n        if (cached && Date.now() - cached.timestamp < cacheDuration) {\n            setState({\n                data: cached.data,\n                loading: false,\n                error: null,\n            });\n            return;\n        }\n        \n        const fetchWithRetry = async () => {\n            try {\n                const response = await fetch(url);\n                \n                if (!response.ok) {\n                    throw new Error(`HTTP ${response.status}`);\n                }\n                \n                const json = await response.json();\n                \n                // Update cache\n                cache.set(url, { data: json, timestamp: Date.now() });\n                \n                if (isMounted) {\n                    setState({\n                        data: json,\n                        loading: false,\n                        error: null,\n                    });\n                }\n            } catch (err) {\n                if (retryCount.current < retries) {\n                    retryCount.current++;\n                    setTimeout(fetchWithRetry, retryDelay * retryCount.current);\n                } else if (isMounted) {\n                    setState({\n                        data: null,\n                        loading: false,\n                        error: err instanceof Error ? err : new Error('Unknown error'),\n                    });\n                }\n            }\n        };\n\n        fetchWithRetry();\n\n        return () => {\n            isMounted = false;\n        };\n    }, [url, retries, retryDelay, cacheDuration]);\n\n    return state;\n}",
+                        "priority": "medium"
+                    }]
+                }]
+            }
+        ],
+        "classification_algorithm": {
+            "feature_weights": {
+                "linguistic_patterns": 0.25,
+                "structural_patterns": 0.15,
+                "technical_patterns": 0.35,
+                "code_quality_analysis": 0.25
+            },
+            "decision_boundaries": {
+                "ai_classification": {
+                    "min_confidence": 0.85,
+                    "required_indicators": 6,
+                    "max_human_indicators": 2
+                },
+                "human_classification": {
+                    "min_confidence": 0.80,
+                    "required_indicators": 7,
+                    "max_ai_indicators": 2
+                },
+                "hybrid_classification": {
+                    "min_confidence": 0.65,
+                    "ai_indicators_range": [3, 6],
+                    "human_indicators_range": [3, 6]
+                }
+            },
+            "code_correction_integration": {
+                "ai_code_penalty": 0.15,
+                "human_code_bonus": 0.10,
+                "correction_required_threshold": 3
+            }
+        },
+        "batch_analysis_results": {
+            "total_analyzed": 25,
+            "ai_generated": 12,
+            "human_written": 10,
+            "hybrid": 3,
+            "average_confidence_ai": 0.94,
+            "average_confidence_human": 0.92,
+            "average_confidence_hybrid": 0.74,
+            "code_errors_found": {
+                "syntax_errors_ai": 0,
+                "syntax_errors_human": 8,
+                "style_violations_ai": 2,
+                "style_violations_human": 34,
+                "missing_error_handling_ai": 5,
+                "missing_error_handling_human": 18
+            },
+            "corrections_applied": 47
+        },
+        "recommendations_for_recruiters": [{
+                "rule_id": "REC_001",
+                "description": "Look for code comments with TODOs, FIXMEs, or personal notes - these are strong human indicators",
+                "weight": 0.85
+            },
+            {
+                "rule_id": "REC_002",
+                "description": "Check for inconsistent formatting or minor typos - AI code is usually perfectly formatted",
+                "weight": 0.78
+            },
+            {
+                "rule_id": "REC_003",
+                "description": "Review error handling patterns - AI tends to have complete but generic error handling",
+                "weight": 0.82
+            },
+            {
+                "rule_id": "REC_004",
+                "description": "Look for evidence of debugging or learning (e.g., 'I know this isn't optimal but...')",
+                "weight": 0.90
+            },
+            {
+                "rule_id": "REC_005",
+                "description": "Check for personal naming conventions or unique variable names",
+                "weight": 0.75
+            },
+            {
+                "rule_id": "REC_006",
+                "description": "Analyze code complexity - AI often produces overly complex or perfectly optimized solutions",
+                "weight": 0.80
+            }
+        ],
+        "code_correction_api": {
+            "endpoint": "/api/v1/code/correct",
+            "method": "POST",
+            "request_format": {
+                "language": "string",
+                "code": "string",
+                "correction_level": "string (basic|intermediate|advanced)"
+            },
+            "response_format": {
+                "original_code": "string",
+                "corrected_code": "string",
+                "corrections_applied": "array",
+                "classification_impact": "object",
+                "confidence_delta": "float"
+            }
+        }
+    }
+}

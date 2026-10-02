@@ -1,0 +1,25 @@
+/* Design tokens. Change colours / radius / font here (or per company via --brand). RGB triplets for Tailwind alpha. */
+:root {
+  --bg: 244 246 251; --surface: 255 255 255; --muted: 238 242 249; --border: 219 226 238;
+  --text: 13 20 38; --subtle: 96 111 140;
+  --primary: 79 70 229; --primary-fg: 255 255 255; --brand: 79 70 229;
+  --good: 16 163 108; --warn: 217 119 6; --bad: 220 38 38;
+  --radius: 0.75rem; --font: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Signature gradient. Indigo → violet → fuchsia reads "premium SaaS" in both themes. */
+  --grad-a: 99 102 241;   /* indigo   */
+  --grad-b: 168 85 247;   /* violet   */
+  --grad-c: 236 72 153;   /* fuchsia  */
+  --grad-d: 34 211 238;   /* cyan     */
+  --glow: 79 70 229;
+}
+[data-theme="dark"] {
+  --bg: 4 7 20; --surface: 13 19 38; --muted: 24 33 58; --border: 42 54 84;
+  --text: 238 243 252; --subtle: 143 158 189; --primary: 129 140 248; --primary-fg: 8 12 28; --brand: 129 140 248;
+  --good: 52 211 153; --warn: 251 191 36; --bad: 248 113 113;
+  --grad-a: 99 102 241;
+  --grad-b: 192 132 252;
+  --grad-c: 244 114 182;
+  --grad-d: 34 211 238;
+  --glow: 129 140 248;
+}

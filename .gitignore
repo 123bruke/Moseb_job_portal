@@ -1,0 +1,10 @@
+.env
+node_modules/
+dist/
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+backend/app/ml/yolo/weights/*.pt

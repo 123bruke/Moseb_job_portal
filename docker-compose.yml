@@ -1,0 +1,82 @@
+# Production-like stack. Postgres/Auth/Storage = Supabase Cloud (DATABASE_URL, SUPABASE_*).
+# Only nginx is published; every datastore lives on the private network.
+x-backend: &backend
+  build:
+    context: .
+    dockerfile: backend/Dockerfile
+  image: ghcr.io/OWNER/smart-resume-v2/backend:${TAG:-latest}
+  env_file: .env
+  depends_on: [redis, chromadb, neo4j]
+  networks: [private]
+  restart: unless-stopped
+
+services:
+  nginx:
+    image: nginx:1.27-alpine
+    ports: ["80:80"]
+    volumes: ["./infra/nginx/nginx.conf:/etc/nginx/nginx.conf:ro"]
+    depends_on: [frontend, backend]
+    networks: [public, private]
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_SUPABASE_URL: ${VITE_SUPABASE_URL}
+        VITE_SUPABASE_ANON_KEY: ${VITE_SUPABASE_ANON_KEY}
+        VITE_API_URL: ${VITE_API_URL:-/api}
+    networks: [private]
+    restart: unless-stopped
+
+  backend:
+    <<: *backend
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request;urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+
+  worker:
+    <<: *backend
+    command: rq worker --url ${REDIS_URL:-redis://redis:6379/0} ingest rank default
+    volumes: ["./backend/app/ml/yolo/weights:/app/app/ml/yolo/weights:ro"]
+    deploy: { replicas: 1 }
+
+  scheduler:
+    <<: *backend
+    command: python -m app.workers.scheduler
+
+  redis:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes
+    volumes: [redis_data:/data]
+    networks: [private]
+
+  chromadb:
+    image: chromadb/chroma:0.5.23
+    volumes: [chroma_data:/chroma/chroma]
+    environment: { IS_PERSISTENT: "TRUE", ANONYMIZED_TELEMETRY: "FALSE" }
+    networks: [private]
+
+  neo4j:
+    image: neo4j:5.24
+    environment:
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD}
+      NEO4J_PLUGINS: '["apoc"]'
+    volumes:
+      - neo4j_data:/data
+      - ./infra/neo4j/seed:/seed:ro
+    networks: [private]
+
+  clamav:
+    image: clamav/clamav:1.4
+    profiles: ["scan"]          # enable with --profile scan and set CLAMAV_HOST=clamav
+    networks: [private]
+
+networks:
+  public: {}
+  private: { internal: false }
+
+volumes: { redis_data: {}, chroma_data: {}, neo4j_data: {} }

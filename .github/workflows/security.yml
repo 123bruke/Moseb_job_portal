@@ -1,0 +1,35 @@
+name: security
+on:
+  schedule: [{ cron: "0 4 * * 1" }]
+  pull_request:
+    paths: ["backend/pyproject.toml", "frontend/package*.json"]
+  workflow_dispatch:
+
+permissions: { contents: read, security-events: write }
+
+jobs:
+  deps:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install pip-audit && cd backend && pip-audit -r <(pip install -e . --dry-run -q --report - | python -c "import json,sys;print('\n'.join(f\"{i['metadata']['name']}=={i['metadata']['version']}\" for i in json.load(sys.stdin)['install']))")
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: cd frontend && npm audit --audit-level=high
+  secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: gitleaks/gitleaks-action@v2
+        env: { GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
+  codeql:
+    runs-on: ubuntu-latest
+    strategy: { matrix: { language: [python, javascript-typescript] } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: github/codeql-action/init@v3
+        with: { languages: "${{ matrix.language }}" }
+      - uses: github/codeql-action/analyze@v3

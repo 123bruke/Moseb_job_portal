@@ -1,0 +1,120 @@
+@import "./tokens.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { @apply bg-bg text-text font-sans antialiased; }
+a { @apply text-primary; }
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  /* Sticky header is ~4.5rem tall; anchor targets must clear it. */
+  section[id] { scroll-margin-top: 6rem; }
+  ::selection { background: rgb(var(--grad-b) / 0.28); }
+  *:focus-visible { @apply outline-none ring-2 ring-primary/70 ring-offset-2 ring-offset-bg; }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: rgb(var(--muted) / 0.5); }
+  ::-webkit-scrollbar-thumb { border-radius: 999px; background: linear-gradient(180deg, rgb(var(--grad-a)), rgb(var(--grad-c))); }
+}
+
+@layer components {
+  /* ---- Transparent surfaces ------------------------------------------------ */
+  .glass {
+    @apply rounded-xl border border-border/60 bg-surface/60 shadow-glass backdrop-blur-xl backdrop-saturate-150;
+  }
+  .glass-strong {
+    @apply rounded-xl border border-border/70 bg-surface/85 shadow-glass backdrop-blur-2xl backdrop-saturate-150;
+  }
+  .glass-soft {
+    @apply rounded-xl border border-white/40 bg-white/40 shadow-lift backdrop-blur-lg;
+  }
+  [data-theme="dark"] .glass-soft { @apply border-white/10 bg-white/[0.04]; }
+
+  /* Gradient hairline that appears on hover, drawn with a mask so it hugs the radius. */
+  .ring-gradient {
+    position: relative;
+  }
+  .ring-gradient::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(120deg, rgb(var(--grad-a)), rgb(var(--grad-b)), rgb(var(--grad-c)));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity .45s ease;
+    pointer-events: none;
+  }
+  .ring-gradient:hover::before, .group:hover .ring-gradient::before { opacity: 1; }
+
+  /* ---- Type ---------------------------------------------------------------- */
+  .text-gradient {
+    background-image: linear-gradient(110deg, rgb(var(--grad-a)), rgb(var(--grad-b)) 42%, rgb(var(--grad-c)) 72%, rgb(var(--grad-d)));
+    background-size: 220% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .animate-gradient { @apply animate-gradient-pan; }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-border/70 bg-surface/50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-subtle backdrop-blur-md;
+  }
+
+  /* ---- Motion -------------------------------------------------------------- */
+  .hover-lift { @apply transition duration-300 ease-out will-change-transform; }
+  .hover-lift:hover { transform: translateY(-5px); }
+  .hover-lift:active { transform: translateY(-1px) scale(.995); }
+
+  /* Icon tile: gradient plate that lifts, spins its glyph and throws a glow. */
+  .icon-tile {
+    @apply relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-xl bg-brand text-primary-fg shadow-glow transition duration-500 ease-out;
+  }
+  .icon-tile::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent 20%, rgb(255 255 255 / 0.45) 50%, transparent 80%);
+    transform: translateX(-120%);
+    transition: transform .7s ease;
+  }
+  .group:hover .icon-tile::after, .icon-tile:hover::after { transform: translateX(120%); }
+  .group:hover .icon-tile { transform: translateY(-4px) rotate(-6deg) scale(1.06); }
+
+  .icon-tile-plain {
+    @apply inline-flex shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-grad-a/15 to-grad-c/15 text-primary transition duration-300 ease-out;
+  }
+  .group:hover .icon-tile-plain { @apply scale-110 text-grad-b; }
+
+  /* Scroll reveal. `.reveal` starts hidden; the Reveal component adds `.is-in`. */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); }
+  .reveal.is-in { opacity: 1; transform: none; }
+
+  /* Sheen that sweeps across a card on hover. */
+  .sheen { position: relative; overflow: hidden; }
+  .sheen::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 45%;
+    background: linear-gradient(90deg, transparent, rgb(255 255 255 / .22), transparent);
+    transform: translateX(-130%) skewX(-18deg);
+    transition: transform .9s cubic-bezier(.22,1,.36,1);
+    pointer-events: none;
+  }
+  .group:hover .sheen::before { transform: translateX(320%) skewX(-18deg); }
+  [data-theme="dark"] .sheen::before { background: linear-gradient(90deg, transparent, rgb(255 255 255 / .09), transparent); }
+
+  .divider-glow { height: 1px; background: linear-gradient(90deg, transparent, rgb(var(--grad-b) / .55), transparent); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}

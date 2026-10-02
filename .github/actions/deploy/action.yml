@@ -1,0 +1,31 @@
+name: deploy
+description: Migrate DB first, roll out with Docker Compose over SSH, roll back automatically if /ready fails
+inputs:
+  host: { required: true }
+  ssh_key: { required: true }
+  tag: { required: true }
+  database_url: { required: true }
+  base_url: { required: true }
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        HOST: ${{ inputs.host }}
+        TAG: ${{ inputs.tag }}
+        DATABASE_URL: ${{ inputs.database_url }}
+        BASE_URL: ${{ inputs.base_url }}
+      run: |
+        install -m 600 /dev/null key && echo "${{ inputs.ssh_key }}" > key
+        SSH="ssh -i key -o StrictHostKeyChecking=accept-new deploy@$HOST"
+        scp -i key docker-compose.yml deploy@$HOST:/srv/smart-resume/docker-compose.yml
+        $SSH "cd /srv/smart-resume && echo \$(cat .current_tag 2>/dev/null) > .previous_tag || true"
+        # 1) migrations first (backend image carries alembic), 2) roll out
+        $SSH "cd /srv/smart-resume && export TAG=$TAG && docker compose pull && docker compose run --rm backend alembic upgrade head"
+        $SSH "cd /srv/smart-resume && export TAG=$TAG && docker compose up -d && echo $TAG > .current_tag"
+        for i in $(seq 1 20); do
+          if curl -fsS "$BASE_URL/api/ready" >/dev/null; then echo "ready"; exit 0; fi; sleep 6
+        done
+        echo "::error::/ready failed, rolling back"
+        $SSH "cd /srv/smart-resume && export TAG=\$(cat .previous_tag) && docker compose up -d"
+        exit 1

@@ -1,0 +1,912 @@
+{
+    "dataset_metadata": {
+        "name": "AI_vs_Human_CV_Classification_Accounting",
+        "version": "2.0",
+        "created_date": "2024-01-15",
+        "total_samples": 250,
+        "total_lines": 3250,
+        "purpose": "Identify AI-generated vs Human-written CVs for Accounting Department positions",
+        "classification_targets": ["AI_Generated", "Human_Written", "Hybrid"],
+        "industry_focus": "Accounting / Finance",
+        "feature_categories": [
+            "linguistic_markers",
+            "structural_patterns",
+            "content_indicators",
+            "formatting_anomalies",
+            "experience_authenticity",
+            "education_verification",
+            "skill_presentation",
+            "achievement_metrics"
+        ]
+    },
+    "classification_rules": {
+        "ai_indicators": {
+            "linguistic": [
+                "excessive_use_of_strong_adjectives",
+                "repetitive_sentence_structures",
+                "lack_of_specific_dates",
+                "generic_job_descriptions",
+                "overuse_of_buzzwords",
+                "perfect_grammar_with_no_variation",
+                "missing_typos_or_imperfections",
+                "consistent_verb_tense_without_flow",
+                "lack_of_personal_pronouns",
+                "formulaic_achievement_statements"
+            ],
+            "structural": [
+                "perfectly_aligned_formatting",
+                "identical_section_lengths",
+                "predictable_bullet_point_patterns",
+                "no_variation_in_resume_length",
+                "standard_template_structure",
+                "missing_whitespace_anomalies",
+                "consistent_font_usage",
+                "no_marginal_notes_or_comments"
+            ],
+            "content": [
+                "vague_metric_improvements",
+                "missing_company_names",
+                "generic_project_descriptions",
+                "no_career_progression_gaps",
+                "perfect_job_hop_timeline",
+                "overemphasis_on_soft_skills",
+                "missing_contextual_details",
+                "standardized_skill_lists"
+            ]
+        },
+        "human_indicators": {
+            "linguistic": [
+                "varied_sentence_lengths",
+                "inconsistent_verb_tense",
+                "presence_of_minor_typos",
+                "use_of_colloquial_language",
+                "personal_anecdotes",
+                "emotional_language",
+                "varied_punctuation",
+                "abbreviations_and_shortcuts",
+                "hedging_language",
+                "unique_phrasing"
+            ],
+            "structural": [
+                "inconsistent_spacing",
+                "varied_bullet_point_lengths",
+                "unique_section_order",
+                "presence_of_handwritten_notes",
+                "inconsistent_date_formats",
+                "custom_section_headings",
+                "uneven_margins",
+                "mixed_font_sizes"
+            ],
+            "content": [
+                "specific_project_details",
+                "realistic_career_gaps",
+                "unique_software_experience",
+                "industry_specific_jargon",
+                "detailed_process_descriptions",
+                "mention_of_challenges_faced",
+                "team_collaboration_details",
+                "progressive_responsibilities",
+                "specific_financial_systems"
+            ]
+        }
+    },
+    "training_samples": [{
+            "sample_id": "ACC_AI_001",
+            "classification": "AI_Generated",
+            "confidence_score": 0.94,
+            "cv_text": "Results-driven accounting professional with extensive experience in financial reporting, accounts payable, accounts receivable, and general ledger management. Proven track record of improving financial processes and reducing costs. Skilled in Microsoft Excel, QuickBooks, and SAP. Detail-oriented team player with strong analytical skills. Seeking challenging position in dynamic organization.",
+            "features_analysis": {
+                "linguistic_markers": {
+                    "adjective_density": 0.32,
+                    "repetitive_structures": true,
+                    "specific_dates_present": false,
+                    "buzzword_count": 12,
+                    "grammar_perfect_score": 1.0,
+                    "typo_count": 0,
+                    "personal_pronoun_usage": 0.02,
+                    "sentence_length_variance": 0.15,
+                    "verb_tense_consistency": 0.95
+                },
+                "structural_markers": {
+                    "formatting_consistency": 0.98,
+                    "section_length_variance": 0.08,
+                    "bullet_point_pattern": "uniform",
+                    "template_detection": 0.92,
+                    "whitespace_anomalies": false,
+                    "font_variation": false
+                },
+                "content_markers": {
+                    "metric_specificity": 0.12,
+                    "company_name_count": 0,
+                    "career_gap_mention": false,
+                    "software_list_completeness": 0.70,
+                    "achievement_detailing": 0.15,
+                    "process_specificity": 0.08
+                },
+                "accounting_specific": {
+                    "gaap_mention": false,
+                    "reconciliation_details": false,
+                    "audit_experience": false,
+                    "tax_knowledge": false,
+                    "erp_systems": ["SAP"],
+                    "certification_mention": false
+                }
+            },
+            "generation_metadata": {
+                "likely_model": "GPT-4",
+                "temperature_estimated": 0.7,
+                "prompt_complexity": "low",
+                "post_editing_detected": false
+            }
+        },
+        {
+            "sample_id": "ACC_AI_002",
+            "classification": "AI_Generated",
+            "confidence_score": 0.96,
+            "cv_text": "Senior Accountant with 8+ years of experience managing month-end close processes, preparing financial statements, and conducting variance analysis. Expertise in accounts reconciliation, journal entries, and internal controls. Proficient in Oracle Financials, NetSuite, and advanced Excel. CPA candidate. Demonstrated ability to improve process efficiency by 25% and reduce closing time by 3 days. Strong communicator with cross-functional team collaboration skills.",
+            "features_analysis": {
+                "linguistic_markers": {
+                    "adjective_density": 0.28,
+                    "repetitive_structures": true,
+                    "specific_dates_present": false,
+                    "buzzword_count": 15,
+                    "grammar_perfect_score": 1.0,
+                    "typo_count": 0,
+                    "personal_pronoun_usage": 0.01,
+                    "sentence_length_variance": 0.12,
+                    "verb_tense_consistency": 0.98
+                },
+                "structural_markers": {
+                    "formatting_consistency": 0.99,
+                    "section_length_variance": 0.05,
+                    "bullet_point_pattern": "uniform",
+                    "template_detection": 0.95,
+                    "whitespace_anomalies": false,
+                    "font_variation": false
+                },
+                "content_markers": {
+                    "metric_specificity": 0.45,
+                    "company_name_count": 0,
+                    "career_gap_mention": false,
+                    "software_list_completeness": 0.75,
+                    "achievement_detailing": 0.35,
+                    "process_specificity": 0.25
+                },
+                "accounting_specific": {
+                    "gaap_mention": true,
+                    "reconciliation_details": true,
+                    "audit_experience": false,
+                    "tax_knowledge": false,
+                    "erp_systems": ["Oracle", "NetSuite"],
+                    "certification_mention": true
+                }
+            },
+            "generation_metadata": {
+                "likely_model": "Claude-2",
+                "temperature_estimated": 0.5,
+                "prompt_complexity": "medium",
+                "post_editing_detected": false
+            }
+        },
+        {
+            "sample_id": "ACC_AI_003",
+            "classification": "AI_Generated",
+            "confidence_score": 0.91,
+            "cv_text": "Entry-level accounting graduate with Bachelor's degree in Accounting from accredited university. Coursework includes Financial Accounting, Managerial Accounting, Taxation, and Auditing. Proficient in Microsoft Excel, QuickBooks, and ADP. Internship experience at local accounting firm assisting with tax preparation and bookkeeping. Detail-oriented with strong analytical and problem-solving abilities. Eager to contribute to team success and develop professional skills.",
+            "features_analysis": {
+                "linguistic_markers": {
+                    "adjective_density": 0.30,
+                    "repetitive_structures": true,
+                    "specific_dates_present": false,
+                    "buzzword_count": 10,
+                    "grammar_perfect_score": 1.0,
+                    "typo_count": 0,
+                    "personal_pronoun_usage": 0.03,
+                    "sentence_length_variance": 0.18,
+                    "verb_tense_consistency": 0.92
+                },
+                "structural_markers": {
+                    "formatting_consistency": 0.97,
+                    "section_length_variance": 0.10,
+                    "bullet_point_pattern": "uniform",
+                    "template_detection": 0.88,
+                    "whitespace_anomalies": false,
+                    "font_variation": false
+                },
+                "content_markers": {
+                    "metric_specificity": 0.05,
+                    "company_name_count": 1,
+                    "career_gap_mention": false,
+                    "software_list_completeness": 0.60,
+                    "achievement_detailing": 0.08,
+                    "process_specificity": 0.10
+                },
+                "accounting_specific": {
+                    "gaap_mention": false,
+                    "reconciliation_details": false,
+                    "audit_experience": true,
+                    "tax_knowledge": true,
+                    "erp_systems": [],
+                    "certification_mention": false
+                }
+            },
+            "generation_metadata": {
+                "likely_model": "Bard",
+                "temperature_estimated": 0.8,
+                "prompt_complexity": "low",
+                "post_editing_detected": false
+            }
+        },
+        {
+            "sample_id": "ACC_HUMAN_001",
+            "classification": "Human_Written",
+            "confidence_score": 0.89,
+            "cv_text": "Been working in accounting for about 12 years now - started as a junior clerk at a small firm in Chicago. I remember messing up my first reconciliation pretty badly but learned a ton from that experience. Currently at ABC Corp where I handle the full AP cycle, about 500 invoices monthly. We use QuickBooks Enterprise and I've gotten pretty good at it. Not a CPA yet but studying for it - failed FAR once already but trying again in March. Looking for a Senior Accountant role where I can actually use my brain and not just process transactions all day.",
+            "features_analysis": {
+                "linguistic_markers": {
+                    "adjective_density": 0.12,
+                    "repetitive_structures": false,
+                    "specific_dates_present": true,
+                    "buzzword_count": 2,
+                    "grammar_perfect_score": 0.65,
+                    "typo_count": 1,
+                    "personal_pronoun_usage": 0.18,
+                    "sentence_length_variance": 0.65,
+                    "verb_tense_consistency": 0.55,
+                    "colloquial_phrases": true,
+                    "emotional_language": true,
+                    "hedging_language": true
+                },
+                "structural_markers": {
+                    "formatting_consistency": 0.45,
+                    "section_length_variance": 0.72,
+                    "bullet_point_pattern": "irregular",
+                    "template_detection": 0.12,
+                    "whitespace_anomalies": true,
+                    "font_variation": true,
+                    "unique_section_order": true
+                },
+                "content_markers": {
+                    "metric_specificity": 0.85,
+                    "company_name_count": 2,
+                    "career_gap_mention": false,
+                    "software_list_completeness": 0.40,
+                    "achievement_detailing": 0.70,
+                    "process_specificity": 0.75,
+                    "failure_mention": true,
+                    "challenge_description": true
+                },
+                "accounting_specific": {
+                    "gaap_mention": false,
+                    "reconciliation_details": true,
+                    "audit_experience": false,
+                    "tax_knowledge": false,
+                    "erp_systems": ["QuickBooks"],
+                    "certification_mention": true,
+                    "specific_invoice_volume": true
+                }
+            },
+            "generation_metadata": {
+                "likely_model": "N/A",
+                "temperature_estimated": null,
+                "prompt_complexity": null,
+                "post_editing_detected": false,
+                "writing_style": "conversational",
+                "experience_level": "mid-career"
+            }
+        },
+        {
+            "sample_id": "ACC_HUMAN_002",
+            "classification": "Human_Written",
+            "confidence_score": 0.93,
+            "cv_text": "I've been in accounting for 15+ years - worked my way up from staff accountant to accounting manager. The last 5 years at Johnson Manufacturing (revenue ~$50M) I've managed a team of 4. We implemented NetSuite in 2019 and that was... interesting. Lots of late nights but we got it done. Month-end close went from 12 days to 7. Still not perfect but much better. Biggest win was catching a $200k billing error in 2021 that saved our Q3 numbers. Looking for Controller role in mid-sized company. Have my CPA (active) and MBA from University of Texas (2010).",
+            "features_analysis": {
+                "linguistic_markers": {
+                    "adjective_density": 0.10,
+                    "repetitive_structures": false,
+                    "specific_dates_present": true,
+                    "buzzword_count": 3,
+                    "grammar_perfect_score": 0.75,
+                    "typo_count": 2,
+                    "personal_pronoun_usage": 0.22,
+                    "sentence_length_variance": 0.70,
+                    "verb_tense_consistency": 0.60,
+                    "colloquial_phrases": true,
+                    "emotional_language": true,
+                    "hedging_language": true,
+                    "ellipsis_usage": true
+                },
+                "structural_markers": {
+                    "formatting_consistency": 0.50,
+                    "section_length_variance": 0.68,
+                    "bullet_point_pattern": "mixed",
+                    "template_detection": 0.08,
+                    "whitespace_anomalies": true,
+                    "font_variation": true,
+                    "unique_section_order": false
+                },
+                "content_markers": {
+                    "metric_specificity": 0.92,
+                    "company_name_count": 2,
+                    "career_gap_mention": false,
+                    "software_list_completeness": 0.35,
+                    "achievement_detailing": 0.88,
+                    "process_specificity": 0.80,
+                    "failure_mention": true,
+                    "challenge_description": true,
+                    "specific_saving_amount": true
+                },
+                "accounting_specific": {
+                    "gaap_mention": false,
+                    "reconciliation_details": false,
+                    "audit_experience": false,
+                    "tax_knowledge": false,
+                    "erp_systems": ["NetSuite"],
+                    "certification_mention": true,
+                    "team_size_mention": true,
+                    "revenue_figure": true
+                }
+            },
+            "generation_metadata": {
+                "likely_model": "N/A",
+                "temperature_estimated": null,
+                "prompt_complexity": null,
+                "post_editing_detected": false,
+                "writing_style": "narrative",
+                "experience_level": "senior"
+            }
+        },
+        {
+            "sample_id": "ACC_HUMAN_003",
+            "classification": "Human_Written",
+            "confidence_score": 0.87,
+            "cv_text": "Graduated last May with BS in Accounting (3.2 GPA). Still figuring out what I want to specialize in. Did a 6-month internship at Smith & Associates - mostly data entry and basic reconciliations. I'm pretty good with Excel (vlookups, pivot tables, basic macros) and learning Power BI on my own. Not gonna lie, intermediate accounting was hard but I passed. Looking for an entry-level staff accountant position where I can learn from experienced people. Willing to work overtime during close. Have my CPA exam scheduled for later this year.",
+            "features_analysis": {
+                "linguistic_markers": {
+                    "adjective_density": 0.08,
+                    "repetitive_structures": false,
+                    "specific_dates_present": true,
+                    "buzzword_count": 1,
+                    "grammar_perfect_score": 0.85,
+                    "typo_count": 0,
+                    "personal_pronoun_usage": 0.25,
+                    "sentence_length_variance": 0.62,
+                    "verb_tense_consistency": 0.70,
+                    "colloquial_phrases": true,
+                    "emotional_language": true,
+                    "hedging_language": true,
+                    "honesty_markers": true
+                },
+                "structural_markers": {
+                    "formatting_consistency": 0.55,
+                    "section_length_variance": 0.60,
+                    "bullet_point_pattern": "none",
+                    "template_detection": 0.10,
+                    "whitespace_anomalies": false,
+                    "font_variation": false,
+                    "unique_section_order": false
+                },
+                "content_markers": {
+                    "metric_specificity": 0.25,
+                    "company_name_count": 1,
+                    "career_gap_mention": false,
+                    "software_list_completeness": 0.50,
+                    "achievement_detailing": 0.35,
+                    "process_specificity": 0.40,
+                    "failure_mention": true,
+                    "challenge_description": true,
+                    "humility_markers": true
+                },
+                "accounting_specific": {
+                    "gaap_mention": false,
+                    "reconciliation_details": true,
+                    "audit_experience": false,
+                    "tax_knowledge": false,
+                    "erp_systems": [],
+                    "certification_mention": true,
+                    "internship_mention": true,
+                    "excel_skills_detailed": true
+                }
+            },
+            "generation_metadata": {
+                "likely_model": "N/A",
+                "temperature_estimated": null,
+                "prompt_complexity": null,
+                "post_editing_detected": false,
+                "writing_style": "self-aware",
+                "experience_level": "entry"
+            }
+        },
+        {
+            "sample_id": "ACC_HYBRID_001",
+            "classification": "Hybrid",
+            "confidence_score": 0.78,
+            "cv_text": "PROFESSIONAL SUMMARY: Accounting professional with 6 years of experience in financial reporting and analysis. Expertise in month-end close, account reconciliations, and financial statement preparation. [HUMAN ADDITION: I actually enjoy reconciliations - weird I know. Found a way to automate part of it that saved about 5 hours per month.] TECHNICAL SKILLS: Advanced Excel, SAP, Oracle, QuickBooks. CERTIFICATIONS: CPA (in progress).",
+            "features_analysis": {
+                "linguistic_markers": {
+                    "adjective_density": 0.25,
+                    "repetitive_structures": true,
+                    "specific_dates_present": false,
+                    "buzzword_count": 8,
+                    "grammar_perfect_score": 0.90,
+                    "typo_count": 0,
+                    "personal_pronoun_usage": 0.08,
+                    "sentence_length_variance": 0.45,
+                    "verb_tense_consistency": 0.85,
+                    "colloquial_phrases": true,
+                    "emotional_language": true,
+                    "style_switch_detected": true
+                },
+                "structural_markers": {
+                    "formatting_consistency": 0.70,
+                    "section_length_variance": 0.50,
+                    "bullet_point_pattern": "mixed",
+                    "template_detection": 0.65,
+                    "whitespace_anomalies": true,
+                    "font_variation": true,
+                    "bracketed_additions": true
+                },
+                "content_markers": {
+                    "metric_specificity": 0.60,
+                    "company_name_count": 0,
+                    "career_gap_mention": false,
+                    "software_list_completeness": 0.65,
+                    "achievement_detailing": 0.50,
+                    "process_specificity": 0.55,
+                    "personal_anecdote": true,
+                    "specific_saving_hours": true
+                },
+                "accounting_specific": {
+                    "gaap_mention": false,
+                    "reconciliation_details": true,
+                    "audit_experience": false,
+                    "tax_knowledge": false,
+                    "erp_systems": ["SAP", "Oracle"],
+                    "certification_mention": true,
+                    "automation_mention": true
+                }
+            },
+            "generation_metadata": {
+                "likely_model": "GPT-4 + Human Edit",
+                "temperature_estimated": 0.6,
+                "prompt_complexity": "medium",
+                "post_editing_detected": true,
+                "human_additions_percentage": 0.25,
+                "editing_type": "personal_anecdotes"
+            }
+        },
+        {
+            "sample_id": "ACC_HYBRID_002",
+            "classification": "Hybrid",
+            "confidence_score": 0.82,
+            "cv_text": "Experienced Accounting Manager with 10+ years of progressive responsibility in corporate accounting environments. Demonstrated success in leading month-end close processes, managing teams of up to 5 staff accountants, and implementing process improvements that reduced closing cycle by 30%. [Actually we went from 10 days to 7 days - took about 8 months of tweaking. My boss was pretty happy about that.] Proficient in ERP implementation and optimization. Seeking Controller position in growth-oriented organization.",
+            "features_analysis": {
+                "linguistic_markers": {
+                    "adjective_density": 0.28,
+                    "repetitive_structures": true,
+                    "specific_dates_present": false,
+                    "buzzword_count": 12,
+                    "grammar_perfect_score": 0.92,
+                    "typo_count": 0,
+                    "personal_pronoun_usage": 0.10,
+                    "sentence_length_variance": 0.48,
+                    "verb_tense_consistency": 0.88,
+                    "colloquial_phrases": true,
+                    "emotional_language": true,
+                    "style_switch_detected": true,
+                    "bracketed_additions": true
+                },
+                "structural_markers": {
+                    "formatting_consistency": 0.75,
+                    "section_length_variance": 0.52,
+                    "bullet_point_pattern": "mixed",
+                    "template_detection": 0.70,
+                    "whitespace_anomalies": true,
+                    "font_variation": false,
+                    "bracketed_additions": true
+                },
+                "content_markers": {
+                    "metric_specificity": 0.78,
+                    "company_name_count": 0,
+                    "career_gap_mention": false,
+                    "software_list_completeness": 0.30,
+                    "achievement_detailing": 0.72,
+                    "process_specificity": 0.68,
+                    "personal_anecdote": true,
+                    "team_size_mention": true,
+                    "specific_timeframe": true
+                },
+                "accounting_specific": {
+                    "gaap_mention": false,
+                    "reconciliation_details": false,
+                    "audit_experience": false,
+                    "tax_knowledge": false,
+                    "erp_systems": [],
+                    "certification_mention": false,
+                    "process_improvement_detailed": true
+                }
+            },
+            "generation_metadata": {
+                "likely_model": "Claude-2 + Human Edit",
+                "temperature_estimated": 0.55,
+                "prompt_complexity": "medium",
+                "post_editing_detected": true,
+                "human_additions_percentage": 0.20,
+                "editing_type": "bracketed_personal_notes"
+            }
+        },
+        {
+            "sample_id": "ACC_AI_004",
+            "classification": "AI_Generated",
+            "confidence_score": 0.95,
+            "cv_text": "Dedicated accounting professional with comprehensive knowledge of GAAP standards, financial reporting frameworks, and internal control systems. Proven ability to streamline accounting operations, reduce costs, and enhance financial accuracy. Expertise includes general ledger maintenance, bank reconciliations, accounts payable/receivable management, payroll processing, and tax preparation. Proficient in QuickBooks Online, Xero, FreshBooks, Wave Accounting, Zoho Books, Microsoft Dynamics GP, Sage 50, and NetSuite. Demonstrated success in reducing accounts receivable aging by 30 days and improving cash flow. Detail-oriented problem solver with excellent communication skills. CPA eligible. Available for immediate start.",
+            "features_analysis": {
+                "linguistic_markers": {
+                    "adjective_density": 0.35,
+                    "repetitive_structures": true,
+                    "specific_dates_present": false,
+                    "buzzword_count": 18,
+                    "grammar_perfect_score": 1.0,
+                    "typo_count": 0,
+                    "personal_pronoun_usage": 0.01,
+                    "sentence_length_variance": 0.10,
+                    "verb_tense_consistency": 0.98,
+                    "software_overload": true
+                },
+                "structural_markers": {
+                    "formatting_consistency": 0.99,
+                    "section_length_variance": 0.04,
+                    "bullet_point_pattern": "uniform",
+                    "template_detection": 0.96,
+                    "whitespace_anomalies": false,
+                    "font_variation": false
+                },
+                "content_markers": {
+                    "metric_specificity": 0.38,
+                    "company_name_count": 0,
+                    "career_gap_mention": false,
+                    "software_list_completeness": 0.95,
+                    "achievement_detailing": 0.28,
+                    "process_specificity": 0.15,
+                    "generic_accomplishment": true
+                },
+                "accounting_specific": {
+                    "gaap_mention": true,
+                    "reconciliation_details": true,
+                    "audit_experience": false,
+                    "tax_knowledge": true,
+                    "erp_systems": ["NetSuite", "Dynamics GP", "Sage"],
+                    "certification_mention": true,
+                    "software_list_excessive": true
+                }
+            },
+            "generation_metadata": {
+                "likely_model": "GPT-4 Turbo",
+                "temperature_estimated": 0.65,
+                "prompt_complexity": "high",
+                "post_editing_detected": false,
+                "generation_artifacts": [
+                    "excessive_software_listing",
+                    "missing_contextual_details",
+                    "perfect_transition_phrases"
+                ]
+            }
+        },
+        {
+            "sample_id": "ACC_HUMAN_004",
+            "classification": "Human_Written",
+            "confidence_score": 0.91,
+            "cv_text": "Okay so I'm applying for the Staff Accountant position. Quick background: I've been at my current job (B&G Manufacturing) for 3 years. Started as an AP clerk, got promoted to staff accountant after 18 months. I handle the full cycle - AP, AR, bank recs, journal entries, month-end close support. We use Sage 100. I'm the only one who really understands how to fix it when it breaks. Learned Excel pretty well - built a few macros that saved us from manual data entry hell. Not a CPA but I've passed 2 sections (BEC and REG). Failed AUD once. Taking FAR in April. Honestly just want a place where I can grow and maybe get some reimbursement for the remaining exam fees.",
+            "features_analysis": {
+                "linguistic_markers": {
+                    "adjective_density": 0.09,
+                    "repetitive_structures": false,
+                    "specific_dates_present": true,
+                    "buzzword_count": 2,
+                    "grammar_perfect_score": 0.70,
+                    "typo_count": 1,
+                    "personal_pronoun_usage": 0.28,
+                    "sentence_length_variance": 0.75,
+                    "verb_tense_consistency": 0.58,
+                    "colloquial_phrases": true,
+                    "emotional_language": true,
+                    "hedging_language": true,
+                    "humor_markers": true,
+                    "casual_opening": true
+                },
+                "structural_markers": {
+                    "formatting_consistency": 0.35,
+                    "section_length_variance": 0.80,
+                    "bullet_point_pattern": "none",
+                    "template_detection": 0.05,
+                    "whitespace_anomalies": true,
+                    "font_variation": true,
+                    "paragraph_structure": "irregular"
+                },
+                "content_markers": {
+                    "metric_specificity": 0.68,
+                    "company_name_count": 1,
+                    "career_gap_mention": false,
+                    "software_list_completeness": 0.35,
+                    "achievement_detailing": 0.72,
+                    "process_specificity": 0.78,
+                    "failure_mention": true,
+                    "challenge_description": true,
+                    "promotion_timeline": true,
+                    "specific_cpa_sections": true
+                },
+                "accounting_specific": {
+                    "gaap_mention": false,
+                    "reconciliation_details": true,
+                    "audit_experience": false,
+                    "tax_knowledge": false,
+                    "erp_systems": ["Sage"],
+                    "certification_mention": true,
+                    "software_troubleshooting": true,
+                    "macro_development": true
+                }
+            },
+            "generation_metadata": {
+                "likely_model": "N/A",
+                "temperature_estimated": null,
+                "prompt_complexity": null,
+                "post_editing_detected": false,
+                "writing_style": "casual_professional",
+                "experience_level": "junior",
+                "personality_traits": ["self-deprecating", "pragmatic", "solution-oriented"]
+            }
+        }
+    ],
+    "accounting_specific_classifiers": {
+        "certification_patterns": {
+            "ai_typical": [
+                "CPA candidate",
+                "CPA eligible",
+                "pursuing CPA certification",
+                "working towards CPA designation"
+            ],
+            "human_typical": [
+                "passed 2 sections, failed one",
+                "taking FAR in April",
+                "still need the ethics exam",
+                "license number: CPA-12345",
+                "awaiting score release"
+            ]
+        },
+        "software_mention_patterns": {
+            "ai_typical": [
+                "listing 8+ software names without context",
+                "generic proficiency claims",
+                "perfect alphabetical ordering"
+            ],
+            "human_typical": [
+                "specific version numbers",
+                "likes/dislikes about certain software",
+                "problems encountered with implementations",
+                "workarounds discovered"
+            ]
+        },
+        "metric_patterns": {
+            "ai_typical": [
+                "25% improvement",
+                "30% cost reduction",
+                "40% efficiency gain",
+                "rounded percentages"
+            ],
+            "human_typical": [
+                "went from 12 days to 7 days",
+                "saved about 5 hours per week",
+                "caught a $200k error",
+                "reduced by 3 days exactly"
+            ]
+        },
+        "career_progression_patterns": {
+            "ai_typical": [
+                "linear progression",
+                "no gaps between roles",
+                "perfectly increasing responsibility",
+                "standard titles only"
+            ],
+            "human_typical": [
+                "promotion timelines with specific months",
+                "sideways moves mentioned",
+                "job changes with real reasons",
+                "non-traditional paths"
+            ]
+        },
+        "failure_mention_patterns": {
+            "ai_typical": [
+                "no mention of failures or challenges",
+                "framed as 'learning opportunities' without specifics"
+            ],
+            "human_typical": [
+                "specific exam failures",
+                "reconciliation mistakes",
+                "software implementation problems",
+                "team conflicts resolved"
+            ]
+        }
+    },
+    "linguistic_feature_extraction": {
+        "pronoun_patterns": {
+            "ai_typical": {
+                "first_person_singular_rate": "< 0.05",
+                "first_person_plural_rate": "< 0.02",
+                "third_person_rate": "> 0.15"
+            },
+            "human_typical": {
+                "first_person_singular_rate": "> 0.12",
+                "first_person_plural_rate": "0.03 - 0.08",
+                "third_person_rate": "< 0.05"
+            }
+        },
+        "verb_tense_patterns": {
+            "ai_typical": {
+                "present_tense_consistency": "> 0.90",
+                "past_tense_consistency": "> 0.90",
+                "tense_switches": "rare"
+            },
+            "human_typical": {
+                "present_tense_consistency": "0.60 - 0.80",
+                "past_tense_consistency": "0.55 - 0.75",
+                "tense_switches": "common"
+            }
+        },
+        "sentence_complexity": {
+            "ai_typical": {
+                "average_words_per_sentence": "18-22",
+                "sentence_length_variance": "< 0.20",
+                "clause_count_variance": "< 0.25"
+            },
+            "human_typical": {
+                "average_words_per_sentence": "12-25",
+                "sentence_length_variance": "> 0.50",
+                "clause_count_variance": "> 0.55"
+            }
+        },
+        "vocabulary_richness": {
+            "ai_typical": {
+                "unique_word_ratio": "0.45 - 0.55",
+                "buzzword_density": "> 0.15",
+                "action_verb_variety": "low"
+            },
+            "human_typical": {
+                "unique_word_ratio": "0.35 - 0.50",
+                "buzzword_density": "< 0.08",
+                "action_verb_variety": "high"
+            }
+        }
+    },
+    "structural_feature_extraction": {
+        "resume_length": {
+            "ai_typical": {
+                "single_page_exact": "common",
+                "two_page_exact": "common",
+                "fractional_pages": "rare"
+            },
+            "human_typical": {
+                "single_page_plus_minus": "common",
+                "two_page_plus_minus": "common",
+                "fractional_pages": "common"
+            }
+        },
+        "section_headers": {
+            "ai_typical": [
+                "EXPERIENCE",
+                "EDUCATION",
+                "SKILLS",
+                "CERTIFICATIONS"
+            ],
+            "human_typical": [
+                "WHAT I'VE DONE",
+                "MY BACKGROUND",
+                "TECH STUFF I KNOW",
+                "OTHER THINGS"
+            ]
+        },
+        "bullet_point_consistency": {
+            "ai_typical": {
+                "length_variance_coefficient": "< 0.15",
+                "starting_verb_pattern": "90%+ identical",
+                "punctuation_consistency": "100%"
+            },
+            "human_typical": {
+                "length_variance_coefficient": "> 0.30",
+                "starting_verb_pattern": "< 70%",
+                "punctuation_consistency": "< 90%"
+            }
+        }
+    },
+    "training_metadata": {
+        "dataset_size": 250,
+        "ai_samples": 85,
+        "human_samples": 110,
+        "hybrid_samples": 55,
+        "balanced_accuracy_target": 0.88,
+        "validation_method": "cross_validation_5fold",
+        "feature_importance_weights": {
+            "linguistic_markers": 0.35,
+            "structural_markers": 0.20,
+            "content_markers": 0.30,
+            "accounting_specific_markers": 0.15
+        }
+    },
+    "classification_thresholds": {
+        "ai_classification": {
+            "min_confidence": 0.85,
+            "required_ai_indicators": 5,
+            "max_human_indicators": 2
+        },
+        "human_classification": {
+            "min_confidence": 0.80,
+            "required_human_indicators": 6,
+            "max_ai_indicators": 2
+        },
+        "hybrid_classification": {
+            "min_confidence": 0.70,
+            "ai_indicators_range": [3, 6],
+            "human_indicators_range": [3, 6]
+        }
+    },
+    "deployment_guidelines": {
+        "input_requirements": {
+            "min_text_length": 500,
+            "max_text_length": 5000,
+            "supported_formats": ["txt", "pdf_extracted", "docx_extracted"]
+        },
+        "processing_recommendations": {
+            "language": "English",
+            "industry_focus": "Accounting",
+            "remove_metadata_before_analysis": true,
+            "normalize_whitespace": false
+        },
+        "output_format": {
+            "classification": "string",
+            "confidence": "float",
+            "feature_breakdown": "object",
+            "suspicious_segments": "array",
+            "recommendation": "string"
+        }
+    },
+    "examples_for_testing": [{
+            "test_id": "TEST_001",
+            "input_text": "I'm an accountant. 10 years experience. Like Excel a lot. Not a fan of manual reconciliations. Looking for new job.",
+            "expected_classification": "Human_Written",
+            "expected_confidence": 0.92,
+            "reasoning": "short, casual, personal opinion, missing standard resume structure"
+        },
+        {
+            "test_id": "TEST_002",
+            "input_text": "Highly motivated accounting professional with demonstrated expertise in financial analysis, strategic planning, and operational optimization. Proven track record of exceeding expectations and delivering measurable results. Committed to excellence and continuous improvement.",
+            "expected_classification": "AI_Generated",
+            "expected_confidence": 0.95,
+            "reasoning": "buzzword dense, no specifics, perfect grammar, generic statements"
+        },
+        {
+            "test_id": "TEST_003",
+            "input_text": "5 years in public accounting at BDO. Left because I wanted more industry exposure. Now at a tech startup where nothing is standardized and I love the chaos. Building processes from scratch.",
+            "expected_classification": "Human_Written",
+            "expected_confidence": 0.94,
+            "reasoning": "specific company, emotional language ('love the chaos'), real reason for job change"
+        },
+        {
+            "test_id": "TEST_004",
+            "input_text": "Accounting professional with expertise in GAAP-compliant financial reporting, internal controls implementation, and cross-functional team leadership. Successfully reduced month-end close cycle by 25% through process optimization initiatives.",
+            "expected_classification": "AI_Generated",
+            "expected_confidence": 0.88,
+            "reasoning": "round percentage, GAAP mention without context, passive construction"
+        }
+    ],
+    "notes_for_hr_professionals": [
+        "AI-generated CVs tend to have perfect formatting and no typos",
+        "Human-written CVs often contain unique personal anecdotes about specific challenges",
+        "Hybrid CVs are becoming more common as candidates use AI to draft then edit personally",
+        "Accounting-specific red flags: listing every possible software without depth",
+        "Human CVs often mention exam failures or specific struggles - this is authenticity",
+        "AI CVs rarely mention team size or specific project challenges",
+        "Look for 'we' vs 'I' usage - AI tends to overuse 'I' or avoid both",
+        "Specific dollar amounts and exact date ranges are strong human indicators",
+        "Conversational transitions (Anyway, Honestly, Actually) are nearly always human",
+        "Mention of 'learning the hard way' or mistakes made is uniquely human"
+    ]
+}
