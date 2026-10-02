@@ -1,3 +1,4 @@
+<img width="1917" height="906" alt="Screenshot 2026-10-02 124323" src="https://github.com/user-attachments/assets/ebc52254-f69c-4a83-bd01-c81729f9980a" />
 <div align="center">
 
 # 🚀 Smart Resume Checker v2
