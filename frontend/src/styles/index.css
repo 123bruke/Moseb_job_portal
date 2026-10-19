@@ -90,9 +90,55 @@ a { @apply text-primary; }
   }
   .group:hover .icon-tile-plain { @apply scale-110 text-grad-b; }
 
-  /* Scroll reveal. `.reveal` starts hidden; the Reveal component adds `.is-in`. */
-  .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); }
-  .reveal.is-in { opacity: 1; transform: none; }
+  /* Enhanced Scroll reveal suite: hardware-accelerated fluid transitions */
+  .reveal-base {
+    will-change: opacity, transform, filter;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    transition-property: opacity, transform, filter;
+  }
+  .reveal,
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-fade {
+    opacity: 0;
+    transition: opacity 0.75s ease-out;
+  }
+  .reveal-scale {
+    opacity: 0;
+    transform: scale(0.93) translateY(18px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-34px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(34px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-blur {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(16px);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), filter 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.is-in,
+  .reveal-base.is-in,
+  .reveal-up.is-in,
+  .reveal-fade.is-in,
+  .reveal-scale.is-in,
+  .reveal-left.is-in,
+  .reveal-right.is-in,
+  .reveal-blur.is-in {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
 
   /* Sheen that sweeps across a card on hover. */
   .sheen { position: relative; overflow: hidden; }
@@ -199,5 +245,5 @@ a { @apply text-primary; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
-  .reveal { opacity: 1; transform: none; }
+  .reveal, .reveal-base { opacity: 1 !important; transform: none !important; filter: none !important; }
 }

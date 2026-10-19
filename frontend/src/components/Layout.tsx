@@ -15,6 +15,9 @@ import { IS_ADMIN_VIEW, START_PATH } from "@/lib/view";
 import type { Role } from "@/lib/types";
 import type { LucideIcon } from "lucide-react";
 
+import ScrollProgressBar from "@/components/marketing/ScrollProgressBar";
+import { useEffect, useState } from "react";
+
 /** Marketing links for Moseb Job Portal */
 const MARKETING: { label: string; href: string }[] = [
   { label: "Find Jobs", href: "/jobs" },
@@ -49,6 +52,17 @@ export default function Layout() {
   const { me, signOut } = useAuth();
   const { theme, toggle } = useTheme();
   const { pathname } = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setIsScrolled(window.scrollY > 15);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const notifs = useQuery({ queryKey: ["notifs"], queryFn: () => api.get<{ id: number; read: boolean }[]>("/notifications"), enabled: !!me, refetchInterval: 30000 });
   const unread = notifs.data?.filter((n) => !n.read).length ?? 0;
 
@@ -58,12 +72,19 @@ export default function Layout() {
 
   return (
     <div className="flex min-h-screen flex-col">
+      <ScrollProgressBar />
       <Aurora variant={onLanding ? "hero" : "page"} />
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-surface focus:px-4 focus:py-2 focus:shadow-glow">
         Skip to content
       </a>
 
-      <header className="sticky top-0 z-40 border-b border-border/60 bg-surface/55 backdrop-blur-2xl backdrop-saturate-150">
+      <header
+        className={`sticky top-0 z-40 transition-all duration-300 ${
+          isScrolled
+            ? "border-b border-border/80 bg-surface/85 shadow-md shadow-black/[0.03] backdrop-blur-2xl backdrop-saturate-150 py-0"
+            : "border-b border-border/40 bg-surface/50 backdrop-blur-xl py-0.5"
+        }`}
+      >
         <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3">
           <Logo />
 

@@ -1,29 +1,66 @@
-/** Drifting gradient field behind the whole page. Purely decorative, fixed, and cheap (3 blurred blobs). */
+import { useEffect, useState } from "react";
+
+/**
+ * Drifting gradient field with dynamic scroll parallax.
+ * Provides subtle fluid depth behind pages during scrolling.
+ */
 export default function Aurora({ variant = "page" }: { variant?: "page" | "hero" }) {
   const isHero = variant === "hero";
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-bg via-bg to-bg" />
-      {/* Continuous flowing ambient color layers */}
+
+      {/* Continuous flowing ambient color layers with scroll parallax */}
       <div
-        className={`absolute -left-[14%] -top-[18%] h-[68vmax] w-[68vmax] rounded-full blur-[120px] animate-gradient-drift ${
-          isHero ? "opacity-[0.42]" : "opacity-[0.32]"
+        className={`absolute -left-[14%] -top-[18%] h-[68vmax] w-[68vmax] rounded-full blur-[120px] animate-gradient-drift transition-transform duration-700 ease-out ${
+          isHero ? "opacity-[0.38]" : "opacity-[0.28]"
         }`}
-        style={{ background: "radial-gradient(circle at 35% 35%, rgb(var(--grad-a)), transparent 60%)" }}
+        style={{
+          background: "radial-gradient(circle at 35% 35%, rgb(var(--grad-a)), transparent 60%)",
+          transform: `translate3d(0, ${scrollY * -0.06}px, 0)`,
+        }}
       />
       <div
-        className="absolute -right-[12%] top-[12%] h-[60vmax] w-[60vmax] rounded-full opacity-[0.32] blur-[130px] animate-aurora-slow"
-        style={{ background: "radial-gradient(circle at 60% 40%, rgb(var(--grad-c)), transparent 58%)" }}
+        className="absolute -right-[12%] top-[12%] h-[60vmax] w-[60vmax] rounded-full opacity-[0.28] blur-[130px] animate-aurora-slow transition-transform duration-700 ease-out"
+        style={{
+          background: "radial-gradient(circle at 60% 40%, rgb(var(--grad-c)), transparent 58%)",
+          transform: `translate3d(0, ${scrollY * 0.04}px, 0)`,
+        }}
       />
       <div
-        className="absolute bottom-[-15%] left-[20%] h-[52vmax] w-[52vmax] rounded-full opacity-[0.28] blur-[140px] animate-aurora"
-        style={{ background: "radial-gradient(circle at 50% 50%, rgb(var(--grad-b)), transparent 62%)", animationDelay: "-7s" }}
+        className="absolute bottom-[-15%] left-[20%] h-[52vmax] w-[52vmax] rounded-full opacity-[0.24] blur-[140px] animate-aurora transition-transform duration-700 ease-out"
+        style={{
+          background: "radial-gradient(circle at 50% 50%, rgb(var(--grad-b)), transparent 62%)",
+          animationDelay: "-7s",
+          transform: `translate3d(0, ${scrollY * -0.03}px, 0)`,
+        }}
       />
       <div
-        className="absolute right-[10%] top-[45%] h-[42vmax] w-[42vmax] rounded-full opacity-[0.22] blur-[130px] animate-drift"
-        style={{ background: "radial-gradient(circle at 50% 50%, rgb(var(--grad-c)), transparent 60%)" }}
+        className="absolute right-[10%] top-[45%] h-[42vmax] w-[42vmax] rounded-full opacity-[0.20] blur-[130px] animate-drift transition-transform duration-700 ease-out"
+        style={{
+          background: "radial-gradient(circle at 50% 50%, rgb(var(--grad-c)), transparent 60%)",
+          transform: `translate3d(0, ${scrollY * 0.05}px, 0)`,
+        }}
       />
-      {/* Faint grid keeps large empty areas from looking flat. */}
+
+      {/* Faint grid keeps large empty areas from looking flat */}
       <div
         className="absolute inset-0 opacity-[0.35]"
         style={{
