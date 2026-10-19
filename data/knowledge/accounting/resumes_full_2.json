@@ -1,0 +1,979 @@
+{
+    "resumes": [{
+                "id": "CV-001",
+                "version": "1.0",
+                "last_updated": "2024-01-15",
+                "compliance_standards": ["UAE", "EU", "USA"],
+                "personal_details": {
+                    "first_name": "Sarah",
+                    "last_name": "Johnson",
+                    "email": "sarah.johnson@email.com",
+                    "phone": "+1 (555) 123-4567",
+                    "address": {
+                        "street": "123 Main Street",
+                        "city": "New York",
+                        "state": "NY",
+                        "postal_code": "10001",
+                        "country": "USA"
+                    },
+                    "linkedin": "linkedin.com/in/sarahjohnson",
+                    "portfolio": "sarahjohnson.com",
+                    "nationality": "American",
+                    "date_of_birth": "1985-06-15",
+                    "driving_license": "Full US License"
+                },
+                "professional_summary": "A spirited and motivated leader able to handle multiple projects simultaneously, able to turn diverse competitive managers into a mutually supportive team. Long-standing record of creating marketing and communication plans, successful events, major website rollouts and upgrades, facility management and office supervision. Over 15 years of experience in public relations and communications across USA and international markets.",
+                "core_competencies": [
+                    "Strategic Communications Planning",
+                    "Crisis Management",
+                    "Media Relations",
+                    "Event Management",
+                    "Team Leadership",
+                    "Budget Management",
+                    "Digital Marketing",
+                    "Brand Development"
+                ],
+                "work_experience": [{
+                        "title": "Director of Communications",
+                        "company": "KC Metro Center",
+                        "location": "Kansas City, USA",
+                        "start_date": "2012-06",
+                        "end_date": "Present",
+                        "employment_type": "Full-time",
+                        "achievements": [
+                            "Manage all daily operations, public relations and marketing efforts serving 50,000+ students annually",
+                            "Developed marketing plan that increased student recruitment by 35% within first year",
+                            "Coordinate with 15+ local community colleges to create articulation agreements",
+                            "Built relationships with 200+ business and industry partners",
+                            "Supervised team of 25 clerical and part-time staff members",
+                            "Launched alumni engagement program resulting in 40% increase in donations"
+                        ]
+                    },
+                    {
+                        "title": "Online Facilitator",
+                        "company": "Communication Department",
+                        "location": "Remote, USA",
+                        "start_date": "2008-03",
+                        "end_date": "2013-09",
+                        "employment_type": "Contract",
+                        "achievements": [
+                            "Taught 8 different communication courses to 500+ students",
+                            "Developed innovative online syllabus adopted by 3 other institutions",
+                            "Maintained 4.8/5 student satisfaction rating",
+                            "Created multimedia learning materials used across department"
+                        ]
+                    },
+                    {
+                        "title": "Public Information Coordinator",
+                        "company": "School District",
+                        "location": "Missouri, USA",
+                        "start_date": "2006-09",
+                        "end_date": "2012-06",
+                        "employment_type": "Full-time",
+                        "achievements": [
+                            "Managed award-winning website with 7,300+ pages and 2M+ annual visitors",
+                            "Led team of 14 website coordinators across district",
+                            "Increased social media engagement by 300% through Facebook and Twitter campaigns",
+                            "Secured $500,000 in grant funding from Kansas City Foundation",
+                            "Coordinated 25+ annual events recognizing 1,000+ teachers and students"
+                        ]
+                    }
+                ],
+                "education": [{
+                        "degree": "Doctor of Philosophy",
+                        "field_of_study": "Adult & Community Education",
+                        "institution": "Kansas State University",
+                        "location": "Kansas, USA",
+                        "year": "2018",
+                        "gpa": "4.0",
+                        "honors": "Summa Cum Laude",
+                        "thesis": "Community Engagement Strategies in Urban Education"
+                    },
+                    {
+                        "degree": "Master of Arts",
+                        "field_of_study": "Communication",
+                        "institution": "Missouri State University",
+                        "location": "Missouri, USA",
+                        "year": "2004",
+                        "gpa": "3.19"
+                    },
+                    {
+                        "degree": "Bachelor of Arts",
+                        "field_of_study": "Communication",
+                        "specialization": "Public Relations",
+                        "minor": "Technical Communication",
+                        "institution": "Missouri Western State University",
+                        "location": "Missouri, USA",
+                        "year": "2002",
+                        "gpa": "2.69"
+                    }
+                ],
+                "certifications": [{
+                        "name": "Certified Public Relations Specialist",
+                        "issuing_body": "PRSA",
+                        "year": "2015",
+                        "expiry": "2025"
+                    },
+                    {
+                        "name": "Digital Marketing Professional",
+                        "issuing_body": "Google",
+                        "year": "2020"
+                    },
+                    {
+                        "name": "Crisis Communication Management",
+                        "issuing_body": "ICRM",
+                        "year": "2019"
+                    }
+                ],
+                "skills": {
+                    "technical": [
+                        "Microsoft Office Suite",
+                        "Adobe Creative Suite",
+                        "Google Analytics",
+                        "Hootsuite",
+                        "Salesforce",
+                        "WordPress",
+                        "MailChimp",
+                        "Asana",
+                        "Slack",
+                        "Zoom"
+                    ],
+                    "soft": [
+                        "Leadership",
+                        "Strategic Planning",
+                        "Crisis Management",
+                        "Negotiation",
+                        "Mentoring",
+                        "Public Speaking",
+                        "Time Management",
+                        "Problem Solving"
+                    ],
+                    "languages": [{
+                            "language": "English",
+                            "proficiency": "Native",
+                            "cefr_level": "C2"
+                        },
+                        {
+                            "language": "Spanish",
+                            "proficiency": "Professional Working",
+                            "cefr_level": "B2"
+                        }
+                    ]
+                },
+                "professional_memberships": [{
+                        "organization": "Alpha Kappa Alpha Sorority",
+                        "role": "Active Member",
+                        "years": "2002-present"
+                    },
+                    {
+                        "organization": "Public Relations Society of America",
+                        "role": "Senior Member",
+                        "years": "2010-present"
+                    },
+                    {
+                        "organization": "International Association of Business Communicators",
+                        "role": "Member",
+                        "years": "2015-present"
+                    }
+                ],
+                "awards": [{
+                        "name": "PR Excellence Award",
+                        "issuing_body": "KC Business Journal",
+                        "year": "2019"
+                    },
+                    {
+                        "name": "Women in Leadership Award",
+                        "issuing_body": "Missouri State University",
+                        "year": "2017"
+                    }
+                ],
+                "volunteer_experience": [{
+                        "role": "Mentor",
+                        "organization": "YouthFriends",
+                        "years": "2007-2014",
+                        "hours_per_week": 4
+                    },
+                    {
+                        "role": "Advocate",
+                        "organization": "YWCA",
+                        "years": "2000-2004",
+                        "description": "Advocate for Victims of Sexual Assault/Rape"
+                    }
+                ],
+                "references": [{
+                    "name": "Dr. Michael Thompson",
+                    "title": "Former Director",
+                    "company": "KC Metro Center",
+                    "email": "m.thompson@email.com",
+                    "phone": "+1 (555) 987-6543",
+                    "relationship": "Direct Supervisor"
+                }]
+            },
+            {
+                "id": "CV-002",
+                "version": "1.0",
+                "last_updated": "2024-01-10",
+                "compliance_standards": ["UAE", "EU", "USA"],
+                "personal_details": {
+                    "first_name": "Michael",
+                    "last_name": "Chen",
+                    "email": "michael.chen@email.com",
+                    "phone": "+971 50 123 4567",
+                    "address": {
+                        "street": "Downtown Dubai",
+                        "city": "Dubai",
+                        "emirate": "Dubai",
+                        "postal_code": "12345",
+                        "country": "UAE"
+                    },
+                    "linkedin": "linkedin.com/in/michaelchen",
+                    "nationality": "British",
+                    "date_of_birth": "1982-03-22",
+                    "driving_license": "UAE, UK",
+                    "visa_status": "Employment Visa"
+                },
+                "professional_summary": "Seasoned communications professional and results-driven communications strategist with award-winning writing and editing credentials, proven success in media relations/pitching, and longtime experience in Web and social media content. Over 20 years of experience across USA, EU, and UAE markets. Specializes in crisis communication for Fortune 500 companies and government entities.",
+                "core_competencies": [
+                    "Crisis Communication",
+                    "Media Relations",
+                    "Government Relations",
+                    "Speechwriting",
+                    "Brand Management",
+                    "Digital Strategy",
+                    "Team Leadership",
+                    "Budget Oversight"
+                ],
+                "work_experience": [{
+                        "title": "Communications Director",
+                        "company": "Non-Profit Agency",
+                        "location": "Pennsylvania, USA",
+                        "start_date": "2013-09",
+                        "end_date": "Present",
+                        "employment_type": "Full-time",
+                        "achievements": [
+                            "Lead communications for agency serving 90,000+ residents annually",
+                            "Developed crisis communication protocol adopted statewide",
+                            "Planned press conference at Capitol Rotunda with Governor and 19 legislators",
+                            "Increased media coverage by 200% through strategic pitching",
+                            "Managed $2M communications budget with 15% cost savings",
+                            "Launched social media presence reaching 500,000+ followers across platforms"
+                        ]
+                    },
+                    {
+                        "title": "Communications Director",
+                        "company": "Pennsylvania Auditor General",
+                        "location": "Pennsylvania, USA",
+                        "start_date": "2005-01",
+                        "end_date": "2013-01",
+                        "employment_type": "Full-time",
+                        "achievements": [
+                            "Issued 300+ press releases annually for department of 750 employees",
+                            "Won national 'PR on a Shoestring' award",
+                            "Received honorable mention for website design",
+                            "Recognized as Business Writer of the Year by Pennsylvania Society of Professional Journalists",
+                            "Managed communications for 12.5 million state residents"
+                        ]
+                    },
+                    {
+                        "title": "Chief Communications Officer",
+                        "company": "Fortune 700 International Company",
+                        "location": "Global (USA, Germany, India, China)",
+                        "start_date": "2001-08",
+                        "end_date": "2003-04",
+                        "employment_type": "Full-time",
+                        "achievements": [
+                            "Led communications for 14,000+ employees across 64 global markets",
+                            "Served as primary media contact for international press",
+                            "Wrote speeches for C-suite executives at global town halls",
+                            "Managed corporate philanthropy program distributing $5M annually"
+                        ]
+                    },
+                    {
+                        "title": "Vice President",
+                        "company": "Communications Agency",
+                        "location": "USA",
+                        "start_date": "1998-02",
+                        "end_date": "2001-08",
+                        "employment_type": "Full-time",
+                        "achievements": [
+                            "Managed blue-chip clients including Firestone and HealthSouth",
+                            "Developed crisis communication for Firestone Explorer tire recall",
+                            "Placed Peggy Fleming on ABC's Good Morning America for Os-Cal campaign",
+                            "Grew agency revenue by 40% within first year"
+                        ]
+                    },
+                    {
+                        "title": "Manager",
+                        "company": "Fortune 500 Natural-Gas Utility",
+                        "location": "Pennsylvania, USA",
+                        "start_date": "1996-12",
+                        "end_date": "1998-02",
+                        "employment_type": "Full-time",
+                        "achievements": [
+                            "Led external communications for 350,000+ customers",
+                            "Recognized by Public Utility Commission as state model",
+                            "Developed communications for energy deregulation initiative",
+                            "Created retail shopping program for natural gas customers"
+                        ]
+                    }
+                ],
+                "education": [{
+                        "degree": "Bachelor of Arts",
+                        "field_of_study": "Communications",
+                        "institution": "Pennsylvania State University",
+                        "location": "Pennsylvania, USA",
+                        "year": "1977",
+                        "activities": "Reporter and Editor of Daily Collegian"
+                    },
+                    {
+                        "degree": "Master of Fine Arts",
+                        "field_of_study": "Creative Non-Fiction",
+                        "institution": "Spalding University",
+                        "location": "Kentucky, USA",
+                        "year": "2004"
+                    }
+                ],
+                "certifications": [{
+                        "name": "Crisis Communication Expert",
+                        "issuing_body": "Institute for Crisis Management",
+                        "year": "2005"
+                    },
+                    {
+                        "name": "Government Communications Professional",
+                        "issuing_body": "National Association of Government Communicators",
+                        "year": "2010"
+                    }
+                ],
+                "skills": {
+                    "technical": [
+                        "Adobe Creative Suite",
+                        "Microsoft Office",
+                        "WordPress",
+                        "Social Media Management Tools",
+                        "Media Monitoring Software",
+                        "AP Style",
+                        "SEO/SEM",
+                        "Google Analytics"
+                    ],
+                    "soft": [
+                        "Strategic Thinking",
+                        "Crisis Management",
+                        "Leadership",
+                        "Mentoring",
+                        "Negotiation",
+                        "Public Speaking",
+                        "Writing",
+                        "Editing"
+                    ],
+                    "languages": [{
+                        "language": "English",
+                        "proficiency": "Native",
+                        "cefr_level": "C2"
+                    }]
+                },
+                "professional_memberships": [{
+                        "organization": "Public Relations Society of America",
+                        "role": "Senior Member",
+                        "years": "2000-present"
+                    },
+                    {
+                        "organization": "Society of Professional Journalists",
+                        "role": "Member",
+                        "years": "1985-present"
+                    }
+                ],
+                "awards": [{
+                        "name": "Pennsylvania Keystone Press Award",
+                        "placement": "First Place",
+                        "year": "1990"
+                    },
+                    {
+                        "name": "Golden Quill Award",
+                        "placement": "First Place",
+                        "year": "1989"
+                    },
+                    {
+                        "name": "Associated Press Sports Editors",
+                        "placement": "Fifth Place National",
+                        "year": "1986"
+                    },
+                    {
+                        "name": "Associated Press Managing Editors",
+                        "placement": "First Place",
+                        "year": "1979"
+                    },
+                    {
+                        "name": "PA Business Writer of the Year",
+                        "issuing_body": "Pennsylvania Society of Professional Journalists",
+                        "year": "2005"
+                    }
+                ],
+                "publications": [{
+                    "title": "Crisis Communication in the Digital Age",
+                    "publisher": "PR Journal",
+                    "year": "2018"
+                }],
+                "references": [{
+                    "name": "Honorable Eugene DePasquale",
+                    "title": "Former Pennsylvania Auditor General",
+                    "email": "e.depasquale@email.com",
+                    "relationship": "Former Client"
+                }]
+            },
+            {
+                "id": "CV-003",
+                "version": "1.0",
+                "last_updated": "2024-01-12",
+                "compliance_standards": ["UAE", "EU", "USA"],
+                "personal_details": {
+                    "first_name": "Elena",
+                    "last_name": "Rodriguez",
+                    "email": "elena.rodriguez@email.com",
+                    "phone": "+44 20 1234 5678",
+                    "address": {
+                        "street": "45 Kensington High Street",
+                        "city": "London",
+                        "postal_code": "W8 5NP",
+                        "country": "United Kingdom"
+                    },
+                    "linkedin": "linkedin.com/in/elenarodriguez",
+                    "nationality": "Spanish",
+                    "date_of_birth": "1988-09-10",
+                    "driving_license": "UK, EU",
+                    "work_authorization": "UK, EU, USA"
+                },
+                "professional_summary": "Public relations and communications specialist adept at media relations, special events coordination, issues management, and community relations. Bilingual professional with extensive experience across European and US markets. Award-winning journalist turned PR strategist with 15+ years of experience. Specializes in entertainment, medical, and tech industry communications.",
+                "core_competencies": [
+                    "Media Relations",
+                    "Event Planning",
+                    "Crisis Management",
+                    "Content Creation",
+                    "Social Media Strategy",
+                    "Community Relations",
+                    "Diversity Training",
+                    "Strategic Development"
+                ],
+                "work_experience": [{
+                        "title": "Public Relations Specialist",
+                        "company": "PR Agency",
+                        "location": "London, UK",
+                        "start_date": "2019-09",
+                        "end_date": "Present",
+                        "employment_type": "Full-time",
+                        "achievements": [
+                            "Generate and implement media pitches for Entertainment, Medical, Fitness, and Tech clients",
+                            "Build relationships with 200+ media contacts weekly",
+                            "Develop campaigns reaching 5M+ customers annually",
+                            "Coordinate press releases for 50+ clients simultaneously",
+                            "Crisis management for 10+ high-profile client situations"
+                        ]
+                    },
+                    {
+                        "title": "Contributing Writer and On-Camera Host",
+                        "company": "PressPassA.com",
+                        "location": "Remote, UK/USA",
+                        "start_date": "2011-08",
+                        "end_date": "Present",
+                        "employment_type": "Contract",
+                        "achievements": [
+                            "Lead camera host for major entertainment news platform",
+                            "Interviewed 100+ high-profile celebrities and sports figures",
+                            "Wrote 500+ investigative and human-interest stories",
+                            "Grew platform viewership by 300% within 2 years",
+                            "Consistently meet tight deadlines with 100% accuracy"
+                        ]
+                    },
+                    {
+                        "title": "Director of Operations",
+                        "company": "Manufacturing Company",
+                        "location": "Multiple Locations, USA",
+                        "start_date": "2003-08",
+                        "end_date": "2018-08",
+                        "employment_type": "Full-time",
+                        "achievements": [
+                            "Supervised 200+ stamping and assembly employees across multiple locations",
+                            "Reduced project downtime by 25% through process improvement",
+                            "Achieved FDA and OSHA certification with zero violations",
+                            "Grew business revenue by 40% through strategic sales initiatives",
+                            "Boosted team productivity by 30% through incentive programs"
+                        ]
+                    }
+                ],
+                "education": [{
+                    "degree": "Bachelor of Arts",
+                    "field_of_study": "Communications",
+                    "specialization": "Speech/Communications and Theater",
+                    "minor": "Biology",
+                    "institution": "Fayetteville State University",
+                    "location": "North Carolina, USA",
+                    "year": "2002",
+                    "gpa": "3.8",
+                    "honors": "Summa Cum Laude"
+                }],
+                "certifications": [{
+                        "name": "Diversity and Inclusion Trainer",
+                        "issuing_body": "Diversity Council",
+                        "year": "2020"
+                    },
+                    {
+                        "name": "Crisis Communication Specialist",
+                        "issuing_body": "PRSA",
+                        "year": "2021"
+                    }
+                ],
+                "skills": {
+                    "technical": [
+                        "Adobe Creative Suite",
+                        "Final Cut Pro",
+                        "Microsoft Office",
+                        "Google Suite",
+                        "Hootsuite",
+                        "Buffer",
+                        "Trello",
+                        "Asana"
+                    ],
+                    "soft": [
+                        "Creative Vision",
+                        "Leadership",
+                        "Event Planning",
+                        "Diversity Training",
+                        "Strategic Thinking",
+                        "Deadline Management"
+                    ],
+                    "languages": [{
+                            "language": "English",
+                            "proficiency": "Native",
+                            "cefr_level": "C2"
+                        },
+                        {
+                            "language": "Spanish",
+                            "proficiency": "Native",
+                            "cefr_level": "C2"
+                        },
+                        {
+                            "language": "French",
+                            "proficiency": "Professional Working",
+                            "cefr_level": "B1"
+                        }
+                    ]
+                },
+                "professional_memberships": [{
+                        "organization": "Alpha Kappa Alpha Sorority",
+                        "role": "Life Member",
+                        "years": "2002-present"
+                    },
+                    {
+                        "organization": "Alpha Psi Omega Honor Fraternity",
+                        "role": "Member",
+                        "years": "2001-present"
+                    },
+                    {
+                        "organization": "Chartered Institute of Public Relations",
+                        "role": "Member",
+                        "years": "2019-present"
+                    }
+                ],
+                "volunteer_experience": [{
+                    "role": "Mentor",
+                    "organization": "Youth Mentorship Program",
+                    "years": "2015-present",
+                    "hours_per_week": 3
+                }],
+                "references": [{
+                    "name": "Sarah Thompson",
+                    "title": "Editor-in-Chief",
+                    "company": "PressPassA.com",
+                    "email": "s.thompson@email.com",
+                    "relationship": "Current Supervisor"
+                }]
+            },
+            {
+                "id": "CV-004",
+                "version": "1.0",
+                "last_updated": "2024-01-08",
+                "compliance_standards": ["UAE", "EU", "USA"],
+                "personal_details": {
+                    "first_name": "Aisha",
+                    "last_name": "Al-Mansouri",
+                    "email": "aisha.almansouri@email.com",
+                    "phone": "+971 55 987 6543",
+                    "address": {
+                        "street": "Al Reem Island",
+                        "city": "Abu Dhabi",
+                        "postal_code": "12345",
+                        "country": "UAE"
+                    },
+                    "linkedin": "linkedin.com/in/aishaalmansouri",
+                    "nationality": "UAE",
+                    "date_of_birth": "1990-12-01",
+                    "driving_license": "UAE",
+                    "marital_status": "Single"
+                },
+                "professional_summary": "Public Relations professional knowledgeable about planning, creating, and implementing campaign strategies and media relations placement. Background in journalism with expertise in Public Relations. Forward-thinking professional following industry-focused strategies for finding and managing clients. Skilled leader with excellent decision-making abilities. Recognized as focused, hardworking, and successful professional with demonstrated history in campaign development and execution.",
+                "core_competencies": [
+                    "Public Relations Strategy",
+                    "Project Management",
+                    "Marketing Communications",
+                    "Media Relations",
+                    "Event Planning",
+                    "Budget Management",
+                    "Content Creation",
+                    "Crisis Communication"
+                ],
+                "work_experience": [{
+                        "title": "Public Relations Officer",
+                        "company": "SOHO Global Health",
+                        "location": "Jakarta, Indonesia",
+                        "start_date": "2014-10",
+                        "end_date": "Present",
+                        "employment_type": "Full-time",
+                        "achievements": [
+                            "Increased brand recognition by 150% as leading herbal pharmacy company",
+                            "Enhanced company presence in national press, supporting sales and marketing teams",
+                            "Planned and organized 25+ corporate media and special events annually",
+                            "Managed editorial content for internal newsletter reaching 5,000+ employees",
+                            "Reduced PR costs by 20% while increasing media coverage by 300%",
+                            "Developed groundbreaking PR campaign recognized as most effective in company history"
+                        ]
+                    },
+                    {
+                        "title": "Public Relations Manager",
+                        "company": "PR Agency",
+                        "location": "Jakarta, Indonesia",
+                        "start_date": "2013-05",
+                        "end_date": "2014-09",
+                        "employment_type": "Full-time",
+                        "achievements": [
+                            "Managed 15+ client accounts simultaneously",
+                            "Expanded client product recognition in national press",
+                            "Coordinated 30+ special events including product launches",
+                            "Coached client representatives on effective communication strategies"
+                        ]
+                    },
+                    {
+                        "title": "News Reporter",
+                        "company": "National News Network",
+                        "location": "Jakarta, Indonesia",
+                        "start_date": "2009-05",
+                        "end_date": "2013-05",
+                        "employment_type": "Full-time",
+                        "achievements": [
+                            "Covered Indonesian Presidential news as Political and Presidential Journalist",
+                            "Reported front-page breaking news stories with real-time updates",
+                            "Maintained 100% accuracy across 1,000+ published stories",
+                            "Developed network of 50+ political and industry contacts"
+                        ]
+                    }
+                ],
+                "education": [{
+                        "degree": "Bachelor's Degree",
+                        "field_of_study": "Broadcast Journalism",
+                        "institution": "Kwik Kian Gie School of Business",
+                        "location": "Jakarta, Indonesia",
+                        "year": "2013"
+                    },
+                    {
+                        "degree": "High School Diploma",
+                        "field_of_study": "Social Science",
+                        "institution": "SMUK 7 BPK Penabur Senior High School",
+                        "location": "Jakarta, Indonesia",
+                        "year": "2004"
+                    }
+                ],
+                "certifications": [{
+                        "name": "Digital PR Certification",
+                        "issuing_body": "PR Council Indonesia",
+                        "year": "2016"
+                    },
+                    {
+                        "name": "Crisis Communication Workshop",
+                        "issuing_body": "International PR Association",
+                        "year": "2018"
+                    }
+                ],
+                "skills": {
+                    "technical": [
+                        "Script Writing",
+                        "News Reporting",
+                        "Video Shooting",
+                        "Video Editing",
+                        "Video Production",
+                        "Adobe Premiere",
+                        "Final Cut Pro",
+                        "Microsoft Office"
+                    ],
+                    "soft": [
+                        "Strategic Planning",
+                        "Negotiation",
+                        "Leadership",
+                        "Time Management",
+                        "Problem Solving",
+                        "Adaptability"
+                    ],
+                    "languages": [{
+                            "language": "Arabic",
+                            "proficiency": "Native",
+                            "cefr_level": "C2"
+                        },
+                        {
+                            "language": "English",
+                            "proficiency": "Professional Working",
+                            "cefr_level": "C1"
+                        },
+                        {
+                            "language": "Indonesian",
+                            "proficiency": "Native",
+                            "cefr_level": "C2"
+                        }
+                    ]
+                },
+                "professional_memberships": [{
+                    "organization": "Indonesian Public Relations Association",
+                    "role": "Professional Member",
+                    "years": "2014-present"
+                }],
+                "projects": [{
+                        "name": "SOHO #BetterU",
+                        "description": "Health education event supporting better public health",
+                        "date": "2015-05-27"
+                    },
+                    {
+                        "name": "Early Investments for Better Elderly Days",
+                        "description": "Campaign commemorating National Elderly Day",
+                        "date": "2015-03-05"
+                    },
+                    {
+                        "name": "Be Aware of Deafness due to Mid-Ear Inflammation",
+                        "description": "Campaign for International Ear Care Day",
+                        "date": "2015-03-03"
+                    },
+                    {
+                        "name": "Reading Culture Socialization",
+                        "description": "Official announcement of Reading Corner at Himata Foundation",
+                        "date": "2015"
+                    }
+                ],
+                "references": [{
+                    "name": "Dr. Budi Setiawan",
+                    "title": "CEO",
+                    "company": "SOHO Global Health",
+                    "email": "b.setiawan@email.com",
+                    "relationship": "Direct Supervisor"
+                }]
+            },
+            {
+                "id": "CV-005",
+                "version": "1.0",
+                "last_updated": "2024-01-05",
+                "compliance_standards": ["UAE", "EU", "USA"],
+                "personal_details": {
+                    "first_name": "David",
+                    "last_name": "Williams",
+                    "email": "david.williams@email.com",
+                    "phone": "+1 (212) 555-7890",
+                    "address": {
+                        "street": "500 Fifth Avenue",
+                        "city": "New York",
+                        "state": "NY",
+                        "postal_code": "10110",
+                        "country": "USA"
+                    },
+                    "linkedin": "linkedin.com/in/davidwilliams",
+                    "nationality": "American",
+                    "date_of_birth": "1975-05-18"
+                },
+                "professional_summary": "Detail-oriented and versatile government, commercial, and non-profit billing professional with proven ability to efficiently manage multiple assignments while meeting strict deadlines. Excels at cultivating and managing internal and external client relationships. Over 15 years of experience in billing operations, client accounting, and customer service.",
+                "core_competencies": [
+                    "Billing Operations",
+                    "Client Relations",
+                    "Process Improvement",
+                    "Team Training",
+                    "Financial Analysis",
+                    "Compliance",
+                    "Customer Service",
+                    "Project Management"
+                ],
+                "work_experience": [{
+                        "title": "Billing Services Associate",
+                        "company": "American Chemical Society",
+                        "location": "Washington, DC, USA",
+                        "start_date": "2012-09",
+                        "end_date": "Present",
+                        "employment_type": "Full-time",
+                        "achievements": [
+                            "Oversee all billing operations including invoice generation and payment processing",
+                            "Serve as subject matter expert for netFORUM, LaserFiche, and MSG Ad Manager",
+                            "Improved team completion rate from 84% to 94% exceeding 75% baseline",
+                            "Streamlined operations through Standard Operating Procedures documentation",
+                            "Awarded for supporting transition of ACS AuthorChoice billing project",
+                            "Introduced Records Retention service reducing offsite storage fees by 50%"
+                        ]
+                    },
+                    {
+                        "title": "Client Accounting Coordinator",
+                        "company": "Government Contractor",
+                        "location": "Virginia, USA",
+                        "start_date": "2007-07",
+                        "end_date": "2012-07",
+                        "employment_type": "Full-time",
+                        "achievements": [
+                            "Processed 70+ government and commercial invoices monthly",
+                            "Handled T&M, CPFF, FFP, and Cost Reimbursement contracts",
+                            "Received Employee of the Month award (June 2011)",
+                            "Consistently prepared final invoices within same day of approval",
+                            "Acted as liaison between Project Managers and Accounts Payable/Receivable"
+                        ]
+                    },
+                    {
+                        "title": "Internet Billing Coordinator",
+                        "company": "Telecommunications Company",
+                        "location": "Maryland, USA",
+                        "start_date": "2005-05",
+                        "end_date": "2007-07",
+                        "employment_type": "Full-time",
+                        "achievements": [
+                            "Managed 45 federal government agencies' internet billing",
+                            "Received 2006 Excellence Award nominated by team members",
+                            "Conducted training sessions for 100+ employees",
+                            "Recovered $500,000 in lost revenue through audit processes"
+                        ]
+                    },
+                    {
+                        "title": "Senior Customer Service Representative",
+                        "company": "Customer Service Center",
+                        "location": "Maryland, USA",
+                        "start_date": "2003-12",
+                        "end_date": "2005-04",
+                        "employment_type": "Full-time",
+                        "achievements": [
+                            "Resolved 95% of customer issues on first call",
+                            "Trained 20 new employees on product knowledge and quality call flow",
+                            "Monitored live calls for quality assurance for 50+ team members",
+                            "Served as acting manager handling escalated concerns"
+                        ]
+                    }
+                ],
+                "education": [{
+                    "degree": "Bachelor of Business Administration",
+                    "field_of_study": "Business Administration",
+                    "institution": "Temple University",
+                    "location": "Pennsylvania, USA",
+                    "year": "2003"
+                }],
+                "certifications": [{
+                    "name": "Certified Billing Professional",
+                    "issuing_body": "American Billing Association",
+                    "year": "2015"
+                }],
+                "skills": {
+                    "technical": [
+                        "Microsoft Office Suite",
+                        "SharePoint",
+                        "PeopleSoft",
+                        "netFORUM",
+                        "LaserFiche",
+                        "MSG Ad Manager",
+                        "Elan Web",
+                        "Maconomy X"
+                    ],
+                    "soft": [
+                        "Attention to Detail",
+                        "Time Management",
+                        "Customer Service",
+                        "Problem Solving",
+                        "Team Training",
+                        "Communication"
+                    ],
+                    "languages": [{
+                        "language": "English",
+                        "proficiency": "Native",
+                        "cefr_level": "C2"
+                    }]
+                },
+                "references": [{
+                    "name": "Jennifer Martinez",
+                    "title": "OSS Manager",
+                    "company": "American Chemical Society",
+                    "email": "j.martinez@email.com",
+                    "relationship": "Direct Supervisor"
+                }]
+            },
+            {
+                "id": "CV-006",
+                "version": "1.0",
+                "last_updated": "2024-01-14",
+                "compliance_standards": ["UAE", "EU", "USA"],
+                "personal_details": {
+                    "first_name": "Sofia",
+                    "last_name": "Martins",
+                    "email": "sofia.martins@email.com",
+                    "phone": "+49 30 12345678",
+                    "address": {
+                        "street": "Unter den Linden 10",
+                        "city": "Berlin",
+                        "postal_code": "10117",
+                        "country": "Germany"
+                    },
+                    "linkedin": "linkedin.com/in/sofiamartins",
+                    "nationality": "Portuguese",
+                    "date_of_birth": "1987-07-25",
+                    "driving_license": "EU",
+                    "work_authorization": "EU, USA"
+                },
+                "professional_summary": "Dedicated, creative, and highly-motivated communications and marketing professional with exceptional interpersonal skills and over seven years of experience. Adapts well to different environments and has the ability to learn new systems quickly. Areas of expertise include Web and print content development, social media strategy, brand management, and project management.",
+                "core_competencies": [
+                    "Content Development",
+                    "Social Media Strategy",
+                    "Brand Management",
+                    "Project Management",
+                    "SEO/SEM",
+                    "Analytics",
+                    "Email Marketing",
+                    "Community Outreach"
+                ],
+                "work_experience": [{
+                            "title": "Social Media & Communications Manager",
+                            "company": "MAM Squared, LLC",
+                            "location": "Berlin, Germany (Remote)",
+                            "start_date": "2011-07",
+                            "end_date": "Present",
+                            "employment_type": "Full-time",
+                            "achievements": [
+                                "Assess communications needs for 20+ non-profit organizations",
+                                "Formulate tailored communications plans and social media strategies",
+                                "Increase client engagement by 150% through strategic campaigns",
+                                "Manage live social media posting for major client events"
+                            ]
+                        },
+                        {
+                            "title": "Community Outreach & Involvement Manager",
+                            "company": "Technical Association",
+                            "location": "Washington, DC, USA",
+                            "start_date": "2012-09",
+                            "end_date": "2015-01",
+                            "employment_type": "Full-time",
+                            "achievements": [
+                                "Managed social media for 43 technical groups across platforms",
+                                "Increased engagement by 200% through targeted campaigns",
+                                "Managed $500,000 budget for special events and activities",
+                                "Served as liaison between membership and executive leaders"
+                            ]
+                        },
+                        {
+                            "title": "Marketing Coordinator",
+                            "company": "Non-Profit Organization",
+                            "location": "Maryland, USA",
+                            "start_date": "2008-10",
+                            "end_date": "2012-09",
+                            "employment_type": "Full-time",
+                            "achievements": [
+                                "Implemented company website redesign twice",
+                                "Drove web traffic growth of 300% using Google Analytics",
+                                "Managed monthly newsletters for 10,000+ subscribers",
+                                "Coordinated staff presence at 50+ internal and external events"
+                            ]
+                        },
+                        {
+                            "title": "Youth Department Assistant",
+                            "company": "National Camp Organization",
+                            "location": "Maryland

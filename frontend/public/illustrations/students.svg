@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" role="img" aria-label="Students in caps reviewing a ranked shortlist">
+  <title>Students reviewing a ranked shortlist</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366f1" />
+      <stop offset=".5" stop-color="#a855f7" />
+      <stop offset="1" stop-color="#ec4899" />
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".55" />
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fde3c8" />
+      <stop offset="1" stop-color="#f4c39a" />
+    </linearGradient>
+    <linearGradient id="shirtA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22d3ee" />
+      <stop offset="1" stop-color="#0ea5e9" />
+    </linearGradient>
+    <linearGradient id="shirtB" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" />
+      <stop offset="1" stop-color="#e6ebff" />
+    </linearGradient>
+    <linearGradient id="shirtC" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f472b6" />
+      <stop offset="1" stop-color="#a855f7" />
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6366f1" />
+      <stop offset="1" stop-color="#ec4899" />
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#312e81" flood-opacity=".28" />
+    </filter>
+  </defs>
+
+  <rect width="640" height="520" rx="30" fill="url(#sky)" opacity=".12" />
+  <circle cx="320" cy="250" r="196" fill="url(#glow)" />
+
+  <g opacity=".5">
+    <circle cx="72" cy="96" r="5" fill="#6366f1" />
+    <circle cx="120" cy="58" r="3" fill="#a855f7" />
+    <circle cx="580" cy="80" r="6" fill="#ec4899" opacity=".7" />
+    <circle cx="612" cy="300" r="4" fill="#22d3ee" />
+    <circle cx="40" cy="300" r="4" fill="#a855f7" opacity=".6" />
+  </g>
+
+  <!-- Floating score card -->
+  <g filter="url(#soft)">
+    <rect x="34" y="104" width="164" height="86" rx="16" fill="#ffffff" opacity=".92" />
+    <rect x="50" y="122" width="52" height="8" rx="4" fill="#cbd5e1" />
+    <rect x="50" y="142" width="132" height="9" rx="4.5" fill="#e2e8f0" />
+    <rect x="50" y="142" width="108" height="9" rx="4.5" fill="url(#bar)" />
+    <rect x="50" y="160" width="96" height="9" rx="4.5" fill="#e2e8f0" />
+    <rect x="50" y="160" width="64" height="9" rx="4.5" fill="#22d3ee" />
+  </g>
+
+  <!-- Floating verdict badge -->
+  <g filter="url(#soft)">
+    <rect x="452" y="146" width="150" height="74" rx="16" fill="#ffffff" opacity=".92" />
+    <circle cx="480" cy="183" r="15" fill="#10b981" opacity=".18" />
+    <path d="M473 183l5 6 10-12" fill="none" stroke="#10b981" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" />
+    <rect x="504" y="172" width="76" height="8" rx="4" fill="#cbd5e1" />
+    <rect x="504" y="190" width="52" height="8" rx="4" fill="#e2e8f0" />
+  </g>
+
+  <!-- Left student -->
+  <g>
+    <path d="M76 384q0-92 74-92t74 92z" fill="url(#shirtA)" />
+    <circle cx="150" cy="252" r="31" fill="url(#skin)" />
+    <path d="M150 216l44 15-44 15-44-15z" fill="#1e1b4b" />
+    <rect x="127" y="231" width="46" height="11" rx="5" fill="#312e81" />
+    <path d="M194 231l5 32" stroke="#312e81" stroke-width="3" stroke-linecap="round" />
+    <circle cx="200" cy="266" r="5" fill="#fbbf24" />
+  </g>
+
+  <!-- Right student -->
+  <g>
+    <path d="M420 384q0-84 70-84t70 84z" fill="url(#shirtC)" />
+    <circle cx="490" cy="264" r="29" fill="url(#skin)" />
+    <path d="M490 230l40 14-40 14-40-14z" fill="#4c1d95" />
+    <rect x="469" y="244" width="42" height="10" rx="5" fill="#5b21b6" />
+    <path d="M530 244l4 28" stroke="#5b21b6" stroke-width="3" stroke-linecap="round" />
+    <circle cx="535" cy="276" r="5" fill="#fbbf24" />
+  </g>
+
+  <!-- Desk -->
+  <rect x="40" y="376" width="560" height="16" rx="8" fill="#ffffff" opacity=".9" />
+  <rect x="72" y="392" width="12" height="46" rx="6" fill="#ffffff" opacity=".65" />
+  <rect x="556" y="392" width="12" height="46" rx="6" fill="#ffffff" opacity=".65" />
+
+  <!-- Centre student + laptop -->
+  <g>
+    <path d="M232 404q0-108 88-108t88 108z" fill="url(#shirtB)" />
+    <circle cx="320" cy="232" r="37" fill="url(#skin)" />
+    <path d="M320 188l52 18-52 18-52-18z" fill="#111827" />
+    <rect x="293" y="206" width="54" height="13" rx="6" fill="#1f2937" />
+    <path d="M372 206l6 36" stroke="#1f2937" stroke-width="3.4" stroke-linecap="round" />
+    <circle cx="379" cy="246" r="6" fill="#fbbf24" />
+  </g>
+  <g filter="url(#soft)">
+    <rect x="268" y="316" width="104" height="62" rx="10" fill="#1f2937" />
+    <rect x="278" y="326" width="84" height="42" rx="6" fill="url(#bar)" opacity=".85" />
+    <path d="M256 386h128l-8 10H264z" fill="#111827" />
+  </g>
+
+  <!-- Book on the desk -->
+  <g transform="rotate(-8 138 372)">
+    <rect x="98" y="352" width="80" height="20" rx="6" fill="#a855f7" />
+    <rect x="98" y="352" width="80" height="6" rx="3" fill="#c084fc" />
+  </g>
+</svg>

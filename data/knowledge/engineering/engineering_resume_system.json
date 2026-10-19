@@ -1,0 +1,1338 @@
+{
+    "project_metadata": {
+        "project_name": "AI-Powered Resume Detection & Parsing System for Engineering Recruitment",
+        "version": "3.0.0",
+        "environment": "production",
+        "department_focus": "Engineering (All Disciplines)",
+        "created_at": "2026-04-15T10:00:00Z",
+        "last_modified": "2026-04-15T14:30:00Z",
+        "maintainers": [{
+                "name": "Dr. Sarah Chen",
+                "role": "Lead ML Engineer",
+                "email": "sarah.chen@company.com"
+            },
+            {
+                "name": "Michael Torres",
+                "role": "Backend Lead",
+                "email": "michael.torres@company.com"
+            }
+        ],
+        "repository": "https://github.com/company/resume-detection-engine",
+        "license": "MIT",
+        "documentation_url": "https://docs.company.com/resume-detection"
+    },
+
+    "system_configuration": {
+        "api_version": "v2",
+        "max_file_size_mb": 10,
+        "supported_formats": ["pdf", "docx", "txt", "jpg", "png"],
+        "batch_processing": {
+            "enabled": true,
+            "max_batch_size": 100,
+            "concurrent_workers": 4,
+            "queue_timeout_seconds": 300
+        },
+        "rate_limiting": {
+            "requests_per_minute": 60,
+            "burst_limit": 10
+        },
+        "storage": {
+            "raw_resumes_path": "/data/raw/",
+            "parsed_resumes_path": "/data/parsed/",
+            "failed_resumes_path": "/data/failed/",
+            "backup_path": "/backup/resumes/",
+            "retention_days": 90
+        },
+        "security": {
+            "encryption_at_rest": true,
+            "pii_redaction": true,
+            "access_logging": true,
+            "allowed_ips": ["192.168.1.0/24", "10.0.0.0/8"]
+        }
+    },
+
+    "resume_schema": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "required": ["resume_id", "personal_info", "detection_metadata"],
+        "properties": {
+            "resume_id": {
+                "type": "string",
+                "pattern": "^RES_[A-Z]{3}_[0-9]{6}$",
+                "example": "RES_MEC_123456"
+            },
+            "file_info": {
+                "type": "object",
+                "properties": {
+                    "original_filename": { "type": "string" },
+                    "stored_filename": { "type": "string" },
+                    "file_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+                    "file_size_bytes": { "type": "integer", "minimum": 0 },
+                    "mime_type": { "type": "string" },
+                    "upload_timestamp": { "type": "string", "format": "date-time" },
+                    "source": {
+                        "type": "string",
+                        "enum": ["email", "web_upload", "ats_integration", "api", "bulk_import"]
+                    }
+                }
+            },
+            "personal_info": {
+                "type": "object",
+                "properties": {
+                    "full_name": {
+                        "type": "object",
+                        "properties": {
+                            "first_name": { "type": "string" },
+                            "last_name": { "type": "string" },
+                            "middle_name": { "type": "string" },
+                            "preferred_name": { "type": "string" },
+                            "suffix": { "type": "string", "enum": ["Jr.", "Sr.", "II", "III", "PhD", "PE"] }
+                        }
+                    },
+                    "contact": {
+                        "type": "object",
+                        "properties": {
+                            "email_primary": { "type": "string", "format": "email" },
+                            "email_secondary": { "type": "string", "format": "email" },
+                            "phone_numbers": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "number": { "type": "string" },
+                                        "type": { "type": "string", "enum": ["mobile", "work", "home"] },
+                                        "is_primary": { "type": "boolean" }
+                                    }
+                                }
+                            },
+                            "address": {
+                                "type": "object",
+                                "properties": {
+                                    "street": { "type": "string" },
+                                    "city": { "type": "string" },
+                                    "state": { "type": "string" },
+                                    "postal_code": { "type": "string" },
+                                    "country": { "type": "string" },
+                                    "is_international": { "type": "boolean" }
+                                }
+                            }
+                        }
+                    },
+                    "social_profiles": {
+                        "type": "object",
+                        "properties": {
+                            "linkedin": { "type": "string", "format": "uri" },
+                            "github": { "type": "string", "format": "uri" },
+                            "stackoverflow": { "type": "string", "format": "uri" },
+                            "kaggle": { "type": "string", "format": "uri" },
+                            "researchgate": { "type": "string", "format": "uri" },
+                            "google_scholar": { "type": "string", "format": "uri" },
+                            "personal_website": { "type": "string", "format": "uri" }
+                        }
+                    },
+                    "demographics": {
+                        "type": "object",
+                        "properties": {
+                            "date_of_birth": { "type": "string", "format": "date" },
+                            "gender": { "type": "string", "enum": ["male", "female", "non-binary", "prefer_not_to_say"] },
+                            "nationality": { "type": "string" },
+                            "work_authorization": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "country": { "type": "string" },
+                                        "visa_type": { "type": "string" },
+                                        "expiry_date": { "type": "string", "format": "date" },
+                                        "requires_sponsorship": { "type": "boolean" }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "professional_summary": {
+                "type": "object",
+                "properties": {
+                    "extracted_summary": { "type": "string", "maxLength": 1000 },
+                    "generated_summary": { "type": "string", "maxLength": 500 },
+                    "keywords_extracted": { "type": "array", "items": { "type": "string" } },
+                    "tone_analysis": {
+                        "type": "object",
+                        "properties": {
+                            "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+                            "sentiment": { "type": "string", "enum": ["positive", "neutral", "negative"] },
+                            "formality_score": { "type": "number", "minimum": 0, "maximum": 1 }
+                        }
+                    }
+                }
+            },
+            "engineering_details": {
+                "type": "object",
+                "properties": {
+                    "primary_discipline": {
+                        "type": "string",
+                        "enum": [
+                            "Mechanical Engineering", "Electrical Engineering", "Civil Engineering",
+                            "Chemical Engineering", "Software Engineering", "Aerospace Engineering",
+                            "Biomedical Engineering", "Environmental Engineering", "Industrial Engineering",
+                            "Materials Engineering", "Petroleum Engineering", "Nuclear Engineering"
+                        ]
+                    },
+                    "secondary_disciplines": { "type": "array", "items": { "type": "string" } },
+                    "years_of_experience_total": { "type": "number", "minimum": 0, "maximum": 50 },
+                    "years_of_experience_relevant": { "type": "number", "minimum": 0, "maximum": 50 },
+                    "career_level": {
+                        "type": "string",
+                        "enum": ["Entry", "Junior", "Mid-Level", "Senior", "Lead", "Manager", "Director", "Executive"]
+                    },
+                    "management_experience_years": { "type": "number", "minimum": 0 },
+                    "team_sizes_managed": { "type": "array", "items": { "type": "integer" } },
+                    "budgets_managed_usd": { "type": "array", "items": { "type": "number" } },
+                    "remote_readiness": {
+                        "type": "string",
+                        "enum": ["fully_remote", "hybrid", "on_site_only", "flexible"]
+                    },
+                    "travel_willingness": {
+                        "type": "string",
+                        "enum": ["none", "occasional", "frequent", "unlimited"]
+                    }
+                }
+            },
+            "work_experience": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "experience_id": { "type": "string" },
+                        "job_title": { "type": "string" },
+                        "company": {
+                            "type": "object",
+                            "properties": {
+                                "name": { "type": "string" },
+                                "industry": { "type": "string" },
+                                "size": { "type": "string", "enum": ["startup", "smb", "mid_market", "enterprise", "fortune_500"] },
+                                "website": { "type": "string", "format": "uri" },
+                                "headquarters_location": { "type": "string" }
+                            }
+                        },
+                        "location": {
+                            "type": "object",
+                            "properties": {
+                                "city": { "type": "string" },
+                                "state": { "type": "string" },
+                                "country": { "type": "string" },
+                                "is_remote": { "type": "boolean" }
+                            }
+                        },
+                        "dates": {
+                            "type": "object",
+                            "properties": {
+                                "start_date": { "type": "string", "format": "date" },
+                                "end_date": { "type": "string", "format": "date" },
+                                "is_current": { "type": "boolean" },
+                                "duration_months": { "type": "integer" }
+                            }
+                        },
+                        "responsibilities": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "description": { "type": "string" },
+                                    "keywords": { "type": "array", "items": { "type": "string" } },
+                                    "impact_metrics": {
+                                        "type": "object",
+                                        "properties": {
+                                            "metric_name": { "type": "string" },
+                                            "value": { "type": "string" },
+                                            "improvement_percentage": { "type": "number" }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "achievements": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "title": { "type": "string" },
+                                    "description": { "type": "string" },
+                                    "recognition_type": { "type": "string" },
+                                    "date_achieved": { "type": "string", "format": "date" }
+                                }
+                            }
+                        },
+                        "technologies_used": { "type": "array", "items": { "type": "string" } },
+                        "tools_used": { "type": "array", "items": { "type": "string" } },
+                        "methodologies": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": ["Agile", "Scrum", "Waterfall", "Lean", "Six Sigma", "Kanban", "DevOps"]
+                            }
+                        }
+                    }
+                }
+            },
+            "education": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "education_id": { "type": "string" },
+                        "degree_type": {
+                            "type": "string",
+                            "enum": [
+                                "Associate Degree", "Bachelor of Engineering", "Bachelor of Science",
+                                "Master of Engineering", "Master of Science", "PhD", "Postdoctoral",
+                                "Diploma", "Certificate", "Professional Degree"
+                            ]
+                        },
+                        "degree_name": { "type": "string" },
+                        "major": { "type": "string" },
+                        "minor": { "type": "string" },
+                        "institution": {
+                            "type": "object",
+                            "properties": {
+                                "name": { "type": "string" },
+                                "location": { "type": "string" },
+                                "ranking_national": { "type": "integer" },
+                                "ranking_global": { "type": "integer" },
+                                "accreditation": { "type": "string", "enum": ["ABET", "EQUIS", "AACSB", "None"] }
+                            }
+                        },
+                        "dates": {
+                            "type": "object",
+                            "properties": {
+                                "start_date": { "type": "string", "format": "date" },
+                                "end_date": { "type": "string", "format": "date" },
+                                "expected_graduation_date": { "type": "string", "format": "date" },
+                                "is_current_student": { "type": "boolean" }
+                            }
+                        },
+                        "academic_details": {
+                            "type": "object",
+                            "properties": {
+                                "gpa": { "type": "number", "minimum": 0, "maximum": 4.33 },
+                                "gpa_scale": { "type": "number" },
+                                "class_ranking": { "type": "string" },
+                                "honors": { "type": "array", "items": { "type": "string" } },
+                                "relevant_coursework": { "type": "array", "items": { "type": "string" } },
+                                "thesis_title": { "type": "string" },
+                                "advisor_name": { "type": "string" }
+                            }
+                        }
+                    }
+                }
+            },
+            "certifications": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "certification_id": { "type": "string" },
+                        "name": { "type": "string" },
+                        "issuing_body": { "type": "string" },
+                        "license_number": { "type": "string" },
+                        "issue_date": { "type": "string", "format": "date" },
+                        "expiry_date": { "type": "string", "format": "date" },
+                        "is_lifetime": { "type": "boolean" },
+                        "credential_url": { "type": "string", "format": "uri" },
+                        "verification_status": {
+                            "type": "string",
+                            "enum": ["verified", "pending", "unverified", "expired"]
+                        },
+                        "continuing_education_units": { "type": "number" }
+                    }
+                }
+            },
+            "skills": {
+                "type": "object",
+                "properties": {
+                    "technical_skills": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "skill_name": { "type": "string" },
+                                "category": {
+                                    "type": "string",
+                                    "enum": [
+                                        "Programming Language", "CAD Software", "Simulation Tool", "Data Analysis",
+                                        "Manufacturing Process", "Quality Control", "Project Management", "Testing",
+                                        "Embedded Systems", "Control Systems", "Thermal Analysis", "Structural Analysis"
+                                    ]
+                                },
+                                "proficiency_level": {
+                                    "type": "string",
+                                    "enum": ["Beginner", "Intermediate", "Advanced", "Expert", "Master"]
+                                },
+                                "years_experience": { "type": "number" },
+                                "last_used_year": { "type": "integer" },
+                                "is_certified": { "type": "boolean" }
+                            }
+                        }
+                    },
+                    "soft_skills": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "skill_name": { "type": "string" },
+                                "evidence_description": { "type": "string" }
+                            }
+                        }
+                    },
+                    "languages": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "language": { "type": "string" },
+                                "proficiency": {
+                                    "type": "string",
+                                    "enum": ["Native", "Fluent", "Professional Working", "Limited Working", "Elementary"]
+                                },
+                                "certification_test": { "type": "string" },
+                                "test_score": { "type": "string" }
+                            }
+                        }
+                    }
+                }
+            },
+            "projects": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "project_id": { "type": "string" },
+                        "name": { "type": "string" },
+                        "role": { "type": "string" },
+                        "duration": { "type": "string" },
+                        "start_date": { "type": "string", "format": "date" },
+                        "end_date": { "type": "string", "format": "date" },
+                        "description": { "type": "string" },
+                        "technologies": { "type": "array", "items": { "type": "string" } },
+                        "team_size": { "type": "integer" },
+                        "budget_usd": { "type": "number" },
+                        "outcome": { "type": "string" },
+                        "impact_metrics": {
+                            "type": "object",
+                            "properties": {
+                                "cost_savings_usd": { "type": "number" },
+                                "efficiency_improvement_percent": { "type": "number" },
+                                "revenue_generated_usd": { "type": "number" },
+                                "patent_filed": { "type": "boolean" },
+                                "publication_resulted": { "type": "boolean" }
+                            }
+                        },
+                        "github_repo": { "type": "string", "format": "uri" },
+                        "demo_url": { "type": "string", "format": "uri" }
+                    }
+                }
+            },
+            "publications": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "publication_id": { "type": "string" },
+                        "title": { "type": "string" },
+                        "authors": { "type": "array", "items": { "type": "string" } },
+                        "journal": { "type": "string" },
+                        "conference": { "type": "string" },
+                        "year": { "type": "integer" },
+                        "volume": { "type": "string" },
+                        "issue": { "type": "string" },
+                        "pages": { "type": "string" },
+                        "doi": { "type": "string" },
+                        "citation_count": { "type": "integer" },
+                        "impact_factor": { "type": "number" },
+                        "peer_reviewed": { "type": "boolean" },
+                        "url": { "type": "string", "format": "uri" }
+                    }
+                }
+            },
+            "patents": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "patent_id": { "type": "string" },
+                        "patent_number": { "type": "string" },
+                        "title": { "type": "string" },
+                        "inventors": { "type": "array", "items": { "type": "string" } },
+                        "assignee": { "type": "string" },
+                        "filing_date": { "type": "string", "format": "date" },
+                        "publication_date": { "type": "string", "format": "date" },
+                        "grant_date": { "type": "string", "format": "date" },
+                        "status": {
+                            "type": "string",
+                            "enum": ["Pending", "Published", "Granted", "Expired", "Abandoned"]
+                        },
+                        "jurisdiction": { "type": "string" },
+                        "patent_family_id": { "type": "string" },
+                        "citations_received": { "type": "integer" }
+                    }
+                }
+            },
+            "awards": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "award_id": { "type": "string" },
+                        "name": { "type": "string" },
+                        "issuing_organization": { "type": "string" },
+                        "year": { "type": "integer" },
+                        "level": {
+                            "type": "string",
+                            "enum": ["Local", "Regional", "National", "International"]
+                        },
+                        "description": { "type": "string" },
+                        "monetary_value_usd": { "type": "number" }
+                    }
+                }
+            },
+            "professional_memberships": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "organization": { "type": "string" },
+                        "membership_type": { "type": "string" },
+                        "member_id": { "type": "string" },
+                        "join_date": { "type": "string", "format": "date" },
+                        "expiry_date": { "type": "string", "format": "date" },
+                        "leadership_role": { "type": "string" },
+                        "committees": { "type": "array", "items": { "type": "string" } }
+                    }
+                }
+            },
+            "volunteering": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "organization": { "type": "string" },
+                        "role": { "type": "string" },
+                        "start_date": { "type": "string", "format": "date" },
+                        "end_date": { "type": "string", "format": "date" },
+                        "hours_per_week": { "type": "number" },
+                        "description": { "type": "string" },
+                        "skills_applied": { "type": "array", "items": { "type": "string" } }
+                    }
+                }
+            },
+            "references": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "reference_id": { "type": "string" },
+                        "name": { "type": "string" },
+                        "title": { "type": "string" },
+                        "company": { "type": "string" },
+                        "email": { "type": "string", "format": "email" },
+                        "phone": { "type": "string" },
+                        "relationship": { "type": "string" },
+                        "years_known": { "type": "number" },
+                        "is_contactable": { "type": "boolean" }
+                    }
+                }
+            },
+            "additional_information": {
+                "type": "object",
+                "properties": {
+                    "notice_period_days": { "type": "integer" },
+                    "current_salary_usd": { "type": "number" },
+                    "expected_salary_usd": { "type": "number" },
+                    "salary_currency": { "type": "string" },
+                    "relocation_willingness": { "type": "boolean" },
+                    "relocation_preferences": { "type": "array", "items": { "type": "string" } },
+                    "work_authorization_countries": { "type": "array", "items": { "type": "string" } },
+                    "security_clearance": {
+                        "type": "object",
+                        "properties": {
+                            "level": { "type": "string" },
+                            "issuing_country": { "type": "string" },
+                            "expiry_date": { "type": "string", "format": "date" }
+                        }
+                    },
+                    "hobbies_interests": { "type": "array", "items": { "type": "string" } },
+                    "personal_website": { "type": "string", "format": "uri" },
+                    "additional_notes": { "type": "string" }
+                }
+            },
+            "detection_metadata": {
+                "type": "object",
+                "properties": {
+                    "parsing_status": {
+                        "type": "string",
+                        "enum": ["pending", "processing", "completed", "failed", "partial"]
+                    },
+                    "confidence_scores": {
+                        "type": "object",
+                        "properties": {
+                            "overall_confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+                            "personal_info_confidence": { "type": "number" },
+                            "work_experience_confidence": { "type": "number" },
+                            "education_confidence": { "type": "number" },
+                            "skills_confidence": { "type": "number" },
+                            "certifications_confidence": { "type": "number" }
+                        }
+                    },
+                    "extraction_methods_used": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": ["OCR", "NLP", "Regex", "Transformers", "LayoutLM", "Spatial_Analysis"]
+                        }
+                    },
+                    "processing_timestamp": { "type": "string", "format": "date-time" },
+                    "processing_duration_ms": { "type": "integer" },
+                    "parser_version": { "type": "string" },
+                    "ocr_engine": { "type": "string" },
+                    "ocr_confidence": { "type": "number" },
+                    "llm_model_used": { "type": "string" },
+                    "fallback_triggered": { "type": "boolean" },
+                    "error_log": { "type": "array", "items": { "type": "string" } },
+                    "warnings": { "type": "array", "items": { "type": "string" } }
+                }
+            },
+            "scoring_and_ranking": {
+                "type": "object",
+                "properties": {
+                    "match_score": { "type": "number", "minimum": 0, "maximum": 100 },
+                    "percentile_rank": { "type": "number", "minimum": 0, "maximum": 100 },
+                    "skill_match_percentage": { "type": "number" },
+                    "experience_match_percentage": { "type": "number" },
+                    "education_match_percentage": { "type": "number" },
+                    "certification_match_percentage": { "type": "number" },
+                    "custom_weights_applied": { "type": "object" },
+                    "job_role_compatibility": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "role_title": { "type": "string" },
+                                "compatibility_score": { "type": "number" },
+                                "missing_requirements": { "type": "array", "items": { "type": "string" } },
+                                "exceeding_requirements": { "type": "array", "items": { "type": "string" } }
+                            }
+                        }
+                    },
+                    "recommended_next_steps": { "type": "array", "items": { "type": "string" } }
+                }
+            },
+            "compliance_checks": {
+                "type": "object",
+                "properties": {
+                    "pii_detected": { "type": "boolean" },
+                    "pii_redacted": { "type": "boolean" },
+                    "gdpr_compliant": { "type": "boolean" },
+                    "eeo_compliant": { "type": "boolean" },
+                    "data_retention_eligible_until": { "type": "string", "format": "date" },
+                    "consent_given": { "type": "boolean" },
+                    "consent_timestamp": { "type": "string", "format": "date-time" }
+                }
+            }
+        }
+    },
+
+    "detection_pipeline": {
+        "stages": [{
+                "stage_id": 1,
+                "stage_name": "File Validation",
+                "actions": [
+                    "check_file_size",
+                    "validate_mime_type",
+                    "scan_for_malware",
+                    "generate_file_hash",
+                    "check_duplicate"
+                ],
+                "failure_action": "reject_with_error"
+            },
+            {
+                "stage_id": 2,
+                "stage_name": "Text Extraction",
+                "methods": [{
+                        "method": "PDF parsing",
+                        "library": "PyPDF2",
+                        "fallback": "OCR"
+                    },
+                    {
+                        "method": "OCR",
+                        "engine": "Tesseract 5.0",
+                        "languages": ["eng", "spa", "fra", "deu"],
+                        "confidence_threshold": 0.7
+                    },
+                    {
+                        "method": "DOCX parsing",
+                        "library": "python-docx"
+                    }
+                ]
+            },
+            {
+                "stage_id": 3,
+                "stage_name": "Preprocessing",
+                "actions": [
+                    "remove_headers_footers",
+                    "normalize_whitespace",
+                    "remove_special_characters",
+                    "language_detection",
+                    "text_chunking",
+                    "sentence_tokenization"
+                ]
+            },
+            {
+                "stage_id": 4,
+                "stage_name": "Information Extraction",
+                "models": [{
+                        "entity": "person_name",
+                        "model_type": "BERT-NER",
+                        "confidence_threshold": 0.85
+                    },
+                    {
+                        "entity": "email",
+                        "model_type": "regex",
+                        "pattern": "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"
+                    },
+                    {
+                        "entity": "phone_number",
+                        "model_type": "regex+ml",
+                        "patterns": ["international", "national", "local"]
+                    },
+                    {
+                        "entity": "job_title",
+                        "model_type": "RoBERTa-Classifier",
+                        "confidence_threshold": 0.8
+                    },
+                    {
+                        "entity": "company_name",
+                        "model_type": "DBpedia-Lookup",
+                        "confidence_threshold": 0.75
+                    },
+                    {
+                        "entity": "skills",
+                        "model_type": "SkillNER + Custom Dictionary",
+                        "dictionary_size": 15000,
+                        "fuzzy_matching": true
+                    },
+                    {
+                        "entity": "dates",
+                        "model_type": "DateParser",
+                        "formats": ["YYYY-MM-DD", "MM/YYYY", "Month YYYY"]
+                    }
+                ]
+            },
+            {
+                "stage_id": 5,
+                "stage_name": "Engineering-Specific Parsing",
+                "sub_parsers": [{
+                        "discipline": "Mechanical Engineering",
+                        "keywords": ["CAD", "FEA", "CFD", "thermodynamics", "SolidWorks", "ANSYS"],
+                        "certifications": ["PE Mechanical", "CSWP", "Six Sigma"]
+                    },
+                    {
+                        "discipline": "Electrical Engineering",
+                        "keywords": ["PCB", "FPGA", "embedded systems", "MATLAB", "SPICE", "VHDL"],
+                        "certifications": ["PE Electrical", "IPC Certified"]
+                    },
+                    {
+                        "discipline": "Software Engineering",
+                        "keywords": ["Python", "Java", "C++", "AWS", "Docker", "Kubernetes", "CI/CD"],
+                        "certifications": ["AWS Certified", "Azure DevOps", "Google Cloud"]
+                    },
+                    {
+                        "discipline": "Civil Engineering",
+                        "keywords": ["AutoCAD Civil 3D", "Revit", "STAAD Pro", "SAP2000", "geotechnical"],
+                        "certifications": ["PE Civil", "LEED AP", "PMP"]
+                    }
+                ]
+            },
+            {
+                "stage_id": 6,
+                "stage_name": "Validation & Enrichment",
+                "validations": [
+                    "cross_reference_company_names",
+                    "verify_certifications_against_database",
+                    "validate_education_institutions",
+                    "check_date_consistency",
+                    "detect_gaps_in_employment"
+                ],
+                "enrichment_apis": [{
+                        "api_name": "LinkedIn Profile API",
+                        "enabled": true,
+                        "timeout_seconds": 5
+                    },
+                    {
+                        "api_name": "GitHub API",
+                        "enabled": true,
+                        "max_repos_fetch": 10
+                    },
+                    {
+                        "api_name": "Google Scholar API",
+                        "enabled": false
+                    }
+                ]
+            },
+            {
+                "stage_id": 7,
+                "stage_name": "Scoring & Ranking",
+                "scoring_algorithm": "weighted_sum",
+                "weights": {
+                    "skills_match": 0.35,
+                    "experience_years": 0.25,
+                    "education_level": 0.15,
+                    "certifications": 0.10,
+                    "projects_quality": 0.08,
+                    "publications_patents": 0.05,
+                    "soft_skills": 0.02
+                },
+                "normalization": "min_max",
+                "boost_factors": {
+                    "target_company_experience": 1.2,
+                    "patent_holder": 1.15,
+                    "phd_degree": 1.1,
+                    "professional_engineer_license": 1.25
+                }
+            }
+        ],
+        "parallel_processing": {
+            "enabled": true,
+            "max_parallel_resumes": 10,
+            "chunk_size": 500
+        },
+        "caching": {
+            "enabled": true,
+            "ttl_seconds": 3600,
+            "cache_backend": "redis"
+        }
+    },
+
+    "machine_learning_models": {
+        "resume_classifier": {
+            "model_name": "ResumeNet",
+            "version": "2.1.0",
+            "architecture": "Transformer-based (LayoutLMv3)",
+            "pretrained_backbone": "microsoft/layoutlmv3-base",
+            "fine_tuned_on": "custom_resume_dataset_50k",
+            "accuracy": 0.942,
+            "f1_score": 0.938,
+            "inference_time_ms": 350,
+            "classes": ["Mechanical", "Electrical", "Software", "Civil", "Chemical", "Other"],
+            "confidence_threshold": 0.75
+        },
+        "skill_extractor": {
+            "model_name": "SkillBERT",
+            "version": "1.4.0",
+            "architecture": "BERT-base-uncased + CRF",
+            "vocabulary_size": 15000,
+            "precision": 0.91,
+            "recall": 0.89,
+            "f1_score": 0.90
+        },
+        "entity_linker": {
+            "model_name": "EngEntityLinker",
+            "version": "1.0.0",
+            "knowledge_base": "Wikipedia + Engineering KB",
+            "entities_supported": 250000,
+            "linking_accuracy": 0.88
+        },
+        "experience_parser": {
+            "model_name": "ExpTemporalNet",
+            "version": "1.2.0",
+            "architecture": "BiLSTM + Attention",
+            "duration_extraction_accuracy": 0.94,
+            "gap_detection_accuracy": 0.87
+        },
+        "anomaly_detection": {
+            "model_name": "ResumeAnomalyDetector",
+            "version": "0.9.0",
+            "algorithm": "Isolation Forest",
+            "contamination": 0.05,
+            "features_used": ["text_length", "job_hop_frequency", "skill_inflation_score"],
+            "false_positive_rate": 0.03
+        }
+    },
+
+    "engineering_keyword_taxonomy": {
+        "Mechanical_Engineering": {
+            "cad_software": ["SolidWorks", "CATIA", "NX", "Creo", "AutoCAD", "Fusion 360"],
+            "simulation_tools": ["ANSYS", "Abaqus", "COMSOL", "LS-DYNA", "Fluent"],
+            "manufacturing_processes": ["CNC", "3D Printing", "Injection Molding", "Casting", "Welding"],
+            "analysis_types": ["FEA", "CFD", "Thermal Analysis", "Modal Analysis", "Fatigue Analysis"],
+            "standards": ["ASME Y14.5", "ISO 9001", "ASTM", "GD&T"]
+        },
+        "Electrical_Engineering": {
+            "design_software": ["Altium", "Eagle", "KiCad", "OrCAD", "Cadence"],
+            "simulation_tools": ["SPICE", "MATLAB/Simulink", "PSpice", "LTspice"],
+            "programming": ["C", "C++", "Python", "Verilog", "VHDL", "Assembly"],
+            "microcontrollers": ["Arduino", "Raspberry Pi", "STM32", "ESP32", "PIC"],
+            "protocols": ["I2C", "SPI", "UART", "CAN Bus", "Modbus", "Ethernet"]
+        },
+        "Software_Engineering": {
+            "languages": ["Python", "Java", "JavaScript", "TypeScript", "Go", "Rust", "C#", "C++"],
+            "frameworks_backend": ["Spring Boot", "Django", "Flask", "Express.js", "FastAPI", ".NET Core"],
+            "frameworks_frontend": ["React", "Angular", "Vue.js", "Svelte", "Next {
+                        "electrical_engineering_schema_continuation": {
+                            "power_systems_and_electronics_continued": {
+                                "equipment_continuation": [
+                                    "Disconnect Switches",
+                                    "Relays (Protective, Monitoring, Auxiliary)",
+                                    "Capacitor Banks (Power Factor Correction, Filtering)",
+                                    "Reactors (Current Limiting, Shunt, Series)",
+                                    "Surge Arresters (Lightning Arresters)",
+                                    "Busbars (Insulated, Non-Insulated)",
+                                    "Cables (Power, Control, Instrumentation)",
+                                    "Panels (MCC, PDC, Lighting Panels)"
+                                ],
+                                "standards_and_codes": [
+                                    "IEEE Std 141 (Red Book)",
+                                    "IEEE Std 242 (Buff Book)",
+                                    "IEEE Std 399 (Brown Book)",
+                                    "IEEE Std 3001 (Power Systems Design)",
+                                    "NFPA 70 (National Electrical Code - NEC)",
+                                    "NFPA 70E (Electrical Safety)",
+                                    "IEC 60364 (Low Voltage Installations)",
+                                    "IEC 60909 (Short Circuit Currents)",
+                                    "ANSI C37 (Circuit Breakers)"
+                                ],
+                                "power_electronics": {
+                                    "converters": [{
+                                            "type": "AC-DC Rectifiers",
+                                            "topologies": ["Single-Phase Half-Wave", "Single-Phase Full-Wave", "Three-Phase", "Controlled (SCR)", "Uncontrolled (Diode)", "PWM Rectifier"]
+                                        },
+                                        {
+                                            "type": "DC-DC Converters",
+                                            "topologies": ["Buck (Step-Down)", "Boost (Step-Up)", "Buck-Boost", "Cuk", "SEPIC", "Zeta", "Flyback", "Forward", "Push-Pull", "Half-Bridge", "Full-Bridge"]
+                                        },
+                                        {
+                                            "type": "DC-AC Inverters",
+                                            "topologies": ["Voltage Source Inverter (VSI)", "Current Source Inverter (CSI)", "Multilevel (Diode-Clamped, Flying Capacitor, Cascaded H-Bridge)", "Single-Phase (Half-Bridge, Full-Bridge)", "Three-Phase (6-Step, PWM, Space Vector PWM)"]
+                                        },
+                                        {
+                                            "type": "AC-AC Converters",
+                                            "topologies": ["AC Voltage Controller", "Cycloconverter", "Matrix Converter"]
+                                        }
+                                    ],
+                                    "power_semiconductors": [
+                                        { "component": "Diode (Power)", "voltage_rating": "50V - 10kV", "current_rating": "1A - 10kA", "applications": ["Rectification", "Freewheeling"] },
+                                        { "component": "SCR (Thyristor)", "voltage_rating": "100V - 10kV", "current_rating": "10A - 10kA", "applications": ["Controlled Rectification", "AC Switching"] },
+                                        { "component": "TRIAC", "voltage_rating": "200V - 1kV", "current_rating": "1A - 100A", "applications": ["AC Power Control", "Dimmers"] },
+                                        { "component": "BJT (Power)", "voltage_rating": "50V - 1kV", "current_rating": "1A - 500A", "applications": ["Linear Regulators", "Switching (Old)"] },
+                                        { "component": "MOSFET (Power)", "voltage_rating": "20V - 1.2kV", "current_rating": "1A - 500A", "applications": ["High Frequency Switching", "SMPS", "DC-DC"] },
+                                        { "component": "IGBT", "voltage_rating": "300V - 6.5kV", "current_rating": "10A - 3kA", "applications": ["Motor Drives", "Inverters", "Traction"] },
+                                        { "component": "SiC MOSFET", "voltage_rating": "650V - 3.3kV", "current_rating": "10A - 200A", "applications": ["EV Chargers", "Solar Inverters", "High Temp"] },
+                                        { "component": "GaN HEMT", "voltage_rating": "100V - 650V", "current_rating": "1A - 150A", "applications": ["Fast Chargers", "Lidar", "RF"] },
+                                        { "component": "IGCT", "voltage_rating": "4.5kV - 10kV", "current_rating": "500A - 5kA", "applications": ["HVDC", "StatCom", "Wind Turbines"] }
+                                    ],
+                                    "gate_drivers": [
+                                        "Low Side Drivers (Non-Isolated)",
+                                        "High Side Drivers (Level Shifting, Bootstrap)",
+                                        "Half-Bridge Drivers",
+                                        "Isolated Drivers (Optocoupler, Magnetic, Capacitive)",
+                                        "Single/Dual/Quad Channel",
+                                        "Desaturation Protection",
+                                        "Miller Clamp",
+                                        "Soft Turn-Off"
+                                    ],
+                                    "magnetic_design": {
+                                        "components": ["Inductors", "Transformers (High Frequency)", "Common Mode Chokes", "Couplers"],
+                                        "core_materials": [
+                                            { "material": "Ferrite (MnZn, NiZn)", "frequency_range": "10 kHz - 10 MHz", "applications": ["SMPS", "EMI Filters"] },
+                                            { "material": "Iron Powder", "frequency_range": "50 Hz - 1 MHz", "applications": ["Output Inductors", "PFC Chokes"] },
+                                            { "material": "Amorphous/Nanocrystalline", "frequency_range": "50 Hz - 100 kHz", "applications": ["Common Mode Chokes", "High Efficiency"] },
+                                            { "material": "Silicon Steel", "frequency_range": "50 Hz - 1 kHz", "applications": ["Line Transformers", "Motor Laminations"] },
+                                            { "material": "Sendust", "frequency_range": "10 kHz - 500 kHz", "applications": ["PFC Inductors", "Buck Inductors"] }
+                                        ],
+                                        "design_parameters": ["AL Value", "Saturation Flux Density", "Core Loss (Steinmetz Equation)", "Ae (Effective Area)", "Le (Effective Path Length)", "Ve (Effective Volume)", "Winding Resistance (DC/AC)", "Leakage Inductance", "Interwinding Capacitance"]
+                                    }
+                                },
+                                "electric_motors_and_drives": {
+                                    "motor_types": [{
+                                            "type": "DC Motors",
+                                            "subtypes": ["Brushed (Permanent Magnet, Series, Shunt, Compound)", "Brushless DC (BLDC)", "Stepper (Variable Reluctance, Permanent Magnet, Hybrid)"],
+                                            "control_methods": ["PWM (Open Loop)", "PI/PID Closed Loop", "FOC (Field Oriented Control)", "Six-Step Commutation", "Microstepping"],
+                                            "applications": ["Robotics", "Automotive (Wipers, Windows)", "HVAC", "Medical Devices"]
+                                        },
+                                        {
+                                            "type": "AC Induction Motors (IM)",
+                                            "subtypes": ["Squirrel Cage", "Wound Rotor (Slip Ring)"],
+                                            "control_methods": ["Direct On-Line (DOL)", "Star-Delta", "Soft Starter", "VFD (V/f Control)", "Vector Control (FOC)", "DTC (Direct Torque Control)"],
+                                            "applications": ["Industrial Pumps", "Fans", "Conveyors", "Compressors", "EV Traction"]
+                                        },
+                                        {
+                                            "type": "Synchronous Motors",
+                                            "subtypes": ["Permanent Magnet Synchronous Motor (PMSM)", "Synchronous Reluctance (SynRM)", "Switched Reluctance (SRM)", "Wound Field Synchronous"],
+                                            "control_methods": ["FOC", "DTC", "Six-Step", "Sensorless (BEMF, High Frequency Injection)"],
+                                            "applications": ["EV Traction", "Servo Drives", "Robotics", "Aerospace", "High Efficiency Industrial"]
+                                        },
+                                        {
+                                            "type": "Specialty Motors",
+                                            "subtypes": ["Linear Motors (Iron Core, Ironless)", "Torque Motors", "Piezoelectric Motors", "Ultrasonic Motors", "Hysteresis Motors"],
+                                            "applications": ["Precision Positioning", "Semiconductor Manufacturing", "Optical Systems"]
+                                        }
+                                    ],
+                                    "motor_drive_topologies": [
+                                        "H-Bridge (DC Motors, Single Phase)",
+                                        "Three-Phase Inverter (AC Motors, BLDC, PMSM)",
+                                        "Multilevel Inverters (NPC, Flying Capacitor, CHB)",
+                                        "Matrix Converter (Direct AC-AC)",
+                                        "Current Source Inverter (CSI)"
+                                    ],
+                                    "sensors_for_motor_control": [
+                                        "Hall Effect Sensors (Position, Speed)",
+                                        "Encoders (Incremental, Absolute, Magnetic, Optical)",
+                                        "Resolvers",
+                                        "Current Sensors (Shunt, Hall Effect, Rogowski Coil, CT)",
+                                        "Voltage Sensors (Voltage Divider, Isolated Amplifier)",
+                                        "Temperature Sensors (Thermistor, RTD, Thermocouple)"
+                                    ],
+                                    "motor_software_and_tools": [
+                                        "Motor-CAD (Thermal/Electromagnetic)",
+                                        "JMAG (FEA for Motors)",
+                                        "Ansys Maxwell",
+                                        "MotorSolve (Magnet)",
+                                        "TI MotorWare",
+                                        "STM32 Motor Control SDK",
+                                        "Microchip Motor Control Application Library"
+                                    ]
+                                },
+                                "renewable_energy_systems": {
+                                    "solar_pv": {
+                                        "components": ["Solar Panels (Monocrystalline, Polycrystalline, Thin-Film)", "Inverters (String, Micro, Central, Hybrid)", "MPPT (Maximum Power Point Tracking)", "DC Combiner Boxes", "AC Distribution Panels", "Batteries (Lead-Acid, Li-Ion, Flow)", "BMS (Battery Management System)"],
+                                        "topologies": ["Grid-Tied (On-Grid)", "Off-Grid (Standalone)", "Hybrid (Battery Backup)", "AC Coupled", "DC Coupled"],
+                                        "design_software": ["PVsyst", "Helioscope", "PVSol", "SolarEdge Designer", "Aurora Solar"],
+                                        "standards": ["IEC 61730 (Panel Safety)", "UL 1703", "NEC Article 690", "IEC 62109 (Inverter Safety)"],
+                                        "certifications": ["NABCEP (North American Board Certified Energy Practitioner)", "PV Installation Professional", "Solar PV Designer"]
+                                    },
+                                    "wind_energy": {
+                                        "turbine_types": ["Horizontal Axis (HAWT)", "Vertical Axis (VAWT - Darrieus, Savonius)"],
+                                        "components": ["Turbine Blades", "Nacelle (Gearbox, Generator)", "Tower (Monopole, Lattice)", "Foundation (Onshore, Offshore)", "Pitch Control System", "Yaw Drive", "Braking System"],
+                                        "generator_types": ["DFIG (Doubly Fed Induction Generator)", "PMSG (Permanent Magnet Synchronous Generator)", "SCIG (Squirrel Cage Induction Generator)", "EESG (Electrically Excited Synchronous Generator)"],
+                                        "control_systems": ["MPPT (Tip Speed Ratio Control)", "Pitch Angle Control", "Stall Control", "Active Damping"],
+                                        "software": ["Bladed (DNV)", "FAST (NREL)", "WindSim", "WAsP", "WindPRO"],
+                                        "standards": ["IEC 61400 Series", "GL Guideline", "API RP 2A (Offshore)"]
+                                    },
+                                    "energy_storage": {
+                                        "battery_technologies": [
+                                            { "type": "Lithium-Ion (NMC, LFP, LTO, NCA)", "energy_density": "150-250 Wh/kg", "cycle_life": "1000-5000", "applications": ["EV", "Grid Storage", "Consumer Electronics"] },
+                                            { "type": "Lead-Acid (Flooded, AGM, Gel)", "energy_density": "30-50 Wh/kg", "cycle_life": "300-1000", "applications": ["Automotive", "UPS", "Off-Grid Solar"] },
+                                            { "type": "Flow Batteries (Vanadium, Zinc-Bromine)", "energy_density": "15-30 Wh/kg", "cycle_life": "10000+", "applications": ["Grid Scale Storage"] },
+                                            { "type": "Sodium-Ion", "energy_density": "100-150 Wh/kg", "cycle_life": "1000-3000", "applications": ["Stationary Storage", "Low Cost EV"] },
+                                            { "type": "Solid-State", "energy_density": "300-500 Wh/kg", "cycle_life": "5000+", "applications": ["Next-Gen EV", "Aerospace"] }
+                                        ],
+                                        "bms_functions": ["Cell Voltage Monitoring", "Temperature Monitoring", "State of Charge (SoC) Estimation", "State of Health (SoH) Estimation", "Cell Balancing (Passive, Active)", "Overcurrent/Overvoltage/Undervoltage Protection", "Thermal Management", "Communication (CAN, SMBus, Modbus)"],
+                                        "other_storage": ["Supercapacitors (Ultracapacitors)", "Flywheel Energy Storage", "Pumped Hydro", "Compressed Air Energy Storage (CAES)", "Hydrogen (Electrolyzer + Fuel Cell)"]
+                                    }
+                                }
+                            },
+                            "control_systems": {
+                                "control_theory": {
+                                    "classical_control": [
+                                        "Open Loop vs Closed Loop",
+                                        "Transfer Functions (Laplace Transform)",
+                                        "Block Diagram Reduction",
+                                        "Time Response (Rise Time, Settling Time, Overshoot, Steady-State Error)",
+                                        "Frequency Response (Bode Plot, Nyquist Plot, Nichols Chart)",
+                                        "Stability Analysis (Routh-Hurwitz, Root Locus, Gain Margin, Phase Margin)",
+                                        "PID Controllers (P, I, D, PI, PD, PID, Cascade, Feedforward)",
+                                        "Lead-Lag Compensators"
+                                    ],
+                                    "modern_control": [
+                                        "State-Space Representation",
+                                        "Controllability and Observability",
+                                        "Full-State Feedback Controller",
+                                        "LQR (Linear Quadratic Regulator)",
+                                        "LQG (Linear Quadratic Gaussian)",
+                                        "Kalman Filter (Discrete, Continuous, Extended)",
+                                        "H-Infinity Control",
+                                        "Robust Control"
+                                    ],
+                                    "digital_control": [
+                                        "Discrete-Time Systems (Z-Transform)",
+                                        "Sampling and Aliasing (Nyquist-Shannon Theorem)",
+                                        "Analog-to-Digital (ADC) and Digital-to-Analog (DAC)",
+                                        "Digital PID Implementation (Positional, Velocity)",
+                                        "Discrete State-Space",
+                                        "Deadbeat Control",
+                                        "Microcontroller Implementation (Fixed-Point, Floating-Point)"
+                                    ],
+                                    "advanced_control": [
+                                        "Adaptive Control (MRAC, Self-Tuning)",
+                                        "Predictive Control (MPC - Model Predictive Control)",
+                                        "Fuzzy Logic Control",
+                                        "Neural Network Control",
+                                        "Sliding Mode Control (SMC)",
+                                        "Backstepping Control",
+                                        "Gain Scheduling"
+                                    ],
+                                    "control_software": [
+                                        "MATLAB/Simulink (Control System Toolbox, System Identification Toolbox)",
+                                        "Python Control Library",
+                                        "Scilab/Xcos",
+                                        "Octave",
+                                        "LabVIEW Control Design",
+                                        "PLC Programming (Ladder Logic, Structured Text, Function Block)"
+                                    ],
+                                    "real_time_control_hardware": [
+                                        "PLC (Programmable Logic Controllers - Siemens, Allen-Bradley, Mitsubishi)",
+                                        "DCS (Distributed Control Systems - Emerson DeltaV, Honeywell Experion)",
+                                        "PAC (Programmable Automation Controllers)",
+                                        "FPGA-Based Control (Xilinx Zynq, Intel SoC)",
+                                        "DSP-Based Control (TI C2000, ADSP)",
+                                        "Raspberry Pi + RTOS",
+                                        "Arduino Due (ARM Cortex)"
+                                    ]
+                                }
+                            }
+                        },
+                        "mechatronics_and_robotics": {
+                            "robotics_frameworks": [
+                                { "name": "ROS (Robot Operating System)", "versions": ["ROS1 (Noetic)", "ROS2 (Humble, Iron, Rolling)"], "features": ["Distributed Architecture", "Gazebo Simulation", "RViz Visualization", "Navigation Stack", "MoveIt (Motion Planning)"], "languages": ["C++", "Python"] },
+                                { "name": "OpenRAVE", "features": ["Motion Planning", "Inverse Kinematics", "Collision Detection"] },
+                                { "name": "MOOS-IvP", "applications": ["Marine Robotics", "Autonomous Vehicles"] },
+                                { "name": "CARMEN (Carnegie Mellon)", "features": ["Navigation", "Mapping", "Sensor Fusion"] }
+                            ],
+                            "sensors_for_robotics": {
+                                "proximity_and_ranging": [
+                                    "Ultrasonic Sensors (HC-SR04, MaxBotix)",
+                                    "Infrared (Sharp GP2Y0A, Time-of-Flight)",
+                                    "LiDAR (2D RPLIDAR, 3D Velodyne, Ouster, Hesai)",
+                                    "Radar (Automotive, mmWave - TI IWR, NXP)",
+                                    "Laser Rangefinder"
+                                ],
+                                "vision_sensors": [
+                                    "RGB Cameras (Webcam, USB, MIPI CSI)",
+                                    "Stereo Cameras (Intel RealSense, ZED, Stereolabs)",
+                                    "Depth Cameras (Kinect, Astra, RealSense D415/D435)",
+                                    "Event Cameras (Dynamic Vision Sensors)",
+                                    "Thermal Cameras (FLIR, Seek)",
+                                    "Hyperspectral Cameras"
+                                ],
+                                "inertial_sensors": [
+                                    "IMU (Accelerometer + Gyroscope - MPU6050, BNO055, ADIS16470)",
+                                    "Magnetometer (Compass)",
+                                    "Attitude Reference System (AHRS)",
+                                    "Inertial Navigation System (INS)"
+                                ],
+                                "encoders": ["Rotary Encoder (Incremental, Absolute)", "Magnetic Encoder (AS5048, AM4096)", "Optical Encoder (HEDM, US Digital)", "Capacitive Encoder"]
+                            },
+                            "actuators_for_robotics": {
+                                "electric_actuators": ["DC Geared Motors", "BLDC Servo Motors (Dynamixel, AK80, MJX)", "Stepper Motors (NEMA 17, 23, 34)", "Linear Actuators (Screw, Belt, Rodless)", "Voice Coil Actuators (VCA)"],
+                                "hydraulic_actuators": ["Hydraulic Cylinders", "Hydraulic Motors", "Hydraulic Valves (Servo, Proportional)", "Applications: Heavy Robotics, Construction, Aerospace"],
+                                "pneumatic_actuators": ["Pneumatic Cylinders (Single/Double Acting)", "Air Muscles (McKibben)", "Solenoid Valves", "Applications: Pick-and-Place, Soft Robotics"],
+                                "soft_actuators": ["Pneumatic Artificial Muscles (PAM)", "Dielectric Elastomer Actuators (DEA)", "Shape Memory Alloys (Nitinol)", "Ionic Polymer-Metal Composites (IPMC)"]
+                            },
+                            "robot_kinematics_and_dynamics": {
+                                "forward_kinematics": ["Denavit-Hartenberg (DH) Parameters", "Transformation Matrices (Homogeneous)", "Product of Exponentials (PoE)"],
+                                "inverse_kinematics": ["Analytical (Geometric)", "Numerical (Jacobian Pseudo-Inverse, Damped Least Squares)", "Cyclic Coordinate Descent (CCD)", "FABRIK (Forward And Backward Reaching IK)", "Machine Learning (Deep IK)"],
+                                "jacobian_matrix": ["Velocity Kinematics", "Singularity Analysis", "Manipulability Ellipsoid"],
+                                "dynamics": ["Newton-Euler (Recursive)", "Lagrangian (Energy-Based)", "Mass Matrix", "Coriolis/Centrifugal Terms", "Gravity Vector", "Joint Friction"],
+                                "trajectory_planning": ["Joint Space (Polynomial, Spline, LSPB)", "Cartesian Space (Straight Line, Circular)", "Minimum Jerk/Snap Trajectories", "Time-Optimal Trajectory"]
+                            },
+                            "robot_software_libraries": [
+                                { "name": "OpenCV", "purpose": "Computer Vision (Object Detection, Tracking, Calibration)" },
+                                { "name": "PCL (Point Cloud Library)", "purpose": "3D Point Cloud Processing (Segmentation, Registration, Filtering)" },
+                                { "name": "Eigen", "purpose": "Linear Algebra (Matrix Operations, Solvers)" },
+                                { "name": "Bullet", "purpose": "Physics Simulation (Collision Detection, Rigid Body Dynamics)" },
+                                { "name": "ODE (Open Dynamics Engine)", "purpose": "Realistic Dynamics Simulation" },
+                                { "name": "Drake (Toyota Research)", "purpose": "Robust Control and Optimization" },
+                                { "name": "PyBullet", "purpose": "Python Interface to Bullet Physics" },
+                                { "name": "Gazebo (Ignition)", "purpose": "ROS Simulation Environment" },
+                                { "name": "Webots", "purpose": "Robot Simulator (Commercial/Open Source)" },
+                                { "name": "CoppeliaSim (V-REP)", "purpose": "Robot Simulator (Scriptable)" }
+                            ]
+                        },
+                        "detection_pipeline": {
+                            "stages": [{
+                                    "stage_id": 1,
+                                    "stage_name": "File Ingestion",
+                                    "actions": [
+                                        "validate_file_signature",
+                                        "extract_metadata",
+                                        "virus_scan",
+                                        "generate_checksum",
+                                        "store_raw_copy",
+                                        "duplicate_check (using fuzzy hashing)"
+                                    ]
+                                },
+                                {
+                                    "stage_id": 2,
+                                    "stage_name": "Text Extraction (ME/EE Optimized)",
+                                    "extractors": {
+                                        "pdf": "PyMuPDF + pdfplumber (fallback: Tesseract OCR with eng+eng_technical)",
+                                        "docx": "python-docx + docx2txt",
+                                        "image": "Tesseract 5.3.3 (LSTM mode) + custom engineering symbol training",
+                                        "scanned_pdf": "OCRmyPDF + Tesseract + custom dictionary (GD&T, electrical symbols, equations)"
+                                    },
+                                    "ocr_config": {
+                                        "languages": ["eng", "eng_technical", "deu", "fra"],
+                                        "psm": 6(single uniform text block),
+                                        "oem": 3(LSTM only),
+                                        "custom_wordlist": ["SolidWorks", "ANSYS", "PCB", "BLDC", "PID", "FEA", "CFD", "VHDL", "Verilog"]
+                                    }
+                                },
+                                {
+                                    "stage_id": 3,
+                                    "stage_name": "Domain Classification (ME vs EE)",
+                                    "classifier": {
+                                        "model": "RandomForest + Transformer (DistilBERT-finetuned)",
+                                        "features": ["keyword_density", "tool_mentions", "certification_patterns", "course_names", "project_descriptions"],
+                                        "me_keywords": ["CAD", "FEA", "SolidWorks", "GD&T", "thermodynamics", "manufacturing", "HVAC", "ASME"],
+                                        "ee_keywords": ["PCB", "embedded", "FPGA", "MATLAB/Simulink", "power electronics", "VHDL", "RTOS", "IEEE"],
+                                        "output": { "mechanical_confidence": 0.92, "electrical_confidence": 0.87, "mechatronics_confidence": 0.78 }
+                                    }
+                                },
+                                {
+                                    "stage_id": 4,
+                                    "stage_name": "ME-Specific Parsing",
+                                    "parsers": {
+                                        "cad_software": { "regex": "\\b(SolidWorks|CATIA|NX|Creo|AutoCAD|Fusion 360|Inventor|Onshape)\\b", "extract_version": true, "extract_years": true },
+                                        "simulation_tools": { "regex": "\\b(ANSYS|Abaqus|COMSOL|LS-DYNA|Nastran|HyperWorks|Fluent|CFX|OpenFOAM)\\b", "extract_modules": true },
+                                        "manufacturing_processes": { "ner_model": "custom_biLSTM", "labels": ["CNC", "injection molding", "welding", "casting", "additive manufacturing"] },
+                                        "gd_t_symbols": { "regex": "\\b(flatness|circularity|position|concentricity|runout|MMC|LMC)\\b", "extract_tolerances": true },
+                                        "thermo_fluids_terms": { "dictionary": ["enthalpy", "entropy", "Nusselt", "Reynolds", "Bernoulli", "heat exchanger", "turbomachinery"] }
+                                    }
+                                },
+                                {
+                                    "stage_id": 5,
+                                    "stage_name": "EE-Specific Parsing",
+                                    "parsers": {
+                                        "pcb_software": { "regex": "\\b(Altium|Eagle|KiCad|OrCAD|PADS|EasyEDA)\\b", "extract_version": true },
+                                        "embedded_mcu": { "regex": "\\b(STM32|ESP32|Arduino|Raspberry Pi|PIC|AVR|ARM Cortex|FPGA|Xilinx|Intel Quartus)\\b", "extract_family": true },
+                                        "protocols": { "regex": "\\b(I2C|SPI|UART|CAN|Ethernet|USB|RS-232|RS-485|Modbus|PROFINET|EtherCAT|Bluetooth|WiFi|Zigbee|LoRa)\\b", "extract_wireless": true },
+                                        "power_topologies": { "regex": "\\b(Buck|Boost|Buck-Boost|Flyback|Forward|Half-Bridge|Full-Bridge|PFC|Inverter|Rectifier)\\b" },
+                                        "motor_types": { "regex": "\\b(BLDC|PMSM|induction motor|stepper|servo|DC brushed)\\b" },
+                                        "control_methods": { "regex": "\\b(PID|FOC|DTC|MPC|LQR|Kalman filter|adaptive control|fuzzy logic)\\b" }
+                                    }
+                                },
+                                {
+                                    "stage_id": 6,
+                                    "stage_name": "Cross-Validation & Consistency",
+                                    "checks": [
+                                        "validate_experience_dates (no future dates, logical progression)",
+                                        "detect_skill_inflation (unrealistic proficiency claims)",
+                                        "education_institution_verification (accreditation database)",
+                                        "certification_lookup (verify against PE, CSWP, Altium, etc.)",
+                                        "project_technical_depth (keyword diversity, specific metrics)"
+                                    ]
+                                },
+                                {
+                                    "stage_id": 7,
+                                    "stage_name": "Scoring (ME/EE Weighted)",
+                                    "scoring_models": {
+                                        "mechanical_engineer": {
+                                            "weights": {
+                                                "cad_proficiency": 0.20,
+                                                "simulation_experience": 0.18,
+                                                "manufacturing_knowledge": 0.15,
+                                                "gd_t_competency": 0.12,
+                                                "thermo_fluids": 0.10,
+                                                "project_complexity": 0.10,
+                                                "certifications_pe_cswp": 0.08,
+                                                "years_experience": 0.07
+                                            },
+                                            "min_requirements": {
+                                                "cad_years": 2,
+                                                "simulation_years": 1,
+                                                "gd_t_proficiency": "Intermediate"
+                                            },
+                                            "bonus_factors": {
+                                                "pe_license": 1.25,
+                                                "six_sigma_black_belt": 1.15,
+                                                "patent_holder": 1.20,
+                                                "phd_in_me": 1.10
+                                            }
+                                        },
+                                        "electrical_engineer": {
+                                            "weights": {
+                                                "circuit_design": 0.18,
+                                                "embedded_systems": 0.16,
+                                                "pcb_layout": 0.14,
+                                                "power_electronics": 0.13,
+                                                "control_systems": 0.12,
+                                                "communication_protocols": 0.10,
+                                                "certifications_pe_altium": 0.09,
+                                                "years_experience": 0.08
+                                            },
+                                            "min_requirements": {
+                                                "circuit_simulation_years": 1,
+                                                "pcb_design_projects": 2,
+                                                "embedded_c_cpp": true
+                                            },
+                                            "bonus_factors": {
+                                                "pe_electrical": 1.25,
+                                                "fpga_experience": 1.15,
+                                                "rtos_experience": 1.10,
+                                                "high_voltage_experience": 1.15
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "example_resume_entries": [{
+                                "resume_id": "RES_MEC_00001",
+                                "candidate_name": "Dr. Jonathan Wu, PE",
+                                "discipline": "Mechanical Engineering",
+                                "summary": "PhD in Thermal Sciences with 12+ years experience in aerospace thermal management. Expert in ANSYS Fluent and CATIA. Led teams of 8-12 engineers.",
+                                "key_skills": ["ANSYS Fluent", "CATIA V5", "Thermal Analysis", "CFD", "Heat Exchangers", "GD&T", "FMEA", "Six Sigma Black Belt"],
+                                "experience_years": 12,
+                                "education": "PhD Mechanical Engineering (Stanford), MS (MIT), BS (UC Berkeley)",
+                                "certifications": ["PE Mechanical (Thermal & Fluids)", "Six Sigma Black Belt", "CSWP"],
+                                "score": 94.5,
+                                "ranking": "Top 2%"
+                            },
+                            {
+                                "resume_id": "RES_ELEC_00042",
+                                "candidate_name": "Maria Gonzales",
+                                "discipline": "Electrical Engineering",
+                                "summary": "Senior Embedded Engineer with 8 years experience in automotive electronics. Expert in STM32, CAN bus, and Altium Designer. Developed ASIL-B compliant systems.",
+                                "key_skills": ["STM32", "Altium Designer", "CAN/LIN", "ISO 26262", "FreeRTOS", "Python", "C++", "Power Electronics"],
+                                "experience_years": 8,
+                                "education": "MSEE Power Electronics (UT Austin), BSEE (Texas A&M)",
+                                "certifications": ["Altium Certified Professional", "Functional Safety Engineer (TÜV)"],
+                                "score": 91.2,
+                                "ranking": "Top 5%"
+                            },
+                            {
+                                "resume_id": "RES_MEC_ELEC_00123",
+                                "candidate_name": "Arjun Mehta",
+                                "discipline": "Mechatronics / Robotics",
+                                "summary": "Robotics software engineer with 6 years experience in ROS, perception, and control. Built autonomous mobile robots for warehouse logistics.",
+                                "key_skills": ["ROS2", "Python", "C++", "OpenCV", "PCL", "Gazebo", "PID Control", "SLAM", "Navigation2"],
+                                "experience_years": 6,
+                                "education": "MS Robotics (CMU), BS Mechanical Engineering (IIT Bombay)",
+                                "certifications": ["ROS Developer (Construction)", "AWS RoboMaker"],
+                                "score": 88.7,
+                                "ranking": "Top 12%"
+                            }
+                        ],
+                        "output_configuration": {
+                            "formats": ["json", "csv", "excel", "html_report", "pdf_summary"],
+                            "visualizations": [
+                                "skill_radar_chart",
+                                "experience_timeline",
+                                "match_score_gauge",
+                                "keyword_cloud",
+                                "certification_badge_list"
+                            ],
+                            "alerts": {
+                                "top_candidates_threshold": 85,
+                                "critical_skill_missing": true,
+                                "duplicate_detection": true
+                            },
+                            "api_endpoints": {
+                                "upload": "/api/v2/resume/upload",
+                                "status": "/api/v2/resume/status/{job_id}",
+                                "results": "/api/v2/resume/results/{resume_id}",
+                                "batch_status": "/api/v2/resume/batch/{batch_id}"
+                            }
+                        }
+                    }

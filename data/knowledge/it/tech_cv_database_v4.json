@@ -1,0 +1,1569 @@
+{
+    "tech_cv_database": {
+        "metadata": {
+            "department": "Technology / IT",
+            "version": "4.0",
+            "created_date": "2024-01-15",
+            "total_cvs": 12,
+            "total_lines": 4850,
+            "technical_focus": "Full-stack, Cloud, DevOps, Data, Security, Infrastructure",
+            "job_roles_covered": [
+                "Senior Software Engineer (Backend)",
+                "DevOps Engineer",
+                "Data Scientist",
+                "IT Manager",
+                "Cloud Architect",
+                "Cybersecurity Analyst",
+                "Full Stack Developer",
+                "Machine Learning Engineer",
+                "Database Administrator",
+                "Network Engineer",
+                "Technical Project Manager",
+                "Site Reliability Engineer"
+            ],
+            "technologies_covered": {
+                "programming_languages": ["Python", "Java", "Go", "Rust", "TypeScript", "JavaScript", "C++", "C#", "Ruby", "Swift", "Kotlin", "Scala"],
+                "frameworks": ["Spring Boot", "Django", "FastAPI", "React", "Vue.js", "Angular", "Next.js", "Express.js", "Flask", "Rails"],
+                "cloud_platforms": ["AWS", "Azure", "GCP", "OCI", "IBM Cloud", "DigitalOcean", "Linode"],
+                "containerization": ["Docker", "Podman", "containerd", "CRI-O"],
+                "orchestration": ["Kubernetes", "Docker Swarm", "Nomad", "OpenShift", "EKS", "AKS", "GKE"],
+                "ci_cd": ["Jenkins", "GitLab CI", "GitHub Actions", "CircleCI", "Travis CI", "Bamboo", "TeamCity", "ArgoCD"],
+                "infrastructure_as_code": ["Terraform", "CloudFormation", "Pulumi", "CDK", "Ansible", "Chef", "Puppet", "SaltStack"],
+                "databases": ["PostgreSQL", "MySQL", "MongoDB", "Cassandra", "Redis", "Elasticsearch", "DynamoDB", "CockroachDB", "TiDB"],
+                "message_queues": ["Kafka", "RabbitMQ", "SQS", "NATS", "Pulsar", "ActiveMQ"],
+                "monitoring": ["Prometheus", "Grafana", "Datadog", "New Relic", "Dynatrace", "AppDynamics", "Splunk", "ELK Stack"],
+                "security_tools": ["Wireshark", "Nessus", "Metasploit", "Burp Suite", "Snort", "Zeek", "Splunk ES", "QRadar"],
+                "data_science": ["TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy", "Jupyter", "Spark MLlib", "XGBoost", "LightGBM"],
+                "networking": ["Cisco IOS", "Juniper JunOS", "Arista EOS", "Palo Alto PAN-OS", "F5 BIG-IP", "BGP", "OSPF", "EIGRP", "IS-IS", "MPLS"]
+            }
+        },
+        "resumes": [{
+                "cv_id": "TECH_BE_001",
+                "job_title": "Senior Software Engineer (Backend)",
+                "years_experience": 8,
+                "education_level": "Master's",
+                "classification": "Human_Written",
+                "personal_details": {
+                    "first_name": "James",
+                    "last_name": "Wilson",
+                    "email": "james.wilson@techcareer.com",
+                    "phone": "+1 (408) 555-0123",
+                    "location": {
+                        "city": "San Francisco",
+                        "state": "California",
+                        "country": "USA",
+                        "postal_code": "94105"
+                    },
+                    "linkedin": "linkedin.com/in/jameswilson",
+                    "github": "github.com/jwilson-dev",
+                    "portfolio": "jameswilson.dev",
+                    "nationality": "American",
+                    "work_authorization": "US Citizen",
+                    "willing_to_relocate": true,
+                    "remote_preference": "Hybrid"
+                },
+                "professional_summary": "Senior Backend Engineer with 8+ years building scalable distributed systems. Started as a QA engineer - found my way into development after automating manual tests. Strong background in Go, Java, and Python. I've built systems handling 100k+ RPS and databases at 10TB scale. Not the typical CS grad (studied physics originally), which gives me a different perspective on problem-solving. Looking for a role where I can mentor junior devs while still writing code daily.",
+                "technical_expertise": {
+                    "primary_languages": [
+                        { "name": "Go", "years": 5, "proficiency": "Expert", "last_used": "2024" },
+                        { "name": "Java", "years": 7, "proficiency": "Expert", "last_used": "2024" },
+                        { "name": "Python", "years": 8, "proficiency": "Advanced", "last_used": "2024" }
+                    ],
+                    "secondary_languages": [
+                        { "name": "Rust", "years": 2, "proficiency": "Intermediate", "last_used": "2023" },
+                        { "name": "TypeScript", "years": 4, "proficiency": "Advanced", "last_used": "2024" }
+                    ],
+                    "frameworks": [
+                        { "name": "Spring Boot", "years": 6, "proficiency": "Expert" },
+                        { "name": "FastAPI", "years": 3, "proficiency": "Advanced" },
+                        { "name": "Gin", "years": 4, "proficiency": "Advanced" },
+                        { "name": "gRPC", "years": 4, "proficiency": "Advanced" }
+                    ],
+                    "databases": [
+                        { "name": "PostgreSQL", "years": 7, "proficiency": "Expert", "use_cases": ["OLTP", "analytics"] },
+                        { "name": "MongoDB", "years": 5, "proficiency": "Advanced", "use_cases": ["document storage", "catalog"] },
+                        { "name": "Redis", "years": 6, "proficiency": "Expert", "use_cases": ["caching", "session store", "rate limiting"] },
+                        { "name": "Cassandra", "years": 3, "proficiency": "Intermediate", "use_cases": ["time-series", "IoT data"] },
+                        { "name": "Elasticsearch", "years": 4, "proficiency": "Advanced", "use_cases": ["search", "logging"] }
+                    ],
+                    "message_brokers": [
+                        { "name": "Kafka", "years": 5, "proficiency": "Expert", "setup": "Self-managed and MSK" },
+                        { "name": "RabbitMQ", "years": 4, "proficiency": "Advanced" },
+                        { "name": "NATS", "years": 2, "proficiency": "Intermediate" }
+                    ],
+                    "container_ orchestration": [
+                        { "name": "Docker", "years": 7, "proficiency": "Expert" },
+                        { "name": "Kubernetes", "years": 5, "proficiency": "Advanced", "certification": "CKA" },
+                        { "name": "Docker Swarm", "years": 3, "proficiency": "Intermediate" }
+                    ],
+                    "cloud_platforms": [
+                        { "name": "AWS", "years": 6, "proficiency": "Advanced", "services": ["EC2", "S3", "RDS", "Lambda", "API Gateway", "ECS", "EKS", "SQS", "SNS", "DynamoDB"] },
+                        { "name": "GCP", "years": 3, "proficiency": "Intermediate", "services": ["GKE", "Cloud Run", "BigQuery", "Pub/Sub"] }
+                    ],
+                    "monitoring_observability": [
+                        { "name": "Prometheus", "years": 4, "proficiency": "Advanced" },
+                        { "name": "Grafana", "years": 4, "proficiency": "Advanced" },
+                        { "name": "Datadog", "years": 3, "proficiency": "Advanced" },
+                        { "name": "Jaeger", "years": 2, "proficiency": "Intermediate", "use_case": "distributed tracing" }
+                    ],
+                    "protocols": [
+                        "HTTP/2", "gRPC", "WebSocket", "TCP/IP", "TLS/mTLS", "OAuth2", "JWT", "SAML"
+                    ],
+                    "version_control": [
+                        { "name": "Git", "years": 8, "proficiency": "Expert" },
+                        { "name": "GitHub", "years": 8, "proficiency": "Expert" },
+                        { "name": "GitLab", "years": 4, "proficiency": "Advanced" }
+                    ],
+                    "ci_cd": [
+                        { "name": "Jenkins", "years": 5, "proficiency": "Advanced" },
+                        { "name": "GitHub Actions", "years": 3, "proficiency": "Advanced" },
+                        { "name": "GitLab CI", "years": 3, "proficiency": "Advanced" }
+                    ]
+                },
+                "education": [{
+                        "level": "Master's",
+                        "degree": "Master of Science",
+                        "field_of_study": "Computer Science",
+                        "institution": "Stanford University",
+                        "location": "Stanford, CA, USA",
+                        "start_date": "2016-09",
+                        "end_date": "2018-06",
+                        "graduation_year": 2018,
+                        "gpa": 3.8,
+                        "gpa_scale": 4.0,
+                        "honors": "Dean's List",
+                        "coursework": [
+                            "Advanced Algorithms (CS261)",
+                            "Distributed Systems (CS244B)",
+                            "Machine Learning (CS229)",
+                            "Database Systems (CS245)",
+                            "Cloud Computing (CS249)",
+                            "Operating Systems (CS240)",
+                            "Computer Networks (CS144)",
+                            "Software Architecture (CS210)"
+                        ],
+                        "thesis_title": "Optimizing Query Performance in Distributed Databases using Learned Index Structures",
+                        "thesis_advisor": "Dr. Jennifer Widom",
+                        "research_papers": 2
+                    },
+                    {
+                        "level": "Bachelor's",
+                        "degree": "Bachelor of Science",
+                        "field_of_study": "Physics",
+                        "minor": "Computer Science",
+                        "institution": "University of California, Berkeley",
+                        "location": "Berkeley, CA, USA",
+                        "start_date": "2011-09",
+                        "end_date": "2015-05",
+                        "graduation_year": 2015,
+                        "gpa": 3.6,
+                        "gpa_scale": 4.0,
+                        "coursework": [
+                            "Computational Physics (PHYS221)",
+                            "Quantum Mechanics (PHYS137)",
+                            "Electromagnetism (PHYS110)",
+                            "Thermodynamics (PHYS112)",
+                            "Data Structures (CS61B)",
+                            "Algorithms (CS170)",
+                            "Linear Algebra (MATH110)",
+                            "Calculus I-IV"
+                        ]
+                    }
+                ],
+                "work_experience": [{
+                        "title": "Senior Software Engineer",
+                        "company": "TechCorp Inc.",
+                        "location": "San Francisco, CA",
+                        "start_date": "2021-03",
+                        "end_date": "Present",
+                        "employment_type": "Full-time",
+                        "team_size": 8,
+                        "stack": ["Go", "Java", "PostgreSQL", "Redis", "Kafka", "AWS", "Kubernetes"],
+                        "responsibilities": [
+                            "Lead backend development for 3 microservices handling 1M+ daily requests",
+                            "Design and implement REST and gRPC APIs",
+                            "Mentor 4 junior engineers",
+                            "Lead architecture reviews and technical design documents",
+                            "On-call rotation for production systems"
+                        ],
+                        "technical_achievements": [
+                            "Reduced API response time by 60% (from 250ms to 100ms) by implementing Redis caching with LRU eviction",
+                            "Migrated 15 services from monolithic architecture to microservices using Kafka for event-driven communication",
+                            "Fixed a memory leak in Go service that caused weekly OOM kills - previous team had been chasing it for 2 years",
+                            "Implemented circuit breaker pattern using Resilience4j that prevented cascading failures during downstream outage",
+                            "Optimized PostgreSQL queries using indexing strategy reducing full table scans by 80%"
+                        ],
+                        "metrics": {
+                            "availability": "99.99%",
+                            "requests_per_second": 10000,
+                            "data_processed_daily": "5TB",
+                            "cost_savings": "$200k/year"
+                        }
+                    },
+                    {
+                        "title": "Software Engineer",
+                        "company": "StartupX",
+                        "location": "Palo Alto, CA",
+                        "start_date": "2018-07",
+                        "end_date": "2021-02",
+                        "employment_type": "Full-time",
+                        "team_size": 5,
+                        "stack": ["Java", "Spring Boot", "MySQL", "Redis", "Docker", "Jenkins"],
+                        "responsibilities": [
+                            "Built REST APIs for mobile and web clients",
+                            "Set up CI/CD pipeline from scratch using Jenkins",
+                            "Database schema design and optimization"
+                        ],
+                        "technical_achievements": [
+                            "Scaled database from 10GB to 500GB with zero downtime using horizontal sharding",
+                            "Implemented JWT-based authentication with refresh token rotation",
+                            "Set up read replicas for analytics queries, reducing load on primary by 40%",
+                            "Built rate limiting middleware using token bucket algorithm"
+                        ]
+                    },
+                    {
+                        "title": "QA Engineer (transitioned to Dev)",
+                        "company": "SoftSolutions",
+                        "location": "San Jose, CA",
+                        "start_date": "2015-08",
+                        "end_date": "2018-06",
+                        "employment_type": "Full-time",
+                        "stack": ["Python", "Selenium", "Jenkins", "JIRA", "TestNG"],
+                        "technical_achievements": [
+                            "Wrote 200+ automated test scripts using Selenium WebDriver, reducing regression testing time from 2 days to 4 hours",
+                            "Built test reporting dashboard using Allure",
+                            "Implemented API contract testing using Postman/Newman",
+                            "Taught myself Python during lunch breaks and built automation framework from scratch"
+                        ]
+                    }
+                ],
+                "certifications": [{
+                        "name": "Certified Kubernetes Administrator (CKA)",
+                        "issuing_body": "Cloud Native Computing Foundation",
+                        "year": 2022,
+                        "expiry": 2025,
+                        "credential_id": "CKA-2210-8842",
+                        "score": "92%"
+                    },
+                    {
+                        "name": "AWS Solutions Architect Associate",
+                        "issuing_body": "Amazon Web Services",
+                        "year": 2021,
+                        "expiry": 2024,
+                        "credential_id": "AWS-ASA-88234"
+                    },
+                    {
+                        "name": "MongoDB Certified Developer Associate",
+                        "issuing_body": "MongoDB",
+                        "year": 2020,
+                        "credential_id": "MDB-DEV-4421"
+                    }
+                ],
+                "open_source_projects": [{
+                        "name": "go-rate-limiter",
+                        "description": "Token bucket and leaky bucket rate limiter implementation in Go",
+                        "github_url": "github.com/jwilson-dev/go-rate-limiter",
+                        "stars": 234,
+                        "forks": 45,
+                        "language": "Go",
+                        "year": 2023
+                    },
+                    {
+                        "name": "kafka-consumer-group-monitor",
+                        "description": "CLI tool for monitoring Kafka consumer group lag",
+                        "github_url": "github.com/jwilson-dev/kafka-consumer-monitor",
+                        "stars": 89,
+                        "forks": 12,
+                        "language": "Python",
+                        "year": 2022
+                    },
+                    {
+                        "name": "postgres-query-optimizer",
+                        "description": "PostgreSQL query optimization recommendations",
+                        "github_url": "github.com/jwilson-dev/pg-query-optimizer",
+                        "stars": 156,
+                        "forks": 28,
+                        "language": "PL/pgSQL",
+                        "year": 2021
+                    }
+                ],
+                "technical_blog_posts": [{
+                        "title": "Building High-Performance gRPC Services in Go",
+                        "platform": "Medium",
+                        "date": "2023-08",
+                        "views": 15000,
+                        "url": "medium.com/@jwilson/go-grpc-performance"
+                    },
+                    {
+                        "title": "Kafka vs RabbitMQ: Choosing the Right Message Broker",
+                        "platform": "Dev.to",
+                        "date": "2023-03",
+                        "views": 25000,
+                        "url": "dev.to/jwilson/kafka-vs-rabbitmq"
+                    }
+                ],
+                "languages": [
+                    { "language": "English", "proficiency": "Native", "cefr_level": "C2" },
+                    { "language": "Spanish", "proficiency": "Conversational", "cefr_level": "B1" }
+                ],
+                "awards": [{
+                        "name": "Engineering Excellence Award",
+                        "issuing_body": "TechCorp Inc.",
+                        "year": 2022,
+                        "reason": "For resolving critical production outage during peak traffic"
+                    },
+                    {
+                        "name": "Mentor of the Year",
+                        "issuing_body": "TechCorp Inc.",
+                        "year": 2023,
+                        "reason": "Mentored 4 junior engineers, 2 were promoted"
+                    }
+                ],
+                "references": [{
+                    "name": "Sarah Chen",
+                    "title": "Engineering Manager",
+                    "company": "TechCorp Inc.",
+                    "email": "sarah.chen@techcorp.com",
+                    "phone": "+1 (408) 555-8888",
+                    "relationship": "Current Manager",
+                    "years_worked_together": 3
+                }]
+            },
+            {
+                "cv_id": "TECH_DEVOPS_002",
+                "job_title": "DevOps Engineer / Platform Engineer",
+                "years_experience": 6,
+                "education_level": "Bachelor's",
+                "classification": "Human_Written",
+                "personal_details": {
+                    "first_name": "Maria",
+                    "last_name": "Garcia",
+                    "email": "maria.garcia@devopspro.com",
+                    "phone": "+1 (206) 555-0456",
+                    "location": {
+                        "city": "Seattle",
+                        "state": "Washington",
+                        "country": "USA",
+                        "postal_code": "98101"
+                    },
+                    "linkedin": "linkedin.com/in/mariagarcia",
+                    "github": "github.com/mgarcia-devops",
+                    "nationality": "American",
+                    "work_authorization": "US Citizen",
+                    "remote_preference": "Remote"
+                },
+                "professional_summary": "DevOps Engineer who actually likes infrastructure (yes, we exist). 6 years experience building CI/CD pipelines, managing Kubernetes clusters, and automating everything that moves. Got into tech through a coding bootcamp after working as a sysadmin for 3 years. Strong believer in 'if you do something twice, automate it'. Currently helping teams adopt GitOps practices with ArgoCD. Looking for a role where I can work on multi-cloud architecture and platform engineering.",
+                "technical_expertise": {
+                    "primary_languages": [
+                        { "name": "Python", "years": 5, "proficiency": "Advanced", "last_used": "2024" },
+                        { "name": "Go", "years": 3, "proficiency": "Intermediate", "last_used": "2024" },
+                        { "name": "Bash", "years": 7, "proficiency": "Expert", "last_used": "2024" }
+                    ],
+                    "infrastructure_as_code": [
+                        { "name": "Terraform", "years": 5, "proficiency": "Expert", "modules_built": 25 },
+                        { "name": "CloudFormation", "years": 3, "proficiency": "Advanced" },
+                        { "name": "Pulumi", "years": 2, "proficiency": "Intermediate" },
+                        { "name": "Ansible", "years": 4, "proficiency": "Advanced" },
+                        { "name": "Chef", "years": 2, "proficiency": "Intermediate" }
+                    ],
+                    "container_orchestration": [
+                        { "name": "Kubernetes", "years": 5, "proficiency": "Expert", "certification": "CKA", "clusters_managed": 15 },
+                        { "name": "Docker", "years": 6, "proficiency": "Expert", "images_built": 200 },
+                        { "name": "Podman", "years": 1, "proficiency": "Intermediate" },
+                        { "name": "OpenShift", "years": 2, "proficiency": "Intermediate" }
+                    ],
+                    "ci_cd": [
+                        { "name": "Jenkins", "years": 5, "proficiency": "Expert", "pipelines_built": 150 },
+                        { "name": "GitLab CI", "years": 4, "proficiency": "Advanced" },
+                        { "name": "GitHub Actions", "years": 3, "proficiency": "Advanced" },
+                        { "name": "ArgoCD", "years": 3, "proficiency": "Advanced" },
+                        { "name": "CircleCI", "years": 2, "proficiency": "Intermediate" }
+                    ],
+                    "cloud_platforms": [
+                        { "name": "AWS", "years": 5, "proficiency": "Advanced", "certifications": ["Solutions Architect", "DevOps Engineer"], "accounts_managed": 8 },
+                        { "name": "Azure", "years": 2, "proficiency": "Intermediate", "certifications": ["Azure Administrator"] },
+                        { "name": "GCP", "years": 1, "proficiency": "Intermediate" }
+                    ],
+                    "monitoring_observability": [
+                        { "name": "Prometheus", "years": 4, "proficiency": "Advanced", "metrics_collected": "10M+/day" },
+                        { "name": "Grafana", "years": 4, "proficiency": "Advanced", "dashboards_created": 50 },
+                        { "name": "Datadog", "years": 3, "proficiency": "Advanced" },
+                        { "name": "ELK Stack", "years": 4, "proficiency": "Advanced", "logs_processed": "5TB/day" },
+                        { "name": "New Relic", "years": 2, "proficiency": "Intermediate" }
+                    ],
+                    "logging": [
+                        { "name": "Loki", "years": 2, "proficiency": "Intermediate" },
+                        { "name": "Fluentd", "years": 3, "proficiency": "Advanced" },
+                        { "name": "Logstash", "years": 3, "proficiency": "Advanced" }
+                    ],
+                    "security_tools": [
+                        { "name": "Vault", "years": 3, "proficiency": "Advanced", "use_case": "secrets management" },
+                        { "name": "Trivy", "years": 2, "proficiency": "Advanced", "use_case": "container scanning" },
+                        { "name": "SonarQube", "years": 2, "proficiency": "Intermediate", "use_case": "code quality" }
+                    ],
+                    "service_mesh": [
+                        { "name": "Istio", "years": 2, "proficiency": "Intermediate" },
+                        { "name": "Linkerd", "years": 1, "proficiency": "Beginner" }
+                    ]
+                },
+                "education": [{
+                        "level": "Bootcamp",
+                        "degree": "Certificate",
+                        "field_of_study": "Full Stack Development",
+                        "institution": "Hack Reactor",
+                        "location": "San Francisco, CA",
+                        "start_date": "2017-01",
+                        "end_date": "2017-06",
+                        "graduation_year": 2017,
+                        "duration_months": 6,
+                        "hours_per_week": 80,
+                        "projects_completed": 4
+                    },
+                    {
+                        "level": "Bachelor's",
+                        "degree": "Bachelor of Science",
+                        "field_of_study": "Information Technology",
+                        "institution": "University of Washington",
+                        "location": "Seattle, WA, USA",
+                        "start_date": "2010-09",
+                        "end_date": "2014-06",
+                        "graduation_year": 2014,
+                        "gpa": 3.4,
+                        "gpa_scale": 4.0,
+                        "coursework": [
+                            "Network Administration (IT340)",
+                            "Database Management (IT270)",
+                            "System Analysis (IT350)",
+                            "IT Project Management (IT410)",
+                            "Cybersecurity Fundamentals (IT380)",
+                            "Cloud Computing (IT450)",
+                            "Linux Administration (IT320)",
+                            "Scripting and Automation (IT310)"
+                        ]
+                    }
+                ],
+                "work_experience": [{
+                        "title": "Senior DevOps Engineer",
+                        "company": "CloudNative Inc.",
+                        "location": "Seattle, WA (Remote)",
+                        "start_date": "2020-01",
+                        "end_date": "Present",
+                        "employment_type": "Full-time",
+                        "team_size": 6,
+                        "infrastructure_scale": {
+                            "clusters": 12,
+                            "nodes": 250,
+                            "pods": 5000,
+                            "namespaces": 80,
+                            "environments": ["dev", "staging", "prod"]
+                        },
+                        "responsibilities": [
+                            "Manage 12 Kubernetes clusters across dev/staging/prod environments",
+                            "Design and implement infrastructure as code using Terraform",
+                            "Lead GitOps adoption using ArgoCD",
+                            "Capacity planning and cost optimization",
+                            "On-call rotation for platform incidents"
+                        ],
+                        "technical_achievements": [
+                            "Reduced deployment time from 30 minutes to 5 minutes by optimizing CI/CD pipelines and implementing parallel builds",
+                            "Implemented Karpenter for auto-scaling, saving $40k/year in EC2 costs by right-sizing nodes",
+                            "Created internal Terraform modules used by 20+ engineering teams",
+                            "Set up Prometheus + Grafana stack with 200+ dashboards and 500+ alerts",
+                            "Implemented Vault for secrets management, eliminating hardcoded credentials"
+                        ],
+                        "metrics": {
+                            "deployment_frequency": "50/day",
+                            "lead_time_to_deploy": "5 minutes",
+                            "mean_time_to_recovery": "15 minutes",
+                            "change_failure_rate": "2%",
+                            "availability": "99.99%"
+                        }
+                    },
+                    {
+                        "title": "DevOps Engineer",
+                        "company": "Midwest Bank",
+                        "location": "Chicago, IL",
+                        "start_date": "2017-07",
+                        "end_date": "2019-12",
+                        "employment_type": "Full-time",
+                        "team_size": 4,
+                        "stack": ["Docker", "Jenkins", "Ansible", "AWS", "Linux", "Nagios", "Terraform"],
+                        "responsibilities": [
+                            "Maintained 200+ Linux servers (Ubuntu, CentOS, RHEL)",
+                            "Automated backup and recovery processes using Ansible playbooks",
+                            "Managed AWS infrastructure (EC2, S3, VPC, IAM)"
+                        ],
+                        "technical_achievements": [
+                            "Migrated on-premise infrastructure to AWS - project took 8 months with zero downtime",
+                            "Set up monitoring with Nagios that caught a security breach attempt within 2 minutes",
+                            "Automated server provisioning reducing setup time from 2 days to 30 minutes",
+                            "Implemented log aggregation using ELK stack for 200+ servers"
+                        ]
+                    }
+                ],
+                "certifications": [{
+                        "name": "AWS DevOps Engineer Professional",
+                        "issuing_body": "Amazon Web Services",
+                        "year": 2023,
+                        "expiry": 2026,
+                        "credential_id": "AWS-DOP-44231",
+                        "score": "88%"
+                    },
+                    {
+                        "name": "Certified Kubernetes Administrator (CKA)",
+                        "issuing_body": "Cloud Native Computing Foundation",
+                        "year": 2022,
+                        "expiry": 2025,
+                        "credential_id": "CKA-3341-9921",
+                        "score": "94%"
+                    },
+                    {
+                        "name": "HashiCorp Certified: Terraform Associate (003)",
+                        "issuing_body": "HashiCorp",
+                        "year": 2021,
+                        "expiry": 2024,
+                        "credential_id": "HCTA-003-8821"
+                    },
+                    {
+                        "name": "Certified Jenkins Engineer",
+                        "issuing_body": "CloudBees",
+                        "year": 2020,
+                        "credential_id": "CJE-4421"
+                    }
+                ],
+                "open_source_contributions": [{
+                        "project": "Terraform AWS Provider",
+                        "contribution_type": "Bug fix",
+                        "pull_requests": 3,
+                        "merged": true,
+                        "year": 2022
+                    },
+                    {
+                        "project": "ArgoCD",
+                        "contribution_type": "Documentation",
+                        "pull_requests": 5,
+                        "merged": true,
+                        "year": 2023
+                    },
+                    {
+                        "project": "Prometheus Operator",
+                        "contribution_type": "Feature",
+                        "pull_requests": 1,
+                        "merged": true,
+                        "year": 2022
+                    }
+                ],
+                "personal_projects": [{
+                        "name": "HomeLab Kubernetes Cluster",
+                        "description": "5-node Raspberry Pi cluster running production-like workloads",
+                        "technologies": ["K3s", "Longhorn", "MetalLB", "Prometheus", "Grafana", "Traefik"],
+                        "github_url": "github.com/mgarcia-devops/homelab",
+                        "year": 2022,
+                        "hardware": "5x Raspberry Pi 4 (8GB)"
+                    },
+                    {
+                        "name": "Terraform AWS Modules Library",
+                        "description": "Reusable Terraform modules for VPC, EKS, RDS, S3 used by 50+ developers",
+                        "technologies": ["Terraform", "AWS", "Go", "Terratest"],
+                        "github_url": "github.com/mgarcia-devops/terraform-modules",
+                        "stars": 89,
+                        "forks": 23,
+                        "year": 2021
+                    }
+                ],
+                "languages": [
+                    { "language": "English", "proficiency": "Native", "cefr_level": "C2" },
+                    { "language": "Spanish", "proficiency": "Native", "cefr_level": "C2" }
+                ],
+                "awards": [{
+                    "name": "Cloud Innovator of the Year",
+                    "issuing_body": "CloudNative Inc.",
+                    "year": 2022,
+                    "reason": "For designing multi-region disaster recovery architecture"
+                }]
+            },
+            {
+                "cv_id": "TECH_DS_003",
+                "job_title": "Data Scientist / ML Engineer",
+                "years_experience": 5,
+                "education_level": "PhD",
+                "classification": "Human_Written",
+                "personal_details": {
+                    "first_name": "Priya",
+                    "last_name": "Patel",
+                    "email": "priya.patel@datascience.com",
+                    "phone": "+1 (617) 555-0789",
+                    "location": {
+                        "city": "Boston",
+                        "state": "Massachusetts",
+                        "country": "USA",
+                        "postal_code": "02110"
+                    },
+                    "linkedin": "linkedin.com/in/priyapatel",
+                    "github": "github.com/priya-ds",
+                    "kaggle": "kaggle.com/priyapatel",
+                    "nationality": "American",
+                    "work_authorization": "US Citizen"
+                },
+                "professional_summary": "Data Scientist with a PhD in Statistics and 5 years industry experience. I love finding patterns in messy data. Started my career in academia (published 8 papers) but wanted real-world impact. Specialize in recommendation systems, customer analytics, and causal inference. Not the typical 'just run models' data scientist - I actually enjoy data engineering and MLOps too. Built ML platforms serving 10M+ predictions daily. Looking for a senior DS role where I can both build models and help shape data strategy.",
+                "technical_expertise": {
+                    "primary_languages": [
+                        { "name": "Python", "years": 8, "proficiency": "Expert", "last_used": "2024" },
+                        { "name": "SQL", "years": 7, "proficiency": "Expert", "last_used": "2024" },
+                        { "name": "R", "years": 6, "proficiency": "Advanced", "last_used": "2023" }
+                    ],
+                    "ml_frameworks": [
+                        { "name": "TensorFlow", "years": 5, "proficiency": "Advanced", "models_deployed": 15 },
+                        { "name": "PyTorch", "years": 4, "proficiency": "Advanced", "models_deployed": 10 },
+                        { "name": "Scikit-learn", "years": 7, "proficiency": "Expert", "models_deployed": 50 },
+                        { "name": "XGBoost", "years": 5, "proficiency": "Expert" },
+                        { "name": "LightGBM", "years": 4, "proficiency": "Advanced" }
+                    ],
+                    "data_engineering": [
+                        { "name": "Apache Spark", "years": 4, "proficiency": "Advanced", "data_processed": "10TB+" },
+                        { "name": "Apache Airflow", "years": 3, "proficiency": "Advanced", "dags_built": 50 },
+                        { "name": "dbt", "years": 2, "proficiency": "Intermediate" },
+                        { "name": "Kafka", "years": 3, "proficiency": "Intermediate" },
+                        { "name": "Pandas", "years": 7, "proficiency": "Expert" },
+                        { "name": "NumPy", "years": 7, "proficiency": "Expert" }
+                    ],
+                    "mlops": [
+                        { "name": "MLflow", "years": 3, "proficiency": "Advanced", "experiments_tracked": 500 },
+                        { "name": "Kubeflow", "years": 2, "proficiency": "Intermediate" },
+                        { "name": "Seldon Core", "years": 2, "proficiency": "Intermediate" },
+                        { "name": "Weights & Biases", "years": 2, "proficiency": "Advanced" }
+                    ],
+                    "cloud_platforms": [
+                        { "name": "AWS", "years": 4, "proficiency": "Advanced", "services": ["SageMaker", "S3", "EC2", "Lambda", "Redshift", "Glue", "Athena"] },
+                        { "name": "GCP", "years": 2, "proficiency": "Intermediate", "services": ["Vertex AI", "BigQuery", "Dataflow"] }
+                    ],
+                    "visualization": [
+                        { "name": "Tableau", "years": 4, "proficiency": "Advanced", "dashboards_built": 30 },
+                        { "name": "Power BI", "years": 2, "proficiency": "Intermediate" },
+                        { "name": "Plotly", "years": 4, "proficiency": "Advanced" },
+                        { "name": "Matplotlib", "years": 7, "proficiency": "Expert" },
+                        { "name": "Seaborn", "years": 6, "proficiency": "Expert" }
+                    ],
+                    "statistical_methods": [
+                        "Bayesian Inference", "Causal Inference", "A/B Testing", "Time Series Analysis", "Hypothesis Testing", "Experimental Design", "Multivariate Analysis", "Factor Analysis"
+                    ]
+                },
+                "education": [{
+                        "level": "PhD",
+                        "degree": "Doctor of Philosophy",
+                        "field_of_study": "Statistics",
+                        "institution": "Harvard University",
+                        "location": "Cambridge, MA, USA",
+                        "start_date": "2015-09",
+                        "end_date": "2019-06",
+                        "graduation_year": 2019,
+                        "gpa": 3.9,
+                        "gpa_scale": 4.0,
+                        "dissertation_title": "Bayesian Methods for High-Dimensional Recommender Systems with Sparse Feedback",
+                        "advisor": "Dr. David Blei",
+                        "committee_members": ["Dr. Kevin Murphy", "Dr. Susan Athey", "Dr. Ryan Adams"],
+                        "coursework": [
+                            "Advanced Statistical Inference (STAT310)",
+                            "Machine Learning (CS281)",
+                            "Bayesian Statistics (STAT340)",
+                            "Time Series Analysis (STAT350)",
+                            "High-Dimensional Statistics (STAT360)",
+                            "Statistical Computing (STAT370)",
+                            "Causal Inference (STAT380)",
+                            "Optimization Methods (APMTH115)"
+                        ],
+                        "publications": 8,
+                        "first_author_papers": 3,
+                        "citations_total": 245,
+                        "h_index": 6
+                    },
+                    {
+                        "level": "Master's",
+                        "degree": "Master of Science",
+                        "field_of_study": "Statistics",
+                        "institution": "Harvard University",
+                        "location": "Cambridge, MA, USA",
+                        "start_date": "2013-09",
+                        "end_date": "2015-06",
+                        "graduation_year": 2015,
+                        "gpa": 3.8,
+                        "gpa_scale": 4.0
+                    },
+                    {
+                        "level": "Bachelor's",
+                        "degree": "Bachelor of Science",
+                        "field_of_study": "Mathematics",
+                        "minor": "Computer Science",
+                        "institution": "Massachusetts Institute of Technology (MIT)",
+                        "location": "Cambridge, MA, USA",
+                        "start_date": "2009-09",
+                        "end_date": "2013-06",
+                        "graduation_year": 2013,
+                        "gpa": 3.7,
+                        "gpa_scale": 4.0,
+                        "honors": "Phi Beta Kappa",
+                        "coursework": [
+                            "Real Analysis (18.100)",
+                            "Linear Algebra (18.06)",
+                            "Probability (18.440)",
+                            "Machine Learning (6.867)",
+                            "Algorithms (6.006)",
+                            "Statistics (18.650)",
+                            "Optimization (6.255)"
+                        ]
+                    }
+                ],
+                "work_experience": [{
+                        "title": "Senior Data Scientist",
+                        "company": "RetailAI",
+                        "location": "Boston, MA",
+                        "start_date": "2021-08",
+                        "end_date": "Present",
+                        "employment_type": "Full-time",
+                        "team_size": 10,
+                        "stack": ["Python", "TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "Spark", "Airflow", "AWS SageMaker", "MLflow"],
+                        "responsibilities": [
+                            "Lead data science initiatives for customer personalization and recommendation",
+                            "Mentor 3 junior data scientists and 2 ML engineers",
+                            "Design and analyze A/B tests for product features",
+                            "Build and maintain ML pipelines for model training and deployment"
+                        ],
+                        "technical_achievements": [
+                            "Built collaborative filtering + neural network hybrid recommendation engine that increased click-through rate by 35% (from 2.1% to 2.8%)",
+                            "Reduced model training time from 8 hours to 45 minutes by implementing distributed training with Horovod",
+                            "Saved $500k annually by optimizing inventory forecasting - prevented overstock on 200+ SKUs using XGBoost",
+                            "Implemented two-tower neural network for real-time personalization serving 500k requests/second",
+                            "Built causal inference model that identified $2M in incremental revenue from marketing campaigns"
+                        ],
+                        "metrics": {
+                            "model_accuracy": "0.89 AUC",
+                            "inference_latency_p99": "25ms",
+                            "daily_predictions": "10M",
+                            "feature_count": 250
+                        }
+                    },
+                    {
+                        "title": "Data Scientist",
+                        "company": "FinTech Solutions",
+                        "location": "New York, NY",
+                        "start_date": "2019-07",
+                        "end_date": "2021-07",
+                        "employment_type": "Full-time",
+                        "team_size": 6,
+                        "stack": ["Python", "SQL", "Tableau", "XGBoost", "LightGBM", "Scikit-learn", "Pandas"],
+                        "technical_achievements": [
+                            "Developed fraud detection model using XGBoost that reduced false positives by 40% (from 5% to 3%)",
+                            "Created customer churn prediction model identifying at-risk customers with 85% precision and 82% recall",
+                            "The fraud model caught a $2M fraud ring in its first month of deployment",
+                            "Built automated A/B testing platform that reduced experiment analysis time from 1 week to 1 day"
+                        ]
+                    }
+                ],
+                "publications": [{
+                        "title": "Bayesian Collaborative Filtering for Sparse Implicit Feedback Data",
+                        "journal": "Journal of Machine Learning Research (JMLR)",
+                        "year": 2020,
+                        "volume": 21,
+                        "issue": 142,
+                        "pages": "1-25",
+                        "citations": 78,
+                        "impact_factor": 6.2,
+                        "url": "jmlr.org/papers/v21/19-884.html"
+                    },
+                    {
+                        "title": "Scalable Recommendation Systems for E-commerce: A Comparative Study",
+                        "conference": "ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)",
+                        "year": 2019,
+                        "citations": 112,
+                        "acceptance_rate": "18%",
+                        "url": "dl.acm.org/doi/10.1145/1234567"
+                    },
+                    {
+                        "title": "Dynamic Bayesian Networks for Time-Varying User Preferences",
+                        "conference": "Conference on Neural Information Processing Systems (NeurIPS)",
+                        "year": 2018,
+                        "citations": 45,
+                        "acceptance_rate": "21%"
+                    }
+                ],
+                "patents": [{
+                    "title": "System and Method for Personalized Product Recommendations Using Neural Collaborative Filtering",
+                    "patent_number": "US20220123456A1",
+                    "year": 2022,
+                    "status": "Pending",
+                    "assignee": "RetailAI Inc."
+                }],
+                "certifications": [{
+                        "name": "AWS Machine Learning Specialty",
+                        "issuing_body": "Amazon Web Services",
+                        "year": 2022,
+                        "expiry": 2025,
+                        "credential_id": "AWS-MLS-55923"
+                    },
+                    {
+                        "name": "TensorFlow Developer Certificate",
+                        "issuing_body": "Google",
+                        "year": 2021,
+                        "credential_id": "TF-DEV-4421",
+                        "expiry": "2024"
+                    },
+                    {
+                        "name": "Databricks Certified Associate Developer for Apache Spark",
+                        "issuing_body": "Databricks",
+                        "year": 2022,
+                        "credential_id": "DBC-SPARK-8821"
+                    }
+                ],
+                "kaggle_competitions": [{
+                        "name": "Google Analytics Customer Revenue Prediction",
+                        "rank": "Top 3%",
+                        "position": "87 / 2845",
+                        "year": 2020,
+                        "solution_url": "kaggle.com/priyapatel/ga-revenue-solution"
+                    },
+                    {
+                        "name": "IEEE-CIS Fraud Detection",
+                        "rank": "Top 5%",
+                        "position": "142 / 2836",
+                        "year": 2019
+                    }
+                ],
+                "languages": [
+                    { "language": "English", "proficiency": "Native", "cefr_level": "C2" },
+                    { "language": "Hindi", "proficiency": "Native", "cefr_level": "C2" },
+                    { "language": "French", "proficiency": "Professional", "cefr_level": "C1" }
+                ]
+            },
+            {
+                "cv_id": "TECH_SRE_004",
+                "job_title": "Site Reliability Engineer (SRE)",
+                "years_experience": 7,
+                "education_level": "Bachelor's",
+                "classification": "AI_Generated",
+                "personal_details": {
+                    "first_name": "Michael",
+                    "last_name": "Brown",
+                    "email": "michael.brown@sre.engineer",
+                    "phone": "+1 (512) 555-0999",
+                    "location": {
+                        "city": "Austin",
+                        "state": "Texas",
+                        "country": "USA",
+                        "postal_code": "78701"
+                    },
+                    "linkedin": "linkedin.com/in/michaelbrown",
+                    "github": "github.com/mbrown-sre",
+                    "nationality": "American"
+                },
+                "professional_summary": "Site Reliability Engineer with 7+ years of experience ensuring high availability and performance for large-scale distributed systems. Expert in SLI/SLO definition, error budgeting, capacity planning, and incident management. Proven track record of achieving 99.99%+ uptime for services handling 1M+ QPS. Strong background in observability, chaos engineering, and performance optimization. Seeking Senior SRE role at hyper-scale organization.",
+                "technical_expertise": {
+                    "programming_languages": [
+                        { "name": "Python", "years": 7, "proficiency": "Advanced" },
+                        { "name": "Go", "years": 5, "proficiency": "Advanced" },
+                        { "name": "Ruby", "years": 4, "proficiency": "Intermediate" },
+                        { "name": "Shell", "years": 7, "proficiency": "Expert" }
+                    ],
+                    "observability": [
+                        "Prometheus", "Grafana", "Datadog", "Dynatrace", "Splunk", "ELK Stack", "Jaeger", "Zipkin"
+                    ],
+                    "incident_management": ["PagerDuty", "Opsgenie", "FireHydrant", "Blameless"],
+                    "chaos_engineering": ["Chaos Mesh", "Gremlin", "Litmus"],
+                    "cloud_platforms": [
+                        { "name": "AWS", "years": 6, "certifications": ["Solutions Architect Professional"] },
+                        { "name": "GCP", "years": 3 }
+                    ]
+                },
+                "education": [{
+                    "level": "Bachelor's",
+                    "degree": "Bachelor of Science",
+                    "field_of_study": "Computer Engineering",
+                    "institution": "University of Texas at Austin",
+                    "location": "Austin, TX, USA",
+                    "graduation_year": 2017,
+                    "gpa": 3.6
+                }],
+                "work_experience": [{
+                    "title": "Senior Site Reliability Engineer",
+                    "company": "HyperScale Inc.",
+                    "location": "Austin, TX",
+                    "start_date": "2021-01",
+                    "end_date": "Present",
+                    "achievements": [
+                        "Achieved 99.99% availability for services processing 1M+ requests per second",
+                        "Defined SLIs and SLOs for 50+ microservices with 99.9% error budget adherence",
+                        "Reduced MTTD from 5 minutes to 30 seconds through improved observability",
+                        "Reduced MTTR from 30 minutes to 8 minutes via automated runbooks",
+                        "Implemented chaos engineering practices that uncovered 15+ latent failure modes"
+                    ]
+                }],
+                "certifications": [
+                    { "name": "AWS Solutions Architect Professional", "year": 2022 },
+                    { "name": "Site Reliability Engineering Foundation", "year": 2021 }
+                ]
+            },
+            {
+                "cv_id": "TECH_SECURITY_005",
+                "job_title": "Cybersecurity Engineer",
+                "years_experience": 5,
+                "education_level": "Bachelor's",
+                "classification": "Human_Written",
+                "personal_details": {
+                    "first_name": "Jessica",
+                    "last_name": "Martinez",
+                    "email": "jessica.martinez@cybersec.com",
+                    "phone": "+1 (703) 555-0567",
+                    "location": {
+                        "city": "Arlington",
+                        "state": "Virginia",
+                        "country": "USA",
+                        "postal_code": "22201"
+                    },
+                    "linkedin": "linkedin.com/in/jessicamartinez",
+                    "github": "github.com/jessica-sec",
+                    "nationality": "American"
+                },
+                "professional_summary": "Cybersecurity Engineer with 5 years experience in threat detection, incident response, and vulnerability management. Got into security after my own Instagram got hacked in college - decided I wanted to be on the other side. I'm passionate about blue team defense, threat hunting, and security automation. Currently studying for OSCP (failed it once already but trying again). Looking for a role where I can do more forensic analysis and malware reverse engineering.",
+                "technical_expertise": {
+                    "security_tools": [
+                        { "name": "Splunk ES", "years": 3, "proficiency": "Advanced" },
+                        { "name": "QRadar", "years": 2, "proficiency": "Intermediate" },
+                        { "name": "Wireshark", "years": 5, "proficiency": "Expert" },
+                        { "name": "Nessus", "years": 4, "proficiency": "Advanced" },
+                        { "name": "Metasploit", "years": 3, "proficiency": "Advanced" },
+                        { "name": "Burp Suite", "years": 3, "proficiency": "Advanced" },
+                        { "name": "Snort", "years": 3, "proficiency": "Advanced" },
+                        { "name": "Zeek (formerly Bro)", "years": 2, "proficiency": "Intermediate" }
+                    ],
+                    "programming": [
+                        { "name": "Python", "years": 4, "proficiency": "Advanced" },
+                        { "name": "PowerShell", "years": 4, "proficiency": "Advanced" },
+                        { "name": "Bash", "years": 4, "proficiency": "Advanced" },
+                        { "name": "Go", "years": 1, "proficiency": "Learning" }
+                    ],
+                    "frameworks": [
+                        "MITRE ATT&CK",
+                        "NIST Cybersecurity Framework",
+                        "CIS Controls",
+                        "ISO 27001",
+                        "PCI DSS"
+                    ],
+                    "cloud_security": [
+                        { "name": "AWS", "services": ["GuardDuty", "Security Hub", "Inspector", "WAF", "Shield"] },
+                        { "name": "Azure", "services": ["Sentinel", "Defender"] }
+                    ],
+                    "operating_systems": [
+                        { "name": "Windows", "years": 5, "proficiency": "Advanced" },
+                        { "name": "Linux", "years": 5, "proficiency": "Advanced" },
+                        { "name": "macOS", "years": 3, "proficiency": "Intermediate" }
+                    ]
+                },
+                "education": [{
+                    "level": "Bachelor's",
+                    "degree": "Bachelor of Science",
+                    "field_of_study": "Cybersecurity",
+                    "institution": "George Mason University",
+                    "location": "Fairfax, VA, USA",
+                    "start_date": "2016-09",
+                    "end_date": "2020-05",
+                    "graduation_year": 2020,
+                    "gpa": 3.6,
+                    "gpa_scale": 4.0,
+                    "coursework": [
+                        "Network Security (CYSE410)",
+                        "Digital Forensics (CYSE420)",
+                        "Malware Analysis (CYSE430)",
+                        "Cryptography (CYSE440)",
+                        "Ethical Hacking (CYSE450)",
+                        "Incident Response (CYSE460)",
+                        "Security Operations (CYSE470)",
+                        "Risk Management (CYSE480)"
+                    ],
+                    "capstone_project": "Built a SIEM using ELK stack for a simulated corporate network with 10,000+ endpoints"
+                }],
+                "work_experience": [{
+                        "title": "Cybersecurity Engineer",
+                        "company": "Defense Systems Inc",
+                        "location": "Arlington, VA",
+                        "start_date": "2021-06",
+                        "end_date": "Present",
+                        "employment_type": "Full-time",
+                        "team_size": 8,
+                        "responsibilities": [
+                            "Monitor SIEM for suspicious activity across 5,000+ endpoints",
+                            "Lead incident response for security events and breaches",
+                            "Conduct vulnerability assessments and penetration testing",
+                            "Develop security automation playbooks"
+                        ],
+                        "technical_achievements": [
+                            "Detected and contained a ransomware attack within 45 minutes - saved company from potential $5M loss",
+                            "Reduced mean time to detect (MTTD) from 4 hours to 30 minutes",
+                            "Created threat intelligence feeds that blocked 10,000+ malicious IPs",
+                            "Automated phishing response using SOAR, reducing analyst workload by 60%",
+                            "Conducted red team exercises that identified 12 critical vulnerabilities"
+                        ]
+                    },
+                    {
+                        "title": "Junior Security Analyst",
+                        "company": "TechSecure",
+                        "location": "Reston, VA",
+                        "start_date": "2020-07",
+                        "end_date": "2021-05",
+                        "employment_type": "Full-time",
+                        "team_size": 4,
+                        "technical_achievements": [
+                            "Triaged 500+ security alerts daily with 98% accuracy",
+                            "Assisted in security audits that led to ISO27001 certification",
+                            "Created security awareness training used by 500+ employees"
+                        ]
+                    }
+                ],
+                "certifications": [{
+                        "name": "CompTIA Security+",
+                        "year": 2020,
+                        "expiry": 2026,
+                        "credential_id": "COMP-SEC-44281"
+                    },
+                    {
+                        "name": "Certified Incident Handler (GCIH)",
+                        "year": 2022,
+                        "expiry": 2025,
+                        "credential_id": "GIAC-2234-8871"
+                    },
+                    {
+                        "name": "Certified Ethical Hacker (CEH)",
+                        "year": 2021,
+                        "expiry": 2024,
+                        "credential_id": "EC-Council-CEH-4421"
+                    },
+                    {
+                        "name": "AWS Certified Security - Specialty",
+                        "year": 2023,
+                        "expiry": 2026,
+                        "credential_id": "AWS-SEC-8832"
+                    }
+                ],
+                "ctf_competitions": [{
+                        "name": "HackTheBox",
+                        "rank": "Top 500",
+                        "machines_rooted": 45,
+                        "year": 2023
+                    },
+                    {
+                        "name": "SANS Holiday Hack Challenge",
+                        "rank": "Top 10%",
+                        "year": 2022
+                    }
+                ],
+                "languages": [
+                    { "language": "English", "proficiency": "Native" },
+                    { "language": "Spanish", "proficiency": "Conversational" }
+                ]
+            },
+            {
+                "cv_id": "TECH_ARCH_006",
+                "job_title": "Cloud Architect",
+                "years_experience": 10,
+                "education_level": "Master's",
+                "classification": "AI_Generated",
+                "personal_details": {
+                    "first_name": "David",
+                    "last_name": "Kim",
+                    "email": "david.kim@cloudarch.com",
+                    "phone": "+1 (425) 555-0345",
+                    "location": {
+                        "city": "Bellevue",
+                        "state": "Washington",
+                        "country": "USA",
+                        "postal_code": "98004"
+                    },
+                    "linkedin": "linkedin.com/in/davidkim",
+                    "nationality": "American"
+                },
+                "professional_summary": "Results-driven Cloud Architect with 10+ years of experience designing and implementing scalable cloud solutions across AWS, Azure, and GCP. Expert in cloud migration, infrastructure automation, and cost optimization. Proven track record of reducing cloud spend by 30-40% while improving performance. Strong background in DevOps practices, container orchestration, and serverless architectures. Seeking Principal Cloud Architect position at enterprise-scale organization.",
+                "technical_expertise": {
+                    "cloud_platforms": [
+                        { "name": "AWS", "years": 8, "certifications": ["Solutions Architect Professional", "DevOps Engineer Professional", "Security Specialty"], "services": 85 },
+                        { "name": "Azure", "years": 5, "certifications": ["Solutions Architect Expert"], "services": 60 },
+                        { "name": "GCP", "years": 3, "certifications": ["Professional Cloud Architect"], "services": 40 }
+                    ],
+                    "infrastructure_as_code": ["Terraform", "CloudFormation", "CDK", "Pulumi"],
+                    "container_orchestration": ["Kubernetes", "EKS", "AKS", "GKE", "Docker Swarm", "Nomad"],
+                    "serverless": ["AWS Lambda", "Azure Functions", "Cloud Functions", "Fargate"],
+                    "networking": ["VPC", "Direct Connect", "VPN", "Load Balancing", "CloudFront", "CDN", "Route53"],
+                    "database": ["RDS", "Aurora", "DynamoDB", "Redshift", "ElastiCache", "DocumentDB", "Neptune"]
+                },
+                "education": [{
+                        "level": "Master's",
+                        "degree": "Master of Science",
+                        "field_of_study": "Cloud Computing",
+                        "institution": "Georgia Institute of Technology",
+                        "location": "Atlanta, GA, USA",
+                        "graduation_year": 2014,
+                        "gpa": 3.9
+                    },
+                    {
+                        "level": "Bachelor's",
+                        "degree": "Bachelor of Science",
+                        "field_of_study": "Computer Science",
+                        "institution": "University of Washington",
+                        "graduation_year": 2012,
+                        "gpa": 3.7
+                    }
+                ],
+                "work_experience": [{
+                    "title": "Principal Cloud Architect",
+                    "company": "Enterprise Tech Corp",
+                    "location": "Seattle, WA",
+                    "start_date": "2020-01",
+                    "end_date": "Present",
+                    "achievements": [
+                        "Designed multi-region, multi-cloud architecture achieving 99.99% uptime across 3 regions",
+                        "Reduced cloud costs by 35% ($1.2M annually) through reserved instance planning, right-sizing, and spot instances",
+                        "Led migration of 200+ applications to Kubernetes with zero downtime",
+                        "Architected disaster recovery solution with 15-minute RPO and 1-hour RTO",
+                        "Implemented FinOps framework adopted by 20+ engineering teams"
+                    ]
+                }],
+                "certifications": [
+                    { "name": "AWS Solutions Architect Professional", "year": 2022 },
+                    { "name": "Microsoft Certified: Azure Solutions Architect Expert", "year": 2022 },
+                    { "name": "Google Professional Cloud Architect", "year": 2021 },
+                    { "name": "Certified Kubernetes Administrator (CKA)", "year": 2020 },
+                    { "name": "HashiCorp Certified: Terraform Associate", "year": 2021 },
+                    { "name": "TOGAF 9 Certified", "year": 2019 }
+                ]
+            },
+            {
+                "cv_id": "TECH_FS_007",
+                "job_title": "Full Stack Developer",
+                "years_experience": 6,
+                "education_level": "Bachelor's",
+                "classification": "Human_Written",
+                "personal_details": {
+                    "first_name": "Emily",
+                    "last_name": "Chen",
+                    "email": "emily.chen@fullstack.dev",
+                    "phone": "+1 (415) 555-0890",
+                    "location": {
+                        "city": "San Francisco",
+                        "state": "California",
+                        "country": "USA",
+                        "postal_code": "94103"
+                    },
+                    "linkedin": "linkedin.com/in/emilychen",
+                    "github": "github.com/emily-chen",
+                    "portfolio": "emilychen.dev",
+                    "nationality": "American"
+                },
+                "professional_summary": "Full Stack Developer who actually cares about accessibility (I'm that person who tests with screen readers). 6 years experience with React, TypeScript, Node.js, and Python. Started as a graphic designer, learned to code because I wanted to build what I designed. I've led accessibility initiatives at two companies and helped both achieve WCAG 2.1 AA compliance. Looking for a senior full-stack role where I can work on design systems and performance optimization.",
+                "technical_expertise": {
+                    "frontend": [
+                        { "name": "React", "years": 5, "proficiency": "Expert" },
+                        { "name": "Next.js", "years": 3, "proficiency": "Advanced" },
+                        { "name": "TypeScript", "years": 4, "proficiency": "Advanced" },
+                        { "name": "Vue.js", "years": 2, "proficiency": "Intermediate" },
+                        { "name": "Tailwind CSS", "years": 3, "proficiency": "Advanced" },
+                        { "name": "Redux", "years": 4, "proficiency": "Advanced" },
+                        { "name": "React Query", "years": 2, "proficiency": "Advanced" }
+                    ],
+                    "backend": [
+                        { "name": "Node.js", "years": 5, "proficiency": "Expert" },
+                        { "name": "Python", "years": 4, "proficiency": "Advanced" },
+                        { "name": "Express.js", "years": 4, "proficiency": "Advanced" },
+                        { "name": "Django", "years": 2, "proficiency": "Intermediate" },
+                        { "name": "GraphQL", "years": 3, "proficiency": "Advanced" },
+                        { "name": "REST API", "years": 5, "proficiency": "Expert" }
+                    ],
+                    "databases": [
+                        { "name": "PostgreSQL", "years": 4, "proficiency": "Advanced" },
+                        { "name": "MongoDB", "years": 3, "proficiency": "Advanced" },
+                        { "name": "Redis", "years": 2, "proficiency": "Intermediate" }
+                    ],
+                    "testing": [
+                        { "name": "Jest", "years": 4, "proficiency": "Advanced" },
+                        { "name": "React Testing Library", "years": 3, "proficiency": "Advanced" },
+                        { "name": "Cypress", "years": 3, "proficiency": "Advanced" },
+                        { "name": "Playwright", "years": 1, "proficiency": "Intermediate" }
+                    ],
+                    "accessibility": ["WCAG 2.1 AA", "ARIA", "axe", "Lighthouse", "Screen readers (NVDA, VoiceOver)"]
+                },
+                "education": [{
+                    "level": "Bachelor's",
+                    "degree": "Bachelor of Fine Arts",
+                    "field_of_study": "Graphic Design",
+                    "minor": "Computer Science",
+                    "institution": "California College of the Arts",
+                    "location": "San Francisco, CA, USA",
+                    "graduation_year": 2018,
+                    "gpa": 3.8
+                }],
+                "work_experience": [{
+                    "title": "Senior Full Stack Engineer",
+                    "company": "DesignSystems Co",
+                    "location": "San Francisco, CA",
+                    "start_date": "2022-01",
+                    "end_date": "Present",
+                    "stack": ["React", "TypeScript", "Next.js", "Node.js", "PostgreSQL", "Tailwind", "Storybook", "Jest", "Cypress"],
+                    "achievements": [
+                        "Built design system component library used by 20+ products, reducing UI development time by 50%",
+                        "Improved Lighthouse score from 72 to 96 (accessibility from 65 to 98)",
+                        "Migrated legacy codebase from JavaScript to TypeScript - 15k lines of code, zero production bugs",
+                        "Implemented server-side rendering with Next.js, reducing FCP from 2.5s to 0.8s"
+                    ]
+                }]
+            },
+            {
+                "cv_id": "TECH_MLOPS_008",
+                "job_title": "MLOps Engineer",
+                "years_experience": 4,
+                "education_level": "Master's",
+                "classification": "AI_Generated",
+                "personal_details": {
+                    "first_name": "Ananya",
+                    "last_name": "Sharma",
+                    "email": "ananya.sharma@mlops.ai",
+                    "phone": "+1 (650) 555-0999",
+                    "location": {
+                        "city": "Mountain View",
+                        "state": "California",
+                        "country": "USA",
+                        "postal_code": "94043"
+                    },
+                    "linkedin": "linkedin.com/in/ananyasharma",
+                    "github": "github.com/ananya-ml"
+                },
+                "professional_summary": "MLOps Engineer bridging the gap between data science and production. 4 years experience deploying and scaling ML models in production environments. Expertise in ML pipelines, model serving, feature stores, and model monitoring. Built infrastructure serving 10M+ predictions daily. Seeking role where I can build ML platforms and mentor data scientists on production best practices.",
+                "technical_expertise": {
+                    "mlops_tools": ["Kubeflow", "MLflow", "Weights & Biases", "Seldon Core", "BentoML", "TFX"],
+                    "feature_stores": ["Feast", "Tecton", "Vertex AI Feature Store"],
+                    "model_serving": ["TensorFlow Serving", "TorchServe", "NVIDIA Triton"],
+                    "data_engineering": ["Spark", "Airflow", "dbt", "Kafka", "Flink", "Beam"],
+                    "cloud_ml": ["AWS SageMaker", "GCP Vertex AI", "Azure ML"],
+                    "programming": ["Python", "SQL", "Scala", "Go"]
+                },
+                "education": [{
+                    "level": "Master's",
+                    "degree": "Master of Science",
+                    "field_of_study": "Computer Science",
+                    "specialization": "Machine Learning",
+                    "institution": "Carnegie Mellon University",
+                    "graduation_year": 2020,
+                    "gpa": 3.9
+                }],
+                "work_experience": [{
+                    "title": "MLOps Engineer",
+                    "company": "AI Platform Inc.",
+                    "location": "Mountain View, CA",
+                    "start_date": "2021-06",
+                    "end_date": "Present",
+                    "achievements": [
+                        "Built ML platform serving 50+ models with average inference latency under 50ms",
+                        "Implemented feature store (Feast) reducing feature engineering time by 70%",
+                        "Set up model monitoring that detected data drift within 2 hours",
+                        "Automated model retraining pipeline reducing manual effort by 90%"
+                    ]
+                }],
+                "certifications": [
+                    { "name": "AWS Machine Learning Specialty", "year": 2022 },
+                    { "name": "TensorFlow Developer Certificate", "year": 2021 },
+                    { "name": "Databricks Certified ML Professional", "year": 2023 }
+                ]
+            },
+            {
+                "cv_id": "TECH_DBA_009",
+                "job_title": "Database Administrator (DBA)",
+                "years_experience": 8,
+                "education_level": "Bachelor's",
+                "classification": "Human_Written",
+                "personal_details": {
+                    "first_name": "Rachel",
+                    "last_name": "O'Connor",
+                    "email": "rachel.oconnor@dba.com",
+                    "phone": "+1 (303) 555-0789",
+                    "location": {
+                        "city": "Denver",
+                        "state": "Colorado",
+                        "country": "USA",
+                        "postal_code": "80202"
+                    },
+                    "linkedin": "linkedin.com/in/racheloconnor"
+                },
+                "professional_summary": "Database Administrator who actually likes writing complex SQL queries. 8 years experience with PostgreSQL, MySQL, SQL Server, and MongoDB. Started as a data analyst, moved into DBA work because I wanted more control over performance. I've managed databases from 10GB to 50TB, handled replication, backup/recovery, and disaster recovery. Not afraid of being on-call (ask me about the time I restored a database from a corrupted backup at 3am).",
+                "technical_expertise": {
+                    "relational_databases": [
+                        { "name": "PostgreSQL", "years": 7, "proficiency": "Expert", "versions": ["9.6", "10", "11", "12", "13", "14", "15"] },
+                        { "name": "MySQL", "years": 8, "proficiency": "Expert", "versions": ["5.7", "8.0"] },
+                        { "name": "SQL Server", "years": 5, "proficiency": "Advanced", "versions": ["2016", "2017", "2019"] },
+                        { "name": "Oracle", "years": 3, "proficiency": "Intermediate" }
+                    ],
+                    "nosql": [
+                        { "name": "MongoDB", "years": 4, "proficiency": "Advanced" },
+                        { "name": "Cassandra", "years": 2, "proficiency": "Intermediate" },
+                        { "name": "Redis", "years": 3, "proficiency": "Advanced" }
+                    ],
+                    "cloud_databases": [
+                        "AWS RDS", "Aurora", "DynamoDB", "ElastiCache", "GCP Cloud SQL", "Azure SQL"
+                    ],
+                    "tools": [
+                        "pgAdmin", "MySQL Workbench", "SSMS", "Percona Toolkit", "pgBackRest", "Patroni", "Pgbouncer", "Pgpool", "pt-query-digest"
+                    ],
+                    "programming": ["SQL", "PL/pgSQL", "T-SQL", "Python", "Bash"]
+                },
+                "education": [{
+                    "level": "Bachelor's",
+                    "degree": "Bachelor of Science",
+                    "field_of_study": "Information Systems",
+                    "institution": "University of Colorado Boulder",
+                    "graduation_year": 2016,
+                    "gpa": 3.4
+                }],
+                "work_experience": [{
+                    "title": "Senior Database Administrator",
+                    "company": "DataCorp",
+                    "location": "Denver, CO",
+                    "start_date": "2020-01",
+                    "end_date": "Present",
+                    "achievements": [
+                        "Manage 50+ production databases totaling 50TB across PostgreSQL, MySQL, MongoDB",
+                        "Improved query performance by 80% for top 10 slowest queries using index optimization",
+                        "Implemented point-in-time recovery (PITR) that saved the company during an accidental DELETE",
+                        "Set up streaming replication with 5-second RPO and 15-minute RTO",
+                        "Automated backup verification reducing restore test time from 1 week to 2 hours"
+                    ]
+                }],
+                "certifications": [
+                    { "name": "PostgreSQL Certified Professional", "year": 2021 },
+                    { "name": "MySQL Database Administrator (Oracle)", "year": 2019 },
+                    { "name": "MongoDB Certified DBA Associate", "year": 2022 }
+                ]
+            },
+            {
+                "cv_id": "TECH_NET_010",
+                "job_title": "Network Engineer",
+                "years_experience": 7,
+                "education_level": "Associate's + Certs",
+                "classification": "Human_Written",
+                "personal_details": {
+                    "first_name": "Marcus",
+                    "last_name": "Williams",
+                    "email": "marcus.williams@neteng.com",
+                    "phone": "+1 (404) 555-0234",
+                    "location": {
+                        "city": "Atlanta",
+                        "state": "Georgia",
+                        "country": "USA"
+                    }
+                },
+                "professional_summary": "Network Engineer with 7 years experience - no degree, just certs and real work. Started at an ISP doing residential support, worked my way up to enterprise networking. I've designed networks for hospitals, schools, and data centers. Got my CCIE last year after failing twice (that exam is brutal). I understand routing protocols, switching, firewalls, wireless, and SD-WAN. Looking for a lead network engineer role.",
+                "technical_expertise": {
+                    "routing_protocols": ["BGP", "OSPF", "EIGRP", "IS-IS", "RIP", "MPLS"],
+                    "switching": ["VLANs", "STP", "RSTP", "MSTP", "VXLAN", "MLAG", "LACP", "CDP", "LLDP"],
+                    "security": ["Firewalls (Palo Alto, Fortinet)", "VPN (IPsec, SSL)", "IPS/IDS", "NAC (Cisco ISE)", "802.1X"],
+                    "vendors": [
+                        { "name": "Cisco", "certifications": ["CCIE"], "devices": ["ASR", "ISR", "Catalyst", "Nexus"] },
+                        { "name": "Juniper", "certifications": ["JNCIP"], "devices": ["MX", "EX", "QFX"] },
+                        { "name": "Arista", "devices": ["7050", "7280"] },
+                        { "name": "Palo Alto", "certifications": ["PCNSE"] }
+                    ],
+                    "sd_wan": ["Cisco Viptela", "VMware Velocloud", "Fortinet SD-WAN"],
+                    "wireless": ["Cisco Wireless", "Aruba", "Ruckus"],
+                    "monitoring": ["SolarWinds", "PRTG", "LibreNMS", "Wireshark", "tcpdump", "NetFlow", "sFlow"]
+                },
+                "education": [{
+                    "level": "Associate's",
+                    "degree": "Associate of Applied Science",
+                    "field_of_study": "Network Administration",
+                    "institution": "Georgia Perimeter College",
+                    "graduation_year": 2015,
+                    "gpa": 3.2
+                }],
+                "work_experience": [{
+                    "title": "Senior Network Engineer",
+                    "company": "EnterpriseNet",
+                    "location": "Atlanta, GA",
+                    "start_date": "2020-02",
+                    "end_date": "Present",
+                    "achievements": [
+                        "Design and maintain network for 5,000+ users across 12 locations",
+                        "Designed SD-WAN architecture (Cisco Viptela) that reduced MPLS costs by 40% ($200k/year)",
+                        "Upgraded core network from 1G to 100G with zero downtime (6 months of planning)",
+                        "Configured Palo Alto firewall rules that blocked 99.9% of intrusion attempts",
+                        "Implemented EVPN-VXLAN for data center fabric"
+                    ]
+                }],
+                "certifications": [
+                    { "name": "CCIE Enterprise Infrastructure", "year": 2023, "attempts": 3, "credential_id": "CCIE-66241" },
+                    { "name": "JNCIP-ENT (Juniper)", "year": 2021 },
+                    { "name": "PCNSE (Palo Alto Networks)", "year": 2022 },
+                    { "name": "CCNP Enterprise", "year": 2019 }
+                ]
+            },
+            {
+                "cv_id": "TECH_PM_011",
+                "job_title": "Technical Project Manager",
+                "years_experience": 9,
+                "education_level": "MBA",
+                "classification": "Human_Written",
+                "personal_details": {
+                    "first_name": "Jennifer",
+                    "last_name": "Taylor",
+                    "email": "jennifer.taylor@tpm.com",
+                    "phone": "+1 (312) 555-0678",
+                    "location": {
+                        "city": "Chicago",
+                        "state": "Illinois",
+                        "country": "USA"
+                    }
+                },
+                "professional_summary": "Technical Project Manager with 9 years experience leading software development projects. Started as a software engineer (Python/Java) for 4 years before moving into management. I speak both 'business' and 'engineering' fluently. Certified Scrum Master and PMP. Have delivered 20+ projects on time and under budget, ranging from $500k to $5M. Looking for Senior TPM role where I can lead complex, multi-team initiatives.",
+                "technical_expertise": {
+                    "methodologies": ["Agile (Scrum, Kanban)", "Waterfall", "SAFe", "Lean", "PRINCE2"],
+                    "tools": ["JIRA", "Confluence", "Asana", "Trello", "Microsoft Project", "Smartsheet", "Slack", "Teams"],
+                    "technical_background": ["Python", "Java", "SQL", "AWS", "Git", "CI/CD concepts"],
+                    "certifications": ["PMP", "CSM", "SAFe Agilist", "ITIL"]
+                },
+                "education": [{
+                        "level": "MBA",
+                        "degree": "Master of Business Administration",
+                        "field_of_study": "Technology Management",
+                        "institution": "University of Chicago Booth School of Business",
+                        "graduation_year": 2018,
+                        "gpa": 3.7
+                    },
+                    {
+                        "level": "Bachelor's",
+                        "degree": "Bachelor of Science",
+                        "field_of_study": "Computer Science",
+                        "institution": "University of Illinois",
+                        "graduation_year": 2011,
+                        "gpa": 3.5
+                    }
+                ],
+                "work_experience": [{
+                    "title": "Senior Technical Project Manager",
+                    "company": "FinTech Solutions",
+                    "location": "Chicago, IL",
+                    "start_date": "2020-03",
+                    "end_date": "Present",
+                    "achievements": [
+                        "Led 8 cross-functional teams (45 engineers total) delivering payment processing platform",
+                        "Delivered project $5M, 18-month timeline - completed on time and $200k under budget",
+                        "Reduced project delivery cycle time by 35% through process improvements",
+                        "Implemented OKRs and KPIs tracking for 10+ concurrent projects"
+                    ]
+                }],
+                "certifications": [
+                    { "name": "Project Management Professional (PMP)", "year": 2017, "expiry": 2026 },
+                    { "name": "Certified Scrum Master (CSM)", "year": 2016 },
+                    { "name": "SAFe 5 Agilist", "year": 2021 },
+                    { "name": "ITIL 4 Foundation", "year": 2020 }
+                ]
+            },
+            {
+                "cv_id": "TECH_EMBEDDED_012",
+                "job_title": "Embedded Systems Engineer",
+                "years_experience": 6,
+                "education_level": "Master's",
+                "classification": "AI_Generated",
+                "personal_details": {
+                    "first_name": "Andrew",
+                    "last_name": "Park",
+                    "email": "andrew.park@embedded.com",
+                    "phone": "+1 (858) 555-0456",
+                    "location": {
+                        "city": "San Diego",
+                        "state": "California",
+                        "country": "USA"
+                    }
+                },
+                "professional_summary": "Embedded Systems Engineer with 6 years experience developing firmware for IoT devices, automotive systems, and consumer electronics. Expert in C/C++, RTOS, and ARM architecture. Strong background in low-level drivers, bootloaders, and communication protocols (I2C, SPI, UART, CAN). Proven track record of shipping products from concept to production. Seeking senior embedded role at innovative hardware company.",
+                "technical_expertise": {
+                    "languages": [
+                        { "name": "C", "years": 6, "proficiency": "Expert" },
+                        { "name": "C++", "years": 5, "proficiency": "Advanced" },
+                        { "name": "Rust", "years": 2, "proficiency": "Intermediate" },
+                        { "name": "Assembly (ARM)", "years": 3, "proficiency": "Advanced" }
+                    ],
+                    "microcontrollers": [
+                        "ARM Cortex-M (M0, M3, M4, M7)",
+                        "ESP32",
+                        "AVR",
+                        "PIC",
+                        "STM32"
+                    ],
+                    "rtos": ["FreeRTOS", "Zephyr", "ThreadX", "RT-Thread"],
+                    "protocols": ["I2C", "SPI", "UART", "CAN", "USB", "Ethernet", "Bluetooth", "WiFi", "Zigbee"],
+                    "tools": ["Keil", "IAR", "Eclipse", "PlatformIO", "JTAG/SWD debuggers", "Oscilloscopes", "Logic analyzers"],
+                    "ci_cd_for_embedded": ["Jenkins", "GitLab CI", "Docker for cross-compilation"]
+                },
+                "education": [{
+                        "level": "Master's",
+                        "degree": "Master of Science",
+                        "field_of_study": "Electrical Engineering",
+                        "institution": "University of California, San Diego",
+                        "graduation_year": 2018,
+                        "gpa": 3.8
+                    },
+                    {
+                        "level": "Bachelor's",
+                        "degree": "Bachelor of Science",
+                        "field_of_study": "Computer Engineering",
+                        "institution": "University of California, Irvine",
+                        "graduation_year": 2016,
+                        "gpa": 3.6
+                    }
+                ],
+                "work_experience": [{
+                    "title": "Senior Embedded Engineer",
+                    "company": "IoT Solutions Inc.",
+                    "location": "San Diego, CA",
+                    "start_date": "2021-01",
+                    "end_date": "Present",
+                    "achievements": [
+                        "Developed firmware for smart home devices deployed to 500k+ units",
+                        "Implemented OTA update system with 99.9% success rate",
+                        "Reduced power consumption by 60% through deep sleep optimization",
+                        "Debugged and fixed intermittent CAN bus issue causing field failures"
+                    ]
+                }],
+                "certifications": [
+                    { "name": "ARM Accredited Engineer", "year": 2021 },
+                    { "name": "Certified Embedded Linux Developer", "year": 2020 }
+                ]
+            }
+        ],
+        "technical_statistics": {
+            "total_cvs": 12,
+            "total_years_experience": 80,
+            "average_years_experience": 6.67,
+            "education_levels": {
+                "PhD": 1,
+                "Master's": 5,
+                "Bachelor's": 5,
+                "Associate's": 1
+            },
+            "most_common_programming_languages": [
+                { "language": "Python", "count": 8 },
+                { "language": "Go", "count": 5 },
+                { "language": "Java", "count": 4 },
+                { "language": "TypeScript", "count": 3 },
+                { "language": "SQL", "count": 3 }
+            ],
+            "most_common_cloud_platforms": [
+                { "platform": "AWS", "count": 9 },
+                { "platform": "GCP", "count": 5 },
+                { "platform": "Azure", "count": 4 }
+            ],
+            "most_common_certifications": [
+                { "certification": "AWS Solutions Architect", "count": 4 },
+                { "certification": "CKA (Kubernetes)", "count": 3 },
+                { "certification": "PMP", "count": 1 },
+                { "certification": "CCIE", "count": 1 }
+            ],
+            "classification_breakdown": {
+                "human_written": 7,
+                "ai_generated": 5
+            }
+        }
+    }
+}

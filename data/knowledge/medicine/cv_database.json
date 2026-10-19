@@ -1,0 +1,1572 @@
+{
+    "social_science_cv_database": {
+        "metadata": {
+            "department": "Social Sciences",
+            "version": "6.0",
+            "created_date": "2024-01-15",
+            "total_cvs": 24,
+            "total_lines": 5580,
+            "disciplines_covered": [
+                "Sociology",
+                "Psychology",
+                "Political Science",
+                "Anthropology",
+                "Economics",
+                "Geography",
+                "History",
+                "Linguistics",
+                "Communication Studies",
+                "International Relations",
+                "Public Administration",
+                "Social Work",
+                "Criminology",
+                "Demography",
+                "Gender Studies",
+                "Urban Studies",
+                "Environmental Social Science",
+                "Development Studies"
+            ],
+            "classification_targets": ["AI_Generated", "Human_Written", "Hybrid"],
+            "research_methods_covered": [
+                "Quantitative Analysis",
+                "Qualitative Research",
+                "Mixed Methods",
+                "Ethnography",
+                "Case Studies",
+                "Survey Research",
+                "Statistical Analysis (SPSS, R, Stata)",
+                "Content Analysis",
+                "Discourse Analysis",
+                "Comparative Analysis",
+                "Longitudinal Studies",
+                "Experimental Design",
+                "Action Research",
+                "Archival Research",
+                "Oral History",
+                "Participant Observation",
+                "Focus Groups",
+                "In-depth Interviews"
+            ]
+        },
+        "social_science_classification_rules": {
+            "ai_indicators": {
+                "linguistic_patterns": [
+                    "excessive_use_of_academic_jargon",
+                    "perfect_citation_formatting",
+                    "lack_of_personal_research_experiences",
+                    "generic_research_descriptions",
+                    "overuse_of_theoretical_frameworks",
+                    "perfect_grammar_with_no_variation",
+                    "missing_fieldwork_anecdotes",
+                    "standardized_methodology_sections"
+                ],
+                "research_patterns": [
+                    "perfect_statistical_reporting",
+                    "idealized_research_conditions",
+                    "no_mention_of_research_challenges",
+                    "perfect_ethics_compliance",
+                    "missing_IRB_delays_or_complications",
+                    "no_discussion_of_bias_or_limitations",
+                    "perfect_sample_sizes"
+                ],
+                "teaching_patterns": [
+                    "standardized_course_descriptions",
+                    "perfect_student_evaluations",
+                    "no_mention_of_teaching_failures",
+                    "generic_mentoring_statements"
+                ]
+            },
+            "human_indicators": {
+                "linguistic_patterns": [
+                    "personal_fieldwork_anecdotes",
+                    "mention_of_research_setbacks",
+                    "reflexivity_statements",
+                    "varied_citation_formats",
+                    "collaboration_acknowledgments",
+                    "emotional_language_about_research",
+                    "mention_of_IRB_challenges"
+                ],
+                "research_patterns": [
+                    "discussion_of_methodological_limitations",
+                    "mention_of_recruitment_difficulties",
+                    "realistic_sample_sizes",
+                    "acknowledgment_of_bias",
+                    "discussion_of_positionality",
+                    "mention_of_data_collection_problems"
+                ],
+                "teaching_patterns": [
+                    "specific_classroom_anecdotes",
+                    "mention_of_teaching_adaptations",
+                    "student_interaction_stories",
+                    "curriculum_development_challenges"
+                ]
+            }
+        },
+        "resumes": [{
+                "cv_id": "SOC_PSY_001",
+                "discipline": "Psychology",
+                "specialization": "Clinical Psychology",
+                "candidate_name": "Dr. Sarah Martinez",
+                "classification": "Human_Written",
+                "confidence_score": 0.94,
+                "personal_details": {
+                    "first_name": "Sarah",
+                    "last_name": "Martinez",
+                    "title": "Dr.",
+                    "email": "sarah.martinez@psychology.edu",
+                    "phone": "+1 (773) 555-0123",
+                    "location": {
+                        "city": "Chicago",
+                        "state": "Illinois",
+                        "country": "USA",
+                        "postal_code": "60601"
+                    },
+                    "linkedin": "linkedin.com/in/drsarahmartinez",
+                    "research_gate": "researchgate.net/profile/Sarah_Martinez",
+                    "google_scholar": "scholar.google.com/citations?user=sarahm",
+                    "orcid_id": "0000-0001-2345-6789"
+                },
+                "professional_summary": "Clinical Psychologist with 12 years of experience in research, teaching, and clinical practice. My research focuses on trauma-informed interventions for underserved communities. The IRB process for my dissertation took 8 months (lesson learned: always submit early). I've conducted fieldwork in community mental health centers, schools, and correctional facilities. Not everything went according to plan - had to adapt my methods when participants didn't show up, recording equipment failed, and once a fire alarm went off during a focus group. Looking for a tenure-track position where I can continue my community-based participatory research.",
+                "education": [{
+                        "level": "PhD",
+                        "degree": "Doctor of Philosophy",
+                        "field_of_study": "Clinical Psychology",
+                        "institution": "University of Michigan",
+                        "location": "Ann Arbor, MI, USA",
+                        "start_date": "2010-09",
+                        "end_date": "2016-05",
+                        "graduation_year": 2016,
+                        "gpa": 3.9,
+                        "gpa_scale": 4.0,
+                        "dissertation_title": "Trauma-Informed Interventions for Urban Youth: A Mixed-Methods Study",
+                        "advisor": "Dr. Elizabeth Thompson",
+                        "committee_members": ["Dr. James Wilson", "Dr. Maria Garcia", "Dr. Robert Chen"],
+                        "coursework": [
+                            "Advanced Research Methods (PSYCH710)",
+                            "Multivariate Statistics (PSYCH720)",
+                            "Clinical Assessment (PSYCH730)",
+                            "Cognitive Behavioral Therapy (PSYCH740)",
+                            "Trauma Psychology (PSYCH750)",
+                            "Ethics in Psychology (PSYCH760)",
+                            "Developmental Psychopathology (PSYCH770)",
+                            "Community Psychology (PSYCH780)"
+                        ],
+                        "clinical_hours": 1800,
+                        "supervised_hours": 1200
+                    },
+                    {
+                        "level": "Master's",
+                        "degree": "Master of Arts",
+                        "field_of_study": "Psychology",
+                        "institution": "University of Michigan",
+                        "location": "Ann Arbor, MI, USA",
+                        "start_date": "2008-09",
+                        "end_date": "2010-06",
+                        "graduation_year": 2010,
+                        "gpa": 3.8,
+                        "gpa_scale": 4.0,
+                        "thesis_title": "Coping Mechanisms in Adolescents Exposed to Community Violence"
+                    },
+                    {
+                        "level": "Bachelor's",
+                        "degree": "Bachelor of Arts",
+                        "field_of_study": "Psychology",
+                        "minor": "Sociology",
+                        "institution": "University of California, Berkeley",
+                        "location": "Berkeley, CA, USA",
+                        "start_date": "2004-09",
+                        "end_date": "2008-05",
+                        "graduation_year": 2008,
+                        "gpa": 3.7,
+                        "gpa_scale": 4.0,
+                        "honors": "Cum Laude, Psi Chi Honor Society"
+                    }
+                ],
+                "research_experience": [{
+                        "title": "Principal Investigator",
+                        "project_name": "Community Trauma Response Project",
+                        "institution": "University of Chicago",
+                        "location": "Chicago, IL",
+                        "start_date": "2018-09",
+                        "end_date": "Present",
+                        "funding_source": "NIH Grant R01-MH123456",
+                        "funding_amount": "$750,000",
+                        "role": "Lead Researcher",
+                        "methodology": "Mixed-methods longitudinal study",
+                        "sample_size": 350,
+                        "research_activities": [
+                            "Conducted 150+ in-depth interviews with trauma survivors",
+                            "Implemented evidence-based intervention in 8 community centers",
+                            "Analyzed quantitative data using multilevel modeling in R",
+                            "Trained 12 community health workers on trauma-informed care"
+                        ],
+                        "challenges_overcome": [
+                            "IRB approval took 4 months due to vulnerable population concerns",
+                            "Lost 20% of participants to follow-up - implemented retention bonuses",
+                            "Had to pivot to telehealth during COVID-19 pandemic"
+                        ],
+                        "outcomes": [
+                            "Published 8 peer-reviewed articles",
+                            "Intervention showed 40% reduction in PTSD symptoms",
+                            "Presented findings at APA Annual Convention (2022, 2023)"
+                        ]
+                    },
+                    {
+                        "title": "Postdoctoral Research Fellow",
+                        "project_name": "Youth Resilience Study",
+                        "institution": "Northwestern University",
+                        "location": "Evanston, IL",
+                        "start_date": "2016-09",
+                        "end_date": "2018-08",
+                        "mentor": "Dr. Patricia Williams",
+                        "methodology": "Longitudinal quantitative study",
+                        "sample_size": 500,
+                        "achievements": [
+                            "Developed and validated new resilience assessment tool",
+                            "Secured $50,000 internal grant for pilot study",
+                            "Mentored 5 undergraduate research assistants"
+                        ]
+                    }
+                ],
+                "teaching_experience": [{
+                    "title": "Assistant Professor",
+                    "institution": "University of Chicago",
+                    "department": "Department of Psychology",
+                    "start_date": "2018-09",
+                    "end_date": "Present",
+                    "courses_taught": [{
+                            "course_code": "PSYCH 210",
+                            "course_name": "Abnormal Psychology",
+                            "enrollment": 85,
+                            "semester": "Fall 2023",
+                            "student_evaluation": 4.6,
+                            "teaching_innovation": "Incorporated case studies from my clinical work"
+                        },
+                        {
+                            "course_code": "PSYCH 310",
+                            "course_name": "Research Methods in Clinical Psychology",
+                            "enrollment": 45,
+                            "semester": "Spring 2024",
+                            "student_evaluation": 4.8
+                        },
+                        {
+                            "course_code": "PSYCH 410",
+                            "course_name": "Trauma and Resilience",
+                            "enrollment": 30,
+                            "semester": "Fall 2023",
+                            "student_evaluation": 4.9,
+                            "note": "Created this course from scratch - first time offered"
+                        }
+                    ],
+                    "teaching_philosophy": "I believe in active learning and real-world application. My students conduct mini research projects and present their findings. One semester, a student's project was so good we submitted it for publication."
+                }],
+                "publications": [{
+                        "title": "Community-Based Trauma Interventions for Urban Youth: A Systematic Review",
+                        "journal": "Journal of Traumatic Stress",
+                        "year": 2023,
+                        "volume": 36,
+                        "issue": 2,
+                        "pages": "245-260",
+                        "citations": 12,
+                        "impact_factor": 4.2,
+                        "co_authors": ["Thompson, E.", "Williams, P."],
+                        "role": "First Author"
+                    },
+                    {
+                        "title": "Barriers to Mental Health Access in Underserved Communities",
+                        "journal": "American Journal of Community Psychology",
+                        "year": 2022,
+                        "volume": 69,
+                        "pages": "112-128",
+                        "citations": 8,
+                        "impact_factor": 3.8,
+                        "co_authors": ["Rodriguez, M."],
+                        "role": "First Author"
+                    },
+                    {
+                        "title": "The Role of Social Support in Trauma Recovery",
+                        "journal": "Psychological Trauma: Theory, Research, Practice",
+                        "year": 2021,
+                        "volume": 13,
+                        "issue": 4,
+                        "pages": "401-410",
+                        "citations": 15,
+                        "co_authors": ["Chen, R.", "Johnson, K."],
+                        "role": "Corresponding Author"
+                    }
+                ],
+                "grants_and_funding": [{
+                        "title": "Community Trauma Response Project",
+                        "funder": "National Institutes of Health (NIH)",
+                        "amount": "$750,000",
+                        "role": "Principal Investigator",
+                        "year": 2020,
+                        "status": "Active"
+                    },
+                    {
+                        "title": "Pilot Study: Youth Mental Health in Schools",
+                        "funder": "American Psychological Foundation",
+                        "amount": "$25,000",
+                        "role": "Co-Investigator",
+                        "year": 2019,
+                        "status": "Completed"
+                    }
+                ],
+                "clinical_experience": [{
+                    "title": "Licensed Clinical Psychologist",
+                    "practice_name": "Community Mental Health Center",
+                    "location": "Chicago, IL",
+                    "start_date": "2018-01",
+                    "end_date": "Present",
+                    "license_number": "IL-PSY-12345",
+                    "patient_population": "Adults and adolescents with trauma history",
+                    "therapy_modalities": ["CBT", "TF-CBT", "Motivational Interviewing"],
+                    "weekly_caseload": 15,
+                    "supervision_provided": "Supervise 3 doctoral interns"
+                }],
+                "professional_service": [{
+                        "role": "Ad-hoc Reviewer",
+                        "organization": "Journal of Traumatic Stress",
+                        "years": "2020-present",
+                        "manuscripts_reviewed": 18
+                    },
+                    {
+                        "role": "Committee Member",
+                        "organization": "APA Division 56 (Trauma Psychology)",
+                        "years": "2021-present"
+                    },
+                    {
+                        "role": "Grant Reviewer",
+                        "organization": "National Institute of Mental Health",
+                        "years": "2022-present"
+                    }
+                ],
+                "awards_and_honors": [{
+                        "name": "Early Career Research Award",
+                        "issuing_body": "American Psychological Association",
+                        "year": 2022
+                    },
+                    {
+                        "name": "Excellence in Teaching Award",
+                        "issuing_body": "University of Chicago",
+                        "year": 2021
+                    }
+                ],
+                "skills": {
+                    "statistical_software": ["SPSS", "R", "Mplus", "Stata", "NVivo"],
+                    "research_methods": ["Multilevel Modeling", "Structural Equation Modeling", "Longitudinal Analysis", "Thematic Analysis"],
+                    "clinical_assessments": ["SCID-5", "CAPS-5", "BDI-II", "PCL-5"],
+                    "languages": [
+                        { "language": "English", "proficiency": "Native" },
+                        { "language": "Spanish", "proficiency": "Professional Working" }
+                    ]
+                },
+                "references": [{
+                    "name": "Dr. Elizabeth Thompson",
+                    "title": "Professor of Psychology",
+                    "institution": "University of Michigan",
+                    "email": "ethompson@umich.edu",
+                    "relationship": "Dissertation Advisor"
+                }]
+            },
+            {
+                "cv_id": "SOC_SOC_002",
+                "discipline": "Sociology",
+                "specialization": "Urban Sociology",
+                "candidate_name": "Prof. James Washington",
+                "classification": "Human_Written",
+                "confidence_score": 0.92,
+                "personal_details": {
+                    "first_name": "James",
+                    "last_name": "Washington",
+                    "title": "Prof.",
+                    "email": "james.washington@sociology.edu",
+                    "phone": "+1 (212) 555-0456",
+                    "location": {
+                        "city": "New York",
+                        "state": "New York",
+                        "country": "USA",
+                        "postal_code": "10027"
+                    },
+                    "twitter": "@drjwashington",
+                    "website": "jameswashington.sociology"
+                },
+                "professional_summary": "Urban Sociologist studying gentrification, housing policy, and racial inequality. Spent 18 months doing ethnographic fieldwork in Brooklyn - lived in the neighborhood I was studying, which taught me a lot about positionality and reflexivity. My first book took 5 years to write (started during PhD, finished as an assistant professor). I've had to navigate IRB challenges, community skepticism, and the ethical dilemmas of studying my own community. Looking for a full professor position where I can mentor junior faculty and continue my community-engaged research.",
+                "education": [{
+                        "level": "PhD",
+                        "degree": "Doctor of Philosophy",
+                        "field_of_study": "Sociology",
+                        "institution": "Harvard University",
+                        "location": "Cambridge, MA, USA",
+                        "start_date": "2006-09",
+                        "end_date": "2012-05",
+                        "graduation_year": 2012,
+                        "gpa": 3.9,
+                        "dissertation_title": "Gentrification and Displacement: An Ethnography of Neighborhood Change in Brooklyn",
+                        "advisor": "Dr. William Julius Wilson",
+                        "coursework": [
+                            "Classical Sociological Theory",
+                            "Contemporary Sociological Theory",
+                            "Qualitative Research Methods",
+                            "Quantitative Research Methods",
+                            "Urban Sociology",
+                            "Race and Ethnic Relations",
+                            "Social Stratification",
+                            "Ethnography"
+                        ]
+                    },
+                    {
+                        "level": "Bachelor's",
+                        "degree": "Bachelor of Arts",
+                        "field_of_study": "Sociology",
+                        "minor": "African American Studies",
+                        "institution": "Morehouse College",
+                        "location": "Atlanta, GA, USA",
+                        "graduation_year": 2004,
+                        "gpa": 3.8,
+                        "honors": "Magna Cum Laude, Phi Beta Kappa"
+                    }
+                ],
+                "research_experience": [{
+                    "title": "Principal Investigator",
+                    "project_name": "Brooklyn Gentrification Study",
+                    "institution": "Columbia University",
+                    "location": "New York, NY",
+                    "start_date": "2014-09",
+                    "end_date": "Present",
+                    "methodology": "Ethnographic fieldwork, in-depth interviews, participant observation",
+                    "fieldwork_duration": "18 months",
+                    "participant_count": 85,
+                    "field_notes_pages": 1200,
+                    "research_activities": [
+                        "Lived in study neighborhood for 18 months",
+                        "Conducted 85 in-depth interviews with long-term residents and newcomers",
+                        "Attended 50+ community board meetings",
+                        "Analyzed housing data from NYC Department of Housing"
+                    ],
+                    "ethical_challenges": [
+                        "Building trust took 6 months - many residents were skeptical of researchers",
+                        "Navigated dual role as researcher and neighbor",
+                        "Had to anonymize data extensively to protect participants"
+                    ],
+                    "outcomes": [
+                        "Published book with Oxford University Press (2019)",
+                        "Published 12 journal articles",
+                        "Invited testimony before NYC City Council on housing policy"
+                    ]
+                }],
+                "publications": [{
+                        "title": "Displaced: Gentrification and Resistance in Brooklyn",
+                        "publisher": "Oxford University Press",
+                        "year": 2019,
+                        "type": "Book",
+                        "pages": 312,
+                        "reviews": 15,
+                        "awards": "ASA Distinguished Book Award (2020)"
+                    },
+                    {
+                        "title": "The Paradox of Diversity: Gentrification and Racial Change",
+                        "journal": "American Sociological Review",
+                        "year": 2021,
+                        "volume": 86,
+                        "issue": 3,
+                        "pages": "421-448",
+                        "citations": 45,
+                        "impact_factor": 9.2
+                    },
+                    {
+                        "title": "Community Resistance to Displacement: A Case Study of Brooklyn",
+                        "journal": "City & Community",
+                        "year": 2020,
+                        "volume": 19,
+                        "issue": 2,
+                        "pages": "312-335",
+                        "citations": 28
+                    }
+                ],
+                "teaching_experience": [{
+                    "title": "Professor of Sociology",
+                    "institution": "Columbia University",
+                    "start_date": "2018-09",
+                    "end_date": "Present",
+                    "courses_taught": [{
+                            "course_name": "Urban Sociology",
+                            "enrollment": 120,
+                            "teaching_innovation": "Students conduct mini-ethnographies of NYC neighborhoods"
+                        },
+                        {
+                            "course_name": "Qualitative Methods",
+                            "enrollment": 25,
+                            "note": "Students learn interviewing and participant observation"
+                        },
+                        {
+                            "course_name": "Race and Urban Inequality",
+                            "enrollment": 90
+                        }
+                    ]
+                }],
+                "skills": {
+                    "qualitative_methods": ["Ethnography", "In-depth Interviews", "Focus Groups", "Participant Observation", "Content Analysis", "Discourse Analysis"],
+                    "software": ["NVivo", "Dedoose", "ATLAS.ti", "SPSS", "Stata"],
+                    "languages": ["English", "Spanish (conversational)"]
+                }
+            },
+            {
+                "cv_id": "SOC_POL_003",
+                "discipline": "Political Science",
+                "specialization": "Comparative Politics",
+                "candidate_name": "Dr. Amira Hassan",
+                "classification": "AI_Generated",
+                "confidence_score": 0.95,
+                "personal_details": {
+                    "first_name": "Amira",
+                    "last_name": "Hassan",
+                    "title": "Dr.",
+                    "email": "amira.hassan@polisci.edu",
+                    "phone": "+1 (202) 555-0789",
+                    "location": {
+                        "city": "Washington",
+                        "state": "DC",
+                        "country": "USA",
+                        "postal_code": "20001"
+                    }
+                },
+                "professional_summary": "Political Scientist specializing in comparative politics, democratization, and Middle East politics. Expertise in quantitative methods and large-N comparative analysis. Published extensively on authoritarian regimes and political transitions. Proven track record of securing external funding and publishing in top journals. Seeking senior faculty position at research-intensive university.",
+                "education": [{
+                        "level": "PhD",
+                        "degree": "Doctor of Philosophy",
+                        "field_of_study": "Political Science",
+                        "institution": "Stanford University",
+                        "location": "Stanford, CA, USA",
+                        "graduation_year": 2015,
+                        "gpa": 3.95,
+                        "dissertation_title": "Authoritarian Resilience: A Comparative Study of Middle East Regimes"
+                    },
+                    {
+                        "level": "Master's",
+                        "degree": "Master of Arts",
+                        "field_of_study": "Political Science",
+                        "institution": "Stanford University",
+                        "graduation_year": 2011,
+                        "gpa": 3.9
+                    },
+                    {
+                        "level": "Bachelor's",
+                        "degree": "Bachelor of Arts",
+                        "field_of_study": "Political Science",
+                        "minor": "Economics",
+                        "institution": "Princeton University",
+                        "graduation_year": 2009,
+                        "gpa": 3.8
+                    }
+                ],
+                "research_experience": [{
+                    "title": "Principal Investigator",
+                    "project_name": "Comparative Authoritarianism Project",
+                    "institution": "Georgetown University",
+                    "start_date": "2018-01",
+                    "end_date": "Present",
+                    "funding": "National Science Foundation Grant",
+                    "amount": "$450,000",
+                    "methodology": "Large-N comparative analysis",
+                    "countries_studied": 25,
+                    "variables_analyzed": 150,
+                    "publications_generated": 15
+                }],
+                "publications": [{
+                        "title": "Authoritarian Resilience in the Middle East",
+                        "journal": "American Political Science Review",
+                        "year": 2022,
+                        "volume": 116,
+                        "issue": 2,
+                        "pages": "445-462",
+                        "citations": 32
+                    },
+                    {
+                        "title": "The Political Economy of Regime Survival",
+                        "journal": "Comparative Political Studies",
+                        "year": 2021,
+                        "volume": 54,
+                        "issue": 5,
+                        "pages": "789-815",
+                        "citations": 28
+                    },
+                    {
+                        "title": "Democratization and Its Discontents",
+                        "journal": "World Politics",
+                        "year": 2020,
+                        "volume": 72,
+                        "issue": 3,
+                        "pages": "401-435",
+                        "citations": 41
+                    }
+                ],
+                "grants": [{
+                        "title": "Comparative Authoritarianism Project",
+                        "funder": "National Science Foundation",
+                        "amount": "$450,000",
+                        "year": 2019
+                    },
+                    {
+                        "title": "Middle East Political Transitions",
+                        "funder": "Carnegie Corporation",
+                        "amount": "$200,000",
+                        "year": 2017
+                    }
+                ],
+                "skills": {
+                    "quantitative_methods": ["Regression Analysis", "Structural Equation Modeling", "Time Series Analysis", "Panel Data", "Causal Inference"],
+                    "software": ["R", "Stata", "SPSS", "Python", "LaTeX"],
+                    "languages": ["English", "Arabic", "French"]
+                }
+            },
+            {
+                "cv_id": "SOC_ANTH_004",
+                "discipline": "Anthropology",
+                "specialization": "Cultural Anthropology",
+                "candidate_name": "Dr. Maria Santos",
+                "classification": "Human_Written",
+                "confidence_score": 0.96,
+                "personal_details": {
+                    "first_name": "Maria",
+                    "last_name": "Santos",
+                    "title": "Dr.",
+                    "email": "maria.santos@anthropology.edu",
+                    "phone": "+1 (505) 555-0987",
+                    "location": {
+                        "city": "Santa Fe",
+                        "state": "New Mexico",
+                        "country": "USA",
+                        "postal_code": "87501"
+                    }
+                },
+                "professional_summary": "Cultural Anthropologist specializing in Indigenous knowledge systems, environmental anthropology, and decolonial methodologies. Spent 2 years conducting fieldwork in the Peruvian Amazon (2015-2017). Learned the hard way that field research never goes as planned: lost data when my laptop fell in a river, had to rebuild rapport after community leadership changed, and got malaria (0/10, do not recommend). My work emphasizes collaborative research with Indigenous communities and returning results to participants. Looking for a position where I can continue community-based participatory research.",
+                "education": [{
+                        "level": "PhD",
+                        "degree": "Doctor of Philosophy",
+                        "field_of_study": "Anthropology",
+                        "institution": "University of California, Berkeley",
+                        "location": "Berkeley, CA, USA",
+                        "start_date": "2010-09",
+                        "end_date": "2017-05",
+                        "graduation_year": 2017,
+                        "dissertation_title": "Indigenous Ecological Knowledge and Conservation in the Peruvian Amazon",
+                        "advisor": "Dr. Laura Nader",
+                        "fieldwork_location": "Loreto region, Peruvian Amazon",
+                        "fieldwork_duration": "24 months",
+                        "language_learning": "Shipibo (intermediate)"
+                    },
+                    {
+                        "level": "Bachelor's",
+                        "degree": "Bachelor of Arts",
+                        "field_of_study": "Anthropology",
+                        "minor": "Spanish",
+                        "institution": "University of New Mexico",
+                        "location": "Albuquerque, NM, USA",
+                        "graduation_year": 2008,
+                        "gpa": 3.7
+                    }
+                ],
+                "fieldwork_experience": [{
+                    "title": "Dissertation Fieldwork",
+                    "location": "Peruvian Amazon",
+                    "duration": "24 months (2015-2017)",
+                    "community": "Shipibo-Konibo communities",
+                    "research_methods": ["Participant observation", "in-depth interviews", "community mapping", "photovoice"],
+                    "participants": 65,
+                    "challenges": [
+                        "Lost 6 months of field notes when laptop fell in river - now I back up everything in 3 places",
+                        "Community leadership changed 8 months in - had to rebuild trust and re-explain the research",
+                        "Contracted malaria - set me back 2 months",
+                        "Language barrier - Shipibo is very different from Spanish"
+                    ],
+                    "successes": [
+                        "Co-produced community resource map with elders",
+                        "Trained 5 community members as research assistants",
+                        "Returned findings through community workshops"
+                    ]
+                }],
+                "publications": [{
+                        "title": "Indigenous Knowledge and Conservation: Collaborative Research in the Amazon",
+                        "journal": "American Anthropologist",
+                        "year": 2021,
+                        "volume": 123,
+                        "issue": 2,
+                        "pages": "345-362",
+                        "citations": 18,
+                        "co_authors": ["Rodriguez, L. (community co-author)"],
+                        "note": "Co-authored with Indigenous community member"
+                    },
+                    {
+                        "title": "Decolonizing Methodology: Lessons from the Field",
+                        "journal": "Cultural Anthropology",
+                        "year": 2020,
+                        "volume": 35,
+                        "issue": 3,
+                        "pages": "412-438",
+                        "citations": 25
+                    }
+                ],
+                "teaching_experience": [{
+                    "title": "Assistant Professor",
+                    "institution": "University of New Mexico",
+                    "start_date": "2018-08",
+                    "end_date": "Present",
+                    "courses": [
+                        "Cultural Anthropology",
+                        "Indigenous Peoples and the Environment",
+                        "Qualitative Research Methods"
+                    ]
+                }],
+                "skills": {
+                    "research_methods": ["Ethnography", "Participant Observation", "Community-Based Participatory Research", "Photovoice", "Oral History"],
+                    "software": ["NVivo", "Dedoose", "ArcGIS"],
+                    "languages": ["English", "Spanish", "Shipibo (intermediate)"]
+                }
+            },
+            {
+                "cv_id": "SOC_ECON_005",
+                "discipline": "Economics",
+                "specialization": "Development Economics",
+                "candidate_name": "Dr. Kwame Asante",
+                "classification": "AI_Generated",
+                "confidence_score": 0.93,
+                "personal_details": {
+                    "first_name": "Kwame",
+                    "last_name": "Asante",
+                    "title": "Dr.",
+                    "email": "kwame.asante@economics.edu",
+                    "phone": "+1 (617) 555-0345",
+                    "location": {
+                        "city": "Cambridge",
+                        "state": "Massachusetts",
+                        "country": "USA"
+                    }
+                },
+                "professional_summary": "Development Economist specializing in poverty alleviation, education policy, and randomized controlled trials (RCTs). Expertise in econometric analysis, causal inference, and large-scale field experiments. Published in top economics journals including AER and QJE. Proven track record of securing research funding from World Bank, USAID, and Gates Foundation. Seeking research-focused position at leading economics department.",
+                "education": [{
+                        "level": "PhD",
+                        "degree": "Doctor of Philosophy",
+                        "field_of_study": "Economics",
+                        "institution": "Massachusetts Institute of Technology (MIT)",
+                        "graduation_year": 2016,
+                        "gpa": 4.0,
+                        "dissertation_title": "Three Essays on Education and Poverty in Sub-Saharan Africa"
+                    },
+                    {
+                        "level": "Bachelor's",
+                        "degree": "Bachelor of Science",
+                        "field_of_study": "Economics",
+                        "institution": "University of Ghana",
+                        "graduation_year": 2010,
+                        "gpa": 3.9
+                    }
+                ],
+                "research_experience": [{
+                    "title": "Principal Investigator",
+                    "project_name": "Education Access in Rural Ghana",
+                    "institution": "Harvard University",
+                    "start_date": "2018-07",
+                    "end_date": "Present",
+                    "funding": "World Bank Development Grant",
+                    "amount": "$1,200,000",
+                    "methodology": "Randomized Controlled Trial (RCT)",
+                    "sample_size": 5000,
+                    "schools": 150,
+                    "follow_up_years": 4
+                }],
+                "publications": [{
+                        "title": "The Impact of Cash Transfers on Educational Outcomes: Evidence from Ghana",
+                        "journal": "American Economic Review",
+                        "year": 2022,
+                        "volume": 112,
+                        "issue": 5,
+                        "pages": "1567-1601",
+                        "citations": 45
+                    },
+                    {
+                        "title": "Teacher Incentives and Student Achievement",
+                        "journal": "Quarterly Journal of Economics",
+                        "year": 2021,
+                        "volume": 136,
+                        "issue": 2,
+                        "pages": "1123-1165",
+                        "citations": 38
+                    }
+                ],
+                "skills": {
+                    "econometrics": ["RCTs", "Instrumental Variables", "Difference-in-Differences", "Regression Discontinuity", "Panel Data"],
+                    "software": ["Stata", "R", "Python", "MATLAB", "LaTeX"],
+                    "languages": ["English", "Twi", "French"]
+                }
+            },
+            {
+                "cv_id": "SOC_SOCW_006",
+                "discipline": "Social Work",
+                "specialization": "Clinical Social Work",
+                "candidate_name": "Michelle Thompson, LCSW",
+                "classification": "Human_Written",
+                "confidence_score": 0.95,
+                "personal_details": {
+                    "first_name": "Michelle",
+                    "last_name": "Thompson",
+                    "credentials": "LCSW, PhD",
+                    "email": "michelle.thompson@socialwork.edu",
+                    "phone": "+1 (415) 555-0567",
+                    "location": {
+                        "city": "San Francisco",
+                        "state": "California",
+                        "country": "USA"
+                    }
+                },
+                "professional_summary": "Clinical Social Worker with 15 years of practice experience and 8 years in academia. My work focuses on child welfare, foster care systems, and trauma-informed practice. Started my career as a frontline caseworker (burnout is real, y'all). I've worked with hundreds of families navigating the child welfare system. My research grew out of my practice - I saw patterns that needed systematic study. I've had to navigate the tension between being a researcher and being a clinician. Looking for a position where I can train the next generation of social workers while continuing my community-engaged research.",
+                "education": [{
+                        "level": "PhD",
+                        "degree": "Doctor of Philosophy",
+                        "field_of_study": "Social Welfare",
+                        "institution": "University of California, Berkeley",
+                        "graduation_year": 2015,
+                        "dissertation_title": "Foster Care to Independence: A Longitudinal Study of Transition-Age Youth"
+                    },
+                    {
+                        "level": "MSW",
+                        "degree": "Master of Social Work",
+                        "field_of_study": "Clinical Social Work",
+                        "institution": "University of Michigan",
+                        "graduation_year": 2007,
+                        "clinical_hours": 1200
+                    },
+                    {
+                        "level": "BSW",
+                        "degree": "Bachelor of Social Work",
+                        "institution": "California State University, East Bay",
+                        "graduation_year": 2005,
+                        "field_placement_hours": 480
+                    }
+                ],
+                "clinical_experience": [{
+                    "title": "Clinical Social Worker",
+                    "organization": "Family Services Agency",
+                    "location": "San Francisco, CA",
+                    "start_date": "2007-06",
+                    "end_date": "2015-08",
+                    "caseload": 35 - 40 families,
+                    "populations": ["Children in foster care", "Biological parents", "Foster parents"],
+                    "interventions": ["Trauma-Focused CBT", "Parent-Child Interaction Therapy", "Case Management"],
+                    "challenges": [
+                        "High caseloads (sometimes 50+ families)",
+                        "Emotionally draining work - learned the hard way about self-care",
+                        "Navigating complex systems (courts, schools, mental health)"
+                    ]
+                }],
+                "research_experience": [{
+                    "title": "Principal Investigator",
+                    "project_name": "Foster Youth Transition Study",
+                    "institution": "San Francisco State University",
+                    "start_date": "2016-09",
+                    "end_date": "Present",
+                    "methodology": "Longitudinal mixed-methods",
+                    "sample_size": 250,
+                    "follow_up_years": 5,
+                    "community_partners": ["County Child Welfare", "Foster Youth Alliance"],
+                    "challenges": [
+                        "High attrition rate - youth in foster care move frequently",
+                        "IRB concerns about vulnerable population",
+                        "Building trust with youth who have been let down by systems"
+                    ],
+                    "findings": [
+                        "Only 50% of youth had stable housing at 24 months post-exit",
+                        "Mental health services utilization dropped significantly after age 18"
+                    ]
+                }],
+                "teaching_experience": [{
+                    "title": "Associate Professor",
+                    "institution": "San Francisco State University",
+                    "department": "School of Social Work",
+                    "start_date": "2016-08",
+                    "end_date": "Present",
+                    "courses": [{
+                            "course_name": "Child Welfare Practice",
+                            "note": "Includes guest speakers who are current/former foster youth"
+                        },
+                        {
+                            "course_name": "Trauma-Informed Practice"
+                        },
+                        {
+                            "course_name": "Social Work Research Methods"
+                        }
+                    ]
+                }],
+                "licenses_and_certifications": [{
+                        "name": "Licensed Clinical Social Worker (LCSW)",
+                        "state": "California",
+                        "license_number": "LCSW-12345",
+                        "year": 2009,
+                        "expiry": 2025
+                    },
+                    {
+                        "name": "Trauma-Focused CBT Certification",
+                        "year": 2012
+                    }
+                ],
+                "skills": {
+                    "clinical_modalities": ["TF-CBT", "PCIT", "Motivational Interviewing", "Crisis Intervention", "Case Management"],
+                    "assessment_tools": ["CANS", "SDM", "ACE Questionnaire"],
+                    "software": ["SPSS", "NVivo", "Electronic Health Records"],
+                    "languages": ["English", "Spanish (conversational)"]
+                }
+            },
+            {
+                "cv_id": "SOC_GEO_007",
+                "discipline": "Geography",
+                "specialization": "Human Geography",
+                "candidate_name": "Dr. David Kim",
+                "classification": "Human_Written",
+                "confidence_score": 0.91,
+                "personal_details": {
+                    "first_name": "David",
+                    "last_name": "Kim",
+                    "title": "Dr.",
+                    "email": "david.kim@geography.edu",
+                    "phone": "+1 (206) 555-0890",
+                    "location": {
+                        "city": "Seattle",
+                        "state": "Washington",
+                        "country": "USA"
+                    }
+                },
+                "professional_summary": "Human Geographer specializing in urban geography, transportation justice, and GIS. My research examines how transportation infrastructure shapes urban inequality. I've spent 5 years mapping transit access in Seattle and working with community organizations on transit advocacy. The maps I made for my dissertation took 18 months - I taught myself GIS because my department didn't offer courses. Now I teach GIS to others. Looking for a position where I can combine spatial analysis with community-based research.",
+                "education": [{
+                        "level": "PhD",
+                        "degree": "Doctor of Philosophy",
+                        "field_of_study": "Geography",
+                        "institution": "University of Washington",
+                        "location": "Seattle, WA, USA",
+                        "start_date": "2014-09",
+                        "end_date": "2019-06",
+                        "graduation_year": 2019,
+                        "dissertation_title": "Transit Justice: A Spatial Analysis of Transportation Access and Urban Inequality",
+                        "advisor": "Dr. Victoria Lawson",
+                        "gis_self_taught": true
+                    },
+                    {
+                        "level": "Bachelor's",
+                        "degree": "Bachelor of Arts",
+                        "field_of_study": "Geography",
+                        "minor": "Urban Studies",
+                        "institution": "University of British Columbia",
+                        "location": "Vancouver, BC, Canada",
+                        "graduation_year": 2012,
+                        "gpa": 3.7
+                    }
+                ],
+                "research_experience": [{
+                    "title": "Assistant Professor",
+                    "project_name": "Seattle Transit Access Project",
+                    "institution": "University of Washington",
+                    "start_date": "2019-09",
+                    "end_date": "Present",
+                    "methodology": "Spatial analysis, GIS mapping, qualitative interviews",
+                    "data_sources": ["King County Metro data", "Census data", "Community surveys"],
+                    "maps_created": 45,
+                    "community_partners": ["Transportation Choices Coalition", "Seattle Housing Authority"],
+                    "findings": [
+                        "Low-income neighborhoods have 30% longer commute times",
+                        "Transit access explains 25% of variation in employment outcomes"
+                    ]
+                }],
+                "skills": {
+                    "gis_software": ["ArcGIS Pro", "QGIS", "PostGIS", "Carto", "Mapbox"],
+                    "spatial_analysis": ["Spatial regression", "Network analysis", "Hot spot analysis", "Buffering", "Overlay analysis"],
+                    "programming": ["Python (geopandas, folium)", "R (sf, tmap)", "SQL"],
+                    "remote_sensing": ["Landsat", "Sentinel", "Google Earth Engine"],
+                    "languages": ["English", "Korean (conversational)"]
+                },
+                "community_engagement": [{
+                    "project": "Transit Justice Map",
+                    "description": "Interactive web map showing transit access by neighborhood",
+                    "community_partners": "Transportation Choices Coalition",
+                    "impact": "Used in advocacy campaign that secured $50M for transit expansion"
+                }]
+            },
+            {
+                "cv_id": "SOC_HIST_008",
+                "discipline": "History",
+                "specialization": "American History",
+                "candidate_name": "Dr. Patricia O'Brien",
+                "classification": "AI_Generated",
+                "confidence_score": 0.94,
+                "personal_details": {
+                    "first_name": "Patricia",
+                    "last_name": "O'Brien",
+                    "title": "Dr.",
+                    "email": "patricia.obrien@history.edu",
+                    "phone": "+1 (434) 555-0123",
+                    "location": {
+                        "city": "Charlottesville",
+                        "state": "Virginia",
+                        "country": "USA"
+                    }
+                },
+                "professional_summary": "American Historian specializing in 19th-century social movements, labor history, and women's history. Expertise in archival research, digital humanities, and public history. Published extensively including two monographs with university presses. Secured NEH and Mellon Foundation grants. Seeking senior position at research university.",
+                "education": [{
+                        "level": "PhD",
+                        "degree": "Doctor of Philosophy",
+                        "field_of_study": "History",
+                        "institution": "Yale University",
+                        "graduation_year": 2010,
+                        "dissertation_title": "The Labor Movement in Industrial America, 1870-1920"
+                    },
+                    {
+                        "level": "Master's",
+                        "degree": "Master of Arts",
+                        "field_of_study": "History",
+                        "institution": "Yale University",
+                        "graduation_year": 2006
+                    },
+                    {
+                        "level": "Bachelor's",
+                        "degree": "Bachelor of Arts",
+                        "field_of_study": "History",
+                        "institution": "University of Virginia",
+                        "graduation_year": 2004,
+                        "gpa": 3.9
+                    }
+                ],
+                "publications": [{
+                        "title": "Organizing the Working Class: Labor Movements in the Gilded Age",
+                        "publisher": "Princeton University Press",
+                        "year": 2018,
+                        "type": "Book",
+                        "pages": 350,
+                        "awards": "Bancroft Prize Honorable Mention"
+                    },
+                    {
+                        "title": "Women and Work in Industrial America",
+                        "publisher": "Cambridge University Press",
+                        "year": 2015,
+                        "type": "Book",
+                        "pages": 280
+                    }
+                ],
+                "grants": [{
+                    "title": "Digital Labor History Project",
+                    "funder": "National Endowment for the Humanities",
+                    "amount": "$350,000",
+                    "year": 2020
+                }],
+                "skills": {
+                    "archival_research": ["Manuscript collections", "Government records", "Newspaper archives", "Oral histories"],
+                    "digital_humanities": ["Omeka", "Tableau", "GIS for history", "Text analysis"],
+                    "languages": ["English", "French (reading)", "German (reading)"]
+                }
+            },
+            {
+                "cv_id": "SOC_LING_009",
+                "discipline": "Linguistics",
+                "specialization": "Sociolinguistics",
+                "candidate_name": "Dr. Elena Petrova",
+                "classification": "Human_Written",
+                "confidence_score": 0.93,
+                "personal_details": {
+                    "first_name": "Elena",
+                    "last_name": "Petrova",
+                    "title": "Dr.",
+                    "email": "elena.petrova@linguistics.edu",
+                    "phone": "+1 (312) 555-0456",
+                    "location": {
+                        "city": "Chicago",
+                        "state": "Illinois",
+                        "country": "USA"
+                    }
+                },
+                "professional_summary": "Sociolinguist studying language variation, identity, and multilingualism in urban contexts. My research examines how immigrants navigate language in daily life. Spent 3 years recording conversations in Chicago's Ukrainian Village. Transcribing 200 hours of speech took forever (seriously, 1 hour of speech = 8 hours of transcription). I've learned that language attitudes are complicated and that people code-switch in ways they don't even notice. Looking for a position where I can continue my research on language and immigration.",
+                "education": [{
+                        "level": "PhD",
+                        "degree": "Doctor of Philosophy",
+                        "field_of_study": "Linguistics",
+                        "institution": "University of Chicago",
+                        "location": "Chicago, IL, USA",
+                        "start_date": "2013-09",
+                        "end_date": "2019-06",
+                        "graduation_year": 2019,
+                        "dissertation_title": "Language, Identity, and Integration: A Sociolinguistic Study of Ukrainian Immigrants in Chicago",
+                        "advisor": "Dr. Salikoko Mufwene",
+                        "fieldwork_hours": 600,
+                        "transcription_hours": 2000
+                    },
+                    {
+                        "level": "Master's",
+                        "degree": "Master of Arts",
+                        "field_of_study": "Linguistics",
+                        "institution": "University of Chicago",
+                        "graduation_year": 2015
+                    },
+                    {
+                        "level": "Bachelor's",
+                        "degree": "Bachelor of Arts",
+                        "field_of_study": "Linguistics",
+                        "minor": "Russian Studies",
+                        "institution": "University of Illinois at Urbana-Champaign",
+                        "graduation_year": 2011,
+                        "gpa": 3.8
+                    }
+                ],
+                "fieldwork_experience": [{
+                    "location": "Ukrainian Village, Chicago",
+                    "duration": "36 months",
+                    "participants": 85,
+                    "recorded_hours": 200,
+                    "transcribed_hours": 1600,
+                    "methods": ["Sociolinguistic interviews", "Participant observation", "Rapid anonymous surveys"],
+                    "challenges": [
+                        "Transcription is incredibly time-consuming",
+                        "Recruiting participants who trust you enough to speak naturally",
+                        "Navigating my own position as a Russian-speaking researcher in a Ukrainian community"
+                    ],
+                    "findings": [
+                        "Second-generation immigrants show systematic variation based on social networks",
+                        "Language attitudes correlate with political views"
+                    ]
+                }],
+                "skills": {
+                    "linguistic_methods": ["Sociolinguistic interviews", "Discourse analysis", "Phonetic analysis", "Corpus linguistics"],
+                    "software": ["Praat", "ELAN", "R (lme4)", "SPSS", "NVivo"],
+                    "transcription_systems": ["IPA", "CHAT", "Jeffersonian"],
+                    "languages": ["English", "Russian", "Ukrainian", "Polish (basic)"]
+                }
+            },
+            {
+                "cv_id": "SOC_IR_010",
+                "discipline": "International Relations",
+                "specialization": "Security Studies",
+                "candidate_name": "Dr. Robert Chen",
+                "classification": "AI_Generated",
+                "confidence_score": 0.96,
+                "personal_details": {
+                    "first_name": "Robert",
+                    "last_name": "Chen",
+                    "title": "Dr.",
+                    "email": "robert.chen@ir.edu",
+                    "phone": "+1 (202) 555-0678",
+                    "location": {
+                        "city": "Washington",
+                        "state": "DC",
+                        "country": "USA"
+                    }
+                },
+                "professional_summary": "International Relations scholar specializing in security studies, East Asian politics, and foreign policy analysis. Expertise in formal modeling, game theory, and quantitative methods. Published extensively including three books and numerous journal articles. Secured funding from Carnegie Corporation and MacArthur Foundation. Seeking senior position at policy-oriented research university.",
+                "education": [{
+                        "level": "PhD",
+                        "degree": "Doctor of Philosophy",
+                        "field_of_study": "Political Science",
+                        "institution": "Princeton University",
+                        "graduation_year": 2012,
+                        "dissertation_title": "Alliance Dynamics in East Asia"
+                    },
+                    {
+                        "level": "Bachelor's",
+                        "degree": "Bachelor of Arts",
+                        "field_of_study": "International Relations",
+                        "institution": "Georgetown University",
+                        "graduation_year": 2006,
+                        "gpa": 3.9
+                    }
+                ],
+                "publications": [{
+                        "title": "The Future of Alliances in the Indo-Pacific",
+                        "journal": "International Security",
+                        "year": 2022,
+                        "volume": 47,
+                        "issue": 1,
+                        "pages": "78-115",
+                        "citations": 25
+                    },
+                    {
+                        "title": "China's Rise and Regional Order",
+                        "publisher": "Oxford University Press",
+                        "year": 2019,
+                        "type": "Book"
+                    }
+                ],
+                "skills": {
+                    "methods": ["Game theory", "Formal modeling", "Statistical analysis", "Case study analysis"],
+                    "software": ["R", "Stata", "Python", "LaTeX"],
+                    "languages": ["English", "Mandarin", "Japanese"]
+                }
+            },
+            {
+                "cv_id": "SOC_PAD_011",
+                "discipline": "Public Administration",
+                "specialization": "Nonprofit Management",
+                "candidate_name": "Dr. Lisa Johnson",
+                "classification": "Human_Written",
+                "confidence_score": 0.92,
+                "personal_details": {
+                    "first_name": "Lisa",
+                    "last_name": "Johnson",
+                    "title": "Dr.",
+                    "email": "lisa.johnson@pad.edu",
+                    "phone": "+1 (213) 555-0789",
+                    "location": {
+                        "city": "Los Angeles",
+                        "state": "California",
+                        "country": "USA"
+                    }
+                },
+                "professional_summary": "Public Administration scholar focusing on nonprofit management, organizational behavior, and program evaluation. Before academia, I spent 10 years running a homeless services nonprofit (learned a lot about budgeting, fundraising, and board management the hard way). My research grew directly from practice - I study what actually works in nonprofit management. Looking for a position where I can bridge academic research and practitioner needs.",
+                "education": [{
+                        "level": "PhD",
+                        "degree": "Doctor of Philosophy",
+                        "field_of_study": "Public Administration",
+                        "institution": "University of Southern California",
+                        "graduation_year": 2015,
+                        "dissertation_title": "Nonprofit Capacity Building and Organizational Effectiveness"
+                    },
+                    {
+                        "level": "MPA",
+                        "degree": "Master of Public Administration",
+                        "institution": "University of Southern California",
+                        "graduation_year": 2005
+                    },
+                    {
+                        "level": "Bachelor's",
+                        "degree": "Bachelor of Arts",
+                        "field_of_study": "Sociology",
+                        "institution": "University of California, Los Angeles",
+                        "graduation_year": 2000
+                    }
+                ],
+                "practitioner_experience": [{
+                    "title": "Executive Director",
+                    "organization": "Homeless Services Network",
+                    "location": "Los Angeles, CA",
+                    "start_date": "2005-06",
+                    "end_date": "2015-08",
+                    "budget": "$5M",
+                    "staff": 45,
+                    "achievements": [
+                        "Grew organization from $1M to $5M budget",
+                        "Launched 3 new programs serving 2000+ clients annually",
+                        "Navigated 2008 recession - had to lay off staff, hardest thing I've done"
+                    ]
+                }],
+                "skills": {
+                    "management": ["Strategic planning", "Budgeting", "Fundraising", "Board development", "Staff supervision"],
+                    "evaluation": ["Program evaluation", "Logic models", "Performance measurement", "Survey design"],
+                    "software": ["SPSS", "NVivo", "QuickBooks", "Salesforce"]
+                }
+            },
+            {
+                "cv_id": "SOC_CRIM_012",
+                "discipline": "Criminology",
+                "specialization": "Juvenile Justice",
+                "candidate_name": "Dr. Marcus Brown",
+                "classification": "Human_Written",
+                "confidence_score": 0.94,
+                "personal_details": {
+                    "first_name": "Marcus",
+                    "last_name": "Brown",
+                    "title": "Dr.",
+                    "email": "marcus.brown@criminology.edu",
+                    "phone": "+1 (215) 555-0980",
+                    "location": {
+                        "city": "Philadelphia",
+                        "state": "Pennsylvania",
+                        "country": "USA"
+                    }
+                },
+                "professional_summary": "Criminologist studying juvenile justice, racial disparities, and alternatives to incarceration. Worked as a probation officer for 5 years before going back for my PhD. That experience shaped everything I research - I've seen how the system fails kids. My research uses mixed methods to evaluate diversion programs. I've had to navigate being both a former system insider and a critical researcher. Looking for a position where my research can inform policy and practice.",
+                "education": [{
+                        "level": "PhD",
+                        "degree": "Doctor of Philosophy",
+                        "field_of_study": "Criminology",
+                        "institution": "University of Pennsylvania",
+                        "graduation_year": 2018,
+                        "dissertation_title": "Diversion Programs and Recidivism: A Mixed-Methods Evaluation"
+                    },
+                    {
+                        "level": "Master's",
+                        "degree": "Master of Science",
+                        "field_of_study": "Criminal Justice",
+                        "institution": "Temple University",
+                        "graduation_year": 2010
+                    },
+                    {
+                        "level": "Bachelor's",
+                        "degree": "Bachelor of Arts",
+                        "field_of_study": "Sociology",
+                        "institution": "Temple University",
+                        "graduation_year": 2005
+                    }
+                ],
+                "practitioner_experience": [{
+                    "title": "Juvenile Probation Officer",
+                    "agency": "Philadelphia Family Court",
+                    "location": "Philadelphia, PA",
+                    "start_date": "2005-08",
+                    "end_date": "2010-06",
+                    "caseload": 60 - 80 youth,
+                    "populations": ["Adjudicated youth", "Youth on probation", "Youth in diversion"]
+                }],
+                "research_experience": [{
+                    "title": "Principal Investigator",
+                    "project_name": "Juvenile Diversion Evaluation Project",
+                    "institution": "Temple University",
+                    "start_date": "2019-01",
+                    "end_date": "Present",
+                    "funding": "National Institute of Justice",
+                    "amount": "$600,000",
+                    "sample_size": 1200,
+                    "follow_up_period": "24 months"
+                }],
+                "skills": {
+                    "methods": ["Program evaluation", "Recidivism analysis", "Survival analysis", "Qualitative interviews"],
+                    "software": ["Stata", "SPSS", "NVivo", "R"],
+                    "certifications": ["Certified Juvenile Probation Officer", "Crisis Intervention Training"]
+                }
+            },
+            {
+                "cv_id": "SOC_AI_001",
+                "discipline": "Psychology",
+                "classification": "AI_Generated",
+                "confidence_score": 0.97,
+                "note": "This CV shows typical AI patterns: perfect formatting, generic descriptions, no personal challenges mentioned"
+            },
+            {
+                "cv_id": "SOC_AI_002",
+                "discipline": "Sociology",
+                "classification": "AI_Generated",
+                "confidence_score": 0.96,
+                "note": "AI-generated CV with standardized language and missing fieldwork anecdotes"
+            },
+            {
+                "cv_id": "SOC_AI_003",
+                "discipline": "Political Science",
+                "classification": "AI_Generated",
+                "confidence_score": 0.95,
+                "note": "Perfect citation formatting, no mention of research setbacks"
+            },
+            {
+                "cv_id": "SOC_HYBRID_001",
+                "discipline": "Anthropology",
+                "classification": "Hybrid",
+                "confidence_score": 0.78,
+                "note": "AI-generated base with human additions about fieldwork challenges"
+            },
+            {
+                "cv_id": "SOC_HYBRID_002",
+                "discipline": "Social Work",
+                "classification": "Hybrid",
+                "confidence_score": 0.75,
+                "note": "Standard AI structure with human-added practice anecdotes"
+            },
+            {
+                "cv_id": "SOC_HYBRID_003",
+                "discipline": "History",
+                "classification": "Hybrid",
+                "confidence_score": 0.72,
+                "note": "AI template with human-added archival research stories"
+            },
+            {
+                "cv_id": "SOC_HUMAN_001",
+                "discipline": "Economics",
+                "classification": "Human_Written",
+                "confidence_score": 0.93,
+                "note": "Personal fieldwork anecdotes, mention of research challenges"
+            },
+            {
+                "cv_id": "SOC_HUMAN_002",
+                "discipline": "Geography",
+                "classification": "Human_Written",
+                "confidence_score": 0.94,
+                "note": "Self-taught GIS story, community engagement details"
+            },
+            {
+                "cv_id": "SOC_HUMAN_003",
+                "discipline": "Linguistics",
+                "classification": "Human_Written",
+                "confidence_score": 0.95,
+                "note": "Detailed transcription challenges, fieldwork struggles"
+            },
+            {
+                "cv_id": "SOC_HUMAN_004",
+                "discipline": "Criminology",
+                "classification": "Human_Written",
+                "confidence_score": 0.94,
+                "note": "Practitioner experience, system insider perspective"
+            },
+            {
+                "cv_id": "SOC_HUMAN_005",
+                "discipline": "Public Administration",
+                "classification": "Human_Written",
+                "confidence_score": 0.92,
+                "note": "Nonprofit leadership experience, budget management details"
+            },
+            {
+                "cv_id": "SOC_HUMAN_006",
+                "discipline": "International Relations",
+                "classification": "Human_Written",
+                "confidence_score": 0.91,
+                "note": "Policy experience, language learning stories"
+            },
+            {
+                "cv_id": "SOC_HUMAN_007",
+                "discipline": "Demography",
+                "classification": "Human_Written",
+                "confidence_score": 0.93,
+                "note": "Longitudinal study challenges, retention strategies"
+            },
+            {
+                "cv_id": "SOC_HUMAN_008",
+                "discipline": "Gender Studies",
+                "classification": "Human_Written",
+                "confidence_score": 0.94,
+                "note": "Positionality statements, ethical reflections"
+            },
+            {
+                "cv_id": "SOC_HUMAN_009",
+                "discipline": "Urban Studies",
+                "classification": "Human_Written",
+                "confidence_score": 0.92,
+                "note": "Community-based research, local partnerships"
+            }
+        ],
+        "classification_summary": {
+            "total_cvs": 24,
+            "human_written": 14,
+            "ai_generated": 6,
+            "hybrid": 4,
+            "human_percentage": 58.3,
+            "ai_percentage": 25.0,
+            "hybrid_percentage": 16.7,
+            "disciplines_with_most_human_cvs": ["Social Work", "Anthropology", "Linguistics", "Criminology"],
+            "disciplines_with_most_ai_cvs": ["Political Science", "International Relations", "Economics"],
+            "key_human_indicators": [
+                "mention_of_IRB_delays (87% of human CVs)",
+                "fieldwork_challenges_discussed (92% of human CVs)",
+                "personal_anecdotes (85% of human CVs)",
+                "reflexivity_statements (78% of human CVs)",
+                "mention_of_positionality (82% of human CVs)"
+            ],
+            "key_ai_indicators": [
+                "perfect_citation_formatting (100% of AI CVs)",
+                "no_mention_of_research_failures (100% of AI CVs)",
+                "generic_methodology_descriptions (95% of AI CVs)",
+                "missing_IRB_discussion (100% of AI CVs)",
+                "no_personal_anecdotes (100% of AI CVs)"
+            ]
+        },
+        "social_science_specific_classifiers": {
+            "fieldwork_indicators": {
+                "human": [
+                    "mention_of_specific_fieldwork_duration",
+                    "discussion_of_language_barriers",
+                    "description_of_access_challenges",
+                    "reflection_on_positionality",
+                    "mention_of_community_relationships"
+                ],
+                "ai": [
+                    "vague_fieldwork_references",
+                    "no_specific_challenges",
+                    "missing_reflexivity",
+                    "generic_community_engagement"
+                ]
+            },
+            "irb_and_ethics": {
+                "human": [
+                    "mention_of_IRB_delays",
+                    "discussion_of_ethical_dilemmas",
+                    "description_of_consent_processes",
+                    "mention_of_vulnerable_populations"
+                ],
+                "ai": [
+                    "no_IRB_mention",
+                    "generic_ethics_compliance",
+                    "missing_vulnerable_population_discussion"
+                ]
+            },
+            "methodological_transparency": {
+                "human": [
+                    "acknowledgment_of_limitations",
+                    "discussion_of_bias",
+                    "mention_of_attrition",
+                    "description_of_methodological_changes"
+                ],
+                "ai": [
+                    "perfect_methodology",
+                    "no_limitations_mentioned",
+                    "idealized_conditions"
+                ]
+            }
+        },
+        "recommendations_for_hiring_committees": [{
+                "rule_id": "SOC_REC_001",
+                "description": "Look for personal fieldwork anecdotes and challenges - strong human indicators in qualitative disciplines",
+                "weight": 0.90
+            },
+            {
+                "rule_id": "SOC_REC_002",
+                "description": "Check for mention of IRB delays or ethical complications - human researchers almost always experience these",
+                "weight": 0.88
+            },
+            {
+                "rule_id": "SOC_REC_003",
+                "description": "Review methodology sections for acknowledgment of limitations - AI tends to present perfect methods",
+                "weight": 0.85
+            },
+            {
+                "rule_id": "SOC_REC_004",
+                "description": "Look for reflexivity and positionality statements - increasingly standard in human-written social science CVs",
+                "weight": 0.87
+            },
+            {
+                "rule_id": "SOC_REC_005",
+                "description": "Check for specific fieldwork details (duration, location, participants) - AI tends to be vague",
+                "weight": 0.92
+            },
+            {
+                "rule_id": "SOC_REC_006",
+                "description": "Look for evidence of community partnership and knowledge translation - strong human indicators",
+                "weight": 0.84
+            },
+            {
+                "rule_id": "SOC_REC_007",
+                "description": "Review teaching statements for specific classroom anecdotes - human teachers have stories",
+                "weight": 0.86
+            }
+        ],
+        "research_methods_frequency": {
+            "qualitative_methods": {
+                "ethnography": "Present in 65% of human CVs, 20% of AI CVs",
+                "in_depth_interviews": "Present in 85% of human CVs, 45% of AI CVs",
+                "participant_observation": "Present in 70% of human CVs, 15% of AI CVs",
+                "focus_groups": "Present in 55% of human CVs, 30% of AI CVs",
+                "discourse_analysis": "Present in 40% of human CVs, 25% of AI CVs"
+            },
+            "quantitative_methods": {
+                "survey_research": "Present in 60% of human CVs, 70% of AI CVs",
+                "statistical_analysis": "Present in 55% of human CVs, 80% of AI CVs",
+                "experimental_design": "Present in 25% of human CVs, 40% of AI CVs",
+                "longitudinal_studies": "Present in 45% of human CVs, 35% of AI CVs"
+            },
+            "mixed_methods": {
+                "mixed_methods_design": "Present in 50% of human CVs, 30% of AI CVs"
+            }
+        },
+        "teaching_evaluation_insights": {
+            "human_patterns": [
+                "Specific course anecdotes ('One student told me...')",
+                "Discussion of teaching failures and adaptations",
+                "Student interaction stories",
+                "Curriculum development challenges"
+            ],
+            "ai_patterns": [
+                "Generic teaching philosophy statements",
+                "Perfect student evaluation summaries",
+                "No specific classroom examples",
+                "Standardized course descriptions"
+            ]
+        }
+    }
+}

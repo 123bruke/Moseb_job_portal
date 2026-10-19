@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 460" role="img" aria-label="An open book with a glowing graduation cap above a skill graph">
+  <title>Learning, graded and explained</title>
+  <defs>
+    <linearGradient id="capG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366f1" />
+      <stop offset=".55" stop-color="#a855f7" />
+      <stop offset="1" stop-color="#ec4899" />
+    </linearGradient>
+    <linearGradient id="pageL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" />
+      <stop offset="1" stop-color="#dfe6ff" />
+    </linearGradient>
+    <linearGradient id="pageR" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" />
+      <stop offset="1" stop-color="#f6e7ff" />
+    </linearGradient>
+    <linearGradient id="link" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22d3ee" />
+      <stop offset="1" stop-color="#6366f1" />
+    </linearGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#312e81" flood-opacity=".3" />
+    </filter>
+    <filter id="halo" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="18" />
+    </filter>
+  </defs>
+
+  <!-- Skill graph -->
+  <g opacity=".85">
+    <path d="M96 122l184-58 184 58" fill="none" stroke="url(#link)" stroke-width="2.4" stroke-dasharray="7 9" stroke-linecap="round" />
+    <path d="M96 122l92 92M464 122l-92 92M280 64v150" fill="none" stroke="url(#link)" stroke-width="2.4" stroke-dasharray="7 9" stroke-linecap="round" />
+    <g>
+      <circle cx="96" cy="122" r="13" fill="#22d3ee" opacity=".22" />
+      <circle cx="96" cy="122" r="7" fill="#22d3ee" />
+      <circle cx="464" cy="122" r="13" fill="#ec4899" opacity=".22" />
+      <circle cx="464" cy="122" r="7" fill="#ec4899" />
+      <circle cx="280" cy="64" r="13" fill="#a855f7" opacity=".22" />
+      <circle cx="280" cy="64" r="7" fill="#a855f7" />
+      <circle cx="188" cy="214" r="11" fill="#6366f1" opacity=".22" />
+      <circle cx="188" cy="214" r="6" fill="#6366f1" />
+      <circle cx="372" cy="214" r="11" fill="#6366f1" opacity=".22" />
+      <circle cx="372" cy="214" r="6" fill="#6366f1" />
+    </g>
+  </g>
+
+  <!-- Glow + cap -->
+  <circle cx="280" cy="150" r="62" fill="url(#capG)" opacity=".28" filter="url(#halo)" />
+  <g filter="url(#shadow)">
+    <path d="M280 96l86 30-86 30-86-30z" fill="url(#capG)" />
+    <path d="M232 138v34c0 12 22 22 48 22s48-10 48-22v-34l-48 16z" fill="#4c1d95" opacity=".92" />
+    <path d="M366 126l7 56" stroke="#312e81" stroke-width="4" stroke-linecap="round" />
+    <circle cx="374" cy="190" r="9" fill="#fbbf24" />
+  </g>
+
+  <!-- Open book -->
+  <g filter="url(#shadow)">
+    <path d="M280 246c-40-30-96-30-140-12v152c44-18 100-18 140 12z" fill="url(#pageL)" />
+    <path d="M280 246c40-30 96-30 140-12v152c-44-18-100-18-140 12z" fill="url(#pageR)" />
+    <path d="M280 246v152" stroke="#c7d2fe" stroke-width="3" />
+    <g stroke="#a5b4fc" stroke-width="5" stroke-linecap="round" opacity=".85">
+      <path d="M170 268h84M170 292h84M170 316h60M306 268h84M306 292h84M306 316h60" />
+    </g>
+    <path d="M180 344l22-22 20 20 26-30 22 26" fill="none" stroke="#6366f1" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity=".8" />
+    <circle cx="380" cy="340" r="7" fill="#ec4899" />
+  </g>
+
+  <!-- Rising sparkles -->
+  <g fill="#a855f7">
+    <path d="M92 384l5 12 12 5-12 5-5 12-5-12-12-5 12-5z" opacity=".55" />
+    <path d="M470 396l4 9 9 4-9 4-4 9-4-9-9-4 9-4z" opacity=".45" />
+    <path d="M440 300l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" opacity=".5" />
+  </g>
+</svg>

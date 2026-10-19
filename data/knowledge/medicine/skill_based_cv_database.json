@@ -1,0 +1,1017 @@
+{
+    "social_science_skill_based_cv_database": {
+        "metadata": {
+            "department": "Social Sciences",
+            "version": "7.0",
+            "created_date": "2024-01-15",
+            "focus": "Skill-Based Assessment and Classification",
+            "total_cvs": 28,
+            "total_lines": 6250,
+            "disciplines_covered": [
+                "Sociology", "Psychology", "Political Science", "Anthropology", "Economics",
+                "Geography", "History", "Linguistics", "Communication Studies", "International Relations",
+                "Public Administration", "Social Work", "Criminology", "Demography", "Gender Studies",
+                "Urban Studies", "Environmental Social Science", "Development Studies", "Archaeology",
+                "Cognitive Science", "Behavioral Economics", "Public Policy", "Industrial-Organizational Psychology"
+            ],
+            "skill_categories": [
+                "quantitative_skills",
+                "qualitative_skills",
+                "statistical_software",
+                "research_methodologies",
+                "data_collection_techniques",
+                "data_analysis_tools",
+                "programming_languages",
+                "gis_spatial_skills",
+                "language_proficiencies",
+                "teaching_competencies",
+                "clinical_assessment_skills",
+                "policy_analysis_skills",
+                "project_management",
+                "grant_writing",
+                "public_communication",
+                "leadership_skills",
+                "interpersonal_skills",
+                "cross_cultural_competency"
+            ]
+        },
+        "skill_classification_rules": {
+            "ai_skill_indicators": {
+                "listing_patterns": [
+                    "excessively_long_skill_lists",
+                    "generic_skill_descriptions",
+                    "no_proficiency_levels",
+                    "missing_context_for_skills",
+                    "alphabetical_perfect_ordering",
+                    "standardized_skill_categories"
+                ],
+                "proficiency_patterns": [
+                    "all_skills_marked_expert",
+                    "no_learning_in_progress",
+                    "no_mention_of_skill_development",
+                    "perfect_years_of_experience"
+                ],
+                "software_patterns": [
+                    "listing_every_version_of_software",
+                    "no_preference_indicators",
+                    "missing_troubleshooting_experience"
+                ]
+            },
+            "human_skill_indicators": {
+                "listing_patterns": [
+                    "categorized_by_strength",
+                    "mention_of_self_taught_skills",
+                    "learning_in_progress_indicators",
+                    "specific_software_versions",
+                    "contextual_skill_usage"
+                ],
+                "proficiency_patterns": [
+                    "varied_proficiency_levels",
+                    "mention_of_skill_gaps",
+                    "learning_journey_descriptions",
+                    "specific_hours_of_practice"
+                ],
+                "software_patterns": [
+                    "mention_of_workarounds",
+                    "preference_for_certain_tools",
+                    "troubleshooting_experience"
+                ]
+            }
+        },
+        "skill_matrix": {
+            "quantitative_skills": {
+                "levels": ["Beginner", "Intermediate", "Advanced", "Expert"],
+                "subcategories": [
+                    "Descriptive Statistics",
+                    "Inferential Statistics",
+                    "Regression Analysis",
+                    "Multivariate Analysis",
+                    "Longitudinal Data Analysis",
+                    "Hierarchical Linear Modeling",
+                    "Structural Equation Modeling",
+                    "Factor Analysis",
+                    "Cluster Analysis",
+                    "Time Series Analysis",
+                    "Survival Analysis",
+                    "Network Analysis",
+                    "Spatial Statistics",
+                    "Bayesian Statistics",
+                    "Causal Inference",
+                    "Propensity Score Matching",
+                    "Instrumental Variables",
+                    "Difference-in-Differences",
+                    "Regression Discontinuity",
+                    "Randomized Controlled Trials"
+                ]
+            },
+            "qualitative_skills": {
+                "levels": ["Beginner", "Intermediate", "Advanced", "Expert"],
+                "subcategories": [
+                    "Ethnography",
+                    "Participant Observation",
+                    "In-depth Interviews",
+                    "Semi-structured Interviews",
+                    "Focus Groups",
+                    "Case Study Research",
+                    "Comparative Case Analysis",
+                    "Discourse Analysis",
+                    "Content Analysis",
+                    "Thematic Analysis",
+                    "Grounded Theory",
+                    "Narrative Analysis",
+                    "Conversation Analysis",
+                    "Visual Analysis",
+                    "Archival Research",
+                    "Oral History",
+                    "Action Research",
+                    "Participatory Action Research",
+                    "Community-Based Participatory Research"
+                ]
+            },
+            "statistical_software": {
+                "levels": ["Beginner", "Intermediate", "Advanced", "Expert"],
+                "software_list": [
+                    "SPSS",
+                    "Stata",
+                    "R",
+                    "SAS",
+                    "Mplus",
+                    "JMP",
+                    "EViews",
+                    "MATLAB",
+                    "Python (pandas, numpy, scipy, statsmodels, scikit-learn)",
+                    "Jamovi",
+                    "JASP",
+                    "PSPP",
+                    "gretl",
+                    "Minitab",
+                    "NVivo",
+                    "ATLAS.ti",
+                    "Dedoose",
+                    "MAXQDA",
+                    "Qualtrics",
+                    "SurveyMonkey",
+                    "LimeSurvey"
+                ]
+            },
+            "gis_spatial_skills": {
+                "levels": ["Beginner", "Intermediate", "Advanced", "Expert"],
+                "software_list": [
+                    "ArcGIS Pro",
+                    "ArcMap",
+                    "QGIS",
+                    "GRASS GIS",
+                    "Google Earth Engine",
+                    "Mapbox",
+                    "Carto",
+                    "Tableau",
+                    "Power BI",
+                    "PostGIS",
+                    "GeoDa",
+                    "R (sf, sp, raster, tmap, leaflet)",
+                    "Python (geopandas, folium, shapely)",
+                    "MapInfo"
+                ]
+            },
+            "programming_languages": {
+                "levels": ["Beginner", "Intermediate", "Advanced", "Expert"],
+                "languages": [
+                    "Python",
+                    "R",
+                    "SQL",
+                    "JavaScript",
+                    "HTML/CSS",
+                    "LaTeX",
+                    "Markdown",
+                    "Stata do-file",
+                    "SPSS syntax",
+                    "SAS",
+                    "MATLAB",
+                    "Julia",
+                    "Java",
+                    "C++"
+                ]
+            },
+            "language_proficiencies": {
+                "levels": ["Basic", "Conversational", "Professional Working", "Native/Fluent"],
+                "cefr_mapping": {
+                    "Basic": "A1-A2",
+                    "Conversational": "B1",
+                    "Professional Working": "B2-C1",
+                    "Native/Fluent": "C2"
+                }
+            },
+            "teaching_competencies": {
+                "subcategories": [
+                    "Curriculum Development",
+                    "Course Design",
+                    "Syllabus Creation",
+                    "Lecture Delivery",
+                    "Discussion Facilitation",
+                    "Active Learning Strategies",
+                    "Experiential Learning",
+                    "Service Learning",
+                    "Online Teaching (LMS: Canvas, Blackboard, Moodle, Brightspace)",
+                    "Hybrid/Blended Learning",
+                    "Student Mentoring",
+                    "Undergraduate Research Supervision",
+                    "Graduate Thesis Advising",
+                    "Doctoral Dissertation Advising",
+                    "Teaching with Technology",
+                    "Assessment Design",
+                    "Rubric Creation",
+                    "Grade Management",
+                    "Student Evaluation",
+                    "Office Hours Management"
+                ]
+            },
+            "clinical_assessment_skills": {
+                "subcategories": [
+                    "Diagnostic Interviewing",
+                    "Mental Status Exam",
+                    "Risk Assessment",
+                    "Suicide Risk Assessment",
+                    "Psychodiagnostic Assessment",
+                    "Personality Assessment",
+                    "Cognitive Assessment",
+                    "Neuropsychological Assessment",
+                    "Trauma Assessment",
+                    "Substance Use Assessment",
+                    "Child/Adolescent Assessment",
+                    "Geriatric Assessment",
+                    "Forensic Assessment"
+                ]
+            },
+            "policy_analysis_skills": {
+                "subcategories": [
+                    "Policy Evaluation",
+                    "Cost-Benefit Analysis",
+                    "Cost-Effectiveness Analysis",
+                    "Regulatory Impact Assessment",
+                    "Legislative Analysis",
+                    "Stakeholder Analysis",
+                    "Systems Thinking",
+                    "Implementation Science",
+                    "Program Evaluation",
+                    "Logic Model Development",
+                    "Theory of Change",
+                    "Performance Measurement",
+                    "Outcome Evaluation"
+                ]
+            }
+        },
+        "resumes": [{
+                    "cv_id": "SOC_SKILLS_PSY_001",
+                    "discipline": "Psychology",
+                    "specialization": "Research Psychology",
+                    "candidate_name": "Dr. Sarah Chen",
+                    "classification": "Human_Written",
+                    "confidence_score": 0.94,
+                    "skill_based_summary": "Research psychologist with advanced quantitative and qualitative skills. Self-taught R during my postdoc (took about 6 months of evenings and weekends - Stack Overflow was my best friend). I'm expert in SPSS (15+ years) and advanced in R (5 years), intermediate in Python (still learning). I've conducted 500+ hours of clinical interviews and trained 20+ research assistants. My statistical skills include multilevel modeling, SEM, and longitudinal analysis. Looking for a position where I can use my methodological expertise while continuing to develop my programming skills.",
+                    "skills_detailed": {
+                        "quantitative_skills": [{
+                                "skill": "Descriptive Statistics",
+                                "proficiency": "Expert",
+                                "years": 15,
+                                "last_used": "2024",
+                                "context": "Used daily for data cleaning and exploratory analysis"
+                            },
+                            {
+                                "skill": "Inferential Statistics",
+                                "proficiency": "Expert",
+                                "years": 15,
+                                "last_used": "2024"
+                            },
+                            {
+                                "skill": "Regression Analysis",
+                                "proficiency": "Expert",
+                                "years": 12,
+                                "last_used": "2024",
+                                "subtypes": ["Linear", "Logistic", "Poisson", "Negative Binomial", "Ordinal"]
+                            },
+                            {
+                                "skill": "Multilevel/Hierarchical Modeling",
+                                "proficiency": "Advanced",
+                                "years": 7,
+                                "last_used": "2024",
+                                "software": ["R (lme4)", "SPSS (MIXED)", "Mplus"]
+                            },
+                            {
+                                "skill": "Structural Equation Modeling",
+                                "proficiency": "Advanced",
+                                "years": 6,
+                                "last_used": "2023",
+                                "software": ["Mplus", "R (lavaan)"],
+                                "note": "Still learning advanced topics like latent growth curves"
+                            },
+                            {
+                                "skill": "Longitudinal Data Analysis",
+                                "proficiency": "Advanced",
+                                "years": 5,
+                                "last_used": "2024"
+                            },
+                            {
+                                "skill": "Factor Analysis",
+                                "proficiency": "Advanced",
+                                "years": 7,
+                                "last_used": "2023",
+                                "subtypes": ["EFA", "CFA"]
+                            },
+                            {
+                                "skill": "Meta-Analysis",
+                                "proficiency": "Intermediate",
+                                "years": 3,
+                                "last_used": "2023",
+                                "software": ["R (metafor)"]
+                            },
+                            {
+                                "skill": "Bayesian Statistics",
+                                "proficiency": "Beginner",
+                                "years": 1,
+                                "last_used": "2023",
+                                "note": "Currently taking online course - fascinated by Bayesian approaches",
+                                "learning_status": "in_progress"
+                            }
+                        ],
+                        "qualitative_skills": [{
+                                "skill": "Semi-structured Interviews",
+                                "proficiency": "Expert",
+                                "years": 12,
+                                "hours_completed": 500,
+                                "populations": ["Clinical", "Community", "Student"]
+                            },
+                            {
+                                "skill": "Thematic Analysis",
+                                "proficiency": "Advanced",
+                                "years": 8,
+                                "software": ["NVivo", "Dedoose"],
+                                "projects_completed": 12
+                            },
+                            {
+                                "skill": "Focus Groups",
+                                "proficiency": "Advanced",
+                                "years": 6,
+                                "sessions_conducted": 25,
+                                "participants_total": 150
+                            },
+                            {
+                                "skill": "Content Analysis",
+                                "proficiency": "Advanced",
+                                "years": 5
+                            }
+                        ],
+                        "statistical_software": [{
+                                "software": "SPSS",
+                                "proficiency": "Expert",
+                                "years": 15,
+                                "versions": ["25", "26", "27", "28", "29"],
+                                "certification": "SPSS Certified Analyst",
+                                "note": "My first statistical software - know it inside out"
+                            },
+                            {
+                                "software": "R",
+                                "proficiency": "Advanced",
+                                "years": 5,
+                                "packages": ["tidyverse", "lme4", "lavaan", "ggplot2", "dplyr", "metafor", "brms"],
+                                "learning_method": "Self-taught via Coursera and Stack Overflow",
+                                "note": "Took about 6 months to feel competent - now my preferred tool"
+                            },
+                            {
+                                "software": "Mplus",
+                                "proficiency": "Intermediate",
+                                "years": 4,
+                                "note": "Only use for SEM - the syntax is not intuitive but powerful"
+                            },
+                            {
+                                "software": "NVivo",
+                                "proficiency": "Intermediate",
+                                "years": 5,
+                                "note": "Used for qualitative analysis on 3 major projects"
+                            },
+                            {
+                                "software": "Stata",
+                                "proficiency": "Beginner",
+                                "years": 1,
+                                "note": "Learning because collaborators use it"
+                            }
+                        ],
+                        "programming_languages": [{
+                                "language": "R",
+                                "proficiency": "Advanced",
+                                "years": 5,
+                                "daily_use": true
+                            },
+                            {
+                                "language": "Python",
+                                "proficiency": "Intermediate",
+                                "years": 2,
+                                "packages": ["pandas", "numpy", "matplotlib"],
+                                "note": "Still learning - mostly use for data cleaning",
+                                "learning_status": "in_progress"
+                            },
+                            {
+                                "language": "SQL",
+                                "proficiency": "Intermediate",
+                                "years": 2,
+                                "note": "Self-taught for database management"
+                            },
+                            {
+                                "language": "LaTeX",
+                                "proficiency": "Advanced",
+                                "years": 8,
+                                "note": "Write all manuscripts and presentations in LaTeX/Overleaf"
+                            },
+                            {
+                                "language": "Markdown",
+                                "proficiency": "Advanced",
+                                "years": 4,
+                                "note": "Use for R Markdown reports and GitHub documentation"
+                            }
+                        ],
+                        "research_methodologies": [{
+                                "methodology": "Survey Research",
+                                "proficiency": "Expert",
+                                "surveys_designed": 25,
+                                "respondents_total": 5000,
+                                "platforms": ["Qualtrics", "SurveyMonkey", "LimeSurvey"]
+                            },
+                            {
+                                "methodology": "Experimental Design",
+                                "proficiency": "Advanced",
+                                "experiments_conducted": 8,
+                                "types": ["Between-subjects", "Within-subjects", "Factorial", "Quasi-experimental"]
+                            },
+                            {
+                                "methodology": "Longitudinal Studies",
+                                "proficiency": "Advanced",
+                                "studies_conducted": 3,
+                                "longest_follow_up": "5 years"
+                            },
+                            {
+                                "methodology": "Program Evaluation",
+                                "proficiency": "Intermediate",
+                                "evaluations_conducted": 4,
+                                "clients": ["Community mental health agencies", "School districts"]
+                            }
+                        ],
+                        "teaching_skills": [{
+                                "skill": "Course Design",
+                                "proficiency": "Advanced",
+                                "courses_developed": 5,
+                                "note": "Designed from scratch: Research Methods, Statistics for Psychologists"
+                            },
+                            {
+                                "skill": "Online Teaching",
+                                "proficiency": "Advanced",
+                                "platforms": ["Canvas", "Blackboard", "Zoom"],
+                                "courses_taught_online": 8,
+                                "note": "Pivoted to online during COVID - learned a lot about engagement strategies"
+                            },
+                            {
+                                "skill": "Student Mentoring",
+                                "proficiency": "Expert",
+                                "undergrads_mentored": 25,
+                                "grad_students_mentored": 8,
+                                "theses_supervised": 6
+                            },
+                            {
+                                "skill": "Teaching with Technology",
+                                "proficiency": "Advanced",
+                                "tools": ["Poll Everywhere", "Kahoot", "Jamboard", "Padlet"]
+                            }
+                        ],
+                        "languages": [{
+                                "language": "English",
+                                "proficiency": "Native",
+                                "cefr_level": "C2"
+                            },
+                            {
+                                "language": "Mandarin",
+                                "proficiency": "Professional Working",
+                                "cefr_level": "C1",
+                                "years_studying": 12,
+                                "use_case": "Research interviews with Mandarin-speaking participants"
+                            },
+                            {
+                                "language": "Spanish",
+                                "proficiency": "Conversational",
+                                "cefr_level": "B1",
+                                "years_studying": 4,
+                                "learning_status": "in_progress",
+                                "note": "Taking evening classes - can conduct basic interviews"
+                            }
+                        ],
+                        "certifications": [{
+                                "name": "SPSS Certified Statistical Analyst",
+                                "issuing_body": "IBM",
+                                "year": 2018
+                            },
+                            {
+                                "name": "R Programming Specialization",
+                                "issuing_body": "Johns Hopkins University (Coursera)",
+                                "year": 2019
+                            },
+                            {
+                                "name": "Qualtrics Research Core Certification",
+                                "issuing_body": "Qualtrics",
+                                "year": 2020
+                            },
+                            {
+                                "name": "CITI Program - Social and Behavioral Research",
+                                "year": 2015,
+                                "expiry": 2025
+                            }
+                        ],
+                        "transferable_skills": [{
+                                "skill": "Project Management",
+                                "proficiency": "Advanced",
+                                "projects_managed": 15,
+                                "tools": ["Asana", "Trello", "Notion"],
+                                "note": "Managed 5-year longitudinal study with $500k budget"
+                            },
+                            {
+                                "skill": "Grant Writing",
+                                "proficiency": "Advanced",
+                                "grants_submitted": 12,
+                                "grants_funded": 6,
+                                "total_funding": "$1.2M",
+                                "note": "First grant was rejected (learned a lot from reviewer feedback)"
+                            },
+                            {
+                                "skill": "Data Visualization",
+                                "proficiency": "Advanced",
+                                "tools": ["ggplot2", "Tableau", "Power BI"],
+                                "dashboards_created": 20
+                            },
+                            {
+                                "skill": "Scientific Writing",
+                                "proficiency": "Expert",
+                                "papers_published": 25,
+                                "manuscripts_reviewed": 40
+                            },
+                            {
+                                "skill": "Public Speaking",
+                                "proficiency": "Advanced",
+                                "conference_presentations": 35,
+                                "keynote_speeches": 3
+                            },
+                            {
+                                "skill": "Collaboration",
+                                "proficiency": "Expert",
+                                "collaborators_count": 45,
+                                "interdisciplinary_projects": 8
+                            }
+                        ]
+                    },
+                    "skill_development_journey": {
+                        "self_taught_skills": ["R programming", "Python basics", "SQL", "Bayesian statistics"],
+                        "learning_resources": ["Coursera", "DataCamp", "Stack Overflow", "R-bloggers", "YouTube tutorials"],
+                        "skill_gaps_acknowledged": ["Advanced machine learning", "Deep learning", "Natural language processing"],
+                        "learning_goals": [
+                            "Complete Bayesian statistics specialization by 2024",
+                            "Learn Python for machine learning",
+                            "Improve Spanish to professional working level"
+                        ]
+                    }
+                },
+                {
+                    "cv_id": "SOC_SKILLS_SOC_002",
+                    "discipline": "Sociology",
+                    "specialization": "Urban Sociology",
+                    "candidate_name": "Dr. Marcus Johnson",
+                    "classification": "Human_Written",
+                    "confidence_score": 0.92,
+                    "skill_based_summary": "Urban sociologist with strong qualitative skills and intermediate quantitative abilities. My strength is ethnography - I've spent 3+ years in the field across 4 cities. I'm less confident in statistics (self-taught what I needed for mixed methods). I use NVivo for qualitative analysis and Stata for basic quant. I've trained 15+ research assistants in ethnographic methods. Looking for a position where my qualitative expertise is valued while I continue developing my quantitative skills.",
+                    "skills_detailed": {
+                        "qualitative_skills": [{
+                                "skill": "Ethnography",
+                                "proficiency": "Expert",
+                                "years": 10,
+                                "fieldwork_hours": 5000,
+                                "settings": ["Urban neighborhoods", "Community organizations", "Public spaces"],
+                                "notebooks_completed": 25,
+                                "note": "My primary method - I've refined my approach over a decade"
+                            },
+                            {
+                                "skill": "Participant Observation",
+                                "proficiency": "Expert",
+                                "years": 10,
+                                "roles": ["Complete observer", "Participant-as-observer", "Complete participant"]
+                            },
+                            {
+                                "skill": "In-depth Interviews",
+                                "proficiency": "Expert",
+                                "years": 10,
+                                "interviews_conducted": 250,
+                                "average_duration": "90 minutes",
+                                "transcription_hours": 2000
+                            },
+                            {
+                                "skill": "Focus Groups",
+                                "proficiency": "Advanced",
+                                "years": 6,
+                                "sessions_conducted": 30,
+                                "participants_total": 180
+                            },
+                            {
+                                "skill": "Thematic Analysis",
+                                "proficiency": "Expert",
+                                "years": 10,
+                                "software": ["NVivo"],
+                                "projects_completed": 15
+                            },
+                            {
+                                "skill": "Discourse Analysis",
+                                "proficiency": "Intermediate",
+                                "years": 3,
+                                "note": "Learning from colleagues - useful for media analysis"
+                            },
+                            {
+                                "skill": "Community-Based Participatory Research",
+                                "proficiency": "Advanced",
+                                "years": 5,
+                                "community_partners": 8,
+                                "note": "Co-designed research with community organizations"
+                            }
+                        ],
+                        "quantitative_skills": [{
+                                "skill": "Descriptive Statistics",
+                                "proficiency": "Advanced",
+                                "years": 6,
+                                "software": ["Stata", "SPSS"],
+                                "note": "Comfortable with means, frequencies, cross-tabs"
+                            },
+                            {
+                                "skill": "Regression Analysis",
+                                "proficiency": "Intermediate",
+                                "years": 4,
+                                "types": ["Linear", "Logistic"],
+                                "note": "Self-taught - can run basic models but need to check assumptions carefully"
+                            },
+                            {
+                                "skill": "Survey Analysis",
+                                "proficiency": "Intermediate",
+                                "years": 5,
+                                "surveys_analyzed": 8,
+                                "note": "Mostly descriptive and basic group comparisons"
+                            },
+                            {
+                                "skill": "Multivariate Analysis",
+                                "proficiency": "Beginner",
+                                "years": 2,
+                                "note": "Still learning - can run MANOVA with supervision"
+                            }
+                        ],
+                        "statistical_software": [{
+                                "software": "Stata",
+                                "proficiency": "Intermediate",
+                                "years": 5,
+                                "note": "My go-to for quantitative analysis - learned what I needed for mixed methods"
+                            },
+                            {
+                                "software": "SPSS",
+                                "proficiency": "Intermediate",
+                                "years": 4,
+                                "note": "Used in grad school - less now"
+                            },
+                            {
+                                "software": "NVivo",
+                                "proficiency": "Expert",
+                                "years": 8,
+                                "note": "Know it inside and out - train others on it"
+                            },
+                            {
+                                "software": "ATLAS.ti",
+                                "proficiency": "Intermediate",
+                                "years": 3,
+                                "note": "Used on one collaborative project"
+                            },
+                            {
+                                "software": "R",
+                                "proficiency": "Beginner",
+                                "years": 1,
+                                "note": "Learning for data visualization - ggplot2 is amazing",
+                                "learning_status": "in_progress"
+                            }
+                        ],
+                        "gis_spatial_skills": [{
+                                "skill": "QGIS",
+                                "proficiency": "Intermediate",
+                                "years": 3,
+                                "note": "Self-taught for mapping neighborhoods in my research",
+                                "maps_created": 25
+                            },
+                            {
+                                "skill": "ArcGIS",
+                                "proficiency": "Beginner",
+                                "years": 1,
+                                "note": "Took a workshop - prefer QGIS for my needs"
+                            },
+                            {
+                                "skill": "Spatial Analysis",
+                                "proficiency": "Intermediate",
+                                "years": 2,
+                                "techniques": ["Buffering", "Spatial join", "Hot spot analysis"],
+                                "note": "Mostly for visualizing spatial patterns"
+                            }
+                        ],
+                        "research_methodologies": [{
+                                "methodology": "Ethnographic Fieldwork",
+                                "proficiency": "Expert",
+                                "longest_fieldwork": "18 months",
+                                "field_sites": 4
+                            },
+                            {
+                                "methodology": "Mixed Methods",
+                                "proficiency": "Advanced",
+                                "projects_completed": 6,
+                                "note": "Integrate qualitative and quantitative findings"
+                            },
+                            {
+                                "methodology": "Case Study Research",
+                                "proficiency": "Advanced",
+                                "cases_studied": 8,
+                                "comparative_analysis": true
+                            },
+                            {
+                                "methodology": "Comparative Case Analysis",
+                                "proficiency": "Advanced",
+                                "countries_comparison": 3,
+                                "cities_comparison": 6
+                            }
+                        ],
+                        "teaching_skills": [{
+                                "skill": "Qualitative Methods Instruction",
+                                "proficiency": "Expert",
+                                "courses_taught": 8,
+                                "students_trained": 200,
+                                "note": "Created hands-on exercises for interview and observation skills"
+                            },
+                            {
+                                "skill": "Research Supervision",
+                                "proficiency": "Expert",
+                                "students_supervised": 25,
+                                "theses_completed": 12
+                            },
+                            {
+                                "skill": "Service Learning Integration",
+                                "proficiency": "Advanced",
+                                "courses": 3,
+                                "community_partners": 5
+                            }
+                        ],
+                        "languages": [{
+                                "language": "English",
+                                "proficiency": "Native",
+                                "cefr_level": "C2"
+                            },
+                            {
+                                "language": "Spanish",
+                                "proficiency": "Professional Working",
+                                "cefr_level": "C1",
+                                "use_case": "Fieldwork with Spanish-speaking communities"
+                            }
+                        ],
+                        "transferable_skills": [{
+                                "skill": "Community Engagement",
+                                "proficiency": "Expert",
+                                "community_organizations_partnered": 15,
+                                "note": "Built trust over years of relationship-building"
+                            },
+                            {
+                                "skill": "Qualitative Data Management",
+                                "proficiency": "Expert",
+                                "data_volume": "5000+ pages of field notes",
+                                "organization_system": "Developed custom coding scheme"
+                            },
+                            {
+                                "skill": "IRB Navigation",
+                                "proficiency": "Advanced",
+                                "protocols_submitted": 12,
+                                "expedited_reviews": 8,
+                                "full_board_reviews": 4,
+                                "note": "First submission took 6 months - now I know the process well"
+                            },
+                            {
+                                "skill": "Public Scholarship",
+                                "proficiency": "Advanced",
+                                "op_eds_published": 15,
+                                "media_interviews": 25,
+                                "community_reports": 8
+                            }
+                        ]
+                    },
+                    "skill_development_journey": {
+                        "self_taught_skills": ["QGIS", "R basics", "Survey design"],
+                        "mentorship_received": ["Quantitative methods from colleagues", "GIS from geography department"],
+                        "skill_gaps_acknowledged": ["Advanced statistics", "Python programming", "Spatial regression"],
+                        "learning_goals": [
+                            "Complete online GIS certificate",
+                            "Learn R for data visualization",
+                            "Take advanced qualitative methods workshop"
+                        ]
+                    }
+                },
+                {
+                    "cv_id": "SOC_SKILLS_ANTH_003",
+                    "discipline": "Anthropology",
+                    "specialization": "Linguistic Anthropology",
+                    "candidate_name": "Dr. Elena Vasquez",
+                    "classification": "Human_Written",
+                    "confidence_score": 0.95,
+                    "skill_based_summary": "Linguistic anthropologist specializing in language documentation and sociolinguistics. I speak 4 languages (English, Spanish, Quechua, Portuguese) at varying levels. My technical skills include phonetic analysis (Praat), transcription (ELAN, CLAN), and corpus linguistics. I've documented 3 endangered languages over 8 years of fieldwork. Self-taught in computational methods (still learning Python for NLP). Looking for a position where I can combine language documentation with computational linguistics.",
+                    "skills_detailed": {
+                        "linguistic_skills": [{
+                                "skill": "Phonetic Analysis",
+                                "proficiency": "Advanced",
+                                "software": ["Praat", "Audacity"],
+                                "hours_of_analysis": 1000,
+                                "note": "Can identify subtle phonetic distinctions"
+                            },
+                            {
+                                "skill": "Phonological Analysis",
+                                "proficiency": "Advanced",
+                                "years": 8,
+                                "languages_analyzed": 4
+                            },
+                            {
+                                "skill": "Morphological Analysis",
+                                "proficiency": "Advanced",
+                                "years": 8
+                            },
+                            {
+                                "skill": "Syntactic Analysis",
+                                "proficiency": "Advanced",
+                                "years": 7
+                            },
+                            {
+                                "skill": "Discourse Analysis",
+                                "proficiency": "Advanced",
+                                "years": 6,
+                                "approaches": ["Conversation analysis", "Narrative analysis"]
+                            },
+                            {
+                                "skill": "Corpus Linguistics",
+                                "proficiency": "Intermediate",
+                                "years": 3,
+                                "corpora_built": 3,
+                                "size": "500k+ words"
+                            }
+                        ],
+                        "language_documentation_skills": [{
+                                "skill": "Fieldwork Language Documentation",
+                                "proficiency": "Expert",
+                                "years": 8,
+                                "languages_documented": 3,
+                                "hours_recorded": 800,
+                                "transcribed_hours": 4000,
+                                "note": "Learned that transcription takes 8-10 hours per hour of speech"
+                            },
+                            {
+                                "skill": "Elicitation Techniques",
+                                "proficiency": "Expert",
+                                "techniques": ["Word lists", "Story elicitation", "Translation tasks", "Grammaticality judgments"]
+                            },
+                            {
+                                "skill": "Glossing and Interlinearization",
+                                "proficiency": "Expert",
+                                "lines_glossed": 10000,
+                                "software": ["Toolbox", "FLEx"]
+                            }
+                        ],
+                        "software_proficiency": [{
+                                "software": "Praat",
+                                "proficiency": "Advanced",
+                                "years": 7,
+                                "note": "Can create complex scripts for batch processing"
+                            },
+                            {
+                                "software": "ELAN",
+                                "proficiency": "Expert",
+                                "years": 8,
+                                "tiers_created": 15,
+                                "note": "Train others on multi-tier transcription"
+                            },
+                            {
+                                "software": "FLEx (FieldWorks Language Explorer)",
+                                "proficiency": "Advanced",
+                                "years": 5,
+                                "lexical_entries": 5000,
+                                "note": "Built searchable dictionary for endangered language"
+                            },
+                            {
+                                "software": "CLAN",
+                                "proficiency": "Intermediate",
+                                "years": 3,
+                                "note": "Used for child language data"
+                            },
+                            {
+                                "software": "NVivo",
+                                "proficiency": "Intermediate",
+                                "years": 3,
+                                "note": "For thematic analysis of discourse data"
+                            }
+                        ],
+                        "programming_languages": [{
+                                "language": "Python",
+                                "proficiency": "Intermediate",
+                                "years": 2,
+                                "libraries": ["nltk", "spaCy", "pandas", "re"],
+                                "note": "Self-taught for natural language processing",
+                                "learning_status": "in_progress"
+                            },
+                            {
+                                "language": "R",
+                                "proficiency": "Beginner",
+                                "years": 1,
+                                "note": "Learning for statistical analysis of linguistic data"
+                            },
+                            {
+                                "language": "Praat Scripting",
+                                "proficiency": "Advanced",
+                                "years": 4,
+                                "scripts_written": 25
+                            }
+                        ],
+                        "languages": [{
+                                "language": "English",
+                                "proficiency": "Native",
+                                "cefr_level": "C2"
+                            },
+                            {
+                                "language": "Spanish",
+                                "proficiency": "Native",
+                                "cefr_level": "C2"
+                            },
+                            {
+                                "language": "Quechua",
+                                "proficiency": "Professional Working",
+                                "cefr_level": "B2",
+                                "years_studying": 6,
+                                "use_case": "Fieldwork and language documentation",
+                                "note": "Can conduct interviews and transcribe"
+                            },
+                            {
+                                "language": "Portuguese",
+                                "proficiency": "Professional Working",
+                                "cefr_level": "B2",
+                                "years_studying": 4,
+                                "use_case": "Regional conferences and reading literature"
+                            },
+                            {
+                                "language": "French",
+                                "proficiency": "Conversational",
+                                "cefr_level": "B1",
+                                "years_studying": 3,
+                                "learning_status": "in_progress"
+                            }
+                        ],
+                        "teaching_skills": [{
+                                "skill": "Linguistics Instruction",
+                                "proficiency": "Advanced",
+                                "courses": ["Introduction to Linguistics", "Phonetics and Phonology", "Field Methods"],
+                                "students_taught": 300
+                            },
+                            {
+                                "skill": "Language Documentation Training",
+                                "proficiency": "Expert",
+                                "workshops_led": 5,
+                                "trainees": 60,
+                                "topics": ["Recording techniques", "Transcription", "FLEx"]
+                            }
+                        ],
+                        "transferable_skills": [{
+                                "skill": "Cross-Cultural Communication",
+                                "proficiency": "Expert",
+                                "cultures_worked_with": 5,
+                                "note": "Navigated cultural differences in fieldwork settings"
+                            },
+                            {
+                                "skill": "Audio/Video Recording",
+                                "proficiency": "Advanced",
+                                "equipment": ["Zoom recorders", "Shotgun mics", "Lavalier mics", "Cameras"],
+                                "note": "Learned field recording through trial and error"
+                            },
+                            {
+                                "skill": "Data Archiving",
+                                "proficiency": "Advanced",
+                                "archives": ["PARADISEC", "ELAR"],
+                                "datasets_archived": 5
+                            }
+                        ]
+                    }
+                },
+                {
+                    "cv_id": "SOC_SKILLS_ECON_004",
+                    "discipline": "Economics",
+                    "specialization": "Development Economics",
+                    "candidate_name": "Dr. Kwame Asante",
+                    "classification": "AI_Generated",
+                    "confidence_score": 0.96,
+                    "skill_based_summary": "Development economist with expertise in econometric analysis, causal inference, and large-scale randomized controlled trials. Advanced proficiency in Stata, R, and Python. Expert in panel data methods, instrumental variables, difference-in-differences, and regression discontinuity designs. Published extensively in top economics journals. Seeking senior research position.",
+                    "skills_detailed": {
+                        "quantitative_skills": [
+                                { "skill": "Econometric Analysis", "proficiency": "Expert", "years": 12 },
+                                { "skill": "Causal Inference", "proficiency": "Expert", "years": 10 },
+                                { "skill": "Randomized Controlled Trials", "proficiency": "Expert", "years": 8 },
+                                { "skill": "Panel Data Analysis", "proficiency": "

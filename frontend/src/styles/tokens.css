@@ -1,0 +1,25 @@
+/* Design tokens. Change colours / radius / font here (or per company via --brand). RGB triplets for Tailwind alpha. */
+:root {
+  --bg: 255 255 255; --surface: 255 255 255; --muted: 247 249 248; --border: 226 232 228;
+  --text: 17 20 17; --subtle: 107 114 128;
+  --primary: 20 125 74; --primary-fg: 255 255 255; --brand: 20 125 74;
+  --good: 20 125 74; --warn: 217 119 6; --bad: 220 38 38;
+  --radius: 0.625rem; --font: "Plus Jakarta Sans", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Moseb Forest Green Palette: #147D4A with refined tones */
+  --grad-a: 20 125 74;    /* forest green #147D4A */
+  --grad-b: 16 102 60;    /* deep forest */
+  --grad-c: 34 165 98;    /* vibrant emerald accent */
+  --grad-d: 13 74 44;     /* dark forest */
+  --glow: 20 125 74;
+}
+[data-theme="dark"] {
+  --bg: 17 20 17; --surface: 24 28 25; --muted: 33 39 34; --border: 45 53 47;
+  --text: 248 250 248; --subtle: 156 163 175; --primary: 34 197 94; --primary-fg: 17 20 17; --brand: 34 197 94;
+  --good: 34 197 94; --warn: 251 191 36; --bad: 248 113 113;
+  --grad-a: 34 197 94;
+  --grad-b: 20 125 74;
+  --grad-c: 16 185 129;
+  --grad-d: 74 222 128;
+  --glow: 34 197 94;
+}

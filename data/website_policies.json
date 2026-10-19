@@ -1,0 +1,63 @@
+{
+  "system": "Moseb_Smart_Resume_Checker_v2",
+  "version": "2.0.0",
+  "updated_at": "2026-10-14",
+  "policies": [
+    {
+      "id": "pol_privacy_bias",
+      "title": "Privacy, Candidate Anonymity & Anti-Bias Guardrail Policy",
+      "category": "privacy",
+      "source": "docs/policies/website_policy.md",
+      "content": "All candidate resumes are anonymized before chunking, embedding, or scoring. Names, photos, ages, gender, nationality, postal codes, and contact details are stripped. Employers see only pseudonymized labels like 'Candidate 1' until an applicant is shortlisted.",
+      "keywords": ["privacy", "anonymity", "bias", "guardrail", "labels", "pii", "identity", "stripped"]
+    },
+    {
+      "id": "pol_retention_deletion",
+      "title": "Resume Retention & One-Click Deletion Policy",
+      "category": "data_lifecycle",
+      "source": "docs/policies/website_policy.md",
+      "content": "Resumes of non-selected applicants are retained for 30 calendar days (RETENTION_DAYS = 30) before automated permanent purging from storage, ChromaDB, Neo4j, and Postgres. Candidates also have an instant one-click right to erasure to delete their account and all data at any time.",
+      "keywords": ["retention", "deletion", "purge", "30 days", "erasure", "delete account", "storage", "privacy"]
+    },
+    {
+      "id": "pol_ai_scoring",
+      "title": "Explainable AI Scoring & Verifiable Quotes Policy",
+      "category": "evaluation",
+      "source": "docs/policies/website_policy.md",
+      "content": "Candidate ranking follows a transparent 5-signal formula: Must-Have Skills (35%), Semantic Similarity (25%), Experience Fit (20%), Education & Certifications (10%), and Skill-Graph Proximity (10%). Every requirement check requires a verifiable quote from the resume or is marked missing.",
+      "keywords": ["scoring", "formula", "weights", "signals", "quotes", "evidence", "verifiable", "explainable", "rubric"]
+    },
+    {
+      "id": "pol_security_malware",
+      "title": "Security, Prompt-Injection Defence & Antivirus Policy",
+      "category": "security",
+      "source": "docs/policies/website_policy.md",
+      "content": "All resume and job texts are wrapped in <document> containment tags so AI ignores any embedded prompt-injection instructions. All uploaded files are scanned via ClamAV for malware and capped at 5MB and 10 pages maximum.",
+      "keywords": ["security", "injection", "prompt injection", "malware", "clamav", "file limit", "antivirus", "safe"]
+    },
+    {
+      "id": "pol_human_override",
+      "title": "Human-in-the-Loop Override & Immutable Audit Log Policy",
+      "category": "governance",
+      "source": "docs/policies/website_policy.md",
+      "content": "The AI never makes hiring decisions alone; it provides decision support. Companies can override rankings or candidate statuses, but every override requires an explanation and is permanently recorded in the immutable audit trail.",
+      "keywords": ["human in the loop", "override", "audit", "audit trail", "compliance", "recruiter", "decision"]
+    },
+    {
+      "id": "pol_redis_chat_ephemeral",
+      "title": "Landing Page Assistant Temporary Redis Storage Policy",
+      "category": "chat_assistant",
+      "source": "docs/policies/website_policy.md",
+      "content": "The Moseb AI Assistant on the landing page stores chat session histories exclusively in Redis (key prefix 'bot:session:'). The data is strictly temporary with an automatic TTL expiration window (24 hours), and users can clear their chat session at any moment.",
+      "keywords": ["redis", "temporary", "chat bot", "assistant", "session", "ttl", "ephemeral", "privacy", "clear chat"]
+    },
+    {
+      "id": "pol_knowledge_standards",
+      "title": "Domain Knowledge & Technical Resume Standards",
+      "category": "knowledge",
+      "source": "data/knowledge/",
+      "content": "The platform incorporates domain datasets from data/knowledge across IT, Engineering, Accounting, and Medicine. In IT (it_ai_human_rules.json), resumes are evaluated against AI vs. human generation indicators, code structure, dates, and technical depth.",
+      "keywords": ["knowledge", "domain", "it", "engineering", "accounting", "medicine", "ai human rules", "technical stack"]
+    }
+  ]
+}

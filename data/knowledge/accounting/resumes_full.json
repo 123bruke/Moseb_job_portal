@@ -1,0 +1,1688 @@
+{
+    "resumes": [{
+            "id": "CV-EDU-001",
+            "version": "1.0",
+            "last_updated": "2024-01-15",
+            "compliance_standards": ["UAE", "EU", "USA"],
+            "personal_details": {
+                "first_name": "Sarah",
+                "last_name": "Johnson",
+                "email": "sarah.johnson@email.com",
+                "phone": "+1 (555) 123-4567",
+                "address": {
+                    "street": "123 Main Street",
+                    "city": "New York",
+                    "state": "NY",
+                    "postal_code": "10001",
+                    "country": "USA"
+                },
+                "linkedin": "linkedin.com/in/sarahjohnson",
+                "portfolio": "sarahjohnson.com",
+                "nationality": "American",
+                "date_of_birth": "1985-06-15",
+                "driving_license": "Full US License"
+            },
+            "professional_summary": "A spirited and motivated leader able to handle multiple projects simultaneously, able to turn diverse competitive managers into a mutually supportive team. Long-standing record of creating marketing and communication plans, successful events, major website rollouts and upgrades, facility management and office supervision. Over 15 years of experience in public relations and communications across USA and international markets.",
+            "education_level": "Doctorate",
+            "education": [{
+                    "level": "Doctorate",
+                    "degree": "Doctor of Philosophy",
+                    "field_of_study": "Adult & Community Education",
+                    "institution": "Kansas State University",
+                    "institution_type": "Public Research University",
+                    "location": {
+                        "city": "Manhattan",
+                        "state": "Kansas",
+                        "country": "USA",
+                        "region": "Midwest"
+                    },
+                    "start_date": "2014-08",
+                    "end_date": "2018-05",
+                    "graduation_year": "2018",
+                    "gpa": "4.0",
+                    "gpa_scale": "4.0",
+                    "honors": "Summa Cum Laude",
+                    "honors_list": ["Summa Cum Laude", "Doctoral Fellowship Recipient", "Outstanding Dissertation Award"],
+                    "thesis_title": "Community Engagement Strategies in Urban Education: A Mixed-Methods Study",
+                    "thesis_advisor": "Dr. Rebecca Thompson",
+                    "coursework": [
+                        "Advanced Community Education Theory",
+                        "Quantitative Research Methods",
+                        "Qualitative Research Methods",
+                        "Program Evaluation and Assessment",
+                        "Adult Learning Theories",
+                        "Educational Leadership",
+                        "Community Organization and Development",
+                        "Statistics for Social Sciences"
+                    ],
+                    "relevant_achievements": [
+                        "Published dissertation in Journal of Community Education",
+                        "Presented at 3 international conferences",
+                        "Recipient of University Research Grant ($25,000)"
+                    ]
+                },
+                {
+                    "level": "Master's",
+                    "degree": "Master of Arts",
+                    "field_of_study": "Communication",
+                    "institution": "Missouri State University",
+                    "institution_type": "Public University",
+                    "location": {
+                        "city": "Springfield",
+                        "state": "Missouri",
+                        "country": "USA",
+                        "region": "Midwest"
+                    },
+                    "start_date": "2002-08",
+                    "end_date": "2004-05",
+                    "graduation_year": "2004",
+                    "gpa": "3.19",
+                    "gpa_scale": "4.0",
+                    "honors": "Graduate Teaching Assistantship",
+                    "thesis_title": "Effective Communication Strategies in Non-Profit Organizations",
+                    "coursework": [
+                        "Strategic Communication",
+                        "Organizational Communication",
+                        "Communication Theory",
+                        "Research Methods in Communication",
+                        "Crisis Communication",
+                        "Persuasion and Social Influence"
+                    ]
+                },
+                {
+                    "level": "Bachelor's",
+                    "degree": "Bachelor of Arts",
+                    "field_of_study": "Communication",
+                    "specialization": "Public Relations",
+                    "minor": "Technical Communication",
+                    "institution": "Missouri Western State University",
+                    "institution_type": "Public University",
+                    "location": {
+                        "city": "St. Joseph",
+                        "state": "Missouri",
+                        "country": "USA",
+                        "region": "Midwest"
+                    },
+                    "start_date": "1998-08",
+                    "end_date": "2002-05",
+                    "graduation_year": "2002",
+                    "gpa": "2.69",
+                    "gpa_scale": "4.0",
+                    "coursework": [
+                        "Introduction to Public Relations",
+                        "Writing for Mass Media",
+                        "Communication Theory",
+                        "Interpersonal Communication",
+                        "Small Group Communication",
+                        "Public Speaking",
+                        "Technical Writing",
+                        "Digital Media Production"
+                    ],
+                    "extracurricular": [
+                        "Student Public Relations Association - Treasurer",
+                        "University Newspaper - Contributing Writer",
+                        "Debate Team - Member"
+                    ]
+                }
+            ],
+            "highest_degree": "Ph.D.",
+            "years_of_education": 20,
+            "continuing_education": [{
+                    "course_name": "Digital Marketing Certification",
+                    "institution": "Google",
+                    "year": "2020",
+                    "duration_hours": 40,
+                    "credential_id": "GDM-2020-78432"
+                },
+                {
+                    "course_name": "Crisis Communication Management",
+                    "institution": "Institute for Crisis Management",
+                    "year": "2019",
+                    "duration_hours": 24,
+                    "credential_id": "ICM-CCM-2019-112"
+                }
+            ],
+            "academic_publications": [{
+                    "title": "Community Engagement in Urban Educational Settings",
+                    "journal": "Journal of Community Education",
+                    "year": 2019,
+                    "volume": 34,
+                    "issue": 2,
+                    "pages": "112-128",
+                    "peer_reviewed": true
+                },
+                {
+                    "title": "Public Relations Strategies for Educational Institutions",
+                    "journal": "PR Educator Quarterly",
+                    "year": 2017,
+                    "volume": 22,
+                    "issue": 4,
+                    "pages": "45-59",
+                    "peer_reviewed": true
+                }
+            ],
+            "academic_conferences": [{
+                    "name": "International Conference on Community Education",
+                    "location": "Toronto, Canada",
+                    "year": 2018,
+                    "presentation_title": "Measuring Impact of Community Engagement Programs",
+                    "presentation_type": "Oral Presentation"
+                },
+                {
+                    "name": "National Communication Association Annual Convention",
+                    "location": "Dallas, TX, USA",
+                    "year": 2016,
+                    "presentation_title": "Crisis Communication in School Districts",
+                    "presentation_type": "Panel Discussion"
+                }
+            ],
+            "teaching_experience": [{
+                    "course": "Introduction to Mass Communication",
+                    "institution": "Kansas State University",
+                    "role": "Teaching Assistant",
+                    "semester": "Spring 2017",
+                    "students_count": 45
+                },
+                {
+                    "course": "Public Relations Writing",
+                    "institution": "Missouri State University",
+                    "role": "Adjunct Instructor",
+                    "semester": "Fall 2005",
+                    "students_count": 30
+                }
+            ],
+            "core_competencies": [
+                "Strategic Communications Planning",
+                "Crisis Management",
+                "Media Relations",
+                "Event Management",
+                "Team Leadership",
+                "Budget Management",
+                "Digital Marketing",
+                "Brand Development"
+            ],
+            "work_experience": [{
+                "title": "Director of Communications",
+                "company": "KC Metro Center",
+                "location": "Kansas City, USA",
+                "start_date": "2012-06",
+                "end_date": "Present",
+                "employment_type": "Full-time",
+                "achievements": [
+                    "Manage all daily operations, public relations and marketing efforts serving 50,000+ students annually",
+                    "Developed marketing plan that increased student recruitment by 35% within first year",
+                    "Coordinate with 15+ local community colleges to create articulation agreements",
+                    "Built relationships with 200+ business and industry partners",
+                    "Supervised team of 25 clerical and part-time staff members",
+                    "Launched alumni engagement program resulting in 40% increase in donations"
+                ]
+            }],
+            "certifications": [{
+                "name": "Certified Public Relations Specialist",
+                "issuing_body": "PRSA",
+                "year": "2015",
+                "expiry": "2025"
+            }],
+            "skills": {
+                "technical": [
+                    "Microsoft Office Suite",
+                    "Adobe Creative Suite",
+                    "Google Analytics",
+                    "Hootsuite",
+                    "Salesforce"
+                ],
+                "soft": [
+                    "Leadership",
+                    "Strategic Planning",
+                    "Crisis Management",
+                    "Negotiation"
+                ],
+                "languages": [{
+                        "language": "English",
+                        "proficiency": "Native",
+                        "cefr_level": "C2"
+                    },
+                    {
+                        "language": "Spanish",
+                        "proficiency": "Professional Working",
+                        "cefr_level": "B2"
+                    }
+                ]
+            },
+            "professional_memberships": [{
+                "organization": "Alpha Kappa Alpha Sorority",
+                "role": "Active Member",
+                "years": "2002-present"
+            }],
+            "awards": [{
+                "name": "PR Excellence Award",
+                "issuing_body": "KC Business Journal",
+                "year": "2019"
+            }],
+            "references": [{
+                "name": "Dr. Michael Thompson",
+                "title": "Former Director",
+                "company": "KC Metro Center",
+                "email": "m.thompson@email.com",
+                "phone": "+1 (555) 987-6543",
+                "relationship": "Direct Supervisor"
+            }]
+        },
+        {
+            "id": "CV-EDU-002",
+            "version": "1.0",
+            "last_updated": "2024-01-10",
+            "compliance_standards": ["UAE", "EU", "USA"],
+            "personal_details": {
+                "first_name": "Michael",
+                "last_name": "Chen",
+                "email": "michael.chen@email.com",
+                "phone": "+971 50 123 4567",
+                "address": {
+                    "street": "Downtown Dubai",
+                    "city": "Dubai",
+                    "emirate": "Dubai",
+                    "postal_code": "12345",
+                    "country": "UAE"
+                },
+                "linkedin": "linkedin.com/in/michaelchen",
+                "nationality": "British",
+                "date_of_birth": "1982-03-22",
+                "driving_license": "UAE, UK",
+                "visa_status": "Employment Visa"
+            },
+            "professional_summary": "Seasoned communications professional and results-driven communications strategist with award-winning writing and editing credentials, proven success in media relations/pitching, and longtime experience in Web and social media content. Over 20 years of experience across USA, EU, and UAE markets. Specializes in crisis communication for Fortune 500 companies and government entities.",
+            "education_level": "Master's",
+            "education": [{
+                    "level": "Master's",
+                    "degree": "Master of Fine Arts",
+                    "field_of_study": "Creative Non-Fiction",
+                    "institution": "Spalding University",
+                    "institution_type": "Private University",
+                    "location": {
+                        "city": "Louisville",
+                        "state": "Kentucky",
+                        "country": "USA",
+                        "region": "South"
+                    },
+                    "start_date": "2002-09",
+                    "end_date": "2004-06",
+                    "graduation_year": "2004",
+                    "gpa": "3.85",
+                    "gpa_scale": "4.0",
+                    "honors": "Graduated with Distinction",
+                    "thesis_title": "The Art of Narrative Journalism: Storytelling in Non-Fiction",
+                    "thesis_advisor": "Dr. Susan Bell",
+                    "coursework": [
+                        "Advanced Narrative Writing",
+                        "Literary Journalism",
+                        "Creative Non-Fiction Workshop",
+                        "The Art of the Interview",
+                        "Memoir and Personal Essay",
+                        "Editing and Revision Strategies"
+                    ],
+                    "residency_program": "Low-Residency MFA Program with bi-annual residencies"
+                },
+                {
+                    "level": "Bachelor's",
+                    "degree": "Bachelor of Arts",
+                    "field_of_study": "Communications",
+                    "institution": "Pennsylvania State University",
+                    "institution_type": "Public Land-Grant University",
+                    "location": {
+                        "city": "University Park",
+                        "state": "Pennsylvania",
+                        "country": "USA",
+                        "region": "Northeast"
+                    },
+                    "start_date": "1973-09",
+                    "end_date": "1977-06",
+                    "graduation_year": "1977",
+                    "gpa": "3.4",
+                    "gpa_scale": "4.0",
+                    "major_credits": 45,
+                    "coursework": [
+                        "Mass Communications Theory",
+                        "Broadcast Journalism",
+                        "Print Journalism",
+                        "Media Ethics",
+                        "Public Relations Principles",
+                        "Communications Research Methods",
+                        "Interpersonal Communication",
+                        "Organizational Communication"
+                    ],
+                    "extracurricular": [
+                        "Daily Collegian - Reporter and Editor",
+                        "Student Government Association - Communications Chair",
+                        "University Radio Station - News Anchor"
+                    ]
+                }
+            ],
+            "highest_degree": "MFA",
+            "years_of_education": 19,
+            "continuing_education": [{
+                    "course_name": "Executive Leadership Program",
+                    "institution": "Harvard Kennedy School",
+                    "year": "2010",
+                    "duration_weeks": 6,
+                    "credential_id": "ELP-2010-442"
+                },
+                {
+                    "course_name": "Crisis Communication Certification",
+                    "institution": "Institute for Crisis Management",
+                    "year": "2005",
+                    "duration_hours": 40
+                },
+                {
+                    "course_name": "Digital Transformation for Leaders",
+                    "institution": "MIT Sloan Executive Education",
+                    "year": "2018",
+                    "duration_weeks": 4
+                }
+            ],
+            "academic_publications": [{
+                    "title": "Crisis Communication in the Digital Age",
+                    "publisher": "PR Journal",
+                    "year": 2018,
+                    "type": "Peer-Reviewed Article"
+                },
+                {
+                    "title": "The Evolution of Political Communications",
+                    "publisher": "Journal of Public Affairs",
+                    "year": 2015,
+                    "type": "Peer-Reviewed Article"
+                }
+            ],
+            "academic_conferences": [{
+                    "name": "International Public Relations Conference",
+                    "location": "Dubai, UAE",
+                    "year": 2019,
+                    "presentation_title": "Crisis Communication Best Practices",
+                    "presentation_type": "Keynote"
+                },
+                {
+                    "name": "PRSA International Conference",
+                    "location": "Austin, TX, USA",
+                    "year": 2017,
+                    "presentation_title": "Measuring Communications ROI",
+                    "presentation_type": "Workshop"
+                }
+            ],
+            "guest_lectures": [{
+                    "institution": "New York University",
+                    "course": "Crisis Communication",
+                    "year": 2019,
+                    "topic": "Real-World Crisis Management Case Studies"
+                },
+                {
+                    "institution": "University of Pennsylvania",
+                    "course": "Strategic Communications",
+                    "year": 2018,
+                    "topic": "Government Communications Best Practices"
+                }
+            ],
+            "core_competencies": [
+                "Crisis Communication",
+                "Media Relations",
+                "Government Relations",
+                "Speechwriting",
+                "Brand Management",
+                "Digital Strategy",
+                "Team Leadership",
+                "Budget Oversight"
+            ],
+            "work_experience": [{
+                "title": "Communications Director",
+                "company": "Non-Profit Agency",
+                "location": "Pennsylvania, USA",
+                "start_date": "2013-09",
+                "end_date": "Present",
+                "employment_type": "Full-time",
+                "achievements": [
+                    "Lead communications for agency serving 90,000+ residents annually",
+                    "Developed crisis communication protocol adopted statewide",
+                    "Planned press conference at Capitol Rotunda with Governor and 19 legislators"
+                ]
+            }],
+            "certifications": [{
+                "name": "Crisis Communication Expert",
+                "issuing_body": "Institute for Crisis Management",
+                "year": "2005"
+            }],
+            "skills": {
+                "technical": [
+                    "Adobe Creative Suite",
+                    "Microsoft Office",
+                    "WordPress"
+                ],
+                "soft": [
+                    "Strategic Thinking",
+                    "Crisis Management",
+                    "Leadership"
+                ],
+                "languages": [{
+                        "language": "English",
+                        "proficiency": "Native",
+                        "cefr_level": "C2"
+                    },
+                    {
+                        "language": "Mandarin",
+                        "proficiency": "Professional Working",
+                        "cefr_level": "B1"
+                    }
+                ]
+            },
+            "professional_memberships": [{
+                "organization": "Public Relations Society of America",
+                "role": "Senior Member",
+                "years": "2000-present"
+            }],
+            "awards": [{
+                    "name": "Pennsylvania Keystone Press Award",
+                    "placement": "First Place",
+                    "year": "1990"
+                },
+                {
+                    "name": "PA Business Writer of the Year",
+                    "year": "2005"
+                }
+            ],
+            "references": [{
+                "name": "Honorable Eugene DePasquale",
+                "title": "Former Pennsylvania Auditor General",
+                "email": "e.depasquale@email.com",
+                "relationship": "Former Client"
+            }]
+        },
+        {
+            "id": "CV-EDU-003",
+            "version": "1.0",
+            "last_updated": "2024-01-12",
+            "compliance_standards": ["UAE", "EU", "USA"],
+            "personal_details": {
+                "first_name": "Elena",
+                "last_name": "Rodriguez",
+                "email": "elena.rodriguez@email.com",
+                "phone": "+44 20 1234 5678",
+                "address": {
+                    "street": "45 Kensington High Street",
+                    "city": "London",
+                    "postal_code": "W8 5NP",
+                    "country": "United Kingdom"
+                },
+                "linkedin": "linkedin.com/in/elenarodriguez",
+                "nationality": "Spanish",
+                "date_of_birth": "1988-09-10",
+                "driving_license": "UK, EU",
+                "work_authorization": "UK, EU, USA"
+            },
+            "professional_summary": "Public relations and communications specialist adept at media relations, special events coordination, issues management, and community relations. Bilingual professional with extensive experience across European and US markets. Award-winning journalist turned PR strategist with 15+ years of experience.",
+            "education_level": "Bachelor's",
+            "education": [{
+                    "level": "Bachelor's",
+                    "degree": "Bachelor of Arts",
+                    "field_of_study": "Communications",
+                    "specialization": "Speech/Communications and Theater",
+                    "minor": "Biology",
+                    "institution": "Fayetteville State University",
+                    "institution_type": "Public HBCU",
+                    "location": {
+                        "city": "Fayetteville",
+                        "state": "North Carolina",
+                        "country": "USA",
+                        "region": "Southeast"
+                    },
+                    "start_date": "1998-09",
+                    "end_date": "2002-06",
+                    "graduation_year": "2002",
+                    "gpa": "3.8",
+                    "gpa_scale": "4.0",
+                    "class_rank": "Top 5%",
+                    "honors": "Summa Cum Laude",
+                    "honors_list": [
+                        "Summa Cum Laude",
+                        "University Honors Scholar",
+                        "Dean's List (all semesters)",
+                        "Alpha Kappa Alpha Sorority Academic Excellence Award"
+                    ],
+                    "major_credits": 48,
+                    "minor_credits": 24,
+                    "coursework": [
+                        "Public Speaking and Rhetoric",
+                        "Interpersonal Communication",
+                        "Organizational Communication",
+                        "Mass Media and Society",
+                        "Communication Theory",
+                        "Persuasion and Social Influence",
+                        "Nonverbal Communication",
+                        "Communication Research Methods",
+                        "Theater Production",
+                        "Acting Fundamentals",
+                        "Stage Design",
+                        "Biology I & II with Labs",
+                        "Human Anatomy",
+                        "Microbiology"
+                    ],
+                    "extracurricular": [
+                        "Alpha Kappa Alpha Sorority - Member",
+                        "Alpha Psi Omega Honor Fraternity - Member",
+                        "University Debate Team - Captain",
+                        "Student Government Association - Senator",
+                        "University Radio Station - Host"
+                    ],
+                    "study_abroad": {
+                        "program": "European Media Studies",
+                        "location": "London, UK / Madrid, Spain",
+                        "duration": "Summer 2001",
+                        "credits_earned": 12
+                    }
+                },
+                {
+                    "level": "High School",
+                    "degree": "High School Diploma",
+                    "institution": "International School of Madrid",
+                    "location": {
+                        "city": "Madrid",
+                        "country": "Spain"
+                    },
+                    "start_date": "1994-09",
+                    "end_date": "1998-06",
+                    "graduation_year": "1998",
+                    "gpa": "3.9",
+                    "gpa_scale": "4.0",
+                    "class_rank": "Valedictorian",
+                    "honors": "Valedictorian, National Honor Society",
+                    "advanced_courses": [
+                        "AP English Literature (Score: 5)",
+                        "AP Spanish Language (Score: 5)",
+                        "AP European History (Score: 4)",
+                        "AP Biology (Score: 4)"
+                    ]
+                }
+            ],
+            "highest_degree": "BA",
+            "years_of_education": 16,
+            "continuing_education": [{
+                    "course_name": "Digital Media Production Certificate",
+                    "institution": "London Film Academy",
+                    "year": "2019",
+                    "duration_months": 6,
+                    "credential_id": "LFA-DMP-2019-332"
+                },
+                {
+                    "course_name": "Diversity and Inclusion in the Workplace",
+                    "institution": "University of Cambridge - Judge Business School",
+                    "year": "2021",
+                    "duration_weeks": 4,
+                    "credential_id": "CAMB-DI-2021-784"
+                },
+                {
+                    "course_name": "Crisis Communication Specialist",
+                    "institution": "PRSA",
+                    "year": "2021",
+                    "duration_hours": 30
+                }
+            ],
+            "academic_conferences": [{
+                    "name": "European Public Relations Congress",
+                    "location": "Brussels, Belgium",
+                    "year": 2022,
+                    "presentation_title": "Multilingual Communication Strategies",
+                    "presentation_type": "Panel Speaker"
+                },
+                {
+                    "name": "National Communication Association Convention",
+                    "location": "Baltimore, MD, USA",
+                    "year": 2019,
+                    "presentation_title": "Diversity in Media Representation",
+                    "presentation_type": "Research Presentation"
+                }
+            ],
+            "teaching_experience": [{
+                "course": "Introduction to Public Relations",
+                "institution": "University of Westminster (London)",
+                "role": "Guest Lecturer",
+                "semester": "Spring 2023",
+                "students_count": 60
+            }],
+            "core_competencies": [
+                "Media Relations",
+                "Event Planning",
+                "Crisis Management",
+                "Content Creation",
+                "Social Media Strategy",
+                "Community Relations",
+                "Diversity Training",
+                "Strategic Development"
+            ],
+            "work_experience": [{
+                "title": "Public Relations Specialist",
+                "company": "PR Agency",
+                "location": "London, UK",
+                "start_date": "2019-09",
+                "end_date": "Present",
+                "employment_type": "Full-time",
+                "achievements": [
+                    "Generate and implement media pitches for Entertainment, Medical, Fitness, and Tech clients",
+                    "Build relationships with 200+ media contacts weekly",
+                    "Develop campaigns reaching 5M+ customers annually"
+                ]
+            }],
+            "certifications": [{
+                "name": "Diversity and Inclusion Trainer",
+                "issuing_body": "Diversity Council",
+                "year": "2020"
+            }],
+            "skills": {
+                "technical": [
+                    "Adobe Creative Suite",
+                    "Final Cut Pro",
+                    "Microsoft Office"
+                ],
+                "soft": [
+                    "Creative Vision",
+                    "Leadership",
+                    "Event Planning"
+                ],
+                "languages": [{
+                        "language": "English",
+                        "proficiency": "Native",
+                        "cefr_level": "C2"
+                    },
+                    {
+                        "language": "Spanish",
+                        "proficiency": "Native",
+                        "cefr_level": "C2"
+                    },
+                    {
+                        "language": "French",
+                        "proficiency": "Professional Working",
+                        "cefr_level": "B1"
+                    },
+                    {
+                        "language": "Italian",
+                        "proficiency": "Conversational",
+                        "cefr_level": "A2"
+                    }
+                ]
+            },
+            "professional_memberships": [{
+                    "organization": "Alpha Kappa Alpha Sorority",
+                    "role": "Life Member",
+                    "years": "2002-present"
+                },
+                {
+                    "organization": "Chartered Institute of Public Relations",
+                    "role": "Member",
+                    "years": "2019-present"
+                }
+            ],
+            "awards": [{
+                "name": "Young PR Professional of the Year",
+                "issuing_body": "CIPR",
+                "year": "2021"
+            }],
+            "references": [{
+                "name": "Sarah Thompson",
+                "title": "Editor-in-Chief",
+                "company": "PressPassA.com",
+                "email": "s.thompson@email.com",
+                "relationship": "Current Supervisor"
+            }]
+        },
+        {
+            "id": "CV-EDU-004",
+            "version": "1.0",
+            "last_updated": "2024-01-08",
+            "compliance_standards": ["UAE", "EU", "USA"],
+            "personal_details": {
+                "first_name": "Aisha",
+                "last_name": "Al-Mansouri",
+                "email": "aisha.almansouri@email.com",
+                "phone": "+971 55 987 6543",
+                "address": {
+                    "street": "Al Reem Island",
+                    "city": "Abu Dhabi",
+                    "postal_code": "12345",
+                    "country": "UAE"
+                },
+                "linkedin": "linkedin.com/in/aishaalmansouri",
+                "nationality": "UAE",
+                "date_of_birth": "1990-12-01",
+                "driving_license": "UAE",
+                "marital_status": "Single"
+            },
+            "professional_summary": "Public Relations professional knowledgeable about planning, creating, and implementing campaign strategies and media relations placement. Background in journalism with expertise in Public Relations. Skilled leader with excellent decision-making abilities.",
+            "education_level": "Bachelor's",
+            "education": [{
+                    "level": "Bachelor's",
+                    "degree": "Bachelor's Degree",
+                    "field_of_study": "Broadcast Journalism",
+                    "institution": "Kwik Kian Gie School of Business",
+                    "institution_type": "Private Business School",
+                    "location": {
+                        "city": "Jakarta",
+                        "country": "Indonesia",
+                        "region": "Southeast Asia"
+                    },
+                    "start_date": "2009-08",
+                    "end_date": "2013-06",
+                    "graduation_year": "2013",
+                    "gpa": "3.6",
+                    "gpa_scale": "4.0",
+                    "class_rank": "Top 10%",
+                    "honors": "Cum Laude",
+                    "coursework": [
+                        "Broadcast Journalism Fundamentals",
+                        "Television Production",
+                        "Radio Production",
+                        "News Writing and Reporting",
+                        "Media Ethics and Law",
+                        "Digital Media Production",
+                        "Video Editing",
+                        "Audio Production",
+                        "Media Research Methods",
+                        "International Journalism",
+                        "Political Reporting",
+                        "Investigative Journalism"
+                    ],
+                    "capstone_project": {
+                        "title": "Investigative Report on Healthcare Access in Rural Indonesia",
+                        "format": "30-minute documentary",
+                        "grade": "A",
+                        "broadcast_location": "Local News Station"
+                    },
+                    "extracurricular": [
+                        "University News Station - News Anchor (2 years)",
+                        "Student Journalism Association - President",
+                        "Debate Team - Member"
+                    ]
+                },
+                {
+                    "level": "High School",
+                    "degree": "High School Diploma",
+                    "field_of_study": "Social Science",
+                    "institution": "SMUK 7 BPK Penabur Senior High School",
+                    "institution_type": "Private Christian School",
+                    "location": {
+                        "city": "Jakarta",
+                        "country": "Indonesia"
+                    },
+                    "start_date": "2001-07",
+                    "end_date": "2004-06",
+                    "graduation_year": "2004",
+                    "gpa": "3.7",
+                    "gpa_scale": "4.0",
+                    "class_rank": "Top 15%",
+                    "advanced_courses": [
+                        "Economics",
+                        "Sociology",
+                        "Political Science",
+                        "World History"
+                    ],
+                    "extracurricular": [
+                        "Student Council - Treasurer",
+                        "School Newspaper - Editor",
+                        "Debate Club - Vice President"
+                    ]
+                }
+            ],
+            "highest_degree": "Bachelor's",
+            "years_of_education": 16,
+            "continuing_education": [{
+                    "course_name": "Digital PR Certification",
+                    "institution": "PR Council Indonesia",
+                    "year": "2016",
+                    "duration_hours": 40,
+                    "credential_id": "DPR-2016-872"
+                },
+                {
+                    "course_name": "Crisis Communication Workshop",
+                    "institution": "International PR Association",
+                    "year": "2018",
+                    "duration_days": 3,
+                    "credential_id": "IPRA-CC-2018-334"
+                },
+                {
+                    "course_name": "Executive Leadership in Communications",
+                    "institution": "Mohammed Bin Rashid School of Government (Dubai)",
+                    "year": "2021",
+                    "duration_weeks": 2
+                },
+                {
+                    "course_name": "Social Media Strategy Masterclass",
+                    "institution": "Meta Blueprint",
+                    "year": "2022",
+                    "duration_hours": 20,
+                    "credential_id": "META-SMS-2022-1290"
+                }
+            ],
+            "academic_conferences": [{
+                    "name": "Middle East Public Relations Summit",
+                    "location": "Dubai, UAE",
+                    "year": 2022,
+                    "presentation_title": "Building Brand Trust in the Digital Age",
+                    "presentation_type": "Speaker"
+                },
+                {
+                    "name": "ASEAN Communications Conference",
+                    "location": "Singapore",
+                    "year": 2019,
+                    "presentation_title": "Crisis Communication in Southeast Asia",
+                    "presentation_type": "Panel Discussion"
+                }
+            ],
+            "core_competencies": [
+                "Public Relations Strategy",
+                "Project Management",
+                "Marketing Communications",
+                "Media Relations",
+                "Event Planning",
+                "Budget Management",
+                "Content Creation",
+                "Crisis Communication"
+            ],
+            "work_experience": [{
+                "title": "Public Relations Officer",
+                "company": "SOHO Global Health",
+                "location": "Jakarta, Indonesia",
+                "start_date": "2014-10",
+                "end_date": "Present",
+                "employment_type": "Full-time",
+                "achievements": [
+                    "Increased brand recognition by 150% as leading herbal pharmacy company",
+                    "Enhanced company presence in national press",
+                    "Planned and organized 25+ corporate media and special events annually"
+                ]
+            }],
+            "certifications": [{
+                "name": "Digital PR Certification",
+                "issuing_body": "PR Council Indonesia",
+                "year": "2016"
+            }],
+            "skills": {
+                "technical": [
+                    "Script Writing",
+                    "News Reporting",
+                    "Video Shooting",
+                    "Video Editing",
+                    "Video Production",
+                    "Adobe Premiere",
+                    "Final Cut Pro"
+                ],
+                "soft": [
+                    "Strategic Planning",
+                    "Negotiation",
+                    "Leadership"
+                ],
+                "languages": [{
+                        "language": "Arabic",
+                        "proficiency": "Native",
+                        "cefr_level": "C2"
+                    },
+                    {
+                        "language": "English",
+                        "proficiency": "Professional Working",
+                        "cefr_level": "C1"
+                    },
+                    {
+                        "language": "Indonesian",
+                        "proficiency": "Native",
+                        "cefr_level": "C2"
+                    }
+                ]
+            },
+            "professional_memberships": [{
+                "organization": "Indonesian Public Relations Association",
+                "role": "Professional Member",
+                "years": "2014-present"
+            }],
+            "projects": [{
+                "name": "SOHO #BetterU",
+                "description": "Health education event supporting better public health",
+                "date": "2015-05-27"
+            }],
+            "references": [{
+                "name": "Dr. Budi Setiawan",
+                "title": "CEO",
+                "company": "SOHO Global Health",
+                "email": "b.setiawan@email.com",
+                "relationship": "Direct Supervisor"
+            }]
+        },
+        {
+            "id": "CV-EDU-005",
+            "version": "1.0",
+            "last_updated": "2024-01-05",
+            "compliance_standards": ["UAE", "EU", "USA"],
+            "personal_details": {
+                "first_name": "David",
+                "last_name": "Williams",
+                "email": "david.williams@email.com",
+                "phone": "+1 (212) 555-7890",
+                "address": {
+                    "street": "500 Fifth Avenue",
+                    "city": "New York",
+                    "state": "NY",
+                    "postal_code": "10110",
+                    "country": "USA"
+                },
+                "linkedin": "linkedin.com/in/davidwilliams",
+                "nationality": "American",
+                "date_of_birth": "1975-05-18"
+            },
+            "professional_summary": "Detail-oriented and versatile government, commercial, and non-profit billing professional with proven ability to efficiently manage multiple assignments while meeting strict deadlines. Excels at cultivating and managing internal and external client relationships.",
+            "education_level": "Bachelor's",
+            "education": [{
+                    "level": "Bachelor's",
+                    "degree": "Bachelor of Business Administration",
+                    "field_of_study": "Business Administration",
+                    "specialization": "Finance",
+                    "institution": "Temple University",
+                    "institution_type": "Public Research University",
+                    "location": {
+                        "city": "Philadelphia",
+                        "state": "Pennsylvania",
+                        "country": "USA",
+                        "region": "Northeast"
+                    },
+                    "start_date": "1999-09",
+                    "end_date": "2003-05",
+                    "graduation_year": "2003",
+                    "gpa": "3.2",
+                    "gpa_scale": "4.0",
+                    "major_credits": 54,
+                    "coursework": [
+                        "Financial Accounting",
+                        "Managerial Accounting",
+                        "Corporate Finance",
+                        "Business Law and Ethics",
+                        "Operations Management",
+                        "Marketing Management",
+                        "Organizational Behavior",
+                        "Business Statistics",
+                        "Economics (Micro and Macro)",
+                        "Strategic Management",
+                        "Information Systems",
+                        "Supply Chain Management"
+                    ],
+                    "extracurricular": [
+                        "Finance Club - Treasurer",
+                        "Beta Gamma Sigma Honor Society - Member",
+                        "Student Government - Budget Committee"
+                    ],
+                    "internship": {
+                        "company": "PricewaterhouseCoopers",
+                        "role": "Finance Intern",
+                        "duration": "Summer 2002",
+                        "description": "Assisted with client billing and financial reporting"
+                    }
+                },
+                {
+                    "level": "Associate's",
+                    "degree": "Associate of Arts",
+                    "field_of_study": "General Studies",
+                    "institution": "Community College of Philadelphia",
+                    "institution_type": "Community College",
+                    "location": {
+                        "city": "Philadelphia",
+                        "state": "Pennsylvania",
+                        "country": "USA"
+                    },
+                    "start_date": "1997-09",
+                    "end_date": "1999-06",
+                    "graduation_year": "1999",
+                    "gpa": "3.5",
+                    "gpa_scale": "4.0",
+                    "honors": "Phi Theta Kappa Honor Society",
+                    "coursework": [
+                        "English Composition",
+                        "College Algebra",
+                        "Introduction to Business",
+                        "Public Speaking",
+                        "Psychology",
+                        "Sociology"
+                    ]
+                }
+            ],
+            "highest_degree": "BBA",
+            "years_of_education": 14,
+            "continuing_education": [{
+                    "course_name": "Certified Billing Professional",
+                    "institution": "American Billing Association",
+                    "year": "2015",
+                    "duration_hours": 80,
+                    "credential_id": "CBP-2015-4421"
+                },
+                {
+                    "course_name": "Advanced Excel for Business Professionals",
+                    "institution": "Corporate Finance Institute",
+                    "year": "2018",
+                    "duration_hours": 30,
+                    "credential_id": "CFI-EXCEL-2018-883"
+                },
+                {
+                    "course_name": "PeopleSoft Financials Certification",
+                    "institution": "Oracle University",
+                    "year": "2016",
+                    "duration_hours": 40,
+                    "credential_id": "ORA-PSFT-2016-221"
+                },
+                {
+                    "course_name": "Project Management Professional (PMP) Prep",
+                    "institution": "Project Management Institute",
+                    "year": "2019",
+                    "duration_hours": 35,
+                    "status": "In Progress"
+                }
+            ],
+            "professional_development": [{
+                    "name": "Annual Billing Conference",
+                    "organization": "American Billing Association",
+                    "year": 2022,
+                    "hours": 16
+                },
+                {
+                    "name": "Government Contracting Webinar Series",
+                    "organization": "Federal Publications",
+                    "year": 2021,
+                    "hours": 12
+                }
+            ],
+            "core_competencies": [
+                "Billing Operations",
+                "Client Relations",
+                "Process Improvement",
+                "Team Training",
+                "Financial Analysis",
+                "Compliance",
+                "Customer Service",
+                "Project Management"
+            ],
+            "work_experience": [{
+                "title": "Billing Services Associate",
+                "company": "American Chemical Society",
+                "location": "Washington, DC, USA",
+                "start_date": "2012-09",
+                "end_date": "Present",
+                "employment_type": "Full-time",
+                "achievements": [
+                    "Oversee all billing operations including invoice generation and payment processing",
+                    "Improved team completion rate from 84% to 94%",
+                    "Introduced Records Retention service reducing offsite storage fees by 50%"
+                ]
+            }],
+            "certifications": [{
+                "name": "Certified Billing Professional",
+                "issuing_body": "American Billing Association",
+                "year": "2015"
+            }],
+            "skills": {
+                "technical": [
+                    "Microsoft Office Suite",
+                    "SharePoint",
+                    "PeopleSoft",
+                    "netFORUM",
+                    "LaserFiche",
+                    "Maconomy X"
+                ],
+                "soft": [
+                    "Attention to Detail",
+                    "Time Management",
+                    "Customer Service"
+                ],
+                "languages": [{
+                    "language": "English",
+                    "proficiency": "Native",
+                    "cefr_level": "C2"
+                }]
+            },
+            "professional_memberships": [{
+                "organization": "American Billing Association",
+                "role": "Professional Member",
+                "years": "2015-present"
+            }],
+            "awards": [{
+                    "name": "Employee of the Month",
+                    "issuing_body": "Company Name",
+                    "year": "2011"
+                },
+                {
+                    "name": "Excellence Award",
+                    "issuing_body": "Company Name",
+                    "year": "2006"
+                }
+            ],
+            "references": [{
+                "name": "Jennifer Martinez",
+                "title": "OSS Manager",
+                "company": "American Chemical Society",
+                "email": "j.martinez@email.com",
+                "relationship": "Direct Supervisor"
+            }]
+        },
+        {
+            "id": "CV-EDU-006",
+            "version": "1.0",
+            "last_updated": "2024-01-14",
+            "compliance_standards": ["UAE", "EU", "USA"],
+            "personal_details": {
+                "first_name": "Sofia",
+                "last_name": "Martins",
+                "email": "sofia.martins@email.com",
+                "phone": "+49 30 12345678",
+                "address": {
+                    "street": "Unter den Linden 10",
+                    "city": "Berlin",
+                    "postal_code": "10117",
+                    "country": "Germany"
+                },
+                "linkedin": "linkedin.com/in/sofiamartins",
+                "nationality": "Portuguese",
+                "date_of_birth": "1987-07-25",
+                "driving_license": "EU",
+                "work_authorization": "EU, USA"
+            },
+            "professional_summary": "Dedicated, creative, and highly-motivated communications and marketing professional with exceptional interpersonal skills and over seven years of experience. Adapts well to different environments and has the ability to learn new systems quickly.",
+            "education_level": "Master's",
+            "education": [{
+                    "level": "Master's",
+                    "degree": "Master of Business Administration",
+                    "field_of_study": "Business",
+                    "specialization": "Marketing",
+                    "institution": "University of Maryland University College",
+                    "institution_type": "Public University",
+                    "location": {
+                        "city": "College Park",
+                        "state": "Maryland",
+                        "country": "USA",
+                        "region": "Mid-Atlantic"
+                    },
+                    "start_date": "2012-09",
+                    "end_date": "2014-06",
+                    "graduation_year": "2014",
+                    "gpa": "3.7",
+                    "gpa_scale": "4.0",
+                    "honors": "Beta Gamma Sigma Honor Society",
+                    "coursework": [
+                        "Marketing Management",
+                        "Strategic Management",
+                        "Financial Decision Making",
+                        "Organizational Leadership",
+                        "Business Analytics",
+                        "Digital Marketing Strategy",
+                        "Consumer Behavior",
+                        "Global Business",
+                        "Corporate Social Responsibility",
+                        "Entrepreneurship"
+                    ],
+                    "capstone_project": {
+                        "title": "Integrated Marketing Communications Plan for Non-Profit Organization",
+                        "grade": "A",
+                        "client": "Local Food Bank"
+                    }
+                },
+                {
+                    "level": "Bachelor's",
+                    "degree": "Bachelor of Science",
+                    "field_of_study": "Journalism & Mass Communication",
+                    "specialization": "Public Relations",
+                    "institution": "North Carolina Agricultural & Technical State University",
+                    "institution_type": "Public HBCU",
+                    "location": {
+                        "city": "Greensboro",
+                        "state": "North Carolina",
+                        "country": "USA",
+                        "region": "Southeast"
+                    },
+                    "start_date": "2003-09",
+                    "end_date": "2007-06",
+                    "graduation_year": "2007",
+                    "gpa": "3.5",
+                    "gpa_scale": "4.0",
+                    "honors": "Cum Laude",
+                    "major_credits": 48,
+                    "coursework": [
+                        "Principles of Public Relations",
+                        "Public Relations Writing",
+                        "Media Relations",
+                        "Crisis Communication",
+                        "Campaign Planning",
+                        "Mass Communication Theory",
+                        "Journalism Ethics",
+                        "Copy Editing",
+                        "Layout and Design",
+                        "Photography",
+                        "Digital Media Production",
+                        "Research Methods in Communication"
+                    ],
+                    "extracurricular": [
+                        "Public Relations Student Society of America (PRSSA) - Vice President",
+                        "University Newspaper - Section Editor",
+                        "Radio Station - Public Affairs Director",
+                        "Student Government - Communications Liaison"
+                    ],
+                    "internship": [{
+                            "company": "YMCA of Greensboro",
+                            "role": "Public Relations Intern",
+                            "duration": "Spring 2007",
+                            "description": "Developed press releases and coordinated media events"
+                        },
+                        {
+                            "company": "Athletic Department",
+                            "role": "Public Relations Intern",
+                            "duration": "Spring 2005",
+                            "description": "Created feature stories and updated website content"
+                        }
+                    ]
+                }
+            ],
+            "highest_degree": "MBA",
+            "years_of_education": 18,
+            "continuing_education": [{
+                    "course_name": "Content Marketing Certification",
+                    "institution": "HubSpot Academy",
+                    "year": "2020",
+                    "duration_hours": 20,
+                    "credential_id": "HUB-CMC-2020-5531"
+                },
+                {
+                    "course_name": "Google Analytics Individual Qualification",
+                    "institution": "Google",
+                    "year": "2019",
+                    "credential_id": "GAIQ-2019-77234"
+                },
+                {
+                    "course_name": "Social Media Management Certification",
+                    "institution": "Hootsuite",
+                    "year": "2020",
+                    "duration_hours": 15,
+                    "credential_id": "HSUITE-SMM-2020-221"
+                },
+                {
+                    "course_name": "SEO Fundamentals",
+                    "institution": "Moz",
+                    "year": "2021",
+                    "duration_hours": 10
+                }
+            ],
+            "academic_conferences": [{
+                "name": "PRSA International Conference",
+                "location": "San Diego, CA, USA",
+                "year": 2019,
+                "presentation_title": "Social Media Metrics That Matter",
+                "presentation_type": "Workshop"
+            }],
+            "teaching_experience": [{
+                "course": "Social Media Marketing",
+                "institution": "University of Maryland - Global Campus",
+                "role": "Adjunct Faculty",
+                "semester": "Fall 2021",
+                "students_count": 25,
+                "course_evaluation": "4.8/5.0"
+            }],
+            "core_competencies": [
+                "Content Development",
+                "Social Media Strategy",
+                "Brand Management",
+                "Project Management",
+                "SEO/SEM",
+                "Analytics",
+                "Email Marketing",
+                "Community Outreach"
+            ],
+            "work_experience": [{
+                "title": "Social Media & Communications Manager",
+                "company": "MAM Squared, LLC",
+                "location": "Berlin, Germany (Remote)",
+                "start_date": "2011-07",
+                "end_date": "Present",
+                "employment_type": "Full-time",
+                "achievements": [
+                    "Assess communications needs for 20+ non-profit organizations",
+                    "Formulate tailored communications plans and social media strategies",
+                    "Increase client engagement by 150% through strategic campaigns"
+                ]
+            }],
+            "certifications": [{
+                "name": "Content Marketing Certification",
+                "issuing_body": "HubSpot Academy",
+                "year": "2020"
+            }],
+            "skills": {
+                "technical": [
+                    "Adobe Creative Suite",
+                    "Dreamweaver",
+                    "Microsoft Office",
+                    "Oracle Procurement",
+                    "Joomla",
+                    "Kentico CMS",
+                    "Google Analytics",
+                    "Hootsuite"
+                ],
+                "soft": [
+                    "Strategic Thinking",
+                    "Creativity",
+                    "Adaptability"
+                ],
+                "languages": [{
+                        "language": "English",
+                        "proficiency": "Native",
+                        "cefr_level": "C2"
+                    },
+                    {
+                        "language": "Portuguese",
+                        "proficiency": "Native",
+                        "cefr_level": "C2"
+                    },
+                    {
+                        "language": "German",
+                        "proficiency": "Professional Working",
+                        "cefr_level": "B2"
+                    }
+                ]
+            },
+            "professional_memberships": [{
+                    "organization": "Public Relations Society of America",
+                    "role": "Member",
+                    "years": "2010-present"
+                },
+                {
+                    "organization": "Beta Gamma Sigma",
+                    "role": "Lifetime Member",
+                    "years": "2014-present"
+                }
+            ],
+            "references": [{
+                "name": "Dr. James Wilson",
+                "title": "Professor of Marketing",
+                "company": "University of Maryland",
+                "email": "j.wilson@email.com",
+                "relationship": "MBA Advisor"
+            }]
+        },
+        {
+            "id": "CV-EDU-007",
+            "version": "1.0",
+            "last_updated": "2024-01-07",
+            "compliance_standards": ["UAE", "EU", "USA"],
+            "personal_details": {
+                "first_name": "Emilia",
+                "last_name": "Rocha",
+                "email": "emilia.rocha@email.com",
+                "phone": "+1 (305) 555-1234",
+                "address": {
+                    "street": "123 Miracle Mile",
+                    "city": "Coral Gables",
+                    "state": "Florida",
+                    "postal_code": "33134",
+                    "country": "USA"
+                },
+                "linkedin": "linkedin.com/in/emiliarocha",
+                "portfolio": "emiliarocha.com",
+                "nationality": "American",
+                "date_of_birth": "1975-03-12"
+            },
+            "professional_summary": "Public Relations professional knowledgeable about planning, creating, and implementing campaign strategies and media relations placement. Forward-thinking professional following industry-focused strategies. Senior Communications expert with emphasis in Audio-Visual content creation. Emmy Award-winning journalist with 20+ years of experience.",
+            "education_level": "Doctorate",
+            "education": [{
+                    "level": "Doctorate",
+                    "degree": "Juris Doctor",
+                    "field_of_study": "Law",
+                    "institution": "Nova Southeastern University",
+                    "institution_type": "Private University",
+                    "location": {
+                        "city": "Fort Lauderdale",
+                        "state": "Florida",
+                        "country": "USA",
+                        "region": "Southeast"
+                    },
+                    "start_date": "2011-08",
+                    "end_date": "2014-05",
+                    "graduation_year": "2014",
+                    "gpa": "3.4",
+                    "gpa_scale": "4.0",
+                    "coursework": [
+                        "Constitutional Law",
+                        "Contracts",
+                        "Torts",
+                        "Civil Procedure",
+                        "Criminal Law",
+                        "Evidence",
+                        "Media Law",
+                        "Intellectual Property",
+                        "Corporate Law",
+                        "Legal Research and Writing",
+                        "Negotiation",
+                        "Alternative Dispute Resolution"
+                    ],
+                    "bar_admission": {
+                        "state": "Florida",
+                        "year": "2015",
+                        "status": "Active"
+                    }
+                },
+                {
+                    "level": "Bachelor's",
+                    "degree": "Bachelor of Arts",
+                    "field_of_study": "Political Science",
+                    "minor": "Criminal Justice",
+                    "institution": "Florida International University",
+                    "institution_type": "Public Research University",
+                    "location": {
+                        "city": "Miami",
+                        "state": "Florida",
+                        "country": "USA",
+                        "region": "Southeast"
+                    },
+                    "start_date": "2005-08",
+                    "end_date": "2009-05",
+                    "graduation_year": "2009",
+                    "gpa": "3.6",
+                    "gpa_scale": "4.0",
+                    "honors": "Cum Laude",
+                    "coursework": [
+                        "American Government",
+                        "Comparative Politics",
+                        "International Relations",
+                        "Political Theory",
+                        "Public Policy",
+                        "Constitutional Law",
+                        "Research Methods",
+                        "Statistics for Social Sciences",
+                        "Criminal Justice System",
+                        "Criminology",
+                        "Juvenile Justice"
+                    ],
+                    "extracurricular": [
+                        "Pre-Law Society - President",
+                        "Student Government - Senator",
+                        "University Television Station - News Anchor"
+                    ]
+                },
+                {
+                    "level": "Associate's",
+                    "degree": "Associate of Arts",
+                    "field_of_study": "Broadcast Journalism",
+                    "institution": "Miami Dade College",
+                    "institution_type": "Community College",
+                    "location": {
+                        "city": "Miami",
+                        "state": "Florida",
+                        "country": "USA"
+                    },
+                    "start_date": "1995-08",
+                    "end_date": "1997-06",
+                    "graduation_year": "1997",
+                    "gpa": "3.8",
+                    "gpa_scale": "4.0",
+                    "honors": "Phi Theta Kappa Honor Society",
+                    "coursework": [
+                        "Introduction to Mass Media",
+                        "Broadcast News Writing",
+                        "Television Production I & II",
+                        "Audio Production",
+                        "Media Ethics"
+                    ]
+                }
+            ],
+            "highest_degree": "JD",
+            "years_of_education": 22,
+            "continuing_education": [{
+                    "course_name": "Media Relations and Law Enforcement Training",
+                    "institution": "Fraternal Order of Police Florida State Lodge",
+                    "year": "2016",
+                    "duration_days": 3,
+                    "credential_id": "FOP-MRL-2016-442"
+                },
+                {
+                    "course_name": "Advanced Video Production Certificate",
+                    "institution": "Miami Film School",
+                    "year": "2015",
+                    "duration_months": 6
+                },
+                {
+                    "course_name": "Adobe Premiere Pro Masterclass",
+                    "institution": "Adobe Certified Professional",
+                    "year": "2018",
+                    "duration_hours": 40,
+                    "credential_id": "ADBE-PREM-2018-773"
+                }
+            ],
+            "academic_publications": [{
+                "title": "Media Law and Ethics in the Digital Age",
+                "publisher": "Florida Law Review",
+                "year": 2013,
+                "type": "Law Review Article"
+            }],
+            "academic_conferences": [{
+                "name": "National Association of Broadcasters Conference",
+                "location": "Las Vegas, NV, USA",
+                "year": 2019,
+                "presentation_title": "Legal Issues in Digital Media",
+                "presentation_type": "Panel Speaker"
+            }],
+            "core_competencies": [
+                "Crisis Communication",
+                "Media Relations",
+                "Legal Compliance",
+                "Audio-Visual Production",
+                "Event Coordination",
+                "Speechwriting",
+                "Brand Strategy",
+                "Social Media Management"
+            ],
+            "work_experience": [{
+                "title": "Public Relations Specialist",
+                "company": "City Government",
+                "location": "Florida, USA",
+                "start_date": "2008-01",
+                "end_date": "2020-10",
+                "employment_type": "Full-time",
+                "achievements": [
+                    "Delivered information from city government to public via press releases and social media",
+                    "Served as city spokesperson and liaison between elected officials and residents",
+                    "Won Emmy Award for original production 'Embracing Autism, a Coral Gables Story'"
+                ]
+            }],
+            "certifications": [{
+                "name": "Adobe Premiere Pro Certification",
+                "issuing_body": "Adobe",
+                "year": "2018"
+            }],
+            "skills": {
+                "technical": [
+                    "Adobe Premier",
+                    "Adobe Photoshop",
+                    "After Effects",
+                    "DSLR Cameras",
+                    "Video Editing",
+                    "Audio Production"
+                ],
+                "soft": [
+                    "Public Speaking",
+                    "Leadership",
+                    "Crisis Management"
+                ],
+                "languages": [{
+                        "language": "English",
+                        "proficiency": "Native",
+                        "cefr_level": "C2"
+                    },
+                    {
+                        "language": "Spanish",
+                        "proficiency": "Native",
+                        "cefr_level": "C2"
+                    },
+                    {
+                        "language": "Portuguese",
+                        "proficiency": "Conversational",
+                        "cefr_level": "B1"
+                    }
+                ]
+            },
+            "professional_memberships": [{
+                    "organization": "Florida Bar Association",
+                    "role": "Member",
+                    "years": "2015-present"
+                },
+                {
+                    "organization": "National Academy of Television Arts & Sciences",
+                    "role": "Emmy Award Member",
+                    "years": "2017-present"
+                }
+            ],
+            "awards": [{
+                    "name": "Emmy Award",
+                    "category": "Best Documentary",
+                    "production": "Embracing Autism, a Coral Gables Story",
+                    "year": "2017"
+                },
+                {
+                    "name": "Telly Award",
+                    "category": "Best Documentary",
+                    "year": "2016"
+                },
+                {
+                    "name": "Telly Award",
+                    "category": "Social Responsibility",
+                    "year": "2016"
+                }
+            ],
+            "references": [{
+                "name": "Mayor Vince Lago",
+                "title": "Mayor",
+                "company": "City of Coral Gables",
+                "email": "v.lago@coralgables.com",
+                "relationship": "Former Employer"
+            }]
+        }
+    ],
+    "metadata": {
+        "total_resumes": 7,
+        "generated_date": "2024-01-15",
+        "format_version": "1.0",
+        "education_focus": true,
+        "education_levels_included": ["Doctorate", "Master's", "Bachelor's", "Associate's", "High School"],
+        "compliance_regions": ["UAE", "EU", "USA"],
+        "fields_included": [
+            "personal_details",
+            "professional_summary",
+            "education_level",
+            "education",
+            "highest_degree",
+            "years_of_education",
+            "continuing_education",
+            "academic_publications",
+            "academic_conferences",
+            "teaching_experience",
+            "core_competencies",
+            "work_experience",
+            "certifications",
+            "skills",
+            "professional_memberships",
+            "awards",
+            "references"
+        ]
+    }
+}
