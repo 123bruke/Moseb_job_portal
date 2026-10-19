@@ -1,9 +1,14 @@
 import { supabase } from "./supabase";
 
-const BASE = import.meta.env.VITE_API_URL ?? "/api";
+const RAW_BASE = (import.meta.env.VITE_API_URL as string | undefined)?.trim() || "/api";
+// Clean trailing slashes so BASE + "/path" doesn't produce "//path"
+const BASE = RAW_BASE.replace(/\/+$/, "");
 
 export class ApiError extends Error {
-  constructor(public status: number, public code: string, message: string) { super(message); }
+  constructor(public status: number, public code: string, message: string) {
+    super(message);
+    this.name = "ApiError";
+  }
 }
 
 async function call<T>(method: string, path: string, body?: unknown, form?: FormData): Promise<T> {
@@ -11,13 +16,59 @@ async function call<T>(method: string, path: string, body?: unknown, form?: Form
   const headers: Record<string, string> = {};
   if (data.session) headers.Authorization = `Bearer ${data.session.access_token}`;
   if (body !== undefined) headers["Content-Type"] = "application/json";
-  const res = await fetch(`${BASE}${path}`, { method, headers, body: form ?? (body !== undefined ? JSON.stringify(body) : undefined) });
-  if (!res.ok) {
-    let e = { code: "http_error", message: res.statusText };
-    try { e = (await res.json()).error ?? e; } catch { /* non-JSON error */ }
-    throw new ApiError(res.status, e.code, e.message);
+
+  const cleanPath = path.startsWith("/") ? path : `/${path}`;
+  const targetUrl = `${BASE}${cleanPath}`;
+
+  let res: Response;
+  try {
+    res = await fetch(targetUrl, {
+      method,
+      headers,
+      body: form ?? (body !== undefined ? JSON.stringify(body) : undefined),
+    });
+  } catch (networkErr: unknown) {
+    const msg = networkErr instanceof Error ? networkErr.message : "Network error";
+    throw new ApiError(
+      0,
+      "network_error",
+      `Unable to reach backend at ${targetUrl}. (${msg}). Make sure the backend server is running and accessible.`,
+    );
   }
-  return res.status === 204 ? (undefined as T) : ((await res.json()) as T);
+
+  if (!res.ok) {
+    let code = "http_error";
+    let message = res.statusText || `Request failed with status ${res.status}`;
+
+    try {
+      const contentType = res.headers.get("content-type") || "";
+      if (contentType.includes("application/json")) {
+        const json = await res.json();
+        code = json.code || json.error?.code || code;
+        message = json.message || json.error?.message || json.detail || message;
+      } else {
+        const text = await res.text();
+        if (text && text.length < 200) {
+          message = text;
+        }
+      }
+    } catch {
+      /* Fallback to default status text */
+    }
+
+    throw new ApiError(res.status, code, message);
+  }
+
+  if (res.status === 204) {
+    return undefined as T;
+  }
+
+  const contentType = res.headers.get("content-type") || "";
+  if (contentType.includes("application/json")) {
+    return (await res.json()) as T;
+  }
+
+  return {} as T;
 }
 
 export const api = {
