@@ -1,171 +1,103 @@
-<img width="1917" height="906" alt="Screenshot 2026-10-02 124323" src="https://github.com/user-attachments/assets/ebc52254-f69c-4a83-bd01-c81729f9980a" />
-<div align="center">
+# Moseb Job Portal
 
-# 🚀 Smart Resume Checker v2
+A full-stack hiring intelligence platform for matching candidates to jobs with explainable AI, bias-aware screening, and transparent recruiter workflows.
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=3000&pause=500&color=3B82F6&center=true&width=600&lines=Explainable+Resume+Ranking;Bias-Guarded+AI+Screening;Transparent+Hiring+Decisions" alt="Smart Resume Checker Animation"/>
+This project combines a candidate-facing job portal with an admin/company dashboard for managing applications, ranking resumes, and reviewing AI-generated recommendations with auditability.
 
-**Explainable, bias-guarded resume ranking with AI-powered candidate insights and company audit trails**
+## Why this project
 
-[![TypeScript](https://img.shields.io/badge/TypeScript-46.3%25-3178C6?logo=typescript&logoColor=white)](#-tech-stack)
-[![Python](https://img.shields.io/badge/Python-45.9%25-3776AB?logo=python&logoColor=white)](#-tech-stack)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-3.4%25-336791?logo=postgresql&logoColor=white)](#-tech-stack)
-[![License](https://img.shields.io/badge/License-MIT-green)](#license)
-[![Status](https://img.shields.io/badge/Status-Production%20Ready-success)](#build-status)
-              
-</div>
+- Candidate experience: browse jobs, review rankings, and understand why they matched or missed a role
+- Company workflow: manage applicants, assess fit, and shortlist with evidence-backed reasoning
+- Explainable ranking: AI scoring tied to resume evidence and requirement checks
+- Bias-conscious processing: anonymizes sensitive personal details before scoring
+- Modern stack: React + FastAPI + Postgres + vector/graph data stores + Docker
 
----
-
-## 📋 Table of Contents
-
-- [✨ Overview](#-overview)
-- [🏗️ Architecture](#-architecture)
-- [🎯 Key Features](#-key-features)
-- [🚀 Quick Start](#-quick-start)
-- [📱 Dual Dashboard](#-dual-dashboard)
-- [🧠 How Ranking Works](#-how-ranking-works)
-- [🛡️ Security & Bias Protection](#-security--bias-protection)
-- [📊 Data Lifecycle](#-data-lifecycle)
-- [📁 Project Structure](#-project-structure)
-- [🧪 Testing](#-testing)
-- [📈 Build Status](#-build-status)
-- [⚙️ Tech Stack](#-tech-stack)
-- [📝 Limitations](#-limitations)
-- [🤝 Contributing](#-contributing)
-
----
-
-## ✨ Overview
-
-Smart Resume Checker v2 is a modern hiring intelligence system designed to help both candidates and companies make better decisions with less guesswork.
-
-It combines:
-
-- Explainable AI scoring that shows why a candidate matches or misses a role
-- Bias guardrails that anonymize sensitive identity data before analysis
-- Transparent candidate feedback with honest, evidence-based reasons
-- Company-side shortlisting with audit trails and override controls
-
-This project was rebuilt from the architecture document in `docs/architecture-v2.html` and implements a full end-to-end hiring flow from resume ingestion to ranking and decision support.
-
----
-
-## 🏗️ Architecture
-
-<div align="center">
+## Architecture overview
 
 ```text
-┌─────────────────────────────────────────────────────────────────────┐
-│                         SYSTEM ARCHITECTURE                          │
-└─────────────────────────────────────────────────────────────────────┘
-
-                         Frontend Layer
-                   ┌──────────┬──────────┐
-                   │ User     │  Admin   │
-                   │  View    │  View    │
-                   └────┬─────┴─────┬────┘
-                        │           │
-              React (Vite/TS/Tailwind)
-              Authentication: Supabase JWT
-                        │           │
-                        └─────┬─────┘
-                              │
-                        ┌─────▼────────┐
-                        │   Nginx      │
-                        │   (Reverse   │
-                        │   Proxy)     │
-                        └─────┬────────┘
-                              │
-                    ┌─────────┴──────────┐
-                    │                    │
-              ┌─────▼──────┐      ┌──────▼──────┐
-              │   FastAPI   │      │   Worker    │
-              │   Server    │      │   Queue     │
-              │  (Port 8000)│      │  (RQ)       │
-              └─────┬──────┘      └──────┬──────┘
-                    │                    │
-        ┌───────────┼────────────────────┼───────────┐
-        │           │                    │           │
-    ┌───▼───┐   ┌───▼───┐   ┌──────┐ ┌─▼──┐   ┌────▼────┐
-    │Supabase │ ChromaDB│   │Neo4j │ │Redis  │   │PyMuPDF  │
-    │(Auth+DB)│(Vector │   │(Graph)│(Queue)│   │YOLO/OCR │
-    │(Storage)│Store)  │   │       │       │   │         │
-    └─────────┘ └────────┘   └──────┘ └─────┘   └─────────┘
-
-              Processing Pipeline
-              ├─ Resume Ingestion
-              ├─ Text Extraction & OCR
-              ├─ Bias Removal & Anonymization
-              ├─ Vector Embedding
-              ├─ Skill Graph Construction
-              └─ Ranking & Scoring
+Frontend (React + Vite)
+    │
+    ├─ Candidate portal
+    ├─ Company/admin dashboard
+    └─ Authenticated views via Supabase
+            │
+            ▼
+      Nginx / API gateway
+            │
+            ▼
+      FastAPI backend
+            │
+            ├─ Resume parsing and ingestion
+            ├─ Skill extraction and scoring
+            ├─ Graph/vector retrieval
+            ├─ Explainable ranking pipeline
+            └─ Background workers
+            │
+            ├── Supabase / PostgreSQL
+            ├── ChromaDB
+            ├── Neo4j
+            ├── Redis / RQ
+            └── AI inference (Gemini / fallback heuristics)
 ```
 
-</div>
+## Key features
 
-### Core system flow
+- Job discovery and application flow for candidates
+- Resume upload and parsing for recruitment workflows
+- Hybrid ranking logic: hard filters + semantic fit + experience + education + graph reasoning
+- Explainable candidate feedback with evidence-backed reasons
+- Bias guardrails that strip identity-related fields before analysis
+- Admin audit trails and override controls for recruiters
+- Docker-based local development environment
+
+## Repository structure
 
 ```text
-React (Vite/TS/Tailwind) ─ Supabase JWT ─▶ Nginx ─▶ FastAPI ─▶ Supabase (Auth + Postgres + Storage)
-                                                    │         ChromaDB · Neo4j · Redis queue
-                                                    └──▶ Worker (RQ): ingest · rank · cleanup ─▶ PyMuPDF/OCR/YOLO · LangGraph · Gemini
+Moseb_job_portal/
+├── backend/                 # FastAPI app, services, workers, schemas
+├── frontend/                # React + Vite user/admin dashboards
+├── infra/                   # Nginx, Neo4j, Supabase-related infrastructure
+├── data/                    # Knowledge and supporting data files
+├── docs/                    # Project docs and architecture references
+├── ml-training/             # CV layout model / YOLO training assets
+├── .env.example             # Environment template
+├── docker-compose.yml       # Main Docker stack
+├── docker-compose.dev.yml   # Local dev config
+├── Makefile                 # Dev, seed, migrate, test commands
+├── package.json             # Root scripts
+├── README.md                # Project documentation
+├── LICENSE                  # License
+├── vercel.json              # Frontend deployment config
+└── .github/                 # CI/workflows
 ```
 
----
+## Prerequisites
 
-## 🎯 Key Features
+Before starting the project, make sure you have:
 
-<table>
-<tr>
-<td align="center" width="50%">
-
-### 👨‍💼 Candidate Experience
-
-- Browse job opportunities
-- View personalized ranking results
-- Receive honest feedback tied to resume evidence
-- Understand why a role matched or did not match
-- Track application progress and status
-
-</td>
-<td align="center" width="50%">
-
-### 🏢 Company Workflow
-
-- Manage jobs and applicants
-- Rank resumes automatically with explainable scoring
-- Review and audit decisions
-- Override ranking without losing traceability
-- Shortlist candidates with human-readable justification
-
-</td>
-</tr>
-</table>
-
----
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-```bash
-# Required local tools
 - Node.js 18+
 - Python 3.10+
-- Docker & Docker Compose
+- Docker and Docker Compose
 - Git
-```
+- A Supabase project
+- A Gemini API key (optional; the app can fall back to heuristic behavior)
 
-### 1) Clone and configure
+## Quick start
+
+### 1) Clone the repository
 
 ```bash
 git clone https://github.com/123bruke/Moseb_job_portal.git
 cd Moseb_job_portal
+```
+
+### 2) Configure environment variables
+
+```bash
 cp .env.example .env
 ```
 
-Fill the environment variables:
+Update `.env` with your local configuration. Typical values include:
 
 ```env
 SUPABASE_URL=https://your-project.supabase.co
@@ -175,266 +107,56 @@ GEMINI_API_KEY=your-gemini-api-key
 NEO4J_PASSWORD=your-neo4j-password
 ```
 
-### 2) Initialize database
-
-```bash
-# Recommended
-make migrate
-
-# Or manually run the SQL migration in Supabase SQL editor:
-# infra/supabase/migrations/0001_init.sql
-```
-
-### 3) Make yourself admin
-
-```sql
-UPDATE profiles SET role='admin' WHERE email='you@example.com';
-```
-
-### 4) Run the app
+### 3) Run the app
 
 ```bash
 make dev
 ```
 
-This starts the app and hot-reload environment. Open:
+This starts the full local stack. The app is usually available at:
 
 - User app: http://localhost:5173
 - API docs: http://localhost:8000/docs
 
-### 5) Seed demo data
+### 4) Initialize database and seed data
 
 ```bash
+make migrate
 make seed
 ```
 
-This populates:
-
-- ChromaDB with knowledge embeddings
-- PostgreSQL with skills data
-- Neo4j with relationship edges
-
-### Fallback behavior without Gemini
-
-If `GEMINI_API_KEY` is missing, the system continues running using:
-
-- heuristic parsing
-- vocabulary-based reasoning
-- templated explanations
-
-That makes local development and CI smoother without sacrificing functional coverage.
-
----
-
-## 📱 Dual Dashboard
-
-The frontend runs twice from the same codebase, with each dev server focused on a different interface.
-
-| Terminal | Command | URL | Shows |
-| --- | --- | --- | --- |
-| 1 — user | `npm run dev:user` | http://localhost:5173 | landing, browse, candidate, company |
-| 2 — admin | `npm run dev:admin` | http://localhost:5174/admin/users | users, queue, audit |
-
-### Important behavior
-
-- Both view layers live from `frontend/`
-- Both proxy `/api` to the backend on `:8000`
-- Same Supabase project means one sign-in works across both views
-- Admin routes are protected and redirect unauthorized users away from `/admin/*`
-- Ports are strict, so stale servers fail loudly instead of silently switching
-
-Admin-only activation is controlled by `frontend/.env.admin` and `VITE_APP_VIEW=admin` mode.
-
----
-
-## 🧠 How Ranking Works
-
-1. Hard filters run first
-   - missing must-have skills
-   - below minimum years of experience
-   - location or work authorization issue
-   - failing candidates are marked as not eligible with a reason
-
-2. Hybrid score 0–100
-   - must-have coverage: 35%
-   - semantic similarity: 25%
-   - experience: 20%
-   - education: 10%
-   - skill-graph proximity: 10%
-
-3. Agent graph reasoning
-   - LangGraph traces each candidate
-   - understand rubric → retrieve evidence → verify requirement → conclude met/partial/missing
-   - evidence must include a verifiable quote from the resume
-
-4. Pairwise comparison
-   - top candidates are compared head-to-head
-   - tie-breaking is human-readable and auditable
-   - company override decisions are logged
-
-### Bias guard
-
-`services/bias.py` strips name, photo, age, gender, nationality, and contact information before chunking, embedding, or scoring. Companies only see anonymized labels until a candidate is shortlisted.
-
-### Prompt injection protection
-
-Resume content is treated as data, not instructions. The system prompt tells the model to ignore instructions embedded in documents, and verdicts without evidence are downgraded to missing.
-
----
-
-## 🛡️ Security & Bias Protection
-
-```text
-Raw Resume
-    │
-    ├─ Strip: Name, Photo, Age, Gender, Nationality
-    ├─ Remove: Email, Phone, Address, Social Media
-    ├─ Anonymize: Dates → Career Span
-    │
-    ▼
-Sanitized Resume
-    │
-    ├─ Embed in ChromaDB (anonymous)
-    ├─ Extract Skills (unattributed)
-    ├─ Build graph in Neo4j (no personal identifiers)
-    │
-    ▼
-Scoring & Ranking (Bias-Free)
-    │
-    ├─ Skills, experience, education only
-    ├─ Personal identity excluded
-    │
-    ▼
-Shortlist Delivery
-    └─ Firms review risk-annotated, explainable outputs
-```
-
-This ensures ranking is based on role fit rather than demographic traits.
-
----
-
-## 📊 Data Lifecycle
-
-After the shortlist is delivered, non-selected applicants have their resume file, Chroma chunks, graph resume edges, parsed data, and reasoning removed after `RETENTION_DAYS` (default 30). Only application metadata and decision records remain for operational needs.
-
-```text
-Application submitted
-    │
-    ├─ Resume stored in Supabase Storage
-    ├─ Resume parsed & chunked
-    ├─ Vector embeddings created
-    ├─ Neo4j resume graph built
-    └─ Ranking and reasoning generated
-            │
-            ▼
-      Shortlist / reject stage
-            │
-            ▼
-      Retention window (30 days)
-            │
-            ▼
-      Cleanup
-      ├─ Remove resume file
-      ├─ Delete Chroma data
-      ├─ Remove graph edges
-      ├─ Clear parsed output
-      └─ Remove model reasoning traces
-```
-
----
-
-## 📁 Project Structure
-
-```text
-Moseb_job_portal/
-├── frontend/                         # React + Vite app
-│   ├── src/
-│   │   ├── app/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── hooks/
-│   │   ├── lib/
-│   │   └── styles/
-│   ├── .env.admin
-│   └── vite.config.ts
-│
-├── backend/
-│   └── app/
-│       ├── core/
-│       ├── routers/
-│       ├── schemas/
-│       ├── services/
-│       ├── repositories/
-│       ├── agents/
-│       ├── prompts/
-│       ├── ml/
-│       └── workers/
-│
-├── infra/
-│   ├── nginx/
-│   ├── neo4j/
-│   └── supabase/
-│
-├── data/
-│   └── knowledge/
-│
-├── docs/
-│   └── architecture-v2.html
-│
-├── ml-training/
-├── docker-compose.yml
-├── .env.example
-├── Makefile
-├── README.md
-└── LICENSE
-```
-
----
-
-## 🧪 Testing
+## Useful commands
 
 ```bash
-cd backend && pytest -q
-cd backend && pytest -m integration --no-cov
-cd frontend && npm test && npm run typecheck && npm run lint
+# start all services
+make dev
+
+# bring services down
+make down
+
+# run database migrations
+make migrate
+
+# populate seed data
+make seed
+
+# run backend tests
+make test
+
+# run linting checks
+make lint
 ```
 
-### Expectations
+## Local development notes
 
-- backend unit tests + ranking eval gate
-- coverage gate for scoring logic
-- frontend type and lint validation
-- integration tests require the compose stack
+The project supports both user and admin views from the same frontend codebase:
 
----
+- User view: http://localhost:5173
+- Admin view: http://localhost:5174/admin/users
 
-## 📈 Build Status
+The backend API proxies are configured to work with the local Docker stack and Supabase environment.
 
-### Milestone progress
-
-```text
-M1 - Core Backend          ✅
-M2 - Frontend (User)       ✅
-M3 - Admin Dashboard       ✅
-M4 - Vector Search         ✅
-M5 - Graph DB              ✅
-M6 - LLM Integration       ✅
-M7 - Data Lifecycle       ✅
-M8 - Hardening             🚧
-```
-
-Hardening work includes:
-
-- Trivy security scanning
-- CodeQL static analysis
-- Gitleaks secret detection
-- Eval gate enforcement
-- Deploy pipeline with migrate-first strategy
-- Automatic rollback based on `/ready`
-
----
-
-## ⚙️ Tech Stack
+## Tech stack
 
 ### Frontend
 - React
@@ -445,17 +167,17 @@ Hardening work includes:
 ### Backend
 - Python
 - FastAPI
-- Supabase
-- PostgreSQL
+- PostgreSQL / Supabase
+- SQLAlchemy / Alembic patterns
 
-### AI & Data
+### AI and data
 - ChromaDB
 - Neo4j
 - Redis / RQ
 - LangGraph
 - Gemini
 - PyMuPDF
-- OCR / YOLO
+- OCR / YOLO-based parsing
 
 ### Infrastructure
 - Docker
@@ -463,48 +185,42 @@ Hardening work includes:
 - Supabase Auth
 - PostgreSQL
 
----
+## How ranking works
 
-## 📝 Limitations
+The application uses a multi-stage hiring evaluation flow:
 
-- This project was generated without live network access, so Docker builds and package installs were not run here.
-- Auto-ranking should support hiring decisions, not replace human judgment.
-- Without a Gemini API key, the system will fall back to lower-cost heuristic behavior.
+1. Hard filters check required eligibility criteria
+2. A hybrid score blends required skills, experience, and education
+3. Semantic and graph-based retrieval helps match candidates to role concepts
+4. Explainable reasoning generates evidence-based feedback
+5. Recruiters can review and override AI suggestions with an audit trail
 
----
+## Security and fairness
 
-## 🤝 Contributing
+The system is designed to reduce bias and keep decisions transparent:
 
-1. Fork the repo.
-2. Create a feature branch.
-3. Add tests and keep the code clean.
-4. Open a pull request with clear notes.
+- sensitive personal identity data is stripped before analysis
+- only role-relevant criteria are evaluated for ranking
+- candidate reasoning is grounded in resume evidence
+- decisions can be reviewed and explained to users
 
-### Recommended commands
+## Contributing
 
-```bash
-make dev
-make migrate
-make seed
-make test
-```
+Contributions are welcome.
 
----
+1. Fork the repository
+2. Create a feature branch
+3. Add or update tests where relevant
+4. Open a pull request with a clear description of the change
 
-## 📄 License
+## License
 
-This project is licensed under the MIT license. See the `LICENSE` file for more details.
+This project is licensed under the MIT License. See the `LICENSE` file for full details.
 
----
+## Status
 
-<div align="center">
-  ## frontend section
-<img width="1902" height="897" alt="Screenshot 2026-10-02 123845" src="https://github.com/user-attachments/assets/cc5898ab-431f-4970-a893-491a0b7d6b06" />
-<img width="1857" height="877" alt="Screenshot 2026-10-02 123947" src="https://github.com/user-attachments/assets/3ea81230-df30-437e-bb3e-282682b6ba01" />
-<img width="1885" height="876" alt="Screenshot 2026-10-02 124229" src="https://github.com/user-attachments/assets/5b72b41d-f1ec-43b0-a50e-275755d8ca24" />
-<img width="1917" height="906" alt="Screenshot 2026-10-02 124323" src="https://github.com/user-attachments/assets/13c03eec-da0a-4a88-9af0-813d268e934e" />
+This repository is structured as a production-style platform with a working development setup and modular services for frontend, backend, AI processing, and infrastructure.
 
+----
 
-[GitHub](https://github.com/123bruke/Moseb_job_portal) • [Issues](https://github.com/123bruke/Moseb_job_portal/issues)
-
-</div>
+If you want, I can also turn this into a more polished GitHub-style README with badges, screenshots, and a stronger product pitch.
