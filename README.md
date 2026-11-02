@@ -1,88 +1,131 @@
 # Moseb Job Portal
 
-A full-stack hiring intelligence platform for matching candidates to jobs with explainable AI, bias-aware screening, and transparent recruiter workflows.
+A full-stack hiring intelligence platform for matching candidates to jobs using explainable AI, structured resume analysis, and recruiter-friendly workflows.
 
-This project combines a candidate-facing job portal with an admin/company dashboard for managing applications, ranking resumes, and reviewing AI-generated recommendations with auditability.
+Moseb brings together a candidate-facing job portal and an internal hiring dashboard so teams can review applicants, rank talent, and understand why a profile matches or misses a role.
 
-## Why this project
+## Overview
 
-- Candidate experience: browse jobs, review rankings, and understand why they matched or missed a role
-- Company workflow: manage applicants, assess fit, and shortlist with evidence-backed reasoning
-- Explainable ranking: AI scoring tied to resume evidence and requirement checks
-- Bias-conscious processing: anonymizes sensitive personal details before scoring
-- Modern stack: React + FastAPI + Postgres + vector/graph data stores + Docker
+This project is designed for modern recruiting workflows where speed, transparency, and fairness matter. The platform combines:
 
-## Architecture overview
+- Candidate discovery and application flows
+- Resume ingestion and parsing
+- Job-to-candidate matching with skill and experience scoring
+- Explainable feedback for candidates and recruiters
+- Bias-aware handling of sensitive personal attributes
+- Admin controls for review, override, and auditability
+
+## Why this project exists
+
+Recruitment often suffers from fragmented systems, opaque ranking logic, and inconsistent review workflows. Moseb aims to make hiring decisions more transparent and actionable by combining:
+
+- Human-centered candidate experience
+- Evidence-based ranking logic
+- AI-assisted hiring support with accountability
+- Modular services for frontend, backend, AI inference, and data storage
+
+## Core features
+
+- Job search and application experience for candidates
+- Resume upload and parsing for recruitment pipelines
+- Hybrid ranking based on skills, experience, education, and role fit
+- Explainable recommendation reasons tied to resume evidence
+- Sensitive-field anonymization before automated evaluation
+- Admin dashboard for recruiter review and manual override
+- Docker-based local development environment
+- Support for vector search, graph reasoning, and background job processing
+
+## Architecture
 
 ```text
 Frontend (React + Vite)
     │
-    ├─ Candidate portal
-    ├─ Company/admin dashboard
-    └─ Authenticated views via Supabase
+    ├── Candidate portal
+    ├── Company dashboard
+    └── Authenticated views
             │
             ▼
       Nginx / API gateway
             │
             ▼
-      FastAPI backend
+       FastAPI backend
             │
-            ├─ Resume parsing and ingestion
-            ├─ Skill extraction and scoring
-            ├─ Graph/vector retrieval
-            ├─ Explainable ranking pipeline
-            └─ Background workers
+            ├── Resume ingestion and parsing
+            ├── Skill extraction and matching
+            ├── Vector/graph retrieval
+            ├── Explainable ranking pipeline
+            └── Background worker tasks
             │
-            ├── Supabase / PostgreSQL
+            ├── PostgreSQL / Supabase
             ├── ChromaDB
             ├── Neo4j
             ├── Redis / RQ
-            └── AI inference (Gemini / fallback heuristics)
+            └── AI inference (Gemini + fallback logic)
 ```
 
-## Key features
+## Tech stack
 
-- Job discovery and application flow for candidates
-- Resume upload and parsing for recruitment workflows
-- Hybrid ranking logic: hard filters + semantic fit + experience + education + graph reasoning
-- Explainable candidate feedback with evidence-backed reasons
-- Bias guardrails that strip identity-related fields before analysis
-- Admin audit trails and override controls for recruiters
-- Docker-based local development environment
+### Frontend
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+
+### Backend
+- Python
+- FastAPI
+- PostgreSQL / Supabase
+- SQLAlchemy and migration workflows
+
+### AI and data
+- ChromaDB
+- Neo4j
+- Redis / RQ
+- LangGraph-style orchestration patterns
+- Gemini integration
+- PDF parsing and OCR-assisted extraction
+- YOLO-based CV layout detection (optional ML pipeline)
+
+### Infrastructure
+- Docker
+- Docker Compose
+- Nginx
+- Supabase Auth and storage integration
 
 ## Repository structure
 
 ```text
 Moseb_job_portal/
-├── backend/                 # FastAPI app, services, workers, schemas
-├── frontend/                # React + Vite user/admin dashboards
-├── infra/                   # Nginx, Neo4j, Supabase-related infrastructure
-├── data/                    # Knowledge and supporting data files
-├── docs/                    # Project docs and architecture references
-├── ml-training/             # CV layout model / YOLO training assets
-├── .env.example             # Environment template
-├── docker-compose.yml       # Main Docker stack
-├── docker-compose.dev.yml   # Local dev config
-├── Makefile                 # Dev, seed, migrate, test commands
-├── package.json             # Root scripts
-├── README.md                # Project documentation
-├── LICENSE                  # License
-├── vercel.json              # Frontend deployment config
-└── .github/                 # CI/workflows
+├── backend/              # FastAPI application, schemas, services, workers
+├── frontend/             # React + Vite frontend and admin interfaces
+├── infra/                # Infrastructure config such as nginx and service setup
+├── data/                 # Supporting knowledge and sample data
+├── docs/                 # Project documentation and design references
+├── ml-training/          # Model training assets for layout detection
+├── .env.example          # Environment template
+├── docker-compose.yml    # Main Docker stack
+├── docker-compose.dev.yml# Local development stack config
+├── Makefile              # Common developer commands
+├── package.json          # Root package scripts
+├── README.md             # Project documentation
+├── LICENSE               # License
+├── vercel.json           # Frontend deployment config
+├── .github/              # CI and workflow configuration
+└── .gitignore            # Git ignore rules
 ```
 
 ## Prerequisites
 
-Before starting the project, make sure you have:
+Before running the project locally, make sure you have:
 
 - Node.js 18+
 - Python 3.10+
 - Docker and Docker Compose
 - Git
 - A Supabase project
-- A Gemini API key (optional; the app can fall back to heuristic behavior)
+- A Gemini API key (optional if fallback logic is enabled)
 
-## Quick start
+## Getting started
 
 ### 1) Clone the repository
 
@@ -97,28 +140,22 @@ cd Moseb_job_portal
 cp .env.example .env
 ```
 
-Update `.env` with your local configuration. Typical values include:
+Update your `.env` file with the configuration for your local environment, including Supabase, database, AI, and Neo4j settings.
 
-```env
-SUPABASE_URL=https://your-project.supabase.co
-SUPABASE_ANON_KEY=your-anon-key
-SUPABASE_SERVICE_ROLE_KEY=your-service-key
-GEMINI_API_KEY=your-gemini-api-key
-NEO4J_PASSWORD=your-neo4j-password
-```
-
-### 3) Run the app
+### 3) Start the app
 
 ```bash
 make dev
 ```
 
-This starts the full local stack. The app is usually available at:
+This launches the project stack using Docker Compose.
 
-- User app: http://localhost:5173
+Typical local endpoints:
+
+- Frontend: http://localhost:5173
 - API docs: http://localhost:8000/docs
 
-### 4) Initialize database and seed data
+### 4) Initialize data and migrations
 
 ```bash
 make migrate
@@ -128,81 +165,68 @@ make seed
 ## Useful commands
 
 ```bash
-# start all services
+# Start the project stack
+docker compose -f docker-compose.yml -f docker-compose.dev.yml up --build
+
+# Stop services
+docker compose down
+
+# Run DB migrations
+docker compose exec backend alembic upgrade head
+
+# Seed local data
+docker compose exec backend python -m scripts.seed_knowledge
+
+# Run backend tests
+cd backend && pytest -q
+
+# Run frontend checks
+cd frontend && npm run lint && npm run typecheck
+```
+
+You can also use the root Makefile shortcuts:
+
+```bash
 make dev
-
-# bring services down
 make down
-
-# run database migrations
 make migrate
-
-# populate seed data
 make seed
-
-# run backend tests
 make test
-
-# run linting checks
 make lint
 ```
 
-## Local development notes
+## Development notes
 
-The project supports both user and admin views from the same frontend codebase:
+The application is structured to support both candidate-facing and recruiter/admin experiences from a shared frontend foundation.
 
-- User view: http://localhost:5173
-- Admin view: http://localhost:5174/admin/users
+The backend uses a modular service-oriented layout for:
 
-The backend API proxies are configured to work with the local Docker stack and Supabase environment.
+- job and application logic
+- resume processing
+- ranking and explainability
+- background workers
+- data persistence and retrieval
 
-## Tech stack
-
-### Frontend
-- React
-- TypeScript
-- Vite
-- Tailwind CSS
-
-### Backend
-- Python
-- FastAPI
-- PostgreSQL / Supabase
-- SQLAlchemy / Alembic patterns
-
-### AI and data
-- ChromaDB
-- Neo4j
-- Redis / RQ
-- LangGraph
-- Gemini
-- PyMuPDF
-- OCR / YOLO-based parsing
-
-### Infrastructure
-- Docker
-- Nginx
-- Supabase Auth
-- PostgreSQL
+This makes it easier to extend the platform with new hiring rules, new ranking features, or additional data sources.
 
 ## How ranking works
 
-The application uses a multi-stage hiring evaluation flow:
+The platform’s matching flow is designed to be transparent and auditable:
 
-1. Hard filters check required eligibility criteria
-2. A hybrid score blends required skills, experience, and education
-3. Semantic and graph-based retrieval helps match candidates to role concepts
-4. Explainable reasoning generates evidence-based feedback
-5. Recruiters can review and override AI suggestions with an audit trail
+1. Hard filters check required eligibility and role constraints
+2. Skill, experience, and education signals are combined into a fit score
+3. Semantic and graph-based matching improves relevance beyond keyword overlap
+4. Explainable reasoning highlights why a candidate was recommended or rejected
+5. Recruiters can review and override system suggestions with an audit trail
 
-## Security and fairness
+## Fairness and explainability
 
-The system is designed to reduce bias and keep decisions transparent:
+The system is intentionally designed with fairness-oriented safeguards:
 
-- sensitive personal identity data is stripped before analysis
-- only role-relevant criteria are evaluated for ranking
-- candidate reasoning is grounded in resume evidence
-- decisions can be reviewed and explained to users
+- Sensitive personal information is stripped before automated analysis
+- Evaluation focuses on role-relevant criteria
+- Recommendation reasoning is grounded in resume evidence
+- Human review remains part of the hiring workflow
 
 ## Contributing
 
@@ -210,17 +234,15 @@ Contributions are welcome.
 
 1. Fork the repository
 2. Create a feature branch
-3. Add or update tests where relevant
-4. Open a pull request with a clear description of the change
+3. Make your change and add relevant tests if needed
+4. Open a pull request with a clear description
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for full details.
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
 ## Status
 
-This repository is structured as a production-style platform with a working development setup and modular services for frontend, backend, AI processing, and infrastructure.
+Moseb Job Portal is structured as a production-style hiring platform with a modular architecture spanning frontend, backend, AI processing, and infrastructure.
 
-----
-
-If you want, I can also turn this into a more polished GitHub-style README with badges, screenshots, and a stronger product pitch.
+It is designed to support both local development and future deployment into a real recruiting environment.
